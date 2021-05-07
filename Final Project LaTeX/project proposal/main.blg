@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: ./bibliography.bib
+Too many commas in name 1 of "Mattu, Jeff Larson, Lauren Kirchner, Surya, Julia Angwin" for entry mattu_machine_nodate
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Mattu, Jeff Larson, Lauren Kirchner, Surya, Julia Angwin" for entry mattu_machine_nodate
+while executing---line 1049 of file plain.bst
+Warning--empty journal in financial_services_authority_data_2008
+Warning--empty publisher in gay_activity-centered_2004
+Too many commas in name 1 of "Mattu, Jeff Larson, Lauren Kirchner, Surya, Julia Angwin" for entry mattu_machine_nodate
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Mattu, Jeff Larson, Lauren Kirchner, Surya, Julia Angwin" for entry mattu_machine_nodate
+while executing---line 1090 of file plain.bst
+You've used 14 entries,
+            2118 wiz_defined-function locations,
+            566 strings with 6050 characters,
+and the built_in function-call counts, 3368 in all, are:
+= -- 310
+> -- 131
+< -- 1
++ -- 55
+- -- 40
+* -- 170
+:= -- 566
+add.period$ -- 35
+call.type$ -- 14
+change.case$ -- 61
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 129
+empty$ -- 315
+format.name$ -- 40
+if$ -- 707
+int.to.chr$ -- 0
+int.to.str$ -- 14
+missing$ -- 7
+newline$ -- 66
+num.names$ -- 28
+pop$ -- 101
+preamble$ -- 1
+purify$ -- 48
+quote$ -- 0
+skip$ -- 117
+stack$ -- 0
+substring$ -- 140
+swap$ -- 20
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 54
+warning$ -- 2
+while$ -- 35
+width$ -- 16
+write$ -- 128
+(There were 4 error messages)
