@@ -17,22 +17,20 @@ class _HomeState extends State<Home> {
       home: Scaffold (
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Colors.white,
+          backgroundColor: lightGrey,
           title: Row(
             children: <Widget>[
-              Align(
-                alignment: Alignment.topRight,
-                child: Icon(
-                  Icons.account_circle,
-                  color: pink1,
-                ),
-              )
             ],
           ),
-          actions: <Widget>[ // add the icon to this list
-            Icon(
-              Icons.account_circle,
-              color: pink1,
+          // action used to place icon to the right
+          actions: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                icon: const Icon(Icons.account_circle, size: 35),
+                tooltip: 'View profile details',
+                color: pink1,
+              ),
             ),
           ],
         ),
