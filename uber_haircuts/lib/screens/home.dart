@@ -15,6 +15,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return MaterialApp (
       home: Scaffold (
+        backgroundColor: lightGrey,
         appBar: AppBar(
           elevation: 0,
           backgroundColor: lightGrey,
@@ -27,9 +28,11 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: IconButton(
-                icon: const Icon(Icons.account_circle, size: 35),
+                icon: const Icon(Icons.account_circle, size: 35, color: pink1),
                 tooltip: 'View profile details',
-                color: pink1,
+                onPressed: () {
+                  // ADD FUNCTION TO VIEW PROFILE DETAILS
+                },
               ),
             ),
           ],
