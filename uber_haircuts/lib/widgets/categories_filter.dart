@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_haircuts/widgets/return_text.dart';
 
 import '../common_items.dart';
 
@@ -29,15 +30,15 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
       yield Padding(
         padding: const EdgeInsets.all(3.5),
         child: FilterChip(
+
           shape: RoundedRectangleBorder(
             side: BorderSide(color: main, width: 1),
             borderRadius: BorderRadius.circular(100),
           ),
           checkmarkColor: Colors.lightBlue,
-
           backgroundColor: lightGrey,
           selectedColor: pink2,
-          label: Text(category.name),
+          label: ReturnText(text: category.name),
           selected: _filters.contains(category.name),
           onSelected: (bool value) {
             setState(() {
