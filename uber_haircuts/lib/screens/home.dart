@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_haircuts/widgets/categories_filter.dart';
+import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
 
 class Home extends StatefulWidget {
@@ -29,7 +31,7 @@ class _HomeState extends State<Home> {
               // action used to place icon to the right
               actions: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(1),
                   child: IconButton(
                     icon: const Icon(Icons.account_circle, size: 35, color: pink1),
                     tooltip: 'View profile details',
@@ -40,27 +42,22 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-            FilterChip(
-              avatar: CircleAvatar(
-                backgroundColor: Colors.grey.shade800,
-              ),
-              label: const Text('Category 1'),
+            SizedBox(
+              height: 40,
+              child: CategoriesFilter(),
             ),
             SizedBox(height: 5,),
+            // Search bar
             Padding(
-              padding: const EdgeInsets.all(14.0),
+              padding: const EdgeInsets.all(20.0),
               child: Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: pink1,
+                    width: 3
+                  ),
+                    borderRadius: BorderRadius.circular(14),
                     color: lightGrey,
-                    boxShadow: [
-                    // Here shadow is used to give an accent to the search box
-                    BoxShadow(
-                      color: pink1,
-                      offset: Offset(2, 1),
-                      blurRadius: 5
-                    )
-                  ]
                 ),
                 child: ListTile(
                   title: TextField(
@@ -75,6 +72,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
+            ReturnText(inputText: "Available Right Now", size: 20,)
           ],
         ),
       ),

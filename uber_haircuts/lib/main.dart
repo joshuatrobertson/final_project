@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Chop Chop',
       theme: ThemeData(
         primarySwatch: Colors.red,
+        fontFamily: 'Poppins'
       ),
       home: Home(),
     );
