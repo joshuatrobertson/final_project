@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/common_items.dart';
-import 'package:uber_haircuts/models/products.dart';
+import 'package:uber_haircuts/models/product.dart';
 
 class Details extends StatefulWidget {
   final Product product;

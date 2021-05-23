@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_haircuts/widgets/available_now.dart';
 import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
@@ -118,65 +119,12 @@ class _HomeState extends State<Home> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
-              child: Align(alignment: Alignment.centerLeft, child: ReturnText(text: 'Available Right Now', size: 20),),
+              child: Align(alignment: Alignment.centerLeft, child: ReturnText(text: 'Haircuts Available Now', size: 17),),
             ),
             SizedBox(
               height: 2
             ),
-            Container(
-              height: 200,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
-                child: Container(
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 3,
-                      itemBuilder: (_, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 140,
-                        decoration: BoxDecoration(
-                          color: lightGrey,
-                          borderRadius: BorderRadius.all(
-                              Radius.circular(12.0)
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.4),
-                              spreadRadius: 4,
-                              blurRadius: 4,
-                              offset: Offset(0, 3),
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget> [
-                            ClipRRect(
-                                borderRadius: BorderRadius.circular(15.0),
-                                child: Image.asset("assets/images/barber02.jpg", height: 115, width: 190, fit: BoxFit.fill,)
-                            ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 20, left: 10),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      ReturnText(text: 'Tom Smith', size: 15, align: TextAlign.left,),
-                                      ReturnText(text: 'High Street Barbers', size: 12),
-                                    ],
-                                  ),
-                                ),
-                          ],
-                        ),
-
-                      ),
-                    );
-                  })
-                ),
-              ),
-            ),
+            availableNow(),
           ],
         ),
       ),

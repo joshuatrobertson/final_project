@@ -16,7 +16,7 @@ class Featured extends StatelessWidget {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                  child: Image.asset("assets/images/barber01.jpg", height: 200, width: 200,),
+                  child: Image.asset("assets/images/barber04.jpg", height: 200, width: 200,),
                 )
               ],
             ),
