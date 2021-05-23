@@ -18,10 +18,12 @@ class CategoriesFilter extends StatefulWidget {
 
 class _CategoriesFilterState extends State<CategoriesFilter> {
   final List<CategoryFilterEntry> _cast = <CategoryFilterEntry>[
-    const CategoryFilterEntry('Category 1'),
-    const CategoryFilterEntry('Category 2'),
-    const CategoryFilterEntry('Category 3'),
-    const CategoryFilterEntry('Category 4'),
+    const CategoryFilterEntry('Haircut'),
+    const CategoryFilterEntry('Beard Trim'),
+    const CategoryFilterEntry('Cheap'),
+    const CategoryFilterEntry('Wash & Cut'),
+    const CategoryFilterEntry('Other'),
+
   ];
   final List<String> _filters = <String>[];
 
@@ -30,7 +32,6 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
       yield Padding(
         padding: const EdgeInsets.all(3.5),
         child: FilterChip(
-
           shape: RoundedRectangleBorder(
             side: BorderSide(color: main, width: 1),
             borderRadius: BorderRadius.circular(100),

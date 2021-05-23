@@ -7,3 +7,4 @@ const Color pink2 = Color(0xFFFAABB9);
 const Color lightGrey = Color(0xFFF5F5F5);
 const Color white = Colors.white;
 const Color black = Colors.black;
+const Color grey = Colors.grey;

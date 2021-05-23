@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
             SizedBox(height: 5,),
             // Search bar
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(
@@ -76,12 +76,12 @@ class _HomeState extends State<Home> {
             ),
             Container(
               height: 200,
-                padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                     itemCount: 4,
                     itemBuilder: (_, index){
                   return Container(
+                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                     height: 200,
                     width: 200,
                         child: Stack(
@@ -94,10 +94,23 @@ class _HomeState extends State<Home> {
                             Padding(
                               padding: const EdgeInsets.only(bottom: 40.0),
                               child: Container(
+
                                   alignment: Alignment.bottomCenter,
-                                  child: ReturnText(text: 'Barber Name', size: 16, color: Colors.white,),
+                                  child: ReturnText(text: 'Barber Name', size: 20, color: white,),
                               ),
-                            )
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 45.0, left: 6),
+                              child: Row(
+                                children: [
+                                  ReturnText(text: '5', size: 16, color: white),
+                                    Padding(
+                                      padding: const EdgeInsets.only(bottom: 8.0),
+                                      child: Icon(Icons.star, color: lightGrey, size: 12),
+                                    ),
+                                  ],
+                              ),
+                            ),
                           ],
                         ),
                   );
@@ -106,6 +119,53 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
               child: Align(alignment: Alignment.centerLeft, child: ReturnText(text: 'Available Right Now', size: 20),),
+            ),
+            SizedBox(
+              height: 2
+            ),
+            Container(
+              height: 200,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                child: Container(
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 3,
+                      itemBuilder: (_, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: 200,
+                        height: 140,
+                        decoration: BoxDecoration(
+                          color: lightGrey,
+                          borderRadius: BorderRadius.all(
+                              Radius.circular(12.0)
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.4),
+                              spreadRadius: 4,
+                              blurRadius: 4,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Column(
+                          children: <Widget> [
+                            ClipRRect(
+                                borderRadius: BorderRadius.circular(15.0),
+                                child: Image.asset("assets/images/barber02.jpg", height: 140, width: 170, )
+                            ),
+                            ReturnText(text: 'Some text')
+                          ],
+                        ),
+
+                      ),
+                    );
+                  })
+                ),
+              ),
             ),
           ],
         ),
