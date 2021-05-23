@@ -36,8 +36,8 @@ List<Barber> barbers = [
 
 ];
 
-class availableNow extends StatelessWidget {
-  const availableNow({Key key}) : super(key: key);
+class AvailableNow extends StatelessWidget {
+  const AvailableNow({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,7 +55,7 @@ class availableNow extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: lightGrey,
                         borderRadius: BorderRadius.all(
-                            Radius.circular(12.0)
+                            Radius.circular(6.0)
                         ),
                         boxShadow: [
                           BoxShadow(
@@ -72,7 +72,7 @@ class availableNow extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                             child: ClipRRect(
-                                borderRadius: BorderRadius.circular(15.0),
+                                borderRadius: BorderRadius.circular(6.0),
                                 child: Image.asset("assets/images/${barbers[index].image}.jpg", height: 100, width: 150,)
                             ),
                           ),
