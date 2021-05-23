@@ -135,7 +135,6 @@ class _HomeState extends State<Home> {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        width: 200,
                         height: 140,
                         decoration: BoxDecoration(
                           color: lightGrey,
@@ -152,12 +151,23 @@ class _HomeState extends State<Home> {
                           ],
                         ),
                         child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget> [
                             ClipRRect(
                                 borderRadius: BorderRadius.circular(15.0),
-                                child: Image.asset("assets/images/barber02.jpg", height: 140, width: 170, )
+                                child: Image.asset("assets/images/barber02.jpg", height: 115, width: 190, fit: BoxFit.fill,)
                             ),
-                            ReturnText(text: 'Some text')
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 20, left: 10),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      ReturnText(text: 'Tom Smith', size: 15, align: TextAlign.left,),
+                                      ReturnText(text: 'High Street Barbers', size: 12),
+                                    ],
+                                  ),
+                                ),
                           ],
                         ),
 
