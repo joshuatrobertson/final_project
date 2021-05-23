@@ -92,10 +92,10 @@ class _HomeState extends State<Home> {
               AvailableNow(),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 30.0),
-                child: Align(alignment: Alignment.centerLeft, child: ReturnText(text: 'Top Rated Barbers', size: 17),),
+                child: Align(alignment: Alignment.bottomLeft, child: ReturnText(text: 'Top Rated Barbers', size: 17),),
               ),
               Container(
-                  height: 200,
+                  height: 140,
                   child: TopRated()
               ),
             ],

@@ -27,12 +27,12 @@ class Featured extends StatelessWidget {
               children:[
                 Container(
                     alignment: Alignment.center,
-                    child: Image.asset("assets/images/${featuredParentsBarbers[index].image}.jpg", height: 120, width: 200,
+                    child: Image.asset("assets/images/${featuredParentsBarbers[index].image}.jpg", height: 140, width: 200,
                       fit: BoxFit.cover,
                     )
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 40.0),
+                  padding: const EdgeInsets.only(bottom: 35.0),
                   child: Container(
 
                     alignment: Alignment.bottomCenter,

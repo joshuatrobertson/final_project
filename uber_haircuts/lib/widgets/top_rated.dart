@@ -23,8 +23,7 @@ class TopRated extends StatelessWidget {
         itemBuilder: (_, index){
           return Container(
             padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-            height: 120,
-            width: 190,
+            width: 180,
             child: Stack(
               children:[
                 Container(
@@ -34,7 +33,7 @@ class TopRated extends StatelessWidget {
                     )
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 40.0),
+                  padding: const EdgeInsets.only(bottom: 15.0),
                   child: Container(
 
                     alignment: Alignment.bottomCenter,
@@ -42,13 +41,13 @@ class TopRated extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 45.0, left: 6),
+                  padding: const EdgeInsets.only(top: 10.0, left: 6),
                   child: Row(
                     children: [
-                      ReturnText(text: featuredParentsBarbers[index].rating.toString(), size: 17, color: white, fontWeight: FontWeight.w600,),
+                      ReturnText(text: featuredParentsBarbers[index].rating.toString(), size: 24, color: white, fontWeight: FontWeight.w600,),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 8.0),
-                        child: Icon(Icons.star, color: lightGrey, size: 12),
+                        child: Icon(Icons.star, color: white, size: 14),
                       ),
                     ],
                   ),
