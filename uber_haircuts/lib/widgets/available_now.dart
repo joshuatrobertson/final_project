@@ -1,42 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
-import 'package:uber_haircuts/models/barber.dart';
-import 'package:uber_haircuts/models/prices.dart';
-import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
 
-List<Product> products = [
-  Product(0, "Haircut", "A simple haircut", false),
-  Product(1, "Shave", "A simple shave", false),
-  Product(2, "Student Cut", "A discounted student cut", false),
-];
-
-List<Prices> productsJohn = [
-  Prices(0, 10.50, products[0], true),
-];
-
-List<Prices> productsPaul = [
-  Prices(0, 10.20, products[0], true),
-];
-
-List<Prices> productsSarah = [
-  Prices(0, 8.90, products[0], true),
-];
-
-List<Prices> productsEmily = [
-  Prices(0, 14.20, products[0], true),
-];
-
-List<Barber> barbers = [
-  Barber(0, "John", "barber01", "A 22 year old with 2 years experience", "High Street Barbers", 4.9, true, true, productsJohn),
-  Barber(1, "Paul", "barber02", "A 33 year old with 10 years experience", "Downtown Barbers", 4.6, true, false, productsJohn),
-  Barber(2, "Sarah", "barber03", "A 33 year old with 10 years experience", "Downtown Barbers", 4.2, true, false, productsSarah),
-  Barber(3, "Emily", "barber04", "A 33 year old with 10 years experience", "Downtown Barbers", 4.6, true, false, productsEmily),
-
-];
 
 class AvailableNow extends StatelessWidget {
   const AvailableNow({Key key}) : super(key: key);
@@ -55,7 +23,7 @@ class AvailableNow extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
                       onTap: () {
-                        navigateToScreen(_, Details(barber: barbers[index]));
+                        navigateToScreen(_, ProductDetails(barber: barbers[index]));
                       },
                       child: Container(
                         decoration: BoxDecoration(

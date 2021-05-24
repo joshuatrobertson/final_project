@@ -3,18 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/prices.dart';
 
-class Details extends StatefulWidget {
+class ProductDetails extends StatefulWidget {
   final Barber barber;
 
-  createState() => _DetailsState();
+  createState() => _ProductDetailsState();
 
-  Details({@required this.barber});
+  ProductDetails({@required this.barber});
 
 }
 
-
-
-class _DetailsState extends State<Details> {
+class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
