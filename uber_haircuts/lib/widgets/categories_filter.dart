@@ -17,7 +17,7 @@ class CategoriesFilter extends StatefulWidget {
 }
 
 class _CategoriesFilterState extends State<CategoriesFilter> {
-  final List<CategoryFilterEntry> _cast = <CategoryFilterEntry>[
+  final List<CategoryFilterEntry> _items = <CategoryFilterEntry>[
     const CategoryFilterEntry('Haircut'),
     const CategoryFilterEntry('Beard Trim'),
     const CategoryFilterEntry('Cheap'),
@@ -28,7 +28,7 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
   final List<String> _filters = <String>[];
 
   Iterable<Widget> get categoryWidget sync* {
-    for (final CategoryFilterEntry category in _cast) {
+    for (final CategoryFilterEntry category in _items) {
       yield Padding(
         padding: const EdgeInsets.all(3.5),
         child: FilterChip(
