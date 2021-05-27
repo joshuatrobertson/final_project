@@ -2,18 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
+import 'package:uber_haircuts/models/prices.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
-import 'package:uber_haircuts/screens/products.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 
 import '../common_items.dart';
 
-class BarberDetails extends StatefulWidget {
-  final ParentBarber parentBarber;
+class Products extends StatefulWidget {
+  final List<Prices> productList;
 
-  createState() => _BarberDetailsState();
+  createState() => _ProductsDetails();
 
-  BarberDetails({@required this.parentBarber});
+  Products({@required this.productList});
 
 }
 /*
@@ -22,7 +22,7 @@ Text(widget.barber.barberProducts[0].price.toString()),
 Text(widget.barber.parentBarber)
 */
 
-class _BarberDetailsState extends State<BarberDetails> {
+class _ProductsDetails extends State<Products> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,14 +35,14 @@ class _BarberDetailsState extends State<BarberDetails> {
               child: Container(
                   child: ListView.builder(
                       scrollDirection: Axis.vertical,
-                      itemCount: widget.parentBarber.barbers.length,
+                      itemCount: widget.productList.length,
                       itemBuilder: (_, index) {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: GestureDetector(
                             onTap: () {
                               navigateToScreen(
-                                  _, Products(productList: widget.parentBarber.barbers[index].barberProducts));
+                                  _, ProductDetails(product: widget.productList[index]));
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -68,7 +68,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                     child: ClipRRect(
                                         borderRadius: BorderRadius.circular(6.0),
                                         child: Image.asset(
-                                          "assets/images/${widget.parentBarber.barbers[index].image}.jpg",
+                                          "assets/images/${widget.productList[index].product.image}.jpg",
                                           height: 100, width: 150,)
                                     ),
                                   ),
@@ -80,7 +80,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                       child: Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
-                                          ReturnText(text: widget.parentBarber.barbers[index].name,
+                                          ReturnText(text: widget.productList[index].product.name,
                                             size: 15,
                                             fontWeight: FontWeight.bold,
                                             align: TextAlign.left,),
@@ -91,15 +91,13 @@ class _BarberDetailsState extends State<BarberDetails> {
                                               children: [
 
                                                 ReturnText(
-                                                    text: widget.parentBarber.name,
+                                                    text: widget.productList[index].product.name,
                                                     color: Colors.black54,
                                                     size: 10),
-                                                ReturnText(text: widget.parentBarber.barbers[index].rating.toString(), size: 24, color: white, fontWeight: FontWeight.w600,),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(bottom: 8.0),
-                                                  child: Icon(Icons.star, color: white, size: 14),
-                                                ),
-
+                                                ReturnText(text: "£" +
+                                                    widget.productList[index].price.toString(),
+                                                  size: 14,
+                                                  color: Colors.redAccent,),
                                               ]
                                           )
                                         ],

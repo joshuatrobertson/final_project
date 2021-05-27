@@ -2,10 +2,14 @@
 \BOOKMARK [2][-]{subsection.1.1}{Ideation and Concept}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Market Analysis}{section.1}% 3
 \BOOKMARK [3][-]{subsubsection.1.2.1}{Existing Applications}{subsection.1.2}% 4
-\BOOKMARK [3][-]{subsubsection.1.2.2}{The Target User}{subsection.1.2}% 5
-\BOOKMARK [3][-]{subsubsection.1.2.3}{Programming Language}{subsection.1.2}% 6
-\BOOKMARK [2][-]{subsection.1.3}{User Personas}{section.1}% 7
-\BOOKMARK [1][-]{section.2}{Production}{}% 8
-\BOOKMARK [2][-]{subsection.2.1}{Version Control}{section.2}% 9
-\BOOKMARK [2][-]{subsection.2.2}{Sprint 1 - Setup}{section.2}% 10
-\BOOKMARK [2][-]{subsection.2.3}{Sprint X - UI}{section.2}% 11
+\BOOKMARK [2][-]{subsection.1.3}{Deciding on a Platform}{section.1}% 5
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Mobile vs Desktop}{subsection.1.3}% 6
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Android vs iOS}{subsection.1.3}% 7
+\BOOKMARK [3][-]{subsubsection.1.3.3}{The Target User}{subsection.1.3}% 8
+\BOOKMARK [3][-]{subsubsection.1.3.4}{Programming Language}{subsection.1.3}% 9
+\BOOKMARK [2][-]{subsection.1.4}{User Personas}{section.1}% 10
+\BOOKMARK [1][-]{section.2}{Prototyping}{}% 11
+\BOOKMARK [1][-]{section.3}{Production}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{Version Control}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{Sprint 1 - Setup}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.3}{Sprint X - UI}{section.3}% 15

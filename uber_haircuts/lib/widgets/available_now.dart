@@ -23,7 +23,7 @@ class AvailableNow extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
                       onTap: () {
-                        navigateToScreen(_, ProductDetails(barber: barbers[index]));
+                        navigateToScreen(_, ProductDetails(product: barbers[index].barberProducts[0]));
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -33,9 +33,9 @@ class AvailableNow extends StatelessWidget {
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.1),
-                              spreadRadius: 8,
-                              blurRadius: 8,
+                              color: Colors.grey.withOpacity(0.35),
+                              spreadRadius: 2,
+                              blurRadius: 3,
                               offset: Offset(0, 3),
                             ),
                           ],

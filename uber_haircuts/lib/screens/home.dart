@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
                   child: Featured()
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 30.0),
                 child: Align(alignment: Alignment.centerLeft, child: ReturnText(text: 'Haircuts Available Now', size: 17),),
               ),
               SizedBox(
@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
               ),
               AvailableNow(),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 30.0),
+                padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
                 child: Align(alignment: Alignment.bottomLeft, child: ReturnText(text: 'Top Rated Barbers', size: 17),),
               ),
               Container(

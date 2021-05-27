@@ -4,11 +4,11 @@ import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/prices.dart';
 
 class ProductDetails extends StatefulWidget {
-  final Barber barber;
+  final Prices product;
 
   createState() => _ProductDetailsState();
 
-  ProductDetails({@required this.barber});
+  ProductDetails({@required this.product});
 
 }
 
@@ -19,9 +19,9 @@ class _ProductDetailsState extends State<ProductDetails> {
        backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
-          Text(widget.barber.name),
-          Text(widget.barber.barberProducts[0].price.toString()),
-          Text(widget.barber.parentBarber)
+          Text(widget.product.price.toString()),
+          Text(widget.product.product.name),
+          Text(widget.product.product.description),
         ],
       )
     );

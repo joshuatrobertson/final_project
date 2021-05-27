@@ -28,9 +28,9 @@ List<ParentBarber> topRatedParentBarbers = [
 
 
 List<Product> products = [
-  Product(0, "Haircut", "A simple haircut", false),
-  Product(1, "Shave", "A simple shave", false),
-  Product(2, "Student Cut", "A discounted student cut", false),
+  Product(0, "Haircut", "A simple haircut", "barber03", false),
+  Product(1, "Shave", "A simple shave", "barber02", false),
+  Product(2, "Student Cut", "A discounted student cut", "barber01", false),
 ];
 
 List<Prices> productsJohn = [
@@ -39,6 +39,8 @@ List<Prices> productsJohn = [
 
 List<Prices> productsPaul = [
   Prices(0, 10.20, products[0], true),
+  Prices(0, 10.20, products[1], true),
+  Prices(0, 10.20, products[2], true),
 ];
 
 List<Prices> productsSarah = [
