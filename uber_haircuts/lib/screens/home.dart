@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
                   Padding(
                     padding: const EdgeInsets.all(1),
                     child: IconButton(
-                      icon: const Icon(Icons.account_circle, size: 35, color: pink1),
+                      icon: const Icon(Icons.account_circle, size: 35, color: accent_1),
                       tooltip: 'View profile details',
                       onPressed: () {
                         // ADD FUNCTION TO VIEW PROFILE DETAILS
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: pink1,
+                      color: accent_1,
                       width: 3
                     ),
                       borderRadius: BorderRadius.circular(14),
@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     // Add the search icon and colour according to the theme
-                    leading: Icon(Icons.search, color: pink1, size: 25),
+                    leading: Icon(Icons.search, color: accent_1, size: 25),
                   ),
                 ),
               ),

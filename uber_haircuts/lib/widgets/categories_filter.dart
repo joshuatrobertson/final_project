@@ -33,12 +33,12 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
         padding: const EdgeInsets.all(3.5),
         child: FilterChip(
           shape: RoundedRectangleBorder(
-            side: BorderSide(color: main, width: 1),
+            side: BorderSide(color: theme, width: 1),
             borderRadius: BorderRadius.circular(100),
           ),
           checkmarkColor: Colors.lightBlue,
           backgroundColor: lightGrey,
-          selectedColor: pink2,
+          selectedColor: accent_2,
           label: ReturnText(text: category.name),
           selected: _filters.contains(category.name),
           onSelected: (bool value) {
