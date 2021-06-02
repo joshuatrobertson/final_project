@@ -84,7 +84,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
                                                 ReturnText(text: widget.parentBarber.barbers[index].name,
-                                                  size: 15,
+                                                  size: 16,
                                                   fontWeight: FontWeight.bold,
                                                   align: TextAlign.left,),
 
@@ -100,7 +100,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                       ReturnText(text: widget.parentBarber.barbers[index].rating.toString(), size: 24, color: black, fontWeight: FontWeight.w600,),
                                                       Padding(
                                                         padding: const EdgeInsets.only(bottom: 8.0),
-                                                        child: Icon(Icons.star, color: black, size: 14),
+                                                        child: Icon(Icons.star, color: theme, size: 14),
                                                       ),
                                                     ]
                                                 )
@@ -117,7 +117,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                     child:
                                           Padding(
                                             padding: const EdgeInsets.all(8.0),
-                                            child: ReturnText(text: widget.parentBarber.barbers[index].description.toString(), size: 12, color: black),
+                                            child: ReturnText(text: '"' + widget.parentBarber.barbers[index].description.toString() + '"', size: 10, color: black),
                                           ),
                                     ),
                                 ],
