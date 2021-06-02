@@ -52,22 +52,22 @@ List<Prices> productsEmily = [
 ];
 
 List<Barber> barbers = [
-  Barber(0, "John", "barber01", "A 22 year old with 2 years experience", "Downtown Barbers", 4.9, true, true, productsJohn),
-  Barber(1, "Paul", "barber02", "A 33 year old with 10 years experience", "Downtown Barbers", 4.6, true, false, productsJohn),
-  Barber(2, "Sarah", "barber03", "A 33 year old with 10 years experience", "Downtown Barbers", 4.2, true, false, productsSarah),
-  Barber(3, "Emily", "barber04", "A 33 year old with 10 years experience", "Downtown Barbers", 4.6, true, false, productsEmily),
+  Barber(0, "John", "barber01", "A 22 year old with 2 years experience A 22 year old with 2 years experience A 22 year old with 2 years experience A 22 year old with 2 years experience", "Downtown Barbers", 4.9, true, true, productsJohn),
+  Barber(1, "Paul", "barber02", "A 33 year old with 10 years experience A 33 year old with 10 years experience A 33 year old with 10 years experience", "Downtown Barbers", 4.6, true, false, productsJohn),
+  Barber(2, "Sarah", "barber03", "A 33 year old with 10 years experience A 33 year old with 10 years experience A 33 year old with 10 years experience", "Downtown Barbers", 4.2, true, false, productsSarah),
+  Barber(3, "Emily", "barber04", "A 33 year old with 10 years experience A 33 year old with 10 years experience A 33 year old with 10 years experience", "Downtown Barbers", 4.6, true, false, productsEmily),
 ];
 
 List<Barber> barbers2 = [
-  Barber(0, "Peter", "barber01", "A 22 year old with 2 years experience", "High Street Barbers", 4.9, true, true, productsJohn),
+  Barber(0, "Peter", "barber01", "A 22 year old with 2 years experience A 22 year old with 2 years experience A 22 year old with 2 years experience", "High Street Barbers", 4.9, true, true, productsJohn),
   Barber(1, "Jason", "barber02", "A 33 year old with 10 years experience", "High Street Barbers", 4.6, true, false, productsJohn),
-  Barber(2, "Gemima", "barber03", "A 33 year old with 10 years experience", "High Street Barbers", 4.2, true, false, productsSarah),
+  Barber(2, "Gemima", "barber03", "A 33 year old with 10 years experience A 33 year old with 10 years experience A 33 year old with 10 years experience", "High Street Barbers", 4.2, true, false, productsSarah),
   Barber(3, "Duncan", "barber04", "A 33 year old with 10 years experience", "High Street Barbers", 4.6, true, false, productsEmily),
 ];
 
 List<Barber> barbers3 = [
-  Barber(0, "Elena", "barber01", "A 22 year old with 2 years experience", "Johns Cut", 4.9, true, true, productsJohn),
+  Barber(0, "Elena", "barber01", "A 22 year old with 2 years experience A 22 year old with 2 years experience A 22 year old with 2 years experience", "Johns Cut", 4.9, true, true, productsJohn),
   Barber(1, "Jeremy", "barber02", "A 33 year old with 10 years experience", "Johns Cut", 4.6, true, false, productsJohn),
-  Barber(2, "Mitch", "barber03", "A 33 year old with 10 years experience", "Johns Cut", 4.2, true, false, productsSarah),
+  Barber(2, "Mitch", "barber03", "A 33 year old with 10 years experience A 33 year old with 10 years experience A 33 year old with 10 years experience", "Johns Cut", 4.2, true, false, productsSarah),
   Barber(3, "Saara", "barber04", "A 33 year old with 10 years experience", "Johns Cut", 4.6, true, false, productsEmily),
 ];

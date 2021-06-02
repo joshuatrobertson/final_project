@@ -33,87 +33,99 @@ class _BarberDetailsState extends State<BarberDetails> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
               child: Container(
-                  child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      itemCount: widget.parentBarber.barbers.length,
-                      itemBuilder: (_, index) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              navigateToScreen(
-                                  _, Products(productList: widget.parentBarber.barbers[index].barberProducts));
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: lightGrey,
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(6.0)
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.1),
-                                    spreadRadius: 8,
-                                    blurRadius: 8,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Padding(
-                                    padding: const EdgeInsets.fromLTRB(
-                                        8.0, 8.0, 8.0, 0),
-                                    child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(6.0),
-                                        child: Image.asset(
-                                          "assets/images/${widget.parentBarber.barbers[index].image}.jpg",
-                                          height: 100, width: 150,)
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 4, left: 10),
-                                    child:
-                                    Container(
-                                      width: 150,
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          ReturnText(text: widget.parentBarber.barbers[index].name,
-                                            size: 15,
-                                            fontWeight: FontWeight.bold,
-                                            align: TextAlign.left,),
-
-                                          Row(
-                                              mainAxisAlignment: MainAxisAlignment
-                                                  .spaceBetween,
-                                              children: [
-
-                                                ReturnText(
-                                                    text: widget.parentBarber.name,
-                                                    color: Colors.black54,
-                                                    size: 10),
-                                                ReturnText(text: widget.parentBarber.barbers[index].rating.toString(), size: 24, color: white, fontWeight: FontWeight.w600,),
-                                                Padding(
-                                                  padding: const EdgeInsets.only(bottom: 8.0),
-                                                  child: Icon(Icons.star, color: white, size: 14),
-                                                ),
-
-                                              ]
-                                          )
-                                        ],
+                  child: SizedBox(
+                    child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: widget.parentBarber.barbers.length,
+                        itemBuilder: (_, index) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GestureDetector(
+                              onTap: () {
+                                navigateToScreen(
+                                    _, Products(productList: widget.parentBarber.barbers[index].barberProducts));
+                              },
+                              child: Row(
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: lightGrey,
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(6.0)
                                       ),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.1),
+                                          spreadRadius: 8,
+                                          blurRadius: 8,
+                                          offset: Offset(0, 3),
+                                        ),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              8.0, 8.0, 8.0, 0),
+                                          child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(6.0),
+                                              child: Image.asset(
+                                                "assets/images/${widget.parentBarber.barbers[index].image}.jpg",
+                                                height: 100, width: 150,)
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 4, left: 10),
+                                          child:
+                                          Container(
+                                            width: 150,
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                ReturnText(text: widget.parentBarber.barbers[index].name,
+                                                  size: 15,
+                                                  fontWeight: FontWeight.bold,
+                                                  align: TextAlign.left,),
+
+                                                Row(
+                                                    mainAxisAlignment: MainAxisAlignment
+                                                        .spaceBetween,
+                                                    children: [
+
+                                                      ReturnText(
+                                                          text: widget.parentBarber.name,
+                                                          color: Colors.black54,
+                                                          size: 10),
+                                                      ReturnText(text: widget.parentBarber.barbers[index].rating.toString(), size: 24, color: black, fontWeight: FontWeight.w600,),
+                                                      Padding(
+                                                        padding: const EdgeInsets.only(bottom: 8.0),
+                                                        child: Icon(Icons.star, color: black, size: 14),
+                                                      ),
+                                                    ]
+                                                )
+                                              ],
+                                            ),
+                                          ),
+
+                                        ),
+                                      ],
                                     ),
 
                                   ),
+                                  Expanded(
+                                    child:
+                                          Padding(
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: ReturnText(text: widget.parentBarber.barbers[index].description.toString(), size: 12, color: black),
+                                          ),
+                                    ),
                                 ],
                               ),
-
                             ),
-                          ),
-                        );
-                      })
+                          );
+                        }),
+                  )
               ),
             ),
           ),
