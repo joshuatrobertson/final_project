@@ -25,7 +25,6 @@ class _CheckoutState extends State<Checkout> {
             icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
             onPressed: () {Navigator.pop(context);},),
         ],
-        ],
       )
     );
   }

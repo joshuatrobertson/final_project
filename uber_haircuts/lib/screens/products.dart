@@ -111,15 +111,23 @@ class _ProductsDetails extends State<Products> {
                           );
                         }),
                     ),
-                    IconButton(
-                      icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
-                      onPressed: () {Navigator.pop(context);},),
-                  ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
+                  onPressed: () {Navigator.pop(context);},),
+
+                IconButton(
+                  icon: Icon(Icons.shopping_basket, color: theme,),
+                  onPressed: () {Navigator.pop(context);},),
+              ],
             ),
+            ]),
           ),
         ),
       ),
-    );
+    ));
   }
 }
 

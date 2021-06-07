@@ -101,7 +101,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                               text: widget.parentBarber.name,
                                                               color: Colors.black54,
                                                               size: 10),
-                                                          ReturnText(text: widget.parentBarber.barbers[index].rating.toString(), size: 24, color: black, fontWeight: FontWeight.w600,),
+                                                          ReturnText(text: widget.parentBarber.barbers[index].rating.toString(), size: 20, color: black, fontWeight: FontWeight.w600,),
                                                           Padding(
                                                             padding: const EdgeInsets.only(bottom: 8.0),
                                                             child: Icon(Icons.star, color: theme, size: 14),
@@ -132,9 +132,18 @@ class _BarberDetailsState extends State<BarberDetails> {
                       )
                 ),
                   ),
+               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                   IconButton(
                     icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
                     onPressed: () {Navigator.pop(context);},),
+
+                  IconButton(
+                    icon: Icon(Icons.shopping_basket, color: theme,),
+                    onPressed: () {Navigator.pop(context);},),
+                ],
+              ),
                 ]),
             ),
           ),

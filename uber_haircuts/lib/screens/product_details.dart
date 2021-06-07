@@ -24,9 +24,21 @@ class _ProductDetailsState extends State<ProductDetails> {
           Stack(
             children: [
               Image.asset("assets/images/${widget.product.product.image}.jpg"),
-              IconButton(
-                icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
-                onPressed: () {Navigator.pop(context);},),
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    IconButton(
+                      icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
+                      onPressed: () {Navigator.pop(context);},),
+
+                    IconButton(
+                      icon: Icon(Icons.shopping_basket, color: theme,),
+                      onPressed: () {Navigator.pop(context);},),
+                  ],
+                ),
+              )
             ],
           ),
           ReturnText(text: widget.product.product.name, size: 30),
