@@ -91,12 +91,10 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                       size: 16,
                                                       fontWeight: FontWeight.bold,
                                                       align: TextAlign.left,),
-
                                                     Row(
                                                         mainAxisAlignment: MainAxisAlignment
                                                             .spaceBetween,
                                                         children: [
-
                                                           ReturnText(
                                                               text: widget.parentBarber.name,
                                                               color: Colors.black54,
