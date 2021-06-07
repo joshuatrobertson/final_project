@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_haircuts/common_items.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/prices.dart';
+import 'package:uber_haircuts/widgets/return_text.dart';
 
 class ProductDetails extends StatefulWidget {
   final Prices product;
@@ -19,9 +21,26 @@ class _ProductDetailsState extends State<ProductDetails> {
        backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
-          Text(widget.product.price.toString()),
-          Text(widget.product.product.name),
-          Text(widget.product.product.description),
+          Stack(
+            children: [
+              Image.asset("assets/images/${widget.product.product.image}.jpg"),
+              IconButton(
+                icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
+                onPressed: () {Navigator.pop(context);},),
+            ],
+          ),
+          ReturnText(text: widget.product.product.name, size: 30),
+          ReturnText(text: "£" + widget.product.price.toString(), size: 20),
+          ReturnText(text: widget.product.product.description),
+        Container(
+          decoration: BoxDecoration(
+            color: accent_1,
+          ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+        child: ReturnText(text: "Add to Basket"),
+        ),
+        ),
         ],
       )
     );
