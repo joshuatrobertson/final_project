@@ -35,6 +35,8 @@ List<Product> products = [
 
 List<Prices> productsJohn = [
   Prices(0, 10.50, products[0], true),
+  Prices(0, 10.20, products[1], true),
+  Prices(0, 10.20, products[2], true),
 ];
 
 List<Prices> productsPaul = [
@@ -45,10 +47,14 @@ List<Prices> productsPaul = [
 
 List<Prices> productsSarah = [
   Prices(0, 8.90, products[0], true),
+  Prices(0, 10.20, products[1], true),
+  Prices(0, 10.20, products[2], true),
 ];
 
 List<Prices> productsEmily = [
   Prices(0, 14.20, products[0], true),
+  Prices(0, 10.20, products[1], true),
+  Prices(0, 10.20, products[2], true),
 ];
 
 List<Barber> barbers = [
