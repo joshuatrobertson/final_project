@@ -11,17 +11,17 @@ import '../common_items.dart';
 import '../common_items.dart';
 import 'cart.dart';
 
-class Checkout extends StatefulWidget {
+class Cart extends StatefulWidget {
   //final Prices prices;
 
-  createState() => _CheckoutState();
+  createState() => _CartState();
 
-  Checkout();
+  Cart();
 
 }
 
 
-class _CheckoutState extends State<Checkout> {
+class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,8 +33,9 @@ class _CheckoutState extends State<Checkout> {
                 padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                 child: Stack(
                     children: [
+                      ReturnText(text: "TEXT", align: TextAlign.center,),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 35, 0, 0),
+                        padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
                             itemCount: shoppingCart.length,
@@ -116,13 +117,6 @@ class _CheckoutState extends State<Checkout> {
                           IconButton(
                             icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
                             onPressed: () {Navigator.pop(context);},),
-
-                          IconButton(
-                            icon: Icon(Icons.shopping_basket, color: theme,),
-                            onPressed: () {
-                              navigateToScreen(context, Cart());
-                            },
-                          )
                         ],
                       ),
                     ]),

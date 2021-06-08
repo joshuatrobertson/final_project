@@ -25,8 +25,6 @@ List<ParentBarber> topRatedParentBarbers = [
   ParentBarber(name: "Johns Cut", image: "barber05", rating: 4.9, barbers: barbers3),
 ];
 
-
-
 List<Product> products = [
   Product(0, "Haircut", "A simple haircut", "barber03", false),
   Product(1, "Shave", "A simple shave", "barber02", false),
@@ -75,5 +73,10 @@ List<Barber> barbers3 = [
   Barber(0, "Elena", "barber01", "A 22 year old with 2 years experience A 22 year old with 2 years experience A 22 year old with 2 years experience", "Johns Cut", 4.9, true, true, productsJohn),
   Barber(1, "Jeremy", "barber02", "A 33 year old with 10 years experience", "Johns Cut", 4.6, true, false, productsJohn),
   Barber(2, "Mitch", "barber03", "A 33 year old with 10 years experience A 33 year old with 10 years experience A 33 year old with 10 years experience", "Johns Cut", 4.2, true, false, productsSarah),
-  Barber(3, "Saara", "barber04", "A 33 year old with 10 years experience", "Johns Cut", 4.6, true, false, productsEmily),
+  Barber(3, "Sara", "barber04", "A 33 year old with 10 years experience", "Johns Cut", 4.6, true, false, productsEmily),
+];
+
+List<Prices> shoppingCart = [
+  productsJohn[0],
+  productsPaul[1]
 ];

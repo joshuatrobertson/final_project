@@ -4,19 +4,20 @@ import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/prices.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-
 import '../common_items.dart';
+import 'cart.dart';
+import 'checkout.dart';
 
-class Products extends StatefulWidget {
+class ProductList extends StatefulWidget {
   final List<Prices> productList;
 
-  createState() => _ProductsDetails();
+  createState() => _ProductList();
 
-  Products({@required this.productList});
+  ProductList({@required this.productList});
 
 }
 
-class _ProductsDetails extends State<Products> {
+class _ProductList extends State<ProductList> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -39,7 +40,8 @@ class _ProductsDetails extends State<Products> {
                             child: GestureDetector(
                               onTap: () {
                                 navigateToScreen(
-                                    _, ProductDetails(product: widget.productList[index]));
+                                    _, ProductDetails(product: widget.productList[index])
+                                );
                               },
                               child: Container(
                                 alignment: Alignment.center,
@@ -120,7 +122,10 @@ class _ProductsDetails extends State<Products> {
 
                 IconButton(
                   icon: Icon(Icons.shopping_basket, color: theme,),
-                  onPressed: () {Navigator.pop(context);},),
+                  onPressed: () {
+                    navigateToScreen(context, Cart());
+                  },
+                )
               ],
             ),
             ]),
