@@ -2,11 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
+import 'package:uber_haircuts/screens/checkout.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
-import 'package:uber_haircuts/screens/products.dart';
+import 'package:uber_haircuts/screens/product_list.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 
 import '../common_items.dart';
+import 'cart.dart';
 
 class BarberDetails extends StatefulWidget {
   final ParentBarber parentBarber;
@@ -47,7 +49,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                 child: GestureDetector(
                                   onTap: () {
                                     navigateToScreen(
-                                        _, Products(productList: widget.parentBarber.barbers[index].barberProducts));
+                                        _, ProductList(productList: widget.parentBarber.barbers[index].barberProducts));
                                   },
                                   child: Row(
                                     children: [
@@ -139,7 +141,10 @@ class _BarberDetailsState extends State<BarberDetails> {
 
                   IconButton(
                     icon: Icon(Icons.shopping_basket, color: theme,),
-                    onPressed: () {Navigator.pop(context);},),
+                    onPressed: () {
+                      navigateToScreen(context, Cart());
+                    },
+                  ),
                 ],
               ),
                 ]),
