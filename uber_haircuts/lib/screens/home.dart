@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
                 // action used to place icon to the right
                 actions: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(1),
+                    padding: const EdgeInsets.all(3),
                     child: IconButton(
                       icon: const Icon(Icons.account_circle, size: 35, color: accent_1),
                       tooltip: 'View profile details',
@@ -102,6 +102,21 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
+          bottomNavigationBar: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.account_box_rounded),
+                  label: 'My Account',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.shopping_basket),
+                  label: 'Shopping Cart',
+                ),
+              ])
       ),
     );
   }

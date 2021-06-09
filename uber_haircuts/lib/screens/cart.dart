@@ -26,103 +26,124 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+          appBar: AppBar(
           backgroundColor: lightGrey,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
+            onPressed: () {Navigator.pop(context);},
+          ),
+          title: Center(child: ReturnText(text: "Shopping Cart", size: 25, fontWeight: FontWeight.w400,)),
+          ),
+
           body: SafeArea(
             child: Container(
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                 child: Stack(
                     children: [
-                      ReturnText(text: "TEXT", align: TextAlign.center,),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
                             itemCount: shoppingCart.length,
                             itemBuilder: (_, index) {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: lightGrey,
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(6.0)
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.1),
-                                        spreadRadius: 8,
-                                        blurRadius: 8,
-                                        offset: Offset(0, 3),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                    Container(
+                                    decoration: BoxDecoration(
+                                      color: lightGrey,
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(6.0)
                                       ),
-                                    ],
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            8.0, 8.0, 8.0, 0),
-                                        child: ClipRRect(
-                                            borderRadius: BorderRadius.circular(6.0),
-                                            child: Image.asset(
-                                              "assets/images/${shoppingCart[index].product.image}.jpg",
-                                              height: 100, width: 150,)
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.1),
+                                          spreadRadius: 8,
+                                          blurRadius: 8,
+                                          offset: Offset(0, 3),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 4, left: 10),
-                                        child:
-                                        Container(
-                                          width: 150,
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              ReturnText(text: shoppingCart[index].product.name,
-                                                size: 15,
-                                                fontWeight: FontWeight.bold,
-                                                align: TextAlign.left,),
+                                      ],
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: <Widget>[
 
-                                              Row(
-                                                  mainAxisAlignment: MainAxisAlignment
-                                                      .spaceBetween,
-                                                  children: [
-
-                                                    ReturnText(
-                                                        text: shoppingCart[index].product.name,
-                                                        color: Colors.black54,
-                                                        size: 10),
-                                                    ReturnText(text: "£" +
-                                                        shoppingCart[index].price.toString(),
-                                                      size: 14,
-                                                      color: Colors.redAccent,),
-                                                  ]
-                                              )
-                                            ],
+                                        Padding(
+                                          padding: const EdgeInsets.fromLTRB(
+                                              8.0, 8.0, 8.0, 0),
+                                          child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(6.0),
+                                              child: Image.asset(
+                                                "assets/images/${shoppingCart[index].product.image}.jpg",
+                                                height: 100, width: 150,)
                                           ),
                                         ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(top: 4, left: 10),
+                                          child:
+                                          Container(
+                                            width: 150,
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                ReturnText(text: shoppingCart[index].product.name,
+                                                  size: 15,
+                                                  fontWeight: FontWeight.bold,
+                                                  align: TextAlign.left,),
 
-                                      ),
-                                    ],
+                                                Row(
+                                                    mainAxisAlignment: MainAxisAlignment
+                                                        .spaceBetween,
+                                                    children: [
+
+                                                      ReturnText(
+                                                          text: shoppingCart[index].product.name,
+                                                          color: Colors.black54,
+                                                          size: 10),
+                                                      ReturnText(text: "£" +
+                                                          shoppingCart[index].price.toString(),
+                                                        size: 14,
+                                                        color: Colors.redAccent,),
+                                                    ]
+                                                )
+                                              ],
+                                            ),
+                                          ),
+
+                                        ),
+                                      ],
+                                    ),
                                   ),
-
-                                ),
+                                    IconButton(
+                                      icon: Icon(Icons.delete_forever, color: theme,),
+                                      onPressed: () {},
+                                    ),
+                                    ]),
                               );
                             }),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconButton(
-                            icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
-                            onPressed: () {Navigator.pop(context);},),
-                        ],
-                      ),
-                    ]),
+                    ])
               ),
             ),
           ),
-        ));
+          bottomNavigationBar: BottomNavigationBar(
+              items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+          icon: Icon(Icons.home_filled),
+          label: 'Home',
+            backgroundColor: Colors.grey,
+        ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.account_box_rounded),
+        label: 'My Account',
+      ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.shopping_basket),
+                  label: 'Shopping Cart',
+                ),
+        ])));
   }
 }

@@ -22,7 +22,21 @@ class _ProductList extends State<ProductList> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: lightGrey,
+        appBar: AppBar(
+          backgroundColor: lightGrey,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
+            onPressed: () {Navigator.pop(context);},
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.shopping_basket, color: theme,),
+              onPressed: () {
+                navigateToScreen(context, Cart());
+              },
+            )
+          ],
+        ),
         body: SafeArea(
           child: Container(
             child: Padding(
@@ -113,21 +127,6 @@ class _ProductList extends State<ProductList> {
                           );
                         }),
                     ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
-                  onPressed: () {Navigator.pop(context);},),
-
-                IconButton(
-                  icon: Icon(Icons.shopping_basket, color: theme,),
-                  onPressed: () {
-                    navigateToScreen(context, Cart());
-                  },
-                )
-              ],
-            ),
             ]),
           ),
         ),

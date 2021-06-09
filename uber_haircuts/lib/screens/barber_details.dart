@@ -25,11 +25,27 @@ Text(widget.barber.parentBarber)
 */
 
 class _BarberDetailsState extends State<BarberDetails> {
+  int _currentNav = 0;
+
   @override
-  Widget build(BuildContext context) {
+    Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: lightGrey,
+        appBar: AppBar(
+          backgroundColor: lightGrey,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
+            onPressed: () {Navigator.pop(context);},
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.shopping_basket, color: theme,),
+              onPressed: () {
+                navigateToScreen(context, Cart());
+              },
+            )
+          ],
+        ),
         body: SafeArea(
           child: Container(
             child: Padding(
@@ -132,25 +148,33 @@ class _BarberDetailsState extends State<BarberDetails> {
                       )
                 ),
                   ),
-               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
-                    onPressed: () {Navigator.pop(context);},),
-
-                  IconButton(
-                    icon: Icon(Icons.shopping_basket, color: theme,),
-                    onPressed: () {
-                      navigateToScreen(context, Cart());
-                    },
-                  ),
-                ],
-              ),
                 ]),
             ),
           ),
         ),
+          bottomNavigationBar: BottomNavigationBar(
+                currentIndex: _currentNav,
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: theme,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.account_box_rounded),
+                  label: 'My Account',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.shopping_basket),
+                  label: 'Shopping Cart',
+                ),
+              ],
+                onTap: (index) {
+                  setState(() {
+                    _currentNav = index;
+                  });
+                })
       ),
     );
   }
