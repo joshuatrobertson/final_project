@@ -8,6 +8,7 @@ import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/registration.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatefulWidget {
   const Login({Key key}) : super(key: key);
@@ -18,10 +19,10 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final key = new GlobalKey<FormState>();
-
   String email, password;
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,7 @@ class _LoginState extends State<Login> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                   child: TextField(
-                    controller: emailController,
+                    controller: _emailController,
                     decoration: InputDecoration(
                       labelText: "Email",
                       )
@@ -53,7 +54,7 @@ class _LoginState extends State<Login> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                   child: TextField(
-                    controller: passwordController,
+                    controller: _passwordController,
                       decoration: InputDecoration(
                         labelText: "Password",
                       )
@@ -78,8 +79,8 @@ class _LoginState extends State<Login> {
                       child: GestureDetector(
                         onTap: () {
                           context.read<Authenticate>().signIn(
-                            email: emailController.text.trim(),
-                            password: passwordController.text.trim()
+                            email: _emailController.text.trim(),
+                            password: _passwordController.text.trim()
                           );
                         },
                         child: Center(
@@ -95,21 +96,27 @@ class _LoginState extends State<Login> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+
+                        },
                         child: Image.asset(
                           "assets/images/google.png",
                           height: 40,
                           width: 40,),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+
+                        },
                         child: Image.asset(
                           "assets/images/facebook.png",
-                          height: 60,
-                          width: 60,),
+                          height: 65,
+                          width: 65,),
                       ),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+
+                        },
                         child: Image.asset(
                           "assets/images/twitter.jpeg",
                           height: 40,
