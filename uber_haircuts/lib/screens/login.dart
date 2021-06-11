@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:uber_haircuts/helpers/navigate.dart';
+import 'package:uber_haircuts/screens/registration.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 
 import '../common_items.dart';
+import 'cart.dart';
 
 class Login extends StatefulWidget {
   const Login({Key key}) : super(key: key);
@@ -113,7 +116,7 @@ class _LoginState extends State<Login> {
                     children: [
                       ReturnText(text: "Don't have an account?   "),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {navigateToScreen(context, Registration());},
                           child: ReturnText(text: "Sign Up", color: Colors.red,)),
                     ],
                   ),
