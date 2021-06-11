@@ -22,6 +22,7 @@ class Cart extends StatefulWidget {
 
 
 class _CartState extends State<Cart> {
+  int total = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -125,6 +126,10 @@ class _CartState extends State<Cart> {
                               );
                             }),
                       ),
+                      Container(
+                        padding: const EdgeInsets.fromLTRB(15, 0, 15, 20),
+                        alignment: Alignment.bottomLeft,
+                          child: ReturnText(text: 'Total = £' + total.toString(), size: 24,)),
                     ])
               ),
             ),

@@ -1,8 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:uber_haircuts/common_items.dart';
-import 'package:uber_haircuts/screens/home.dart';
+import 'package:uber_haircuts/screens/login.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
         fontFamily: 'Poppins'
       ),
-      home: Home(),
+      home: Login(),
     );
   }
 }
