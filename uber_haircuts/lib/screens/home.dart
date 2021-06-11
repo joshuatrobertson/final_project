@@ -1,15 +1,20 @@
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/widgets/available_now.dart';
 import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/featured.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:uber_haircuts/widgets/top_rated.dart';
 import '../common_items.dart';
+import 'package:flutter/painting.dart';
+import 'package:provider/provider.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key key}) : super(key: key);
+
 
   @override
   _HomeState createState() => _HomeState();
@@ -38,10 +43,10 @@ class _HomeState extends State<Home> {
                   Padding(
                     padding: const EdgeInsets.all(3),
                     child: IconButton(
-                      icon: const Icon(Icons.account_circle, size: 35, color: accent_1),
+                      icon: const Icon(Icons.exit_to_app_outlined, size: 35, color: accent_1),
                       tooltip: 'View profile details',
-                      onPressed: () {
-                        // ADD FUNCTION TO VIEW PROFILE DETAILS
+                      onPressed: () async {
+                          context.read<Authenticate>().signOut();
                       },
                     ),
                   ),

@@ -9,9 +9,10 @@ class ReturnText extends StatelessWidget {
   final String fontFamily;
   final Color color;
   final FontWeight fontWeight;
+  final TextDecoration decoration;
 
   ReturnText(
-  {@required this.text, this.align, this.size, this.fontFamily, this.color, this.fontWeight}
+  {@required this.text, this.align, this.size, this.fontFamily, this.color, this.fontWeight, this.decoration}
       );
 
   @override
@@ -24,6 +25,7 @@ class ReturnText extends StatelessWidget {
         fontFamily: this.fontFamily ?? 'Poppins',
         color: this.color ?? black,
         fontWeight: this.fontWeight ?? FontWeight.normal,
+          decoration: decoration,
     )
     );
   }

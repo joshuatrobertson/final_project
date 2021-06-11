@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
+import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-
 import '../common_items.dart';
+import 'home.dart';
 import 'login.dart';
+import 'package:provider/provider.dart';
 
 class Registration extends StatefulWidget {
   const Registration({Key key}) : super(key: key);
@@ -17,7 +19,10 @@ class Registration extends StatefulWidget {
 class _RegistrationState extends State<Registration> {
   final key = new GlobalKey<FormState>();
 
-  String email, password;
+  String name, email, password;
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
 
   @override
@@ -41,6 +46,7 @@ class _RegistrationState extends State<Registration> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                           child: TextField(
+                              controller: nameController,
                               decoration: InputDecoration(
                                 labelText: "Name",
                               )
@@ -49,6 +55,7 @@ class _RegistrationState extends State<Registration> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                           child: TextField(
+                              controller: emailController,
                               decoration: InputDecoration(
                                 labelText: "Email",
                               )
@@ -57,11 +64,13 @@ class _RegistrationState extends State<Registration> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                           child: TextField(
+                              controller: passwordController,
                               decoration: InputDecoration(
                                 labelText: "Password",
                               )
                           ),
                         ),
+
                         Padding(
                           padding: const EdgeInsets.fromLTRB(35, 40, 35, 0),
                           child: SizedBox(
@@ -71,7 +80,13 @@ class _RegistrationState extends State<Registration> {
                               shadowColor: theme,
                               color: theme,
                               child: GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  context.read<Authenticate>().signUp(
+                                      email: emailController.text.trim(),
+                                      password: passwordController.text.trim(),
+                                  );
+                                  navigateToScreen(context, Home());
+                                },
                                 child: Center(
                                   child: ReturnText(text: 'Sign Up', fontWeight: FontWeight.w500, size: 30, color: white,),
                                 ),
@@ -87,7 +102,7 @@ class _RegistrationState extends State<Registration> {
                               ReturnText(text: "Already have an account?   "),
                               GestureDetector(
                                   onTap: () {navigateToScreen(context, Login());},
-                                  child: ReturnText(text: "Login", color: Colors.red,)),
+                                  child: ReturnText(text: "Login", color: Colors.red, decoration: TextDecoration.underline,)),
                             ],
                           ),
                         )
