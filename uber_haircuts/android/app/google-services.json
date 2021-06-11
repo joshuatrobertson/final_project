@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "891920806737",
+    "project_id": "uber-haircuts",
+    "storage_bucket": "uber-haircuts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891920806737:android:748eaafdc21275804a5970",
+        "android_client_info": {
+          "package_name": "com.example.uber_haircuts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891920806737-c8hmt34njml48d3l7u16etiklbkfoo72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMU0s908IJevDyX_XkNBLvmueiqaMdkFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891920806737-c8hmt34njml48d3l7u16etiklbkfoo72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
