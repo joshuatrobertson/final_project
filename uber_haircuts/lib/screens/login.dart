@@ -97,7 +97,9 @@ class _LoginState extends State<Login> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          context.read<Authenticate>().googleSignIn();
+                          if (context.read<Authenticate>().googleSignIn() == true) {
+
+                          }
                         },
                         child: Image.asset(
                           "assets/images/google.png",
@@ -106,7 +108,7 @@ class _LoginState extends State<Login> {
                       ),
                       GestureDetector(
                         onTap: () {
-
+                          context.read<Authenticate>().facebookSignIn();
                         },
                         child: Image.asset(
                           "assets/images/facebook.png",

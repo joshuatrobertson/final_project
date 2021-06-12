@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// If the user is not logged in return the login screen
 class AuthenticationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,6 @@ class AuthenticationWrapper extends StatelessWidget {
     else {
       return Login();
     }
-    return Container();
   }
 }
 

@@ -22,6 +22,8 @@ class Home extends StatefulWidget {
 
 
 class _HomeState extends State<Home> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp (
