@@ -10,6 +10,8 @@ import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import 'forgot_password.dart';
+
 class Login extends StatefulWidget {
   const Login({Key key}) : super(key: key);
 
@@ -65,7 +67,11 @@ class _LoginState extends State<Login> {
                   child: Container(
                     alignment: Alignment.topRight,
                     child:
-                    ReturnText(text: "Forgot Password?", color: Colors.red, decoration: TextDecoration.underline,),
+                    GestureDetector(
+                    onTap: () {
+                      navigateToScreen(context, ForgotPassword());
+                    },
+                    child: ReturnText(text: "Forgot Password?", color: Colors.red, decoration: TextDecoration.underline,)),
                   ),
                 ),
                 Padding(
@@ -97,10 +103,8 @@ class _LoginState extends State<Login> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          if (context.read<Authenticate>().googleSignIn() == true) {
-
-                          }
-                        },
+                          context.read<Authenticate>().googleSignIn();
+                          },
                         child: Image.asset(
                           "assets/images/google.png",
                           height: 40,
@@ -117,7 +121,7 @@ class _LoginState extends State<Login> {
                       ),
                       GestureDetector(
                         onTap: () {
-
+                          context.read<Authenticate>().twitterSignIn('1403651379705663488-I6gxGAkJqPrkSRXTxysm5wmI3Hc5no', 'KVP7xVAAdZYZ5TV1xW5tQBAriXR8QOPvOxqhYc9OWi0L4');
                         },
                         child: Image.asset(
                           "assets/images/twitter.jpeg",
