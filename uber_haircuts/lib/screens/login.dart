@@ -91,13 +91,13 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(80.0, 20, 80, 0),
+                  padding: const EdgeInsets.fromLTRB(70.0, 20, 70, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
                         onTap: () {
-
+                          context.read<Authenticate>().googleSignIn();
                         },
                         child: Image.asset(
                           "assets/images/google.png",
