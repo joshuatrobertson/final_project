@@ -12,7 +12,7 @@ import '../common_items.dart';
 import 'cart.dart';
 
 class Cart extends StatefulWidget {
-  //final Prices prices;
+
 
   createState() => _CartState();
 
@@ -23,6 +23,8 @@ class Cart extends StatefulWidget {
 
 class _CartState extends State<Cart> {
   int total = 0;
+  List<OrderModel> _shoppingCart;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -46,7 +48,7 @@ class _CartState extends State<Cart> {
                         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
-                            itemCount: shoppingCart.length,
+                            itemCount: _shoppingCart.length,
                             itemBuilder: (_, index) {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -78,7 +80,7 @@ class _CartState extends State<Cart> {
                                           child: ClipRRect(
                                               borderRadius: BorderRadius.circular(6.0),
                                               child: Image.asset(
-                                                "assets/images/${shoppingCart[index].product.image}.jpg",
+                                                "assets/images/${_shoppingCart[index].product.image}.jpg",
                                                 height: 100, width: 150,)
                                           ),
                                         ),
@@ -90,7 +92,7 @@ class _CartState extends State<Cart> {
                                             child: Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                ReturnText(text: shoppingCart[index].product.name,
+                                                ReturnText(text: _shoppingCart[index].product.name,
                                                   size: 15,
                                                   fontWeight: FontWeight.bold,
                                                   align: TextAlign.left,),
@@ -101,11 +103,11 @@ class _CartState extends State<Cart> {
                                                     children: [
 
                                                       ReturnText(
-                                                          text: shoppingCart[index].product.name,
+                                                          text: _shoppingCart[index].product.name,
                                                           color: Colors.black54,
                                                           size: 10),
                                                       ReturnText(text: "£" +
-                                                          shoppingCart[index].price.toString(),
+                                                          _shoppingCart[index].price.toString(),
                                                         size: 14,
                                                         color: Colors.redAccent,),
                                                     ]
