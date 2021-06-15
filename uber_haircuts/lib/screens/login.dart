@@ -29,9 +29,9 @@ class _LoginState extends State<Login> {
     final authProvider = Provider.of<Authenticate>(context);
 
     return Scaffold(
+      // Shows loading wheel before user is logged in
       body: authProvider.authStatus == AuthStatus.AUTHENTICATING ? Center(child: CircularProgressIndicator(),) : Column(
         children: [
-          ReturnText(text: authProvider.authStatus.toString()),
           Container(
             child: Stack(
               children: [
