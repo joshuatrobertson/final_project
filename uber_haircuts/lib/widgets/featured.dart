@@ -13,6 +13,7 @@ class Featured extends StatelessWidget {
   Widget build(BuildContext context) {
 
     List<ParentBarberModel> _featuredParentBarbers;
+
     return ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: _featuredParentBarbers.length,

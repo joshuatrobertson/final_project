@@ -9,10 +9,11 @@ import 'package:uber_haircuts/widgets/return_text.dart';
 import 'cart.dart';
 
 class ProductDetails extends StatefulWidget {
+  final OrderModel product;
 
   createState() => _ProductDetailsState();
 
-  ProductDetails();
+  ProductDetails({@required this.product});
 
 }
 

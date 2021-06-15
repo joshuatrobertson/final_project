@@ -12,13 +12,14 @@ class TopRated extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<ParentBarberModel> _topRatedBarbers;
     return ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: topRatedParentBarbers.length,
+        itemCount: _topRatedBarbers.length,
         itemBuilder: (_, index){
           return GestureDetector(
             onTap: () {
-              navigateToScreen(_, BarberDetails(parentBarber: topRatedParentBarbers[index]));
+              navigateToScreen(_, BarberDetails(parentBarber: _topRatedBarbers[index]));
             },
             child: Container(
               padding: const EdgeInsets.only(left: 8.0, right: 8.0),
@@ -27,7 +28,7 @@ class TopRated extends StatelessWidget {
                 children:[
                   Container(
                       alignment: Alignment.center,
-                      child: Image.asset("assets/images/${topRatedParentBarbers[index].image}.jpg", height: 120, width: 200,
+                      child: Image.asset("assets/images/${_topRatedBarbers[index].image}.jpg", height: 120, width: 200,
                         fit: BoxFit.cover,
                       )
                   ),
@@ -36,14 +37,14 @@ class TopRated extends StatelessWidget {
                     child: Container(
 
                       alignment: Alignment.bottomCenter,
-                      child: ReturnText(text: topRatedParentBarbers[index].name, size: 15, color: white,),
+                      child: ReturnText(text: _topRatedBarbers[index].name, size: 15, color: white,),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10.0, left: 6),
                     child: Row(
                       children: [
-                        ReturnText(text: topRatedParentBarbers[index].rating.toString(), size: 24, color: white, fontWeight: FontWeight.w600,),
+                        ReturnText(text: _topRatedBarbers[index].rating.toString(), size: 24, color: white, fontWeight: FontWeight.w600,),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 8.0),
                           child: Icon(Icons.star, color: white, size: 14),

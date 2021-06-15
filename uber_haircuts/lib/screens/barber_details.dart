@@ -11,7 +11,7 @@ import '../common_items.dart';
 import 'cart.dart';
 
 class BarberDetails extends StatefulWidget {
-  final ParentBarber parentBarber;
+  final ParentBarberModel parentBarber;
 
   createState() => _BarberDetailsState();
 
@@ -65,7 +65,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                 child: GestureDetector(
                                   onTap: () {
                                     navigateToScreen(
-                                        _, ProductList(productList: widget.parentBarber.barbers[index].barberProducts));
+                                        _, ProductList(productList: widget.parentBarber.barbers[index].barberProducts[index]));
                                   },
                                   child: Row(
                                     children: [

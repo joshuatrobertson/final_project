@@ -9,7 +9,7 @@ import 'cart.dart';
 import 'checkout.dart';
 
 class ProductList extends StatefulWidget {
-  final List<Prices> productList;
+  final List<OrderModel> productList;
 
   createState() => _ProductList();
 
