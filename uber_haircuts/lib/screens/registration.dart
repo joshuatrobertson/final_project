@@ -20,13 +20,15 @@ class _RegistrationState extends State<Registration> {
   final key = new GlobalKey<FormState>();
 
   String name, email, password;
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
 
 
   @override
   Widget build(BuildContext context) {
+    final authProvider = Provider.of<Authenticate>(context);
     return Scaffold(
         body: Column(
             children: [
@@ -35,7 +37,9 @@ class _RegistrationState extends State<Registration> {
                     children: [
                       Container(
                         padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
-                        child: ReturnText(text: "INSERT LOGO HERE", size: 30),
+                        child: Image.asset(
+                          "assets/images/logo.png",
+                        ),
                       )
                     ],
                   )
@@ -46,7 +50,7 @@ class _RegistrationState extends State<Registration> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                           child: TextField(
-                              controller: nameController,
+                              controller: _nameController,
                               decoration: InputDecoration(
                                 labelText: "Name",
                               )
@@ -55,7 +59,7 @@ class _RegistrationState extends State<Registration> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                           child: TextField(
-                              controller: emailController,
+                              controller: _emailController,
                               decoration: InputDecoration(
                                 labelText: "Email",
                               )
@@ -64,7 +68,7 @@ class _RegistrationState extends State<Registration> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                           child: TextField(
-                              controller: passwordController,
+                              controller: _passwordController,
                               decoration: InputDecoration(
                                 labelText: "Password",
                               )
@@ -80,15 +84,21 @@ class _RegistrationState extends State<Registration> {
                               shadowColor: theme,
                               color: theme,
                               child: GestureDetector(
-                                onTap: () {
-                                  context.read<Authenticate>().signUp(
-                                      email: emailController.text.trim(),
-                                      password: passwordController.text.trim(),
-                                  );
-                                  navigateToScreen(context, Home());
+                                onTap: () async {
+                                  if (!await authProvider.signUp(
+                                      email: _emailController.text.trim(),
+                                      password: _passwordController.text.trim()
+                                  )) {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                        SnackBar(
+                                            content: ReturnText(text: "Sign Up failed!", color: white,)));
+                                  }
+                                  else {
+                                    navigateToScreen(context, Home());
+                                  }
                                 },
                                 child: Center(
-                                  child: ReturnText(text: 'Sign Up', fontWeight: FontWeight.w500, size: 30, color: white,),
+                                  child: ReturnText(text: 'Sign Up', fontWeight: FontWeight.w400, size: 30, color: white,),
                                 ),
                               ),
                             ),

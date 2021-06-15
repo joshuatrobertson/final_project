@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/home.dart';
 import 'package:uber_haircuts/screens/login.dart';
+import 'package:uber_haircuts/screens/user_gps.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,10 +40,18 @@ class MyApp extends StatelessWidget {
 class AuthenticationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<User>();
-    if(user != null) {
+    // Use Provider.of to fetch the authentication status and return the appropriate screen
+    final auth = Provider.of<Authenticate>(context);
+    final user = context.watch<Authenticate>();
+
+    // If the user is logged in with their GPS taken then show the home screen
+    if (user != null && auth.authStatus == AuthStatus.AUTHENTICATED) {
       return Home();
     }
+    else if (user != null && auth.authStatus == AuthStatus.AUTH_WITH_MAPS) {
+      return UserGPS();
+    }
+    // Else they must login
     else {
       return Login();
     }

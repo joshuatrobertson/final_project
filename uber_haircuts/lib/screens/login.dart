@@ -8,8 +8,6 @@ import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/registration.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-
 import 'forgot_password.dart';
 
 class Login extends StatefulWidget {
@@ -20,7 +18,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final key = new GlobalKey<FormState>();
   String email, password;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -28,15 +25,21 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    // Allows use of provider package throughout app
+    final authProvider = Provider.of<Authenticate>(context);
+
     return Scaffold(
-      body: Column(
+      body: authProvider.authStatus == AuthStatus.AUTHENTICATING ? Center(child: CircularProgressIndicator(),) : Column(
         children: [
+          ReturnText(text: authProvider.authStatus.toString()),
           Container(
             child: Stack(
               children: [
                 Container(
                   padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
-                  child: ReturnText(text: "INSERT LOGO HERE", size: 30),
+                  child: Image.asset(
+                    "assets/images/logo.png",
+                  ),
                 )
               ],
             )
@@ -83,11 +86,15 @@ class _LoginState extends State<Login> {
                       shadowColor: theme,
                       color: theme,
                       child: GestureDetector(
-                        onTap: () {
-                          context.read<Authenticate>().signIn(
-                            email: _emailController.text.trim(),
-                            password: _passwordController.text.trim()
-                          );
+                        onTap: () async {
+                          if (!await authProvider.signIn(
+                              email: _emailController.text.trim(),
+                              password: _passwordController.text.trim()
+                          )) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: ReturnText(text: "Login failed!", color: white,)));
+                          }
                         },
                         child: Center(
                           child: ReturnText(text: 'Login', fontWeight: FontWeight.w400, size: 30, color: white,),
@@ -103,7 +110,7 @@ class _LoginState extends State<Login> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          context.read<Authenticate>().googleSignIn();
+                          authProvider.googleSignIn();
                           },
                         child: Image.asset(
                           "assets/images/google.png",
@@ -112,7 +119,7 @@ class _LoginState extends State<Login> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          context.read<Authenticate>().facebookSignIn();
+                          authProvider.facebookSignIn();
                         },
                         child: Image.asset(
                           "assets/images/facebook.png",
@@ -121,7 +128,7 @@ class _LoginState extends State<Login> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          context.read<Authenticate>().twitterSignIn('1403651379705663488-I6gxGAkJqPrkSRXTxysm5wmI3Hc5no', 'KVP7xVAAdZYZ5TV1xW5tQBAriXR8QOPvOxqhYc9OWi0L4');
+                          authProvider.twitterSignIn('1403651379705663488-I6gxGAkJqPrkSRXTxysm5wmI3Hc5no', 'KVP7xVAAdZYZ5TV1xW5tQBAriXR8QOPvOxqhYc9OWi0L4');
                         },
                         child: Image.asset(
                           "assets/images/twitter.jpeg",
@@ -148,4 +155,24 @@ class _LoginState extends State<Login> {
           ])
       );
   }
+
+  void _showAlertDialog(String message) async {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(message),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Ok'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
 }

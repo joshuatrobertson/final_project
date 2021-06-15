@@ -35,7 +35,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     children: [
                       Container(
                         padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
-                        child: ReturnText(text: "INSERT LOGO HERE", size: 30),
+                        child: Image.asset(
+                          "assets/images/logo.png",
+                        ),
                       )
                     ],
                   )

@@ -1,14 +1,29 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:uber_haircuts/helpers/user.dart';
+import 'package:uber_haircuts/models/user.dart';
 
-class Authenticate {
+enum AuthStatus {
+UNINITIALISED,
+NOT_AUTHENTICATED,
+AUTHENTICATING,
+AUTHENTICATED,
+AUTH_WITH_MAPS,
+}
+
+class Authenticate with ChangeNotifier {
 
   // Create an instance of firebase and authenticate it
   FirebaseAuth _firebaseAuth;
+  User _user;
+  UserModel _userModel;
+  UserHelper _userHelper = UserHelper();
   Authenticate(this._firebaseAuth);
+  AuthStatus _authStatus = AuthStatus.UNINITIALISED;
   // Function to test for logged in user and return relevant page
   Stream<User> get stateChanges => _firebaseAuth.authStateChanges();
   GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
@@ -18,34 +33,43 @@ class Authenticate {
   );
 
 
+  // Getters
+  AuthStatus get authStatus => _authStatus;
+  User get user => _user;
+
   Future<bool> signIn({String email, String password}) async {
     try {
+      _authStatus = AuthStatus.AUTHENTICATING;
+      notifyListeners();
       await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       print("signed in " + email);
+      _authStatus = AuthStatus.AUTHENTICATED;
       return true;
     } catch (e) {
       print(e);
+      _authStatus = AuthStatus.NOT_AUTHENTICATED;
       return false;
     }
   }
 
   Future<bool> googleSignIn() async {
     try {
+      _authStatus = AuthStatus.AUTHENTICATING;
+      notifyListeners();
       final GoogleSignInAccount account = await _googleSignIn.signIn();
       final GoogleSignInAuthentication authentication = await account.authentication;
-
       final GoogleAuthCredential credential = GoogleAuthProvider.credential(
           idToken: authentication.idToken,
           accessToken: authentication.accessToken
       );
-
       final UserCredential authResult = await _firebaseAuth.signInWithCredential(credential);
       final User user = authResult.user;
-
       print("signed in with Google as: " + user.displayName);
+      _authStatus = AuthStatus.AUTHENTICATED;
       return true;
   } catch (e) {
       print(e);
+      _authStatus = AuthStatus.NOT_AUTHENTICATED;
       return false;
     }
   }
@@ -57,26 +81,32 @@ class Authenticate {
 
   Future<bool> facebookSignIn() async {
     try {
+      _authStatus = AuthStatus.AUTHENTICATING;
+      notifyListeners();
       final AccessToken result = await FacebookAuth.instance.login();
-
       final facebookAuthCredential = FacebookAuthProvider.credential(result.token);
-
       _firebaseAuth.signInWithCredential(facebookAuthCredential);
       print("Signed in with Facebook ID: " + result.userId);
+      _authStatus = AuthStatus.AUTHENTICATED;
       return true;
+
     } catch(e) {
       print(e);
+      _authStatus = AuthStatus.NOT_AUTHENTICATED;
       return false;
     }
   }
 
   Future<bool> twitterSignIn(String token, String secret) async {
+    _authStatus = AuthStatus.AUTHENTICATING;
+    notifyListeners();
       final AuthCredential credential = TwitterAuthProvider.credential(
           accessToken: token,
           secret: secret
       );
       await _firebaseAuth.signInWithCredential(credential);
-    }
+      _authStatus = AuthStatus.AUTHENTICATED;
+  }
 
 
   Future<bool> signUp({String email, String password}) async {
@@ -87,6 +117,7 @@ class Authenticate {
     }
     catch (e) {
       print(e);
+      _authStatus = AuthStatus.NOT_AUTHENTICATED;
       return false;
     }
   }
@@ -107,6 +138,7 @@ class Authenticate {
       await _twitterSignIn.logOut();
       await _firebaseAuth.signOut();
       print("User signed out");
+      _authStatus = AuthStatus.UNINITIALISED;
 
     } catch (exception) {
       print(exception.toString());
