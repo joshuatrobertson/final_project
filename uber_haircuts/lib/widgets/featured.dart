@@ -11,13 +11,15 @@ class Featured extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    List<ParentBarberModel> _featuredParentBarbers;
     return ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: featuredParentBarbers.length,
+        itemCount: _featuredParentBarbers.length,
         itemBuilder: (_, index){
           return GestureDetector(
             onTap: () {
-              navigateToScreen(_, BarberDetails(parentBarber: featuredParentBarbers[index]));
+              navigateToScreen(_, BarberDetails(parentBarber: _featuredParentBarbers[index]));
             },
             child: Container(
               padding: const EdgeInsets.only(left: 8.0, right: 8.0),
@@ -27,7 +29,7 @@ class Featured extends StatelessWidget {
                 children:[
                   Container(
                       alignment: Alignment.center,
-                      child: Image.asset("assets/images/${featuredParentBarbers[index].image}.jpg", height: 140, width: 200,
+                      child: Image.asset("assets/images/${_featuredParentBarbers[index].image}.jpg", height: 140, width: 200,
                         fit: BoxFit.cover,
                       )
                   ),
@@ -36,7 +38,7 @@ class Featured extends StatelessWidget {
                     child: Container(
 
                       alignment: Alignment.bottomCenter,
-                      child: ReturnText(text: featuredParentBarbers[index].name, size: 15, color: white,),
+                      child: ReturnText(text: _featuredParentBarbers[index].name, size: 15, color: white,),
                     ),
                   ),
                 ],
