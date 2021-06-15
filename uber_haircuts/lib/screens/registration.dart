@@ -86,6 +86,7 @@ class _RegistrationState extends State<Registration> {
                               child: GestureDetector(
                                 onTap: () async {
                                   if (!await authProvider.signUp(
+                                      name: _nameController.text.trim(),
                                       email: _emailController.text.trim(),
                                       password: _passwordController.text.trim()
                                   )) {

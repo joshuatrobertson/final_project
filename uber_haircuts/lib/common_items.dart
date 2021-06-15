@@ -6,9 +6,9 @@ import 'models/prices.dart';
 import 'models/product.dart';
 
 // Used to keep track of global variables, such as different theme colours
-const Color theme = Color(0xFFFE5E7D);
-const Color accent_1 = Color(0xFFFAACBA);
-const Color accent_2 = Color(0xFFFAABB9);
+const Color theme = Color(0xFF57c274);
+const Color accent_1 = Color(0xFF87de9f);
+const Color accent_2 = Color(0xFFaee8be);
 const Color lightGrey = Color(0xFFF5F5F5);
 const Color white = Colors.white;
 const Color black = Colors.black;

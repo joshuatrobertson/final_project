@@ -65,7 +65,7 @@ class AvailableNow extends StatelessWidget {
                                         children : [
 
                                           ReturnText(text: barbers[index].parentBarber, color: Colors.black54, size: 10),
-                                          ReturnText(text: "£" + barbers[index].barberProducts[0].price.toString(), size: 14, color: Colors.redAccent,),
+                                          ReturnText(text: "£" + barbers[index].barberProducts[0].price.toString(), size: 14, color: accent_1,),
                                         ]
                                     )
                                   ],
