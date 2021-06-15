@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
                   Padding(
                     padding: const EdgeInsets.all(3),
                     child: IconButton(
-                      icon: const Icon(Icons.exit_to_app_outlined, size: 35, color: accent_1),
+                      icon: const Icon(Icons.exit_to_app_outlined, size: 35, color: theme),
                       tooltip: 'View profile details',
                       onPressed: () async {
                           context.read<Authenticate>().signOut();
@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: accent_1,
+                      color: theme,
                       width: 3
                     ),
                       borderRadius: BorderRadius.circular(14),
