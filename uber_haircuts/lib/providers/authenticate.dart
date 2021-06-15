@@ -4,7 +4,8 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:uber_haircuts/helpers/user.dart';
+import 'package:provider/provider.dart';
+import 'package:uber_haircuts/helpers/user_database.dart';
 import 'package:uber_haircuts/models/user.dart';
 
 enum AuthStatus {
@@ -15,14 +16,13 @@ AUTHENTICATED,
 AUTH_WITH_MAPS,
 }
 
-class Authenticate with ChangeNotifier {
+class Authenticate extends ChangeNotifier {
 
   // Create an instance of firebase and authenticate it
   FirebaseAuth _firebaseAuth;
   User _user;
   UserModel _userModel;
-  UserHelper _userHelper = UserHelper();
-  Authenticate(this._firebaseAuth);
+  UserDatabase _userDatabase = UserDatabase();
   AuthStatus _authStatus = AuthStatus.UNINITIALISED;
   // Function to test for logged in user and return relevant page
   Stream<User> get stateChanges => _firebaseAuth.authStateChanges();
@@ -32,10 +32,12 @@ class Authenticate with ChangeNotifier {
     consumerSecret: 'KVP7xVAAdZYZ5TV1xW5tQBAriXR8QOPvOxqhYc9OWi0L4',
   );
 
+  Authenticate(this._firebaseAuth);
 
   // Getters
   AuthStatus get authStatus => _authStatus;
   User get user => _user;
+  Stream<User> get userStateChanges => _firebaseAuth.authStateChanges();
 
   Future<bool> signIn({String email, String password}) async {
     try {
@@ -44,8 +46,9 @@ class Authenticate with ChangeNotifier {
       await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       print("signed in " + email);
       _authStatus = AuthStatus.AUTHENTICATED;
+      notifyListeners();
       return true;
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
       print(e);
       _authStatus = AuthStatus.NOT_AUTHENTICATED;
       return false;
@@ -66,10 +69,12 @@ class Authenticate with ChangeNotifier {
       final User user = authResult.user;
       print("signed in with Google as: " + user.displayName);
       _authStatus = AuthStatus.AUTHENTICATED;
+      notifyListeners();
       return true;
   } catch (e) {
       print(e);
       _authStatus = AuthStatus.NOT_AUTHENTICATED;
+      notifyListeners();
       return false;
     }
   }
@@ -82,42 +87,54 @@ class Authenticate with ChangeNotifier {
   Future<bool> facebookSignIn() async {
     try {
       _authStatus = AuthStatus.AUTHENTICATING;
-      notifyListeners();
       final AccessToken result = await FacebookAuth.instance.login();
       final facebookAuthCredential = FacebookAuthProvider.credential(result.token);
       _firebaseAuth.signInWithCredential(facebookAuthCredential);
       print("Signed in with Facebook ID: " + result.userId);
       _authStatus = AuthStatus.AUTHENTICATED;
+      notifyListeners();
       return true;
 
     } catch(e) {
       print(e);
       _authStatus = AuthStatus.NOT_AUTHENTICATED;
+      notifyListeners();
       return false;
     }
   }
 
+  // Method to sign in a user via twitter
   Future<bool> twitterSignIn(String token, String secret) async {
     _authStatus = AuthStatus.AUTHENTICATING;
     notifyListeners();
-      final AuthCredential credential = TwitterAuthProvider.credential(
+    final AuthCredential credential = TwitterAuthProvider.credential(
           accessToken: token,
           secret: secret
       );
       await _firebaseAuth.signInWithCredential(credential);
       _authStatus = AuthStatus.AUTHENTICATED;
+    notifyListeners();
   }
 
-
-  Future<bool> signUp({String email, String password}) async {
+  // Method to sign a user up. Creates a Map<String, dynamic> to pass through the values to the method createNewUser which then
+  // adds these items to the firebase database.
+  Future<bool> signUp({String name, String email, String password}) async {
     try {
-      await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential _authResult = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      Map<String, dynamic> newUser = {
+        "id": _authResult.user.uid,
+        "name": name,
+        "email": email,
+        "location": null
+      };
+      _userDatabase.createNewUser(newUser);
       print(email + " signed up");
       return true;
     }
-    catch (e) {
+    on FirebaseAuthException catch (e) {
       print(e);
       _authStatus = AuthStatus.NOT_AUTHENTICATED;
+      notifyListeners();
       return false;
     }
   }
@@ -139,6 +156,7 @@ class Authenticate with ChangeNotifier {
       await _firebaseAuth.signOut();
       print("User signed out");
       _authStatus = AuthStatus.UNINITIALISED;
+      notifyListeners();
 
     } catch (exception) {
       print(exception.toString());
