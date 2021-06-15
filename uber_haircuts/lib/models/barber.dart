@@ -1,4 +1,4 @@
-import 'package:uber_haircuts/models/prices.dart';
+import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/product.dart';
 
 

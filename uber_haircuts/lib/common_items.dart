@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'models/barber.dart';
 import 'models/parent_barber.dart';
-import 'models/prices.dart';
+import 'models/order.dart';
 import 'models/product.dart';
 
 // Used to keep track of global variables, such as different theme colours

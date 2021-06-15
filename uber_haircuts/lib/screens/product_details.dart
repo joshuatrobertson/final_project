@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:uber_haircuts/common_items.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/screens/checkout.dart';
-import 'package:uber_haircuts/models/prices.dart';
+import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 
 import 'cart.dart';
