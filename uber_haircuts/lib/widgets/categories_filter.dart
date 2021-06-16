@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 
 import '../common_items.dart';
@@ -20,7 +22,7 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
   final List<CategoryFilterEntry> _items = <CategoryFilterEntry>[
     const CategoryFilterEntry('Haircut'),
     const CategoryFilterEntry('Beard Trim'),
-    const CategoryFilterEntry('Cheap'),
+    const CategoryFilterEntry('Student Cut'),
     const CategoryFilterEntry('Wash & Cut'),
     const CategoryFilterEntry('Other'),
 
@@ -28,6 +30,8 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
   final List<String> _filters = <String>[];
 
   Iterable<Widget> get categoryWidget sync* {
+    final productsProvider = Provider.of<ProductsProvider>(context);
+
     for (final CategoryFilterEntry category in _items) {
       yield Padding(
         padding: const EdgeInsets.all(3.5),

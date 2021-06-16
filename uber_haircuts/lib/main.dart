@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/screens/home.dart';
 import 'package:uber_haircuts/screens/login.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
@@ -24,7 +25,12 @@ class MyApp extends StatelessWidget {
         ListenableProvider<Authenticate>(
           create: (_) => Authenticate(FirebaseAuth.instance),
         ),
-        StreamProvider(create: (context) => context.read<Authenticate>().stateChanges, initialData: null,)
+        StreamProvider(
+          create: (context) => context.read<Authenticate>().stateChanges, initialData: null,
+        ),
+        ListenableProvider<ProductsProvider>(
+          create: (_) => ProductsProvider(),
+        ),
       ],
       child: MaterialApp(
         title: 'Chop Chop',

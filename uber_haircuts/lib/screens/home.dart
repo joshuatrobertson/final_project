@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/widgets/available_now.dart';
 import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/featured.dart';
@@ -24,8 +25,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final FirebaseAuth auth = FirebaseAuth.instance;
 
+
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp (
       home: Scaffold (
         backgroundColor: lightGrey,

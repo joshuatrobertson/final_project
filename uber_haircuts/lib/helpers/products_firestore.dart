@@ -9,8 +9,10 @@ class ProductsFirestore {
 
 
   Future<List<ProductModel>> getProducts() async =>
+  // Go through the collection 'products'
       _collectionReference.get().then((value) {
     List<ProductModel> products = [];
+    // for each item within products add to a list and return
     for (DocumentSnapshot product in value.docs) {
       products.add(ProductModel.fromSnapshot(product));
     }
