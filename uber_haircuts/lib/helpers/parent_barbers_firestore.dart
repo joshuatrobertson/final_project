@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
-import '../models/product.dart';
 
 class ParentBarbersFirestore {
 
@@ -10,10 +8,10 @@ class ParentBarbersFirestore {
 
 
   Future<List<ParentBarberModel>> getParentBarbers() async =>
-      // Go through the collection 'products'
+      // Go through the collection 'parentBarbers'
   _collectionReference.get().then((value) {
     List<ParentBarberModel> parents = [];
-    // for each item within products add to a list and return
+    // for each item within the parent barbers add to a list and return
     for (DocumentSnapshot parent in value.docs) {
       parents.add(ParentBarberModel.fromSnapshot(parent));
     }

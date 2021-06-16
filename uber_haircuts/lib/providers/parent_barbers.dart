@@ -1,22 +1,21 @@
 import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
-import 'package:uber_haircuts/helpers/products_firestore.dart';
-import 'package:uber_haircuts/models/product.dart';
+import 'package:uber_haircuts/helpers/parent_barbers_firestore.dart';
+import 'package:uber_haircuts/models/parent_barber.dart';
 
-class ParentBarbers extends ChangeNotifier {
+class ParentBarbersProvider extends ChangeNotifier {
 
   // Create an instance of firestore
-  ProductsFirestore _productsFirestore = ProductsFirestore();
-  List<ProductModel> _products = [];
+  ParentBarbersFirestore _parentFirestore = ParentBarbersFirestore();
+  List<ParentBarberModel> _parents = [];
 
-  get products => _products;
+  get parents => _parents;
 
-  ProductsProvider() {
-    _loadProducts();
+  ParentBarbersProvider() {
+    _loadParents();
   }
 
-  _loadProducts() async {
-    _products = await _productsFirestore.getProducts();
+  _loadParents() async {
+    _parents = await _parentFirestore.getParentBarbers();
     notifyListeners();
   }
 
