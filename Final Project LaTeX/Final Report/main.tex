@@ -212,6 +212,9 @@ anchorcolor = blue]{hyperref}
 	\subsection{Sprint X - UI}
 	Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possile.
 	
+	\subsection{Sprint X - Backend Design}
+	Initially a relational database model was created, which can be seen below (ADD DATABASE). This was later changed to use Google Firestore (\cite{firestore}), a noSQL database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform.
+	
 
 	
 \end{document}
