@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/screens/home.dart';
 import 'package:uber_haircuts/screens/login.dart';
@@ -30,6 +31,9 @@ class MyApp extends StatelessWidget {
         ),
         ListenableProvider<ProductsProvider>(
           create: (_) => ProductsProvider(),
+        ),
+        ListenableProvider<ParentBarbersProvider>(
+          create: (_) => ParentBarbersProvider(),
         ),
       ],
       child: MaterialApp(
