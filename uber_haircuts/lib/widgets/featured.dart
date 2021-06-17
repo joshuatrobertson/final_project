@@ -27,16 +27,19 @@ class Featured extends StatelessWidget {
               navigateToScreen(_, BarberDetails(parentBarber: _featuredParentBarbers.parents[index]));
             },
             child: Container(
-              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              padding: const EdgeInsets.only(left: 4.0, right: 4.0),
               height: 200,
               width: 200,
               child: Stack(
                 children:[
-                  Container(
-                      alignment: Alignment.center,
-                      child: Image(image: NetworkImage(_featuredParentBarbers.parents[index].image), height: 140, width: 200,
-                        fit: BoxFit.cover,
-                      )
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: Container(
+                        alignment: Alignment.center,
+                        child: Image(image: NetworkImage(_featuredParentBarbers.parents[index].image), height: 140, width: 200,
+                          fit: BoxFit.cover,
+                        )
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 35.0),
