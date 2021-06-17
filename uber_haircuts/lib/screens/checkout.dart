@@ -1,9 +1,11 @@
+/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/order.dart';
+import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
@@ -24,6 +26,9 @@ class Checkout extends StatefulWidget {
 class _CheckoutState extends State<Checkout> {
   @override
   Widget build(BuildContext context) {
+
+    final List<ProductModel> _shoppingCart;
+
     return MaterialApp(
         home: Scaffold(
           backgroundColor: lightGrey,
@@ -37,7 +42,7 @@ class _CheckoutState extends State<Checkout> {
                         padding: const EdgeInsets.fromLTRB(0, 35, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
-                            itemCount: shoppingCart.length,
+                            itemCount: _shoppingCart.length,
                             itemBuilder: (_, index) {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -66,7 +71,7 @@ class _CheckoutState extends State<Checkout> {
                                         child: ClipRRect(
                                             borderRadius: BorderRadius.circular(6.0),
                                             child: Image.asset(
-                                              "assets/images/${shoppingCart[index].product.image}.jpg",
+                                              "assets/images/${_shoppingCart[index].image}.jpg",
                                               height: 100, width: 150,)
                                         ),
                                       ),
@@ -78,7 +83,7 @@ class _CheckoutState extends State<Checkout> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              ReturnText(text: shoppingCart[index].product.name,
+                                              ReturnText(text: _shoppingCart[index].name,
                                                 size: 15,
                                                 fontWeight: FontWeight.bold,
                                                 align: TextAlign.left,),
@@ -89,11 +94,11 @@ class _CheckoutState extends State<Checkout> {
                                                   children: [
 
                                                     ReturnText(
-                                                        text: shoppingCart[index].product.name,
+                                                        text: _shoppingCart[index].name,
                                                         color: Colors.black54,
                                                         size: 10),
                                                     ReturnText(text: "£" +
-                                                        shoppingCart[index].price.toString(),
+                                                        _shoppingCart[index].price.toString(),
                                                       size: 14,
                                                       color: Colors.redAccent,),
                                                   ]
@@ -132,3 +137,4 @@ class _CheckoutState extends State<Checkout> {
         ));
   }
 }
+ */

@@ -15,8 +15,13 @@ class ParentBarbersProvider extends ChangeNotifier {
   }
 
   _loadParents() async {
-    _parents = await _parentFirestore.getParentBarbers();
-    notifyListeners();
+    try {
+      _parents = await _parentFirestore.getParentBarbers();
+      notifyListeners();
+      print("Parent barbers loaded!");
+    } catch (e) {
+      print("Loading of parent barbers failed with error: " + e);
+    }
   }
 
 }

@@ -105,7 +105,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                 child: Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
-                                                    ReturnText(text: widget.parentBarber.barbers[index].name,
+                                                    ReturnText(text: widget.parentBarber.barbers[index].firstName,
                                                       size: 16,
                                                       fontWeight: FontWeight.bold,
                                                       align: TextAlign.left,),
@@ -127,7 +127,6 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                   ],
                                                 ),
                                               ),
-
                                             ),
                                           ],
                                         ),
