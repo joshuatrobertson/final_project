@@ -6,9 +6,11 @@ class ParentBarbersProvider extends ChangeNotifier {
 
   // Create an instance of firestore
   ParentBarbersFirestore _parentFirestore = ParentBarbersFirestore();
-  List<ParentBarberModel> _parents = [];
+  List<ParentBarberModel> _topRatedParents = [];
+  List<ParentBarberModel> _featuredParents = [];
 
-  get parents => _parents;
+  get topRatedParents => _topRatedParents;
+  get featuredParents => _featuredParents;
 
   ParentBarbersProvider() {
     _loadParents();
@@ -16,7 +18,8 @@ class ParentBarbersProvider extends ChangeNotifier {
 
   _loadParents() async {
     try {
-      _parents = await _parentFirestore.getParentBarbers();
+      _topRatedParents = await _parentFirestore.getTopRatedParents();
+      _featuredParents = await _parentFirestore.getFeaturedParents();
       notifyListeners();
       print("Parent barbers loaded!");
     } catch (e) {

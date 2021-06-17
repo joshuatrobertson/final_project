@@ -2,10 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 
 
-class ParentBarbersFirestore {
+class TopRatedBarbers {
 
   // Connect to the database and create a collection reference
   final CollectionReference _collectionReference = FirebaseFirestore.instance.collection('parentBarber');
+
 
   Future<List<ParentBarberModel>> getTopRatedParents() async =>
       // Go through the collection 'parentBarbers'
@@ -41,6 +42,6 @@ class ParentBarbersFirestore {
   });
 
 
-  ParentBarbersFirestore();
+  TopRatedBarbers();
 
 }

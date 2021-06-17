@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
-import 'package:uber_haircuts/helpers/parent_barbers_firestore.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
@@ -18,13 +17,12 @@ class Featured extends StatelessWidget {
     final _featuredParentBarbers = Provider.of<ParentBarbersProvider>(context);
 
     return ListView.builder(
-
         scrollDirection: Axis.horizontal,
-        itemCount: _featuredParentBarbers.parents.length,
+        itemCount: _featuredParentBarbers.featuredParents.length,
         itemBuilder: (_, index){
           return GestureDetector(
             onTap: () {
-              navigateToScreen(_, BarberDetails(parentBarber: _featuredParentBarbers.parents[index]));
+              navigateToScreen(_, BarberDetails(parentBarber: _featuredParentBarbers.featuredParents[index]));
             },
             child: Container(
               padding: const EdgeInsets.only(left: 4.0, right: 4.0),
@@ -36,7 +34,7 @@ class Featured extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Container(
                         alignment: Alignment.center,
-                        child: Image(image: NetworkImage(_featuredParentBarbers.parents[index].image), height: 140, width: 200,
+                        child: Image(image: NetworkImage(_featuredParentBarbers.featuredParents[index].image), height: 140, width: 200,
                           fit: BoxFit.cover,
                         )
                     ),
@@ -45,7 +43,7 @@ class Featured extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 35.0),
                     child: Container(
                       alignment: Alignment.bottomCenter,
-                      child: ReturnText(text: _featuredParentBarbers.parents[index].name, size: 15, color: white,),
+                      child: ReturnText(text: _featuredParentBarbers.featuredParents[index].name, size: 15, color: white,),
                     ),
                   ),
                 ],
