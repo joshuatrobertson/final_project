@@ -65,7 +65,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                 child: GestureDetector(
                                   onTap: () {
                                     navigateToScreen(
-                                        _, ProductList(productList: widget.parentBarber.barbers[index].barberProducts[index]));
+                                        _, ProductList(productList: widget.parentBarber.barbers[index].barberProducts));
                                   },
                                   child: Row(
                                     children: [

@@ -27,7 +27,7 @@ class AvailableNow extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: GestureDetector(
                       onTap: () {
-                        navigateToScreen(_, ProductDetails(product: _barbersAvailableNow[index].barberProducts[0]));
+                        navigateToScreen(_, ProductDetails(product: null,));
                       //product: _barbers[index].barberProducts[0])
                         },
                       child: Container(
@@ -63,7 +63,7 @@ class AvailableNow extends StatelessWidget {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    ReturnText(text: _barbersAvailableNow[index].name, size: 15, fontWeight: FontWeight.bold, align: TextAlign.left,),
+                                    ReturnText(text: "TEST", size: 15, fontWeight: FontWeight.bold, align: TextAlign.left,),
 
                                     Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

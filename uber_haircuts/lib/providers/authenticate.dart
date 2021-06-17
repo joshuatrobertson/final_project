@@ -127,6 +127,7 @@ class Authenticate extends ChangeNotifier {
         "email": email,
         "location": null
       };
+      // Create a new user and add to the database
       _userDatabase.createNewUser(newUser);
       print(email + " signed up");
       return true;

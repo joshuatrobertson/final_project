@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/order.dart';
+import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
@@ -9,7 +10,7 @@ import 'cart.dart';
 import 'checkout.dart';
 
 class ProductList extends StatefulWidget {
-  final List<OrderModel> productList;
+  final List<ProductModel> productList;
 
   createState() => _ProductList();
 
@@ -82,7 +83,7 @@ class _ProductList extends State<ProductList> {
                                       child: ClipRRect(
                                           borderRadius: BorderRadius.circular(6.0),
                                           child: Image.asset(
-                                            "assets/images/${widget.productList[index].product.image}.jpg",
+                                            "assets/images/${widget.productList[index].image}.jpg",
                                             height: 100, width: 150,)
                                       ),
                                     ),
@@ -94,7 +95,7 @@ class _ProductList extends State<ProductList> {
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            ReturnText(text: widget.productList[index].product.name,
+                                            ReturnText(text: widget.productList[index].name,
                                               size: 15,
                                               fontWeight: FontWeight.bold,
                                               align: TextAlign.left,),
@@ -105,7 +106,7 @@ class _ProductList extends State<ProductList> {
                                                 children: [
 
                                                   ReturnText(
-                                                      text: widget.productList[index].product.name,
+                                                      text: widget.productList[index].name,
                                                       color: Colors.black54,
                                                       size: 10),
                                                   ReturnText(text: "£" +

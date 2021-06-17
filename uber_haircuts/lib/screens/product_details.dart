@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/common_items.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
+import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/screens/checkout.dart';
 import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
@@ -9,7 +10,7 @@ import 'package:uber_haircuts/widgets/return_text.dart';
 import 'cart.dart';
 
 class ProductDetails extends StatefulWidget {
-  final OrderModel product;
+  final ProductModel product;
 
   createState() => _ProductDetailsState();
 
@@ -26,7 +27,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           children: <Widget>[
             Stack(
               children: [
-                Image.asset("assets/images/${widget.product.product.image}.jpg"),
+                Image.asset("assets/images/${widget.product.image}.jpg"),
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
                   child: Row(
@@ -46,9 +47,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                 )
               ],
             ),
-            ReturnText(text: widget.product.product.name, size: 30),
+            ReturnText(text: widget.product.name, size: 30),
             ReturnText(text: "£" + widget.product.price.toString(), size: 20),
-            ReturnText(text: widget.product.product.description),
+            ReturnText(text: widget.product.description),
             Padding(
               padding: const EdgeInsets.only(top: 25),
               child: GestureDetector(

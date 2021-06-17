@@ -48,6 +48,5 @@ class ParentBarberModel {
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
     _barbers = documentSnapshot.data()[BARBERS];
-
   }
 }

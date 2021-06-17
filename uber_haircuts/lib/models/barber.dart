@@ -7,7 +7,8 @@ import 'package:uber_haircuts/models/product.dart';
 class BarberModel {
 
   static const ID = "id";
-  static const NAME = "name";
+  static const FIRST_NAME = "firstName";
+  static const LAST_NAME = "lastName";
   static const IMAGE = "image";
   static const DESCRIPTION = "description";
   static const PARENT_BARBER = "parentBarber";
@@ -17,7 +18,8 @@ class BarberModel {
   static const BARBER_PRODUCTS = "barberProducts";
 
   String _id;
-  String _name;
+  String _firstName;
+  String _lastName;
   String _image;
   String _description;
   String _parentBarber;
@@ -27,7 +29,8 @@ class BarberModel {
   List<ProductModel> _barberProducts;
 
   String get id => _id;
-  String get name => _name;
+  String get firstName => _firstName;
+  String get lastName => _lastName;
   String get image => _image;
   String get description => _description;
   String get parentBarber => _parentBarber;
@@ -37,7 +40,8 @@ class BarberModel {
   List<ProductModel> get barberProducts => _barberProducts;
 
   set id(String id) => _id;
-  set name(String name) => _name;
+  set firstName(String firstName) => _firstName;
+  set lastName(String lastName) => _lastName;
   set image(String image) => _image;
   set description(String description) => _description;
   set parentBarber(String name) => _parentBarber;
@@ -48,7 +52,8 @@ class BarberModel {
 
   BarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.data()[ID];
-    _name = documentSnapshot.data()[NAME];
+    _firstName = documentSnapshot.data()[FIRST_NAME];
+    _lastName = documentSnapshot.data()[LAST_NAME];
     _image = documentSnapshot.data()[IMAGE];
     _description = documentSnapshot.data()[DESCRIPTION];
     _parentBarber = documentSnapshot.data()[PARENT_BARBER];
@@ -56,6 +61,5 @@ class BarberModel {
     _featured = documentSnapshot.data()[FEATURED];
     _availableNow = documentSnapshot.data()[AVAILABLE_NOW];
     _barberProducts = documentSnapshot.data()[BARBER_PRODUCTS];
-
   }
 }
