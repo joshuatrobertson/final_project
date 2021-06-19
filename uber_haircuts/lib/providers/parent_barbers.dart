@@ -23,7 +23,7 @@ class ParentBarbersProvider extends ChangeNotifier {
       notifyListeners();
       print("Parent barbers loaded!");
     } catch (e) {
-      print("Loading of parent barbers failed with error: " + e);
+      print("Loading of parent barbers failed with error: " + e.toString());
     }
   }
 
