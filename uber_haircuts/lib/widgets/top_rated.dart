@@ -23,7 +23,7 @@ class TopRated extends StatelessWidget {
         itemBuilder: (_, index){
           return GestureDetector(
             onTap: () {
-              navigateToScreen(_, BarberDetails(parentBarber: _topRatedParentBarbers.topRatedParents[index]));
+              navigateToScreen(_, BarberDetails(parentBarberModel: _topRatedParentBarbers.topRatedParents[index], parentBarbersProvider: _topRatedParentBarbers));
             },
             child: Container(
               padding: const EdgeInsets.only(left: 8.0, right: 8.0),

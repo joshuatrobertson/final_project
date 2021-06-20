@@ -15,40 +15,40 @@ class ProductModel {
   static const PRICE = "price";
   static const IMAGE = "image";
   static const FEATURED = "featured";
-  static const PARENT_BARBER = "parent_barber";
+  static const BARBER_ID = "barberID";
 
 
   String _id;
   String _name;
   String _description;
-  double _price;
+  num _price;
   String _image;
   bool _featured;
-  String _parentBarber;
+  String _barberID;
 
   String get id => _id;
   String get name => _name;
   String get description => _description;
-  double get price => _price;
+  num get price => _price;
   String get image => _image;
   bool get featured => _featured;
-  String get parentBarber => _parentBarber;
+  String get barberID => _barberID;
 
   set id(String id) => _id;
   set name(String name) => _name;
   set description(String description) => _description;
-  set price(double price) => _price;
+  set price(num price) => _price;
   set image(String image) => _image;
   set featured(bool featured) => _featured;
-  set parentBarber(String parentBarber) => _parentBarber;
+  set parentBarber(String parentBarber) => _barberID;
 
   ProductModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
-    _id = documentSnapshot.data()[ID];
+    _id = documentSnapshot.id;
     _name = documentSnapshot.data()[NAME];
     _description = documentSnapshot.data()[DESCRIPTION];
     _price = documentSnapshot.data()[PRICE];
     _image = documentSnapshot.data()[IMAGE];
     _featured = documentSnapshot.data()[FEATURED];
-    _parentBarber = documentSnapshot.data()[PARENT_BARBER];
+    _barberID = documentSnapshot.data()[BARBER_ID];
   }
 }

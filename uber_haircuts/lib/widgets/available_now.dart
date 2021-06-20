@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/barber.dart';
+import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
@@ -11,7 +13,10 @@ class AvailableNow extends StatelessWidget {
   const AvailableNow({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    List<BarberModel> _barbersAvailableNow;
+    final _parentBarbers = Provider.of<ParentBarbersProvider>(context);
+
+    List<BarberModel> _barbersAvailableNow = _parentBarbers.barbers.where((barber) =>
+    barber.availableNow == true).toList();
 
 
     return Container(
@@ -52,7 +57,8 @@ class AvailableNow extends StatelessWidget {
                               padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                               child: ClipRRect(
                                   borderRadius: BorderRadius.circular(6.0),
-                                  child: Image.asset("assets/images/${_barbersAvailableNow[index].image}.jpg", height: 100, width: 150,)
+                                  child: Image(
+                                    image: NetworkImage(_barbersAvailableNow[index].image), height: 100, width: 150,)
                               ),
                             ),
                             Padding(
@@ -69,8 +75,7 @@ class AvailableNow extends StatelessWidget {
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children : [
 
-                                          ReturnText(text: _barbersAvailableNow[index].parentBarber, color: Colors.black54, size: 10),
-                                          ReturnText(text: "£" + _barbersAvailableNow[index].barberProducts[0].price.toString(), size: 14, color: accent_1,),
+                                          ReturnText(text: _barbersAvailableNow[index].parentBarberID, color: Colors.black54, size: 10),
                                         ]
                                     )
                                   ],

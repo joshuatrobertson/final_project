@@ -27,7 +27,8 @@ class _ProductDetailsState extends State<ProductDetails> {
           children: <Widget>[
             Stack(
               children: [
-                Image.asset("assets/images/${widget.product.image}.jpg"),
+                Image(
+                    image: NetworkImage(widget.product.image)),
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
                   child: Row(
@@ -49,7 +50,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
             ReturnText(text: widget.product.name, size: 30),
             ReturnText(text: "£" + widget.product.price.toString(), size: 20),
-            ReturnText(text: widget.product.description),
+            ReturnText(text: widget.product.description, size: 10),
             Padding(
               padding: const EdgeInsets.only(top: 25),
               child: GestureDetector(

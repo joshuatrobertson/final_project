@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
-import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:provider/provider.dart';
+import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/barber_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
@@ -22,7 +22,8 @@ class Featured extends StatelessWidget {
         itemBuilder: (_, index){
           return GestureDetector(
             onTap: () {
-              navigateToScreen(_, BarberDetails(parentBarber: _featuredParentBarbers.featuredParents[index]));
+              // Remove all the barbers that do not belong to the currently indexed parent barber
+              navigateToScreen(_, BarberDetails(parentBarbersProvider: _featuredParentBarbers, parentBarberModel: _featuredParentBarbers.featuredParents[index]));
             },
             child: Container(
               padding: const EdgeInsets.only(left: 4.0, right: 4.0),

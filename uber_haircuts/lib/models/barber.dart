@@ -11,7 +11,7 @@ class BarberModel {
   static const LAST_NAME = "lastName";
   static const IMAGE = "image";
   static const DESCRIPTION = "description";
-  static const PARENT_BARBER = "parentBarber";
+  static const PARENT_BARBER_ID = "parentBarberID";
   static const RATING = "rating";
   static const FEATURED = "featured";
   static const AVAILABLE_NOW = "availableNow";
@@ -22,7 +22,7 @@ class BarberModel {
   String _lastName;
   String _image;
   String _description;
-  String _parentBarber;
+  String _parentBarberID;
   double _rating;
   bool _featured;
   bool _availableNow;
@@ -33,7 +33,7 @@ class BarberModel {
   String get lastName => _lastName;
   String get image => _image;
   String get description => _description;
-  String get parentBarber => _parentBarber;
+  String get parentBarberID => _parentBarberID;
   double get rating => _rating;
   bool get featured => _featured;
   bool get availableNow => _availableNow;
@@ -44,19 +44,19 @@ class BarberModel {
   set lastName(String lastName) => _lastName;
   set image(String image) => _image;
   set description(String description) => _description;
-  set parentBarber(String name) => _parentBarber;
+  set parentBarberID(String name) => _parentBarberID;
   set rating(double rating) => _rating;
   set featured(bool featured) => _featured;
   set availableNow(bool available) => _availableNow;
   set barberProducts(List<ProductModel> products) => _barberProducts;
 
   BarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
-    _id = documentSnapshot.data()[ID];
+    _id = documentSnapshot.id;
     _firstName = documentSnapshot.data()[FIRST_NAME];
     _lastName = documentSnapshot.data()[LAST_NAME];
     _image = documentSnapshot.data()[IMAGE];
     _description = documentSnapshot.data()[DESCRIPTION];
-    _parentBarber = documentSnapshot.data()[PARENT_BARBER];
+    _parentBarberID = documentSnapshot.data()[PARENT_BARBER_ID];
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
     _availableNow = documentSnapshot.data()[AVAILABLE_NOW];

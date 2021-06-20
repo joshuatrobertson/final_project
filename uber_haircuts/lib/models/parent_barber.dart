@@ -21,8 +21,8 @@ class ParentBarberModel {
   String _image;
   String _description;
   double _rating;
-  bool _featured;
   List<BarberModel> _barbers;
+  bool _featured;
 
   String get id => _id;
   String get name => _name;
@@ -41,7 +41,7 @@ class ParentBarberModel {
   set barbers(List<BarberModel> barbers) => _barbers;
 
   ParentBarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
-    _id = documentSnapshot.data()[ID];
+    _id = documentSnapshot.id;
     _name = documentSnapshot.data()[NAME];
     _image = documentSnapshot.data()[IMAGE];
     _description = documentSnapshot.data()[DESCRIPTION];

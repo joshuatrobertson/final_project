@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
+import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/product.dart';
+import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
@@ -10,17 +12,20 @@ import 'cart.dart';
 import 'checkout.dart';
 
 class ProductList extends StatefulWidget {
-  final List<ProductModel> productList;
+  final ParentBarbersProvider parentBarbersProvider;
+  final BarberModel barberModel;
 
   createState() => _ProductList();
 
-  ProductList({@required this.productList});
+  ProductList({@required this.parentBarbersProvider, @required this.barberModel});
 
 }
 
 class _ProductList extends State<ProductList> {
   @override
   Widget build(BuildContext context) {
+    List<ProductModel> _products = widget.parentBarbersProvider.products.where((product) =>
+    product.barberID == widget.barberModel.id).toList();
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -48,14 +53,14 @@ class _ProductList extends State<ProductList> {
                       padding: const EdgeInsets.fromLTRB(0, 35, 0, 0),
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
-                        itemCount: widget.productList.length,
+                        itemCount: _products.length,
                         itemBuilder: (_, index) {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: GestureDetector(
                               onTap: () {
                                 navigateToScreen(
-                                    _, ProductDetails(product: widget.productList[index])
+                                    _, ProductDetails(product: _products[index])
                                 );
                               },
                               child: Container(
@@ -77,13 +82,18 @@ class _ProductList extends State<ProductList> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: ReturnText(text: 'SOME TEXT!', size: 10, color: black),
+                                      ),
+
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           8.0, 8.0, 8.0, 0),
                                       child: ClipRRect(
                                           borderRadius: BorderRadius.circular(6.0),
-                                          child: Image.asset(
-                                            "assets/images/${widget.productList[index].image}.jpg",
+                                          child: Image(
+                                            image: NetworkImage(_products[index].image),
                                             height: 100, width: 150,)
                                       ),
                                     ),
@@ -95,7 +105,7 @@ class _ProductList extends State<ProductList> {
                                         child: Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            ReturnText(text: widget.productList[index].name,
+                                            ReturnText(text: _products[index].name,
                                               size: 15,
                                               fontWeight: FontWeight.bold,
                                               align: TextAlign.left,),
@@ -106,13 +116,14 @@ class _ProductList extends State<ProductList> {
                                                 children: [
 
                                                   ReturnText(
-                                                      text: widget.productList[index].name,
+                                                      text: _products[index].name,
                                                       color: Colors.black54,
                                                       size: 10),
                                                   ReturnText(text: "£" +
-                                                      widget.productList[index].price.toString(),
+                                                      _products[index].price.toString(),
                                                     size: 14,
                                                     color: Colors.redAccent,),
+
                                                 ]
                                             )
                                           ],
@@ -120,9 +131,9 @@ class _ProductList extends State<ProductList> {
                                       ),
 
                                     ),
+
                                   ],
                                 ),
-
                               ),
                             ),
                           );

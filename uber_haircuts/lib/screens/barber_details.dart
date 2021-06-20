@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
+import 'package:uber_haircuts/helpers/parent_barbers_firestore.dart';
+import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
+import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/checkout.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/screens/product_list.dart';
@@ -11,24 +15,25 @@ import '../common_items.dart';
 import 'cart.dart';
 
 class BarberDetails extends StatefulWidget {
-  final ParentBarberModel parentBarber;
+  final ParentBarbersProvider parentBarbersProvider;
+  final ParentBarberModel parentBarberModel;
 
   createState() => _BarberDetailsState();
 
-  BarberDetails({@required this.parentBarber});
+  BarberDetails({@required this.parentBarbersProvider, @required this.parentBarberModel});
+
+
 
 }
-/*
-Text(widget.barber.name),
-Text(widget.barber.barberProducts[0].price.toString()),
-Text(widget.barber.parentBarber)
-*/
 
 class _BarberDetailsState extends State<BarberDetails> {
   int _currentNav = 0;
-
   @override
     Widget build(BuildContext context) {
+    // Fetch only the barbers which have the parent barber ID
+    List<BarberModel> _barbers = widget.parentBarbersProvider.barbers.where((barber) =>
+    barber.parentBarberID == widget.parentBarberModel.id).toList();
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -58,14 +63,14 @@ class _BarberDetailsState extends State<BarberDetails> {
                       child: SizedBox(
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
-                            itemCount: widget.parentBarber.barbers.length,
+                            itemCount: _barbers.length,
                             itemBuilder: (_, index) {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: GestureDetector(
                                   onTap: () {
                                     navigateToScreen(
-                                        _, ProductList(productList: widget.parentBarber.barbers[index].barberProducts));
+                                        _, ProductList(parentBarbersProvider: widget.parentBarbersProvider, barberModel: widget.parentBarbersProvider.barbers[index]));
                                   },
                                   child: Row(
                                     children: [
@@ -92,8 +97,8 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                   8.0, 8.0, 8.0, 0),
                                               child: ClipRRect(
                                                   borderRadius: BorderRadius.circular(6.0),
-                                                  child: Image.asset(
-                                                    "assets/images/${widget.parentBarber.barbers[index].image}.jpg",
+                                                  child: Image(
+                                                    image: NetworkImage(_barbers[index].image),
                                                     height: 100, width: 150,)
                                               ),
                                             ),
@@ -105,7 +110,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                 child: Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
-                                                    ReturnText(text: widget.parentBarber.barbers[index].firstName,
+                                                    ReturnText(text: _barbers[index].firstName,
                                                       size: 16,
                                                       fontWeight: FontWeight.bold,
                                                       align: TextAlign.left,),
@@ -114,10 +119,10 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                             .spaceBetween,
                                                         children: [
                                                           ReturnText(
-                                                              text: widget.parentBarber.name,
+                                                              text: widget.parentBarberModel.name,
                                                               color: Colors.black54,
                                                               size: 10),
-                                                          ReturnText(text: widget.parentBarber.barbers[index].rating.toString(), size: 20, color: black, fontWeight: FontWeight.w600,),
+                                                          ReturnText(text: _barbers[index].rating.toString(), size: 20, color: black, fontWeight: FontWeight.w600,),
                                                           Padding(
                                                             padding: const EdgeInsets.only(bottom: 8.0),
                                                             child: Icon(Icons.star, color: theme, size: 14),
@@ -136,7 +141,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                         child:
                                               Padding(
                                                 padding: const EdgeInsets.all(8.0),
-                                                child: ReturnText(text: '"' + widget.parentBarber.barbers[index].description.toString() + '"', size: 10, color: black),
+                                                child: ReturnText(text: '"' + widget.parentBarbersProvider.barbers[index].description.toString() + '"', size: 10, color: black),
                                               ),
                                         ),
                                     ],
