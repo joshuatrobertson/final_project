@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
@@ -15,9 +16,9 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   int total = 0;
   List<ProductModel> _shoppingCart;
-
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<Cart>(context);
     return MaterialApp(
         home: Scaffold(
           appBar: AppBar(
@@ -39,7 +40,7 @@ class _CartState extends State<Cart> {
                         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
-                            itemCount: _shoppingCart.length,
+                            itemCount: 0 ?? _shoppingCart.length,
                             itemBuilder: (_, index) {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
