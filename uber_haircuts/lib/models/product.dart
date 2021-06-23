@@ -11,7 +11,7 @@ class ProductModel {
 
   static const ID = "id";
   static const NAME = "name";
-  static const DESCRIPTION = "id";
+  static const DESCRIPTION = "description";
   static const PRICE = "price";
   static const IMAGE = "image";
   static const FEATURED = "featured";

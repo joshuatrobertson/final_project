@@ -44,8 +44,6 @@ class ParentBarbersFirestore {
     List<ParentBarberModel> parents = [];
     // for each item within the parent barbers add to a list and return
     for (DocumentSnapshot parent in parentBarber.docs) {
-      ParentBarberModel parentBarberModel = ParentBarberModel.fromSnapshot(parent);
-      parentBarberModel.barbers = [];
       parents.add(ParentBarberModel.fromSnapshot(parent));
     }
     return parents;

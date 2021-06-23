@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/product.dart';
 
 
@@ -15,7 +14,6 @@ class BarberModel {
   static const RATING = "rating";
   static const FEATURED = "featured";
   static const AVAILABLE_NOW = "availableNow";
-  static const BARBER_PRODUCTS = "barberProducts";
 
   String _id;
   String _firstName;
@@ -26,7 +24,6 @@ class BarberModel {
   double _rating;
   bool _featured;
   bool _availableNow;
-  List<ProductModel> _barberProducts;
 
   String get id => _id;
   String get firstName => _firstName;
@@ -37,7 +34,6 @@ class BarberModel {
   double get rating => _rating;
   bool get featured => _featured;
   bool get availableNow => _availableNow;
-  List<ProductModel> get barberProducts => _barberProducts;
 
   set id(String id) => _id;
   set firstName(String firstName) => _firstName;
@@ -48,7 +44,6 @@ class BarberModel {
   set rating(double rating) => _rating;
   set featured(bool featured) => _featured;
   set availableNow(bool available) => _availableNow;
-  set barberProducts(List<ProductModel> products) => _barberProducts;
 
   BarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.id;
@@ -60,6 +55,5 @@ class BarberModel {
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
     _availableNow = documentSnapshot.data()[AVAILABLE_NOW];
-    _barberProducts = documentSnapshot.data()[BARBER_PRODUCTS];
   }
 }

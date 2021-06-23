@@ -19,7 +19,7 @@ class ReturnText extends StatelessWidget {
   Widget build(BuildContext context) {
     // Return the default values specified for missing input items
     return Text(
-        this.text, textAlign: this.align ?? TextAlign.center,
+        this.text?? '', textAlign: this.align ?? TextAlign.center,
         style: TextStyle(
         fontSize: this.size ?? 14,
         fontFamily: this.fontFamily ?? 'Poppins',

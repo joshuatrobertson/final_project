@@ -1,18 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:uber_haircuts/helpers/navigate.dart';
-import 'package:uber_haircuts/models/order.dart';
-import 'package:uber_haircuts/screens/product_details.dart';
+import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
 
-import '../common_items.dart';
-import 'cart.dart';
-
 class Cart extends StatefulWidget {
-
 
   createState() => _CartState();
 
@@ -20,10 +12,9 @@ class Cart extends StatefulWidget {
 
 }
 
-
 class _CartState extends State<Cart> {
   int total = 0;
-  List<OrderModel> _shoppingCart;
+  List<ProductModel> _shoppingCart;
 
   @override
   Widget build(BuildContext context) {
@@ -79,8 +70,8 @@ class _CartState extends State<Cart> {
                                               8.0, 8.0, 8.0, 0),
                                           child: ClipRRect(
                                               borderRadius: BorderRadius.circular(6.0),
-                                              child: Image.asset(
-                                                "assets/images/${_shoppingCart[index].product.image}.jpg",
+                                              child: Image(
+                                                image: NetworkImage(_shoppingCart[index].image),
                                                 height: 100, width: 150,)
                                           ),
                                         ),
@@ -92,7 +83,7 @@ class _CartState extends State<Cart> {
                                             child: Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                ReturnText(text: _shoppingCart[index].product.name,
+                                                ReturnText(text: _shoppingCart[index].name,
                                                   size: 15,
                                                   fontWeight: FontWeight.bold,
                                                   align: TextAlign.left,),
@@ -103,7 +94,7 @@ class _CartState extends State<Cart> {
                                                     children: [
 
                                                       ReturnText(
-                                                          text: _shoppingCart[index].product.name,
+                                                          text: _shoppingCart[index].name,
                                                           color: Colors.black54,
                                                           size: 10),
                                                       ReturnText(text: "£" +

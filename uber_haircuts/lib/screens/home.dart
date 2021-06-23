@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 30.0),
-                child: Align(alignment: Alignment.centerLeft, child: ReturnText(text: 'Haircuts Available Now', size: 17),),
+                child: Align(alignment: Alignment.centerLeft, child: ReturnText(text: 'Barbers Available Now', size: 17),),
               ),
               SizedBox(
                 height: 2
