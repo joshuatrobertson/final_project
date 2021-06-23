@@ -17,9 +17,10 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+  int x = 1;
+
   @override
   Widget build(BuildContext context) {
-    int x = 0;
     return Scaffold(
         backgroundColor: Colors.white,
         body: Column(
@@ -57,7 +58,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                 children:[
                   IconButton(icon: Icon(Icons.remove), onPressed: (){
                     setState(() {
-                      x++;
+                      if (x > 1) {
+                        x--;
+                      }
                     });
                   }),
                   GestureDetector(
@@ -75,9 +78,11 @@ class _ProductDetailsState extends State<ProductDetails> {
                   ),
                 ),
                   IconButton(icon: Icon(Icons.add), onPressed: (){
-                    setState(() {
-                      x--;
+                    if (x < 99) {
+                      setState(() {
+                      x++;
                     });
+                  }
                   }),
                 ]),
             ),
