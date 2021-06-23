@@ -19,6 +19,7 @@ class ProductDetails extends StatefulWidget {
 class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
+    int x = 0;
     return Scaffold(
         backgroundColor: Colors.white,
         body: Column(
@@ -47,24 +48,38 @@ class _ProductDetailsState extends State<ProductDetails> {
               ],
             ),
             ReturnText(text: widget.product.name, size: 30),
-            ReturnText(text: "£" + widget.product.price.toString(), size: 20),
+            ReturnText(text: "£" + widget.product.price.toString(), color: theme, size: 20),
             ReturnText(text: widget.product.description, size: 10),
             Padding(
-              padding: const EdgeInsets.only(top: 25),
-              child: GestureDetector(
-                onTap: () {
-                },
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: theme,
-                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                    child: ReturnText(text: "Add to Basket", color: Colors.white,),
+              padding: const EdgeInsets.only(top: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:[
+                  IconButton(icon: Icon(Icons.remove), onPressed: (){
+                    setState(() {
+                      x++;
+                    });
+                  }),
+                  GestureDetector(
+                  onTap: () {
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: theme,
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                      child: ReturnText(text: "Add " + x.toString() + " to Basket", color: Colors.white,),
+                    ),
                   ),
                 ),
-              ),
+                  IconButton(icon: Icon(Icons.add), onPressed: (){
+                    setState(() {
+                      x--;
+                    });
+                  }),
+                ]),
             ),
           ],
         ),
