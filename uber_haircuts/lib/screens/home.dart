@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/products.dart';
+import 'package:uber_haircuts/screens/user_orders.dart';
 import 'package:uber_haircuts/widgets/available_now.dart';
 import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/featured.dart';
@@ -11,6 +12,8 @@ import 'package:uber_haircuts/widgets/top_rated.dart';
 import '../common_items.dart';
 import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
+
+import 'account.dart';
 
 
 class Home extends StatefulWidget {
@@ -24,6 +27,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final FirebaseAuth auth = FirebaseAuth.instance;
+  int _currentIndex = 0;
+  final List<Widget> _screens = [
+    Home(),
+    Account(),
+    UserOrders()
+  ];
 
 
   @override
@@ -112,21 +121,6 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-          bottomNavigationBar: BottomNavigationBar(
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.account_box_rounded),
-                  label: 'My Account',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_basket),
-                  label: 'Shopping Cart',
-                ),
-              ])
       ),
     );
   }

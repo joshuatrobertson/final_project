@@ -18,6 +18,19 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   int x = 1;
+  int _navIndex = 0;
+  List<Widget> _widget = <Widget>[
+    Text('Home'),
+    Text('My Account'),
+    Text('Shopping Cart'),
+    Text('My Orders'),
+  ];
+
+  void _onClick(int index) {
+    setState(() {
+      _navIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,21 +101,6 @@ class _ProductDetailsState extends State<ProductDetails> {
             ),
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.account_box_rounded),
-                label: 'My Account',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_basket),
-                label: 'Shopping Cart',
-              ),
-            ])
     );
   }
 }

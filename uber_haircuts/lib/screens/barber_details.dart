@@ -156,29 +156,6 @@ class _BarberDetailsState extends State<BarberDetails> {
             ),
           ),
         ),
-          bottomNavigationBar: BottomNavigationBar(
-                currentIndex: _currentNav,
-              type: BottomNavigationBarType.fixed,
-              selectedItemColor: theme,
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.account_box_rounded),
-                  label: 'My Account',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_basket),
-                  label: 'Shopping Cart',
-                ),
-              ],
-                onTap: (index) {
-                  setState(() {
-                    _currentNav = index;
-                  });
-                })
       ),
     );
   }

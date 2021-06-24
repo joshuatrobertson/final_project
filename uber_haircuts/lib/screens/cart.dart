@@ -128,21 +128,7 @@ class _CartState extends State<Cart> {
               ),
             ),
           ),
-          bottomNavigationBar: BottomNavigationBar(
-              items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-          icon: Icon(Icons.home_filled),
-          label: 'Home',
-            backgroundColor: Colors.grey,
-        ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.account_box_rounded),
-        label: 'My Account',
-      ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_basket),
-                  label: 'Shopping Cart',
-                ),
-        ])));
+        )
+    );
   }
 }
