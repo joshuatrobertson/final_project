@@ -1,17 +1,25 @@
-import 'package:flutter/cupertino.dart';
-import 'package:uber_haircuts/models/product.dart';
-
 class CartItem {
-  final String id;
-  final ProductModel product;
-  final int quantity;
+  static const ID = "id";
+  static const PRODUCT_ID = "productID";
+  static const QUANTITY = "quantity";
 
-  CartItem({@required this.id, @required this.product, @required this.quantity})
+  String _id;
+  String _productId;
+  int _quantity;
+
+
+  // Get a map from data
+  CartItem.fromMap(Map item){
+    _id = item[ID];
+    _productId =  item[PRODUCT_ID];
+    _quantity =  item[QUANTITY];
   }
 
-  class Cart with ChangeNotifier {
-    Map<String, CartItem> get items {
-
-    }
+  // Create a map with json objects
+  Map toMap() => {
+    ID: _id,
+    PRODUCT_ID: _productId,
+    QUANTITY: _quantity,
+  };
   }
 

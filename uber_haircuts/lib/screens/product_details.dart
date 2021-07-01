@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:uber_haircuts/common_items.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/product.dart';
+import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 
 import 'cart.dart';
@@ -34,6 +36,7 @@ class _ProductDetailsState extends State<ProductDetails> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<Authenticate>(context);
     return Scaffold(
         backgroundColor: Colors.white,
         body: Column(
@@ -78,6 +81,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                   }),
                   GestureDetector(
                   onTap: () {
+                    // Add the item to the current user fetched from Provider of Authenticate class
+                    user.addItemToCart(productModel: widget.product, quantity: x);
                   },
                   child: Container(
                     decoration: BoxDecoration(

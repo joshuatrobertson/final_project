@@ -7,9 +7,8 @@ class UserDatabase {
   FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   // Method to add a new user through using collection.set
-  void createNewUser(Map<String, dynamic> values)  {
-    String id = values["uid"];
-    _firebaseFirestore.collection(collection).doc(values[id]).set(values);
+  void createNewUser(Map<String, dynamic> values, String uid)  {
+    _firebaseFirestore.collection(collection).doc(uid).set(values);
   }
 
   // Method to update an existing user
@@ -20,6 +19,13 @@ class UserDatabase {
 
   // Fetch the user based on a given ID
   Future<UserModel> getUserById(String userId) {
+    _firebaseFirestore.collection(collection).doc(userId).get().then((value) {
+      return UserModel.fromSnapshot(value);
+    });
+  }
+
+  // Fetch the user based on a given ID
+  UserModel getSingleUserById(String userId) {
     _firebaseFirestore.collection(collection).doc(userId).get().then((value) {
       return UserModel.fromSnapshot(value);
     });

@@ -13,26 +13,24 @@ class UserModel {
   String _email;
   String _uid;
   String _location;
-  List<ProductModel> _cart;
+  List<ProductModel> cart;
 
   String get name => _name;
   String get email => _email;
   String get uid => _uid;
   String get location => _location;
-  List<ProductModel> get cart => _cart;
 
   set name(String name) => _name;
   set email(String email) => _email;
   set uid(String uid) => _uid;
   set location(String location) => _location;
-  set cart(List<ProductModel> cart) => _cart;
 
   UserModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _name = documentSnapshot.data()[NAME];
     _email = documentSnapshot.data()[EMAIL];
     _uid = documentSnapshot.data()[UID];
     _location = documentSnapshot.data()[LOCATION];
-    _cart = documentSnapshot.data()[CART] ?? [];
+    cart = _convertFromMap(documentSnapshot.data()[CART]) ?? [];
   }
 
   List<ProductModel> _convertFromMap(List cart) {
@@ -40,7 +38,6 @@ class UserModel {
     cart.forEach((element) {
       _result.add(ProductModel.fromSnapshot(element));
     });
-
     return _result;
   }
 }

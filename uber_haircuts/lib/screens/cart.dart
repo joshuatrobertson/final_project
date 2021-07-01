@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/product.dart';
+import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../common_items.dart';
 
@@ -15,10 +16,11 @@ class Cart extends StatefulWidget {
 
 class _CartState extends State<Cart> {
   int total = 0;
-  List<ProductModel> _shoppingCart;
   @override
   Widget build(BuildContext context) {
-    final cart = Provider.of<Cart>(context);
+
+    final user = Provider.of<Authenticate>(context);
+
     return MaterialApp(
         home: Scaffold(
           appBar: AppBar(
@@ -40,7 +42,7 @@ class _CartState extends State<Cart> {
                         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
-                            itemCount: 0 ?? _shoppingCart.length,
+                            itemCount: 0 ?? user.userModel.cart.length,
                             itemBuilder: (_, index) {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -72,7 +74,7 @@ class _CartState extends State<Cart> {
                                           child: ClipRRect(
                                               borderRadius: BorderRadius.circular(6.0),
                                               child: Image(
-                                                image: NetworkImage(_shoppingCart[index].image),
+                                                image: NetworkImage(user.userModel.cart[index].image),
                                                 height: 100, width: 150,)
                                           ),
                                         ),
@@ -84,7 +86,7 @@ class _CartState extends State<Cart> {
                                             child: Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                ReturnText(text: _shoppingCart[index].name,
+                                                ReturnText(text: user.userModel.cart[index].name,
                                                   size: 15,
                                                   fontWeight: FontWeight.bold,
                                                   align: TextAlign.left,),
@@ -95,11 +97,11 @@ class _CartState extends State<Cart> {
                                                     children: [
 
                                                       ReturnText(
-                                                          text: _shoppingCart[index].name,
+                                                          text: user.userModel.cart[index].name,
                                                           color: Colors.black54,
                                                           size: 10),
                                                       ReturnText(text: "£" +
-                                                          _shoppingCart[index].price.toString(),
+                                                          user.userModel.cart[index].price.toString(),
                                                         size: 14,
                                                         color: Colors.redAccent,),
                                                     ]

@@ -5,7 +5,10 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
+import 'package:uber_haircuts/helpers/OrderHelper.dart';
 import 'package:uber_haircuts/helpers/user_database.dart';
+import 'package:uber_haircuts/models/cart.dart';
+import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
 
 enum AuthStatus {
@@ -21,7 +24,7 @@ class Authenticate extends ChangeNotifier {
   // Create an instance of firebase and authenticate it
   FirebaseAuth _firebaseAuth;
   User _user;
-  UserModel _userModel;
+  UserModel userModel;
   UserDatabase _userDatabase = UserDatabase();
   AuthStatus _authStatus = AuthStatus.UNINITIALISED;
   // Function to test for logged in user and return relevant page
@@ -31,7 +34,7 @@ class Authenticate extends ChangeNotifier {
     consumerKey: '1403651379705663488-I6gxGAkJqPrkSRXTxysm5wmI3Hc5no',
     consumerSecret: 'KVP7xVAAdZYZ5TV1xW5tQBAriXR8QOPvOxqhYc9OWi0L4',
   );
-
+  OrderHelper _orderHelper;
   Authenticate(this._firebaseAuth);
 
   // Getters
@@ -122,14 +125,15 @@ class Authenticate extends ChangeNotifier {
     try {
       UserCredential _authResult = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
       Map<String, dynamic> newUser = {
-        "id": _authResult.user.uid,
+        "uid": _authResult.user.uid,
         "name": name,
         "email": email,
         "location": null,
         "cart": [],
       };
       // Create a new user and add to the database
-      _userDatabase.createNewUser(newUser);
+      // Here we use the auth result user id as the document id so that it can be referred to later
+      _userDatabase.createNewUser(newUser, _authResult.user.uid);
       print(email + " signed up");
       return true;
     }
@@ -164,6 +168,34 @@ class Authenticate extends ChangeNotifier {
       print(exception.toString());
       return null;
     }
+  }
+
+  // Used to add an item to each user, which has their own 'Authenticate' instance
+  Future addItemToCart({ProductModel productModel, int quantity}) async {
+    print("Adding " + quantity.toString() + " " + productModel.name.toLowerCase() + " to the basket");
+   // userModel = await _orderHelper.getUserById(userModel.uid);
+
+    print("Trying with id" + userModel.name);
+    /*
+    try {
+      // Get the current user from the database
+      print("user id = " + userModel.uid);
+      // Generate a unique key for each cart item
+      var key = UniqueKey();
+      // Create a map using the relevant json objectes from productModel
+      Map cartItem ={
+        "id": key,
+        "productId": productModel.id,
+        "quantity": quantity,
+      };
+      CartItem item = CartItem.fromMap(cartItem);
+      _orderHelper.addToCart(userId: _user.uid, cartItem: item);
+    }
+    catch(e) {
+      print("Cart error: " + e.toString());
+    }
+
+     */
   }
 
 }
