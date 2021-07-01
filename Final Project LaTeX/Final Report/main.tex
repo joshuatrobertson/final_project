@@ -14,6 +14,16 @@ urlcolor  = blue,
 citecolor = blue,
 anchorcolor = blue]{hyperref}
 \usepackage{blindtext}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{light-gray}{gray}{0.95}
+\lstset{
+	numbers=left,
+	breaklines=true,
+	backgroundcolor=\color{light-gray},
+	tabsize=2,
+	basicstyle=\ttfamily,
+}
 
 
 \begin{document}
@@ -237,7 +247,16 @@ anchorcolor = blue]{hyperref}
 	https://firebase.google.com/docs/firestore/solutions/geoqueries
 	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are co-ordinates hashed to be a single Base32 string.
 	
-	
+	\subsection{Sprint X - Login and Sign Up}
+	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
+	\begin{lstlisting}
+		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
+	\end{lstlisting}
+	which does not scale well due to a search time of $\mathcal{O}$(n), compared to 
+	\begin{lstlisting}
+		_firebaseFirestore.collection(collection).doc(userId).get()
+	\end{lstlisting}
+	which gives a search time of $\mathcal{O}$(1). 
 
 	
 \end{document}
