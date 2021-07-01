@@ -10,6 +10,7 @@ class ParentBarberModel {
   static const DESCRIPTION = "description";
   static const RATING = "rating";
   static const FEATURED = "featured";
+  static const LOCATION_GEOHASH = "locationGeohash";
 
   String _id;
   String _name;
@@ -17,6 +18,7 @@ class ParentBarberModel {
   String _description;
   double _rating;
   bool _featured;
+  bool _locationGeohash;
 
   String get id => _id;
   String get name => _name;
@@ -24,6 +26,7 @@ class ParentBarberModel {
   String get description => _description;
   double get rating => _rating;
   bool get featured => _featured;
+  bool get locationGeohash => _locationGeohash;
 
   set id(String id) => _id;
   set name(String name) => _name;
@@ -31,6 +34,7 @@ class ParentBarberModel {
   set description(String description) => _description;
   set rating(double rating) => _rating;
   set featured(bool featured) => _featured;
+  set locationGeohash(bool locationGeohash) => _locationGeohash;
 
   ParentBarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.id;
@@ -39,5 +43,6 @@ class ParentBarberModel {
     _description = documentSnapshot.data()[DESCRIPTION];
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
+    _locationGeohash = documentSnapshot.data()[LOCATION_GEOHASH];
   }
 }
