@@ -89,8 +89,12 @@ class ShowSearchPage extends SearchDelegate<LocationModel> {
 
   @override
   Widget buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
-    throw UnimplementedError();
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
   }
 
   @override
