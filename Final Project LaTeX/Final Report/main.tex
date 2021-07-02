@@ -245,7 +245,14 @@ anchorcolor = blue]{hyperref}
 	
 	\subsection{Sprint X - Location}
 	https://firebase.google.com/docs/firestore/solutions/geoqueries
-	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are co-ordinates hashed to be a single Base32 string.
+	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are longitude and latitiude co-ordinates that are hashed into a single Base32 string.
+	
+	User location access is granted through the following line in the ./android/app/src/main/AndroidManifest.xml file
+	\begin{lstlisting}
+		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	\end{lstlisting}
+
+	
 	
 	\subsection{Sprint X - Login and Sign Up}
 	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
