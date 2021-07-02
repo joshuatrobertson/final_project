@@ -99,14 +99,29 @@ class ShowSearchPage extends SearchDelegate<LocationModel> {
 
   @override
   Widget buildResults(BuildContext context) {
-    // TODO: implement buildResults
-    throw UnimplementedError();
+    return null;
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
-    throw UnimplementedError();
+    return StreamBuilder(
+      builder: (context, snapshot) => query == ''
+          ? Container(
+        padding: EdgeInsets.fromLTRB(20.0, 15, 10, 10),
+        child: Text('Enter your address'),
+      )
+          : snapshot.hasData
+          ? ListView.builder(
+        itemBuilder: (context, index) => ListTile(
+          // we will display the data returned from our future here
+          title:
+          Text(snapshot.data[index]),
+          onTap: () {
+            close(context, snapshot.data[index]);
+          },
+        ),
+        itemCount: snapshot.data.length,
+      )
+          : CircularProgressIndicator);
   }
-
 }
