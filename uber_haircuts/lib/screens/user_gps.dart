@@ -1,4 +1,5 @@
 // Documentation here - https://developers.google.com/maps/documentation/places/web-service/autocomplete
+// Created following a guide found at https://medium.com/comerge/location-search-autocomplete-in-flutter-84f155d44721
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -9,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import '../common_items.dart';
 import 'package:uuid/uuid.dart';
-final _controller = TextEditingController;
 
 class UserGPS extends StatelessWidget {
 
@@ -69,13 +69,13 @@ class _FireMapState extends State<FireMap> {
                     delegate: ShowSearchPage(sessionToken),
                   );
                   final placeDetails = await GoogleMapsAPI(sessionToken)
-                      .getLocations(searchResult.placeId);
+                      .getLocationDetails(searchResult.placeId);
                   setState(() {
                     _textController.text = searchResult.description;
-                    _number = placeDetails.;
+                    _number = placeDetails.number;
                     _street = placeDetails.street;
                     _city = placeDetails.city;
-                    _zipCode = placeDetails.zipCode;
+                    _postcode = placeDetails.postcode;
                   });
                 },
                 decoration: InputDecoration(
@@ -181,6 +181,39 @@ class GoogleMapsAPI {
       else {
         throw Exception(result['error_message']);
       }
+  }
+
+  // Used to parse the returned json file
+  Future<PlaceModel> getLocationDetails(String placeId) async {
+    final apiRequest =
+        'https://maps.googleapis.com/maps/api/place/details/json?place_id=$placeId&fields=address_component&key=$apiKey&sessiontoken=$sessionToken';
+    final response = await client.get(Uri.parse(apiRequest));
+
+      final result = json.decode(response.body);
+      if (result['status'] == 'OK') {
+        final components =
+        result['result']['address_components'] as List<dynamic>;
+        // build result
+        final placeModel = PlaceModel();
+        components.forEach((item) {
+          final List type = item['types'];
+          if (type.contains('street_number')) {
+            placeModel.number = item['long_name'];
+          }
+          if (type.contains('route')) {
+            placeModel.street = item['long_name'];
+          }
+          if (type.contains('locality')) {
+            placeModel.city = item['long_name'];
+          }
+          if (type.contains('postal_code')) {
+            placeModel.postcode = item['long_name'];
+          }
+        });
+        return placeModel;
+      }
+      throw Exception(result['error_message']);
+
   }
   
 }
