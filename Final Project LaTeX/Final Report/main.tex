@@ -251,6 +251,17 @@ anchorcolor = blue]{hyperref}
 	\begin{lstlisting}
 		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 	\end{lstlisting}
+	For the search results we use a drop down menu in the form of flutters built in 'showSearch' function to display a search page and 'SearchDelegate' to define the content of said search page.
+	
+	A textEditingController is used to collect the inputted data from the user and pass through to the showSearch function.
+	
+	\subsubsection{Autocomplete locations}
+	As a means for the user to autocomplete their address when signing up, the 'Place Autocomplete service', which returns location predictions in response to HTTP requests was implemented using a request adhering to a set of parameters, the full list, along with details of the API can be found on the Google Developers website \cite{requests}.
+	First, we create a location model which can hold the data returned from the API. We then create an API request using the above aformentiend form. For brevity, not every option is discussed, but those of importance include 'input', which is the user query, 'types', which determines the query returned, for which we specify address to return the full address and 'sessionToken', which is required for each new query. The query can be seen here:
+	\begin{lstlisting}
+		'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=address&components=country:ch&lang=en&key=$apiKey&sessiontoken=$sessionToken';
+	\end{lstlisting}
+	
 
 	
 	
