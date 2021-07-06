@@ -7,9 +7,8 @@ import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-
 import '../common_items.dart';
-
+import 'package:uuid/uuid.dart';
 final _controller = TextEditingController;
 
 class UserGPS extends StatelessWidget {
@@ -32,6 +31,12 @@ class FireMap extends StatefulWidget {
 
 class _FireMapState extends State<FireMap> {
   @override
+  final _textController = TextEditingController();
+  String _number = '';
+  String _street = '';
+  String _city = '';
+  String _postcode = '';
+
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -55,11 +60,23 @@ class _FireMapState extends State<FireMap> {
             ),
             child: ListTile(
               title: TextField(
+                controller: _textController,
                 onTap: () async {
-                  showSearch(
+                  var sessionToken = Uuid().v4();
+                  // Create a search result using ShowSearchPage and put into the delegate
+                  final LocationModel searchResult = await showSearch(
                     context: context,
-                    delegate: ShowSearchPage(),
+                    delegate: ShowSearchPage(sessionToken),
                   );
+                  final placeDetails = await GoogleMapsAPI(sessionToken)
+                      .getLocations(searchResult.placeId);
+                  setState(() {
+                    _textController.text = searchResult.description;
+                    _number = placeDetails.;
+                    _street = placeDetails.street;
+                    _city = placeDetails.city;
+                    _zipCode = placeDetails.zipCode;
+                  });
                 },
                 decoration: InputDecoration(
                   hintText: "Enter your address",
@@ -77,6 +94,15 @@ class _FireMapState extends State<FireMap> {
 }
 
 class ShowSearchPage extends SearchDelegate<LocationModel> {
+
+  final sessionToken;
+  GoogleMapsAPI googleMapsAPI;
+
+  ShowSearchPage(this.sessionToken) {
+    googleMapsAPI = GoogleMapsAPI(sessionToken);
+  }
+
+
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -107,12 +133,11 @@ class ShowSearchPage extends SearchDelegate<LocationModel> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return StreamBuilder(
-      builder: (context, snapshot) => query == ''
-          ? Container(
-      )
-          : snapshot.hasData
-          ? ListView.builder(
+    return FutureBuilder(
+      future: query == ''
+          ? null : googleMapsAPI.getLocations(query),
+          builder: (context, snapshot) => query == '' ?
+          ListView.builder(
         itemBuilder: (context, index) => ListTile(
           title:
           Text(snapshot.data[index]),
@@ -129,7 +154,7 @@ class ShowSearchPage extends SearchDelegate<LocationModel> {
 class GoogleMapsAPI {
   var client = http.Client();
 
-  GoogleMapsAPI(this.sessionToken, this.client);
+  GoogleMapsAPI(this.sessionToken);
 
   final sessionToken;
 
