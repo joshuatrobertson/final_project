@@ -251,7 +251,7 @@ anchorcolor = blue]{hyperref}
 	\begin{lstlisting}
 		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 	\end{lstlisting}
-	For the search results we use a drop down menu in the form of flutters built in 'showSearch' function to display a search page and 'SearchDelegate' to define the content of said search page.
+	For the search results we use a drop down menu in the form of flutters built in 'showSearch' function loosely following a guide on medium \cite{medium-comerge} to display a search page and 'SearchDelegate' to define the content of said search page.
 	
 	A textEditingController is used to collect the inputted data from the user and pass through to the showSearch function.
 	
@@ -261,6 +261,7 @@ anchorcolor = blue]{hyperref}
 	\begin{lstlisting}
 		'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=address&components=country:ch&lang=en&key=$apiKey&sessiontoken=$sessionToken';
 	\end{lstlisting}
+	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each quer.y (Google recommends to use version 4 UUID and so this is used here)
 	
 
 	
