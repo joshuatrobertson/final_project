@@ -4,7 +4,7 @@ import 'package:flutter/painting.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-import '../common_items.dart';
+import '../theme/common_items.dart';
 import 'home.dart';
 import 'login.dart';
 import 'package:provider/provider.dart';

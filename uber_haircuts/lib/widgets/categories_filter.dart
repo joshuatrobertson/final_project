@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 
-import '../common_items.dart';
+import '../theme/common_items.dart';
 
 class CategoryFilterEntry {
   const CategoryFilterEntry(this.name);

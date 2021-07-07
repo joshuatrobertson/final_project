@@ -282,8 +282,14 @@ anchorcolor = blue]{hyperref}
 	
 	\subsection{Widgets and Common Items}
 	Here we discuss any items not covered within a specified sprint.
+	
+	\subsubsection{Widgets}
+	Several widgets were used to increase readability and brevity of code. For example, 'ReturnText()' allows for easy access to the main textual components used and improves readability. 
+	
 	\subsubsection{Common Items}
-	The common items contains global variables that were accessible throughout the project. Initially this included structures and arrays that served as objects to test the functionality of the frontend, for example a barber shop class with a nested list of barbers classes, each with a name, age, description etc. As backend functionality was added these items were removed. The common items class also contains regularly used colours, such as white, black and grey, along with theme colours and accents. Doing it in this way meant that the application could be easily styled, without any unnecessary refactoring of code.
+	The common items contains global variables that were accessible throughout the project. Initially this included structures and arrays that served as objects to test the functionality of the frontend, for example a barber shop class with a nested list of barbers classes, each with a name, age, description etc. As backend functionality was added these items were removed. A theme class was then added which contains dart files that can be implemented. Doing it in this way meant that the application could be easily styled, without any unnecessary refactoring of code.
+	
+	
 
 	
 \end{document}

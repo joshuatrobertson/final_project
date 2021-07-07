@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../common_items.dart';
+import '../theme/common_items.dart';
 
 class ReturnText extends StatelessWidget {
   final String text;

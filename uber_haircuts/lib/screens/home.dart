@@ -9,7 +9,7 @@ import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/featured.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:uber_haircuts/widgets/top_rated.dart';
-import '../common_items.dart';
+import '../theme/common_items.dart';
 import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 

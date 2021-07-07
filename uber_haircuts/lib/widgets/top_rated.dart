@@ -6,7 +6,7 @@ import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/barber_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-import '../common_items.dart';
+import '../theme/common_items.dart';
 
 
 class TopRated extends StatelessWidget {

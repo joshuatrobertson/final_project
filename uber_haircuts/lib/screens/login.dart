@@ -7,7 +7,7 @@ import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/registration.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-import '../common_items.dart';
+import '../theme/common_items.dart';
 import 'forgot_password.dart';
 
 class Login extends StatefulWidget {

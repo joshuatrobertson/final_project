@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uber_haircuts/common_items.dart';
+import 'package:uber_haircuts/theme/common_items.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';

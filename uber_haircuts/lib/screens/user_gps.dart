@@ -8,7 +8,7 @@ import 'package:uber_haircuts/widgets/location_search.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../common_items.dart';
+import '../theme/common_items.dart';
 import 'package:uuid/uuid.dart';
 
 class UserGPS extends StatelessWidget {
