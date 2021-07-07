@@ -1,7 +1,7 @@
 // Documentation here - https://developers.google.com/maps/documentation/places/web-service/autocomplete
 // Created following a guide found at https://medium.com/comerge/location-search-autocomplete-in-flutter-84f155d44721
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:uber_haircuts/helpers/google_maps.dart';
+import 'package:uber_haircuts/providers/google_maps.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/widgets/location_search.dart';
 import 'package:flutter/material.dart';
