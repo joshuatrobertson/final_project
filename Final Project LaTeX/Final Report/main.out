@@ -14,11 +14,13 @@
 \BOOKMARK [1][-]{section.3}{Production}{}% 14
 \BOOKMARK [2][-]{subsection.3.1}{Version Control}{section.3}% 15
 \BOOKMARK [2][-]{subsection.3.2}{Sprint 1 - Setup}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.3}{Sprint X - UI}{section.3}% 17
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Cupertino vs Material}{subsection.3.3}% 18
-\BOOKMARK [2][-]{subsection.3.4}{Sprint X - Backend Design}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.5}{Sprint X - Location}{section.3}% 20
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Autocomplete locations}{subsection.3.5}% 21
-\BOOKMARK [2][-]{subsection.3.6}{Sprint X - Login and Sign Up}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.7}{Widgets and Common Items}{section.3}% 23
-\BOOKMARK [3][-]{subsubsection.3.7.1}{Common Items}{subsection.3.7}% 24
+\BOOKMARK [3][-]{subsubsection.3.2.1}{File Structure}{subsection.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Sprint X - UI}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Cupertino vs Material}{subsection.3.3}% 19
+\BOOKMARK [2][-]{subsection.3.4}{Sprint X - Login and Sign Up}{section.3}% 20
+\BOOKMARK [2][-]{subsection.3.5}{Sprint X - Backend Design}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.6}{Sprint X - Location}{section.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.6.1}{Autocomplete locations}{subsection.3.6}% 23
+\BOOKMARK [2][-]{subsection.3.7}{Widgets and Common Items}{section.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.7.1}{Widgets}{subsection.3.7}% 25
+\BOOKMARK [3][-]{subsubsection.3.7.2}{Common Items}{subsection.3.7}% 26
