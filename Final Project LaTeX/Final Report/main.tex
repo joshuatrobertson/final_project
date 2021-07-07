@@ -224,6 +224,7 @@ anchorcolor = blue]{hyperref}
 	
 	\section{Production}
 	\subsection{Version Control}
+
 	
 	\subsection{Sprint 1 - Setup}
 	During the first sprint, the task involved setting up the environment in preparation to begin development. For the editor, Android Studio was 
@@ -257,11 +258,13 @@ anchorcolor = blue]{hyperref}
 	
 	\subsubsection{Autocomplete locations}
 	As a means for the user to autocomplete their address when signing up, the 'Place Autocomplete service', which returns location predictions in response to HTTP requests was implemented using a request adhering to a set of parameters, the full list, along with details of the API can be found on the Google Developers website \cite{requests}.
-	First, we create a location model which can hold the data returned from the API. We then create an API request using the above aformentiend form. For brevity, not every option is discussed, but those of importance include 'input', which is the user query, 'types', which determines the query returned, for which we specify address to return the full address and 'sessionToken', which is required for each new query. The query can be seen here:
+	First, we create a location model which can hold the data returned from the API. We then create an API request using the above aforementioned API format. For brevity, not every option is discussed, but those of importance include 'input', which is the user query, 'types', which determines the query returned, for which we specify address to return the full address and 'sessionToken', which is required for each new query. The query can be seen here:
 	\begin{lstlisting}
 		'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=address&components=country:ch&lang=en&key=$apiKey&sessiontoken=$sessionToken';
 	\end{lstlisting}
-	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each quer.y (Google recommends to use version 4 UUID and so this is used here)
+	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each query (Google recommends to use version 4 UUID and so this is used here). Without our 'user\_gps.dart' file
+	
+	For the content of the search page we use pass in newly created session token into the ShowSearchPage class, which in turn sends an api request and parses the json data to return a list of locations in the form of 'place id's' and 'description' using a FutureBuilder. From here, we pass through the location id to the getLocationDetails function to fetch the address details of each location and then display this to the user.
 	
 
 	
@@ -276,6 +279,11 @@ anchorcolor = blue]{hyperref}
 		_firebaseFirestore.collection(collection).doc(userId).get()
 	\end{lstlisting}
 	which gives a search time of $\mathcal{O}$(1). 
+	
+	\subsection{Widgets and Common Items}
+	Here we discuss any items not covered within a specified sprint.
+	\subsubsection{Common Items}
+	The common items contains global variables that were accessible throughout the project. Initially this included structures and arrays that served as objects to test the functionality of the frontend, for example a barber shop class with a nested list of barbers classes, each with a name, age, description etc. As backend functionality was added these items were removed. The common items class also contains regularly used colours, such as white, black and grey, along with theme colours and accents. Doing it in this way meant that the application could be easily styled, without any unnecessary refactoring of code.
 
 	
 \end{document}
