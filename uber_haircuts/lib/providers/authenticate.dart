@@ -5,7 +5,7 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
-import 'package:uber_haircuts/helpers/OrderHelper.dart';
+import 'package:uber_haircuts/helpers/order.dart';
 import 'package:uber_haircuts/helpers/user_database.dart';
 import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/models/product.dart';
