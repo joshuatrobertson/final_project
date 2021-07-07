@@ -232,10 +232,21 @@ anchorcolor = blue]{hyperref}
 	
 	
 	\subsection{Sprint X - UI}
-	Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possile.
+	Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possible.
 	
 	\subsubsection{Cupertino vs Material}
 	The final project was built using material due to..
+	
+		\subsection{Sprint X - Login and Sign Up}
+	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
+	\begin{lstlisting}
+		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
+	\end{lstlisting}
+	which does not scale well due to a search time of $\mathcal{O}$(n), compared to 
+	\begin{lstlisting}
+		_firebaseFirestore.collection(collection).doc(userId).get()
+	\end{lstlisting}
+	which gives a search time of $\mathcal{O}$(1). 
 	
 	\subsection{Sprint X - Backend Design}
 	
@@ -265,20 +276,6 @@ anchorcolor = blue]{hyperref}
 	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each query (Google recommends to use version 4 UUID and so this is used here). Without our 'user\_gps.dart' file
 	
 	For the content of the search page we use pass in newly created session token into the ShowSearchPage class, which in turn sends an api request and parses the json data to return a list of locations in the form of 'place id's' and 'description' using a FutureBuilder. From here, we pass through the location id to the getLocationDetails function to fetch the address details of each location and then display this to the user.
-	
-
-	
-	
-	\subsection{Sprint X - Login and Sign Up}
-	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
-	\begin{lstlisting}
-		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
-	\end{lstlisting}
-	which does not scale well due to a search time of $\mathcal{O}$(n), compared to 
-	\begin{lstlisting}
-		_firebaseFirestore.collection(collection).doc(userId).get()
-	\end{lstlisting}
-	which gives a search time of $\mathcal{O}$(1). 
 	
 	\subsection{Widgets and Common Items}
 	Here we discuss any items not covered within a specified sprint.
