@@ -2,14 +2,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
-import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/screens/user_orders.dart';
 import 'package:uber_haircuts/widgets/available_now.dart';
 import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/featured.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:uber_haircuts/widgets/top_rated.dart';
-import '../theme/common_items.dart';
+import '../theme/main_theme.dart';
 import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 

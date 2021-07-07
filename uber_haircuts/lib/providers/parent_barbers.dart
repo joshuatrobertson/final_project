@@ -25,6 +25,18 @@ class ParentBarbersProvider extends ChangeNotifier {
     _loadProducts();
   }
 
+  // Returns a list of ProductModel using getProducts() of parent_barbers_firestore.dart
+  _loadProducts() async {
+    try {
+      _products = await _parentFirestore.getProducts();
+      notifyListeners();
+      print("Products loaded!");
+    } catch (e) {
+      print("Loading of products failed with error: " + e.toString());
+    }
+  }
+
+  // Returns a list of ParentBarberModel
   _loadParents() async {
     try {
       // Load the items into memory to reduce server calls and decrease load/ lookup times
@@ -37,6 +49,7 @@ class ParentBarbersProvider extends ChangeNotifier {
     }
   }
 
+  // Returns a list of BarberModel
   _loadBarbers() async {
     try {
       _barbers = await _parentFirestore.getBarbers();
@@ -44,16 +57,6 @@ class ParentBarbersProvider extends ChangeNotifier {
       print('Barbers loaded!');
     } catch (e) {
       print("Loading of barbers failed with error: " + e.toString());
-    }
-  }
-
-  _loadProducts() async {
-    try {
-      _products = await _parentFirestore.getProducts();
-      notifyListeners();
-      print("Products loaded!");
-    } catch (e) {
-      print("Loading of products failed with error: " + e.toString());
     }
   }
 

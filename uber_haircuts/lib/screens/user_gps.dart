@@ -3,12 +3,9 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:uber_haircuts/helpers/google_maps.dart';
 import 'package:uber_haircuts/models/location.dart';
-import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/location_search.dart';
-import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:flutter/material.dart';
-import 'dart:async';
-import '../theme/common_items.dart';
+import '../theme/main_theme.dart';
 import 'package:uuid/uuid.dart';
 
 class UserGPS extends StatelessWidget {

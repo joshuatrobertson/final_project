@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/google_maps.dart';
 import 'package:uber_haircuts/models/location.dart';
-import 'package:uber_haircuts/screens/user_gps.dart';
 
 class ShowSearchPage extends SearchDelegate<LocationModel> {
 

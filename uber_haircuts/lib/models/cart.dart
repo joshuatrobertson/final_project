@@ -1,3 +1,5 @@
+// Class representing a cart item to be used for the shopping cart
+
 class CartItem {
   static const ID = "id";
   static const PRODUCT_ID = "productID";
@@ -20,6 +22,6 @@ class CartItem {
     ID: _id,
     PRODUCT_ID: _productId,
     QUANTITY: _quantity,
-  };
+    };
   }
 

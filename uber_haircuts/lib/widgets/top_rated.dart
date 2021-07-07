@@ -2,12 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
-import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/barber_details.dart';
+import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-import '../theme/common_items.dart';
-
+import '../theme/main_theme.dart';
 
 class TopRated extends StatelessWidget {
   const TopRated({Key key}) : super(key: key);
@@ -32,9 +31,7 @@ class TopRated extends StatelessWidget {
                 children:[
                   Container(
                       alignment: Alignment.center,
-                      child: Image(image: NetworkImage(_topRatedParentBarbers.topRatedParents[index].image), height: 120, width: 200,
-                        fit: BoxFit.cover,
-                      )
+                      child: ReturnImage(image: _topRatedParentBarbers.topRatedParents[index].image, width: 120, height: 200, boxFit: BoxFit.cover)
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 15.0),

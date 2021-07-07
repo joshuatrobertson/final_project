@@ -8,9 +8,9 @@ import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-import '../common_items.dart';
+import '../main_theme.dart';
 
-import '../common_items.dart';
+import '../main_theme.dart';
 import 'cart.dart';
 
 class Checkout extends StatefulWidget {

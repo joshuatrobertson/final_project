@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-import '../theme/common_items.dart';
+import '../theme/main_theme.dart';
 
 class Cart extends StatefulWidget {
 
@@ -73,10 +73,8 @@ class _CartState extends State<Cart> {
                                               8.0, 8.0, 8.0, 0),
                                           child: ClipRRect(
                                               borderRadius: BorderRadius.circular(6.0),
-                                              child: Image(
-                                                image: NetworkImage(user.userModel.cart[index].image),
-                                                height: 100, width: 150,)
-                                          ),
+                                              child: ReturnImage(image: user.userModel.cart[index].image, width: 150, height: 100)
+                                          )
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(top: 4, left: 10),

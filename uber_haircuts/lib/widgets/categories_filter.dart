@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-
-import '../theme/common_items.dart';
+import '../theme/main_theme.dart';
 
 class CategoryFilterEntry {
   const CategoryFilterEntry(this.name);

@@ -1,6 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:uber_haircuts/models/product.dart';
-
 
 // Class representing a barber including a list of Product classes
 class BarberModel {

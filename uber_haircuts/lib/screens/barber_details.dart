@@ -1,17 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
-import 'package:uber_haircuts/helpers/parent_barbers_firestore.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
-import 'package:uber_haircuts/screens/checkout.dart';
-import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/screens/product_list.dart';
+import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-
-import '../theme/common_items.dart';
+import '../theme/main_theme.dart';
 import 'cart.dart';
 
 class BarberDetails extends StatefulWidget {
@@ -97,9 +93,7 @@ class _BarberDetailsState extends State<BarberDetails> {
                                                   8.0, 8.0, 8.0, 0),
                                               child: ClipRRect(
                                                   borderRadius: BorderRadius.circular(6.0),
-                                                  child: Image(
-                                                    image: NetworkImage(_barbers[index].image),
-                                                    height: 100, width: 150,)
+                                                  child: ReturnImage(image: _barbers[index].image, width: 150, height: 100)
                                               ),
                                             ),
                                             Padding(

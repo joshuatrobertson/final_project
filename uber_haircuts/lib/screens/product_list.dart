@@ -5,10 +5,10 @@ import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
+import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-import '../theme/common_items.dart';
+import '../theme/main_theme.dart';
 import 'cart.dart';
-import 'checkout.dart';
 
 class ProductList extends StatefulWidget {
   final ParentBarbersProvider parentBarbersProvider;
@@ -86,9 +86,7 @@ class _ProductList extends State<ProductList> {
                                           8.0, 8.0, 8.0, 0),
                                       child: ClipRRect(
                                           borderRadius: BorderRadius.circular(6.0),
-                                          child: Image(
-                                            image: NetworkImage(_products[index].image),
-                                            height: 100, width: 150,)
+                                          child: ReturnImage(image: _products[index].image, width: 150, height: 100)
                                       ),
                                     ),
                                     Padding(
@@ -117,7 +115,6 @@ class _ProductList extends State<ProductList> {
                                                       _products[index].price.toString(),
                                                     size: 14,
                                                     color: Colors.redAccent,),
-
                                                 ]
                                             )
                                           ],

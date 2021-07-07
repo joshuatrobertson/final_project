@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:provider/provider.dart';
-import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/barber_details.dart';
+import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
-import '../theme/common_items.dart';
+import '../theme/main_theme.dart';
 
 class Featured extends StatelessWidget {
   const Featured({Key key}) : super(key: key);
@@ -35,9 +35,7 @@ class Featured extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Container(
                         alignment: Alignment.center,
-                        child: Image(image: NetworkImage(_featuredParentBarbers.featuredParents[index].image), height: 140, width: 200,
-                          fit: BoxFit.cover,
-                        )
+                        child: ReturnImage(image: _featuredParentBarbers.featuredParents[index].image, width: 200, height: 140, boxFit: BoxFit.cover)
                     ),
                   ),
                   Padding(
