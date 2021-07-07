@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:provider/provider.dart';
-import 'package:uber_haircuts/helpers/products_firestore.dart';
 import 'package:uber_haircuts/models/product.dart';
+import 'package:uber_haircuts/utilities/products_firestore.dart';
 
 class ProductsProvider extends ChangeNotifier {
 

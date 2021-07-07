@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:uber_haircuts/helpers/navigate.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
+import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';

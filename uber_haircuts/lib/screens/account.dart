@@ -1,8 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:provider/provider.dart';
-import 'package:uber_haircuts/helpers/user_database.dart';
 import 'package:uber_haircuts/models/user.dart';
-import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/utilities/user_database.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:flutter/material.dart';
 

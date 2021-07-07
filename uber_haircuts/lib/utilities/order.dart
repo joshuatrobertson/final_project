@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/models/user.dart';
 
-class OrderHelper {
+class OrderUtility {
   FirebaseFirestore _firestore;
   String users = "users";
 

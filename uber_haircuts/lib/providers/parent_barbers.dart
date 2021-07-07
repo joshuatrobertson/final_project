@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:uber_haircuts/helpers/parent_barbers_firestore.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
+import 'package:uber_haircuts/utilities/parent_barbers_firestore.dart';
 
 class ParentBarbersProvider extends ChangeNotifier {
 

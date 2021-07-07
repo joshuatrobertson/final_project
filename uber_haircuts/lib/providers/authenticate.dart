@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:uber_haircuts/helpers/order.dart';
-import 'package:uber_haircuts/helpers/user_database.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
+import 'package:uber_haircuts/utilities/order.dart';
+import 'package:uber_haircuts/utilities/user_database.dart';
 
 enum AuthStatus {
 UNINITIALISED,
@@ -31,7 +31,7 @@ class Authenticate extends ChangeNotifier {
     consumerKey: '1403651379705663488-I6gxGAkJqPrkSRXTxysm5wmI3Hc5no',
     consumerSecret: 'KVP7xVAAdZYZ5TV1xW5tQBAriXR8QOPvOxqhYc9OWi0L4',
   );
-  OrderHelper _orderHelper;
+  OrderUtility _orderUtility;
   Authenticate(this._firebaseAuth);
 
   // Getters
