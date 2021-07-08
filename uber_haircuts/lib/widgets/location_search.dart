@@ -43,19 +43,29 @@ class ShowSearchPage extends SearchDelegate<LocationModel> {
   @override
   Widget buildSuggestions(BuildContext context) {
     return FutureBuilder(
-        future: query == ''
-            ? null : googleMapsAPI.getLocations(query),
-        builder: (context, snapshot) => query == '' ?
-        ListView.builder(
-          itemBuilder: (context, index) => ListTile(
-            title:
-            Text(snapshot.data[index]),
-            onTap: () {
-              close(context, snapshot.data[index]);
-            },
+      future: query == ""
+          ? null
+          : googleMapsAPI.getLocations(
+          query),
+      builder: (context, snapshot) => query == ''
+          ? Container(
+        padding: EdgeInsets.all(16.0),
+      )
+          : snapshot.hasData
+          ? ListView.builder(
+        itemBuilder: (context, index) => ListTile(
+          title:
+          Text((snapshot.data[index] as LocationModel).description),
+          onTap: () {
+            close(context, snapshot.data[index] as LocationModel);
+          },
+        ),
+        itemCount: snapshot.data.length,
+      )
+          : Padding(
+            padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
+            child: Container(child: Text('Loading...')),
           ),
-          itemCount: snapshot.data.length,
-        )
-            : CircularProgressIndicator);
+    );
   }
 }

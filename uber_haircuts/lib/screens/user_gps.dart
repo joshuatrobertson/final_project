@@ -1,10 +1,11 @@
-// Documentation here - https://developers.google.com/maps/documentation/places/web-service/autocomplete
-// Created following a guide found at https://medium.com/comerge/location-search-autocomplete-in-flutter-84f155d44721
+// Created following a guide found at https://medium.com/comerge/location-search-autocomplete-in-flutter-84f155d44721 and the documentation
+// which can be found here https://developers.google.com/maps/documentation/places/web-service/autocomplete
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:uber_haircuts/providers/google_maps.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/widgets/location_search.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
 import 'package:uuid/uuid.dart';
 
@@ -64,15 +65,17 @@ class _FireMapState extends State<FireMap> {
                     context: context,
                     delegate: ShowSearchPage(sessionToken),
                   );
-                  final placeDetails = await GoogleMapsAPI(sessionToken)
-                      .getLocationDetails(searchResult.placeId);
-                  setState(() {
-                    _textController.text = searchResult.description;
-                    _number = placeDetails.number;
-                    _street = placeDetails.street;
-                    _city = placeDetails.city;
-                    _postcode = placeDetails.postcode;
-                  });
+                  if (searchResult != null) {
+                    final placeDetails = await GoogleMapsAPI(sessionToken)
+                        .getLocationDetails(searchResult.placeId);
+                    setState(() {
+                      _textController.text = searchResult.description;
+                      _number = placeDetails.number;
+                      _street = placeDetails.street;
+                      _city = placeDetails.city;
+                      _postcode = placeDetails.postcode;
+                    });
+                  }
                 },
                 decoration: InputDecoration(
                   hintText: "Enter your address",
@@ -83,6 +86,8 @@ class _FireMapState extends State<FireMap> {
               leading: Icon(Icons.search, color: accent_1, size: 25),
             ),
           ),
+        ),
+
         ),
       ],
     );

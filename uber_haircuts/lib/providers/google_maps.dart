@@ -16,7 +16,7 @@ class GoogleMapsAPI {
   Future<List<LocationModel>> getLocations(String input) async {
     // Create an api request using the session token/ api key
     final apiRequest =
-        'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=address&components=country:ch&lang=en&key=$apiKey&sessiontoken=$sessionToken';
+        'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=address&components=country:uk&lang=en&key=$apiKey&sessiontoken=$sessionToken';
     // Send a get request to the server and return a response
     final response = await client.get(Uri.parse(apiRequest));
     final result = json.decode(response.body);
