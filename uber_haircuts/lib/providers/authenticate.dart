@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
 import 'package:uber_haircuts/utilities/order.dart';
@@ -77,6 +78,20 @@ class Authenticate extends ChangeNotifier {
       notifyListeners();
       return false;
     }
+  }
+
+  // Turn the location values into a JSON format map to store in firebase
+  Map<String, dynamic> createLocationMap(PlaceModel placeModel) {
+    Map<String, dynamic> location = {
+      "number": placeModel.number,
+      "street": placeModel.street,
+      "city": placeModel.city,
+      "postcode": placeModel.postcode,
+    };
+    print("Authenticated with maps");
+    _authStatus = AuthStatus.AUTH_WITH_MAPS;
+    notifyListeners();
+    return location;
   }
 
   Future googleSignOut() async {

@@ -18,5 +18,4 @@ class ProductsProvider extends ChangeNotifier {
     _products = await _productsFirestore.getProducts();
     notifyListeners();
   }
-
 }

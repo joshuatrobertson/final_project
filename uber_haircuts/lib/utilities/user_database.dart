@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/user.dart';
 
 class UserDatabase {
@@ -30,5 +31,9 @@ class UserDatabase {
     });
   }
 
+  // Method to update an existing user
+  void addLocationDetails(Map<String, dynamic> values, String uid)  {
+    _firebaseFirestore.collection(collection).doc(values[uid]).collection("address").add(values);
+  }
 
 }
