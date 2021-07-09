@@ -38,19 +38,19 @@ anchorcolor = blue]{hyperref}
 		%	HEADING SECTIONS
 		%----------------------------------------------------------------------------------------
 		\textsc{\Large MSc Project: Mobile Hairdresser Application}\\[5 cm] 
-
+		
 		
 		
 		\includegraphics[scale=0.05]{images/logo.png}\\[1 cm]
-				
 		
-
+		
+		
 		
 		
 		\textsc{\LARGE Joshua Robertson} \\[6 cm]
 		
 		
-
+		
 		
 		
 		%----------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ anchorcolor = blue]{hyperref}
 	
 	\subsection{Market Analysis}
 	In order to gauge whether there is a market for the proposed analysis, a survey was carried out in which users were asked about whether they could see themselves using the application features, among other things.
-	 
+	
 	\subsubsection{Existing Applications}
 	As previously discusses there exists a variety of similar applications, for which the most prominent will be discussed below, along with
 	
@@ -143,7 +143,7 @@ anchorcolor = blue]{hyperref}
 	\subsubsection{Programming Language}
 	When deciding on the programming software, several metrics were taken into consideration, including cross-platform functionality, speed, speed of development and performance. For this reason, Dart and the corresponding Flutter software development kit (SDK) were chosen for the primary software. Flutter is a cross-platform development kit, meaning that it will natively run on both iOS and android applications created by Google \cite{flutter}. Dart is compiled ahead-of-time into native ARM code giving better performance compared to other similar development kits, such as React Native and the user interface  is implemented within a fast, low-level C++ library giving great speed to the application. Dart has also seen a large increase in usage within recent years, jumping up 532\% from 2018 to 2019 \cite{Github, 2018} meaning that there is now an extensible list of third-party plugins available and a large community.
 	
-
+	
 	\subsection{User Personas}
 	The creation of user personas representing fictitious, archetypal users is an essential part of application development \cite{Grudin and Pruitt, 2002} and allows a deep understanding of the target user to be sought and implemented within the features and design of the application \cite{Long, 2009}. There are, however, some shortcomings to qualitative persona generation, such as validity concerns and user bias \cite{Chapman and Milham, 2007} and although they are addressed by other methods, such as data-driven personas \cite{Mcginn and Kotamraju, 2008}, there require a broad user base and therefore we have decided to stick with qualitative methods, which allow for enough brevity and depth for the scope of the project.
 	
@@ -155,7 +155,7 @@ anchorcolor = blue]{hyperref}
 		
 		Profile: 
 		\begin{figure}[H]
-
+			
 			\includegraphics[scale=0.2]{images/persona_1.png}
 			\caption{Persona 1}
 			\label{fig:persona_1}
@@ -185,7 +185,7 @@ anchorcolor = blue]{hyperref}
 			\caption{Persona 3}
 			\label{fig:persona_3}
 		\end{figure}
-	
+		
 		\item Persona 4:
 		
 		Name:  Claire Sheppard
@@ -200,10 +200,10 @@ anchorcolor = blue]{hyperref}
 		\end{figure}
 		
 	\end{itemize}
-
+	
 	\section{Prototyping}
 	An important component of UCD and more generally UX is wireframing, which involves making a mock-up of the application that acts as an early prototype to influence later development, along with allowing for early beta testing \cite{Arnowitz Arent Berger}. For the wireframing application Adobe XD was chosen for several reasons. Firstly, it has strong prototyping functionality, allowing the user to click around the application through the use of ‘components’. This interactivity means that early testers can get a real feel for how the application works. An illustration of this can be seen below, whereby each arrow represents a state change in the form of a trigger/ action pair, whereby for example a user could click on ‘Available Right Now’ and be taken to the ‘Checkout’ as seen in figure \ref{fig:prot-comp} below.
-		\begin{figure}[H]
+	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{images/prototyping-components.png}
 		\caption{Component Interactivity within Adobe XD}
@@ -224,14 +224,14 @@ anchorcolor = blue]{hyperref}
 	
 	\section{Production}
 	\subsection{Version Control}
-
+	
 	
 	\subsection{Sprint 1 - Setup}
 	During the first sprint, the task involved setting up the environment in preparation to begin development. For the editor, Android Studio was 
 	TALK ABOUT SCREENS/ MODELS/ HELPER etc
 	\subsubsection{File Structure}
 	Although there is no official recommendation for structuring the app, here we follow a commonly used structure which includes models; the files that serve as collections of data that are used in conjunction with the widgets to form the user interface of the application; providers; screens; utilities; and widgets; .
-
+	
 	
 	
 	\subsection{Sprint X - UI}
@@ -240,7 +240,7 @@ anchorcolor = blue]{hyperref}
 	\subsubsection{Cupertino vs Material}
 	The final project was built using material due to..
 	
-		\subsection{Sprint X - Login and Sign Up}
+	\subsection{Sprint X - Login and Sign Up}
 	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
 	\begin{lstlisting}
 		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
@@ -271,10 +271,10 @@ anchorcolor = blue]{hyperref}
 	A textEditingController is used to collect the inputted data from the user and pass through to the showSearch function.
 	
 	\subsubsection{Autocomplete locations}
-	As a means for the user to autocomplete their address when signing up, the 'Place Autocomplete service', which returns location predictions in response to HTTP requests was implemented using a request adhering to a set of parameters, the full list, along with details of the API can be found on the Google Developers website \cite{requests}.
-	First, we create a location model which can hold the data returned from the API. We then create an API request using the above aforementioned API format. For brevity, not every option is discussed, but those of importance include 'input', which is the user query, 'types', which determines the query returned, for which we specify address to return the full address and 'sessionToken', which is required for each new query. The query can be seen here:
+	As a means for the user to autocomplete their address when signing up, the 'Place Autocomplete service' within the Google Places API, which returns location predictions in response to HTTP requests was implemented using a request adhering to a set of parameters, the full list, along with details of the API can be found on the Google Developers website \cite{requests}.
+	First, we enable the Places API within the Google console, before we then create a location model which can hold the data returned from the API. We then create an API request using the above aforementioned API format. For brevity, not every option is discussed, but those of importance include 'input', which is the user query, 'types', which determines the query returned, for which we specify address as we wish to fetch the users full address and a session token, which is required for each new query. The query can be seen here:
 	\begin{lstlisting}
-		'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=address&components=country:ch&lang=en&key=$apiKey&sessiontoken=$sessionToken';
+		'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=address&components=country:uk&lang=en&key=$apiKey&sessiontoken=$sessionToken'
 	\end{lstlisting}
 	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each query (Google recommends to use version 4 UUID and so this is used here). Without our 'user\_gps.dart' file
 	
@@ -290,6 +290,6 @@ anchorcolor = blue]{hyperref}
 	The common items contains global variables that were accessible throughout the project. Initially this included structures and arrays that served as objects to test the functionality of the frontend, for example a barber shop class with a nested list of barbers classes, each with a name, age, description etc. As backend functionality was added these items were removed. A theme class was then added which contains dart files that can be implemented. Doing it in this way meant that the application could be easily styled, without any unnecessary refactoring of code.
 	
 	
-
+	
 	
 \end{document}

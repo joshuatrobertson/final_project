@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/providers/products.dart';
+import 'package:uber_haircuts/screens/home.dart';
+import 'package:uber_haircuts/screens/login.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
 
 void main() async {
@@ -57,11 +59,11 @@ class AuthenticationWrapper extends StatelessWidget {
       return UserGPS();
     }
     else if (user != null && status.authStatus == AuthStatus.AUTH_WITH_MAPS) {
-      return UserGPS();
+      return Home();
     }
     // Else they must login
     else {
-      return UserGPS();
+      return Login();
       //return Login();
     }
   }
