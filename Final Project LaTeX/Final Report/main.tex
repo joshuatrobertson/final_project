@@ -278,7 +278,9 @@ anchorcolor = blue]{hyperref}
 	\end{lstlisting}
 	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each query (Google recommends to use version 4 UUID and so this is used here). Without our 'user\_gps.dart' file
 	
-	For the content of the search page we use pass in newly created session token into the ShowSearchPage class, which in turn sends an api request and parses the json data to return a list of locations in the form of 'place id's' and 'description' using a FutureBuilder. From here, we pass through the location id to the getLocationDetails function to fetch the address details of each location and then display this to the user.
+	For the content of the search page we use pass in newly created session token into the ShowSearchPage class, which in turn sends an api request and parses the json data to return a list of locations in the form of 'place id's' and 'description' using a FutureBuilder. From here, we pass through the location id to the getLocationDetails function to fetch the address details of each location and put into a PlaceModel object.
+	
+	Next, we parse the data into JSON format by passing the PlaceModel object into the function 'createLocationMap', which creates a map using the location data. Finally we pass through this map to the 'addLocationDetails', which uses the given user id to update the database with the users location.
 	
 	\subsection{Widgets and Common Items}
 	Here we discuss any items not covered within a specified sprint.
