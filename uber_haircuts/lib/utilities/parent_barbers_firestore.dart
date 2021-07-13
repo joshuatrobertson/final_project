@@ -7,7 +7,7 @@ import 'package:uber_haircuts/models/product.dart';
 class ParentBarbersFirestore {
 
   // Connect to the database and create a collection reference with the top level collection (ParentBarber)
-  final CollectionReference _collectionReferenceParents = FirebaseFirestore.instance.collection('parentBarber');
+  final Query _collectionReferenceParents = FirebaseFirestore.instance.collection('parentBarber');
   final CollectionReference _collectionReferenceBarbers = FirebaseFirestore.instance.collection('barbers');
   final CollectionReference _collectionReferenceProducts = FirebaseFirestore.instance.collection('products');
 
@@ -39,7 +39,7 @@ class ParentBarbersFirestore {
   // Fetch the featured barbers to use in featured.dart
   Future<List<ParentBarberModel>> getFeaturedParents() async =>
       // Go through the collection 'parentBarbers'
-  _collectionReferenceParents.where('featured', isEqualTo: true).get().then((parentBarber) {
+  _collectionReferenceParents.where("featured", isEqualTo: true).get().then((parentBarber) {
     // Create an array of ParentBarberModel to pass back from the function
     List<ParentBarberModel> parents = [];
     // for each item within the parent barbers add to a list and return

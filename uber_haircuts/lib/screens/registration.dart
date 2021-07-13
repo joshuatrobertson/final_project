@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/screens/user_gps.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
@@ -95,7 +96,7 @@ class _RegistrationState extends State<Registration> {
                                             content: ReturnText(text: "Sign Up failed!", color: white,)));
                                   }
                                   else {
-                                    navigateToScreen(context, Home());
+                                    navigateToScreen(context, UserGPS());
                                   }
                                 },
                                 child: Center(

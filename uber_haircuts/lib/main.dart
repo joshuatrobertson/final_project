@@ -64,7 +64,6 @@ class AuthenticationWrapper extends StatelessWidget {
     // Else they must login
     else {
       return Login();
-      //return Login();
     }
   }
 }

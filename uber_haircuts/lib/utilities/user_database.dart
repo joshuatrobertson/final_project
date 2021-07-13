@@ -7,8 +7,8 @@ class UserDatabase {
   FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   // Method to add a new user through using collection.set
-  void createNewUser(Map<String, dynamic> values, String uid)  {
-    _firebaseFirestore.collection(collection).doc(uid).set(values);
+  void createNewUser(Map<String, dynamic> values, String userId)  {
+    _firebaseFirestore.collection(collection).doc(userId).set(values);
   }
 
   // Method to update an existing user
@@ -31,9 +31,9 @@ class UserDatabase {
     });
   }
 
-  // Method to update an existing user
-  void addLocationDetails(Map<String, dynamic> values, String uid)  {
-    _firebaseFirestore.collection(collection).doc(values[uid]).collection("address").add(values);
+  // Method to add location details to the user
+  void addLocationDetails(Map<String, dynamic> values, String userId)  {
+    _firebaseFirestore.collection(collection).doc(userId).update(values);
   }
 
 }

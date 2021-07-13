@@ -83,10 +83,12 @@ class Authenticate extends ChangeNotifier {
   // Turn the location values into a JSON format map to store in firebase
   Map<String, dynamic> createLocationMap(PlaceModel placeModel) {
     Map<String, dynamic> location = {
-      "number": placeModel.number,
-      "street": placeModel.street,
-      "city": placeModel.city,
-      "postcode": placeModel.postcode,
+      "location": [
+        {"number": placeModel.number},
+        {"street": placeModel.street},
+        {"city": placeModel.city},
+        {"postcode": placeModel.postcode},
+      ]
     };
     print("Authenticated with maps");
     _authStatus = AuthStatus.AUTH_WITH_MAPS;
@@ -146,6 +148,8 @@ class Authenticate extends ChangeNotifier {
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
       _userDatabase.createNewUser(newUser, _authResult.user.uid);
+      _authStatus = AuthStatus.AUTHENTICATED;
+      notifyListeners();
       print(email + " signed up");
       return true;
     }
@@ -157,6 +161,7 @@ class Authenticate extends ChangeNotifier {
     }
   }
 
+  // Method to send a password reset to the user given their specified email
   Future resetPassword(String email) async {
     try {
       _firebaseAuth.sendPasswordResetEmail(email: email);

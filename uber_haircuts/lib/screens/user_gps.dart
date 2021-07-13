@@ -9,9 +9,12 @@ import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/utilities/user_database.dart';
 import 'package:uber_haircuts/widgets/location_search.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
 import 'package:uuid/uuid.dart';
+
+import 'home.dart';
 
 class UserGPS extends StatelessWidget {
 
@@ -32,13 +35,8 @@ class FireMap extends StatefulWidget {
 }
 
 class _FireMapState extends State<FireMap> {
-  UserDatabase _userDatabase;
-  FirebaseAuth _userAuth;
+  UserDatabase _userDatabase = new UserDatabase();
   final _textController = TextEditingController();
-  String _number = '';
-  String _street = '';
-  String _city = '';
-  String _postcode = '';
 
   Widget build(BuildContext context) {
     final authProvider = Provider.of<Authenticate>(context);
@@ -72,11 +70,14 @@ class _FireMapState extends State<FireMap> {
                     context: context,
                     delegate: ShowSearchPage(sessionToken),
                   );
-                  _userAuth = FirebaseAuth.instance;
+                  final FirebaseAuth _auth = FirebaseAuth.instance;
+                  final User _user = _auth.currentUser;
                   if (searchResult != null) {
                     final placeDetails = await GoogleMapsAPI(sessionToken)
                         .getLocationDetails(searchResult.placeId);
-                    _userDatabase.addLocationDetails(authProvider.createLocationMap(placeDetails), _userAuth.currentUser.uid);
+                    Map<String, dynamic> values = authProvider.createLocationMap(placeDetails);
+                    _userDatabase.addLocationDetails(values, _user.uid);
+                    navigateToScreen(context, Home());
                   }
                 },
                 decoration: InputDecoration(

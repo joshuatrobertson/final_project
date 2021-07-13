@@ -31,7 +31,7 @@ class TopRated extends StatelessWidget {
                 children:[
                   Container(
                       alignment: Alignment.center,
-                      child: ReturnImage(image: _topRatedParentBarbers.topRatedParents[index].image, width: 120, height: 200, boxFit: BoxFit.cover)
+                      child: ReturnImage(image: _topRatedParentBarbers.topRatedParents[index].image, width: 200, height: 120, boxFit: BoxFit.cover)
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 15.0),
