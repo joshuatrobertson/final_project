@@ -1,6 +1,7 @@
 // Class representing a barber product
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+// List of products barbers can use
 enum allowedProducts {
   HAIRCUT,
   SHAVE,

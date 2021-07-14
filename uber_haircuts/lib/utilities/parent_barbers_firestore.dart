@@ -5,6 +5,7 @@ import 'package:uber_haircuts/models/product.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:uber_haircuts/utilities/distance_query.dart';
 
 class ParentBarbersFirestore {
 
@@ -13,9 +14,9 @@ class ParentBarbersFirestore {
   final CollectionReference _collectionReferenceBarbers = FirebaseFirestore.instance.collection('barbers');
   final CollectionReference _collectionReferenceProducts = FirebaseFirestore.instance.collection('products');
   final geoflutterfire = Geoflutterfire();
+  final _distanceQuery = DistanceQuery();
   final _firestore = FirebaseFirestore.instance;
-  final String boundaryGeohash1 = 'aa';
-  final String boundaryGeohash2 = 'zz';
+  List<String> boundaryGeohash;
 
 
   // Fetch the featured barbers to use in top_rated.dart
@@ -23,8 +24,9 @@ class ParentBarbersFirestore {
       // Go through the collection 'parentBarbers' and order by rating (descending) to fetch the top 5 rated barbers
   _collectionReferenceParents
       .orderBy("rating", descending: true)
-      .where('locationGeohash', isGreaterThanOrEqualTo: boundaryGeohash1)
-      .where('locationGeohash', isLessThanOrEqualTo: boundaryGeohash2)
+          //Fetch the hashes given the current location of the user
+      .where('locationGeohash', isGreaterThanOrEqualTo: _distanceQuery.getHash()[0])
+      .where('locationGeohash', isLessThanOrEqualTo: _distanceQuery.getHash()[1])
       .limit(5).get().then((value) {
     List<ParentBarberModel> parents = [];
     // for each item within the parent barbers add to a list and return
@@ -36,10 +38,11 @@ class ParentBarbersFirestore {
 
   // Get all parent barbers within the local area to use for the search function
   Future<List<ParentBarberModel>> getAllParentBarbers() async =>
+
       // Go through the collection 'parentBarbers'
   _collectionReferenceParents
-      .where('locationGeohash', isGreaterThanOrEqualTo: boundaryGeohash1)
-      .where('locationGeohash', isLessThanOrEqualTo: boundaryGeohash2)
+      .where('locationGeohash', isGreaterThanOrEqualTo: _distanceQuery.getHash()[0])
+      .where('locationGeohash', isLessThanOrEqualTo: _distanceQuery.getHash()[1])
       .get().then((value) {
     List<ParentBarberModel> parents = [];
     // for each item within the parent barbers add to a list and return
@@ -68,7 +71,6 @@ class ParentBarbersFirestore {
     List<BarberModel> barbers = [];
       for (DocumentSnapshot barber in barber.docs) {
         BarberModel _barberModel = BarberModel.fromSnapshot(barber);
-        print("BARBERS NAME: " + _barberModel.firstName);
         barbers.add(_barberModel);
       }
       return barbers;
@@ -80,7 +82,6 @@ class ParentBarbersFirestore {
     List<ProductModel> products = [];
       for (DocumentSnapshot barber in product.docs) {
         ProductModel _productModel = ProductModel.fromSnapshot(barber);
-        print("PRODUCT NAME: " + _productModel.name);
         products.add(_productModel);
       }
       return products;

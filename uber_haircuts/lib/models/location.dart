@@ -13,8 +13,9 @@ class LocationModel {
 class CoordModel {
   final double longitude;
   final double latitude;
+  final String geohash;
 
-  CoordModel(this.longitude, this.latitude);
+  CoordModel(this.longitude, this.latitude, this.geohash);
 }
 
 class PlaceModel {
