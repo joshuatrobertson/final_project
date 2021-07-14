@@ -249,7 +249,8 @@ anchorcolor = blue]{hyperref}
 	\begin{lstlisting}
 		_firebaseFirestore.collection(collection).doc(userId).get()
 	\end{lstlisting}
-	which gives a search time of $\mathcal{O}$(1). 	
+	which gives a search time of $\mathcal{O}$(1).
+	
 	
 	\subsection{Sprint X - Backend Design}
 	
@@ -257,6 +258,11 @@ anchorcolor = blue]{hyperref}
 	When entering the app it is more effecient to make one call to the server rather than multiple due to GPS restrictions. Therefore ParentBarbers, barbers and all of their products are loaded within a certain radius, rather than loading parentBarbers and barbers separately throughout the app. 
 	
 	Don't nest as calls will fetch all of the parent and nested structured so better to have separate data.
+	
+	\subsection{Connecting the Frontend and Backend}
+	To get the list of items within a range
+	1) Get the users current location
+	2) Query firestore with the radius
 	
 	\subsection{Sprint X - Location}
 	https://firebase.google.com/docs/firestore/solutions/geoqueries
