@@ -10,6 +10,13 @@ class LocationModel {
   }
 }
 
+class CoordModel {
+  final double longitude;
+  final double latitude;
+
+  CoordModel(this.longitude, this.latitude);
+}
+
 class PlaceModel {
   String number;
   String street;

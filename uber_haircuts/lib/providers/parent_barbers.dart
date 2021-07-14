@@ -8,14 +8,12 @@ class ParentBarbersProvider extends ChangeNotifier {
 
   // Create an instance of firestore
   ParentBarbersFirestore _parentFirestore = ParentBarbersFirestore();
-  List<ParentBarberModel> _topRatedParents = [];
-  List<ParentBarberModel> _featuredParents = [];
+  List<ParentBarberModel> _parents = [];
 
   List<BarberModel> _barbers = [];
   List<ProductModel> _products = [];
 
-  get topRatedParents => _topRatedParents;
-  get featuredParents => _featuredParents;
+  get parents => _parents;
   get barbers => _barbers;
   get products => _products;
 
@@ -39,10 +37,8 @@ class ParentBarbersProvider extends ChangeNotifier {
   // Returns a list of ParentBarberModel
   _loadParents() async {
     try {
-      // Load the items into memory to reduce server calls and decrease load/ lookup times
-      _topRatedParents = await _parentFirestore.getTopRatedParents();
-      _featuredParents = await _parentFirestore.getFeaturedParents();
-      notifyListeners();
+      // Load all the items into memory to reduce server calls and decrease load/ lookup times
+      _parents = await _parentFirestore.getAllParentBarbers();
       print("Parent barbers loaded!");
     } catch (e) {
       print("Loading of parent barbers failed with error: " + e.toString());

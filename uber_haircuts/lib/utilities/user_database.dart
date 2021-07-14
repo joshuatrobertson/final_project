@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/user.dart';
 
+
 class UserDatabase {
   String collection = "users";
   FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
@@ -34,6 +35,10 @@ class UserDatabase {
   // Method to add location details to the user
   void addLocationDetails(Map<String, dynamic> values, String userId)  {
     _firebaseFirestore.collection(collection).doc(userId).update(values);
+  }
+
+  void addCurrentLocation(Map<String, dynamic> value, String userId) {
+    _firebaseFirestore.collection(collection).doc(userId).update(value);
   }
 
 }

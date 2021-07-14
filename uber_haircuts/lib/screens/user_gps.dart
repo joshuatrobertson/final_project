@@ -2,6 +2,7 @@
 // which can be found here https://developers.google.com/maps/documentation/places/web-service/autocomplete
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/google_maps.dart';
@@ -10,7 +11,6 @@ import 'package:uber_haircuts/utilities/user_database.dart';
 import 'package:uber_haircuts/widgets/location_search.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
-import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
 import 'package:uuid/uuid.dart';
 
@@ -37,8 +37,10 @@ class FireMap extends StatefulWidget {
 class _FireMapState extends State<FireMap> {
   UserDatabase _userDatabase = new UserDatabase();
   final _textController = TextEditingController();
+  Location location = new Location();
 
   Widget build(BuildContext context) {
+
     final authProvider = Provider.of<Authenticate>(context);
     return Stack(
       children: [

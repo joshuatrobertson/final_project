@@ -2,19 +2,30 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
-
+import 'package:geolocator/geolocator.dart';
+import 'package:geoflutterfire/geoflutterfire.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ParentBarbersFirestore {
 
   // Connect to the database and create a collection reference with the top level collection (ParentBarber)
-  final Query _collectionReferenceParents = FirebaseFirestore.instance.collection('parentBarber');
+  final CollectionReference _collectionReferenceParents = FirebaseFirestore.instance.collection('parentBarber');
   final CollectionReference _collectionReferenceBarbers = FirebaseFirestore.instance.collection('barbers');
   final CollectionReference _collectionReferenceProducts = FirebaseFirestore.instance.collection('products');
+  final geoflutterfire = Geoflutterfire();
+  final _firestore = FirebaseFirestore.instance;
+  final String boundaryGeohash1 = 'aa';
+  final String boundaryGeohash2 = 'zz';
+
 
   // Fetch the featured barbers to use in top_rated.dart
   Future<List<ParentBarberModel>> getTopRatedParents() async =>
       // Go through the collection 'parentBarbers' and order by rating (descending) to fetch the top 5 rated barbers
-  _collectionReferenceParents.orderBy("rating", descending: true).limit(5).get().then((value) {
+  _collectionReferenceParents
+      .orderBy("rating", descending: true)
+      .where('locationGeohash', isGreaterThanOrEqualTo: boundaryGeohash1)
+      .where('locationGeohash', isLessThanOrEqualTo: boundaryGeohash2)
+      .limit(5).get().then((value) {
     List<ParentBarberModel> parents = [];
     // for each item within the parent barbers add to a list and return
     for (DocumentSnapshot parent in value.docs) {
@@ -23,11 +34,13 @@ class ParentBarbersFirestore {
     return parents;
   });
 
-
   // Get all parent barbers within the local area to use for the search function
   Future<List<ParentBarberModel>> getAllParentBarbers() async =>
       // Go through the collection 'parentBarbers'
-  _collectionReferenceParents.get().then((value) {
+  _collectionReferenceParents
+      .where('locationGeohash', isGreaterThanOrEqualTo: boundaryGeohash1)
+      .where('locationGeohash', isLessThanOrEqualTo: boundaryGeohash2)
+      .get().then((value) {
     List<ParentBarberModel> parents = [];
     // for each item within the parent barbers add to a list and return
     for (DocumentSnapshot parent in value.docs) {
@@ -73,6 +86,13 @@ class ParentBarbersFirestore {
       return products;
     });
 
+  List<ProductModel> distanceQuery(List<ProductModel> products) {
+    GeoFirePoint center = geoflutterfire.point(latitude: 12.960632, longitude: 77.641603);
+  }
+
+
   ParentBarbersFirestore();
+
+
 
 }

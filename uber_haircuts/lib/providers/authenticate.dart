@@ -142,7 +142,6 @@ class Authenticate extends ChangeNotifier {
         "uid": _authResult.user.uid,
         "name": name,
         "email": email,
-        "location": null,
         "cart": [],
       };
       // Create a new user and add to the database
