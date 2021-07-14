@@ -129,19 +129,20 @@ anchorcolor = blue]{hyperref}
 	With this change has brought with it a push towards frameworks that allow for development across multiple platforms, such as React Native (https://reactnative.dev/) and Flutter (flutter.dev/). For this reason, it was decided that a cross platform would be used, which is further discussed below.
 	
 	\subsection{Frontend: Programming Language}
+	\subsubsection{Programming Language}
+	When deciding on the programming software, several metrics were taken into consideration, including cross-platform functionality, speed, speed of development and performance. For this reason, Dart and the corresponding Flutter software development kit (SDK) were chosen for the primary software. Flutter is a cross-platform development kit, meaning that it will natively run on both iOS and android applications created by Google \cite{flutter}. Dart is compiled ahead-of-time into native ARM code giving better performance compared to other similar development kits, such as React Native and the user interface  is implemented within a fast, low-level C++ library giving great speed to the application. Dart has also seen a large increase in usage within recent years, jumping up 532\% from 2018 to 2019 \cite{Github, 2018} meaning that there is now an extensible list of third-party plugins available and a large community.
 	
 	\subsection{Backend: SQL vs noSQL database}
 	Initially a relational database model was created, which can be seen below (ADD DATABASE). This was later changed to use Google Firestore (\cite{firestore}), a noSQL database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform.
 	
-	Another important feature of noSQL databases is the ability to easily modify the internal data in response to changing business requirements, in an interative way that allows fordo you use relationship data in firebase stackoverflow modification throughout the application lifestyle and therefore easy scaling.
-	Finally, the current model requires that each seperate barbers will need similar, although different data. For example, alough two barbers will likely share the product 'haircut', the description of each is likely to be entirely different making a normal SQL database difficult to implement.
+	Another important feature of noSQL databases is the ability to easily modify the internal data in response to changing business requirements, in an interactive way that allows fordo you use relationship data in firebase stackoverflow modification throughout the application lifestyle and therefore easy scaling.
+	Finally, the current model requires that each separate barbers will need similar, although different data. For example, although two barbers will likely share the product 'haircut', the description of each is likely to be entirely different making a normal SQL database difficult to implement.
 	
 	
 	
 	\subsubsection{The Target User}
 	
-	\subsubsection{Programming Language}
-	When deciding on the programming software, several metrics were taken into consideration, including cross-platform functionality, speed, speed of development and performance. For this reason, Dart and the corresponding Flutter software development kit (SDK) were chosen for the primary software. Flutter is a cross-platform development kit, meaning that it will natively run on both iOS and android applications created by Google \cite{flutter}. Dart is compiled ahead-of-time into native ARM code giving better performance compared to other similar development kits, such as React Native and the user interface  is implemented within a fast, low-level C++ library giving great speed to the application. Dart has also seen a large increase in usage within recent years, jumping up 532\% from 2018 to 2019 \cite{Github, 2018} meaning that there is now an extensible list of third-party plugins available and a large community.
+
 	
 	
 	\subsection{User Personas}
@@ -221,6 +222,15 @@ anchorcolor = blue]{hyperref}
 		\caption{Sign In Page Made with Adobe XD}
 		\label{fig:sign-in}
 	\end{figure}
+
+	\section{System Design}
+	\subsection{Application Scope}
+	\subsection{Requirements}
+	\subsubsection{Functional Requirements}
+	\subsubsection{Non-Functional Requirements}
+	\subsection{Architecture}
+	\subsection{State Management}
+	
 	
 	\section{Production}
 	\subsection{Version Control}
@@ -297,7 +307,11 @@ anchorcolor = blue]{hyperref}
 	\subsubsection{Common Items}
 	The common items contains global variables that were accessible throughout the project. Initially this included structures and arrays that served as objects to test the functionality of the frontend, for example a barber shop class with a nested list of barbers classes, each with a name, age, description etc. As backend functionality was added these items were removed. A theme class was then added which contains dart files that can be implemented. Doing it in this way meant that the application could be easily styled, without any unnecessary refactoring of code.
 	
+	\bibliography{bib file}
 	
-	
+	\appendix
+	\section{Use Cases}
+	\section{Application Images}
+	\section{Code Snippets}
 	
 \end{document}
