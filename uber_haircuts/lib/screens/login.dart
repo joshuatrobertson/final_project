@@ -35,9 +35,9 @@ class _LoginState extends State<Login> {
             child: Stack(
               children: [
                 Container(
-                  padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
+                  padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
                   child: Image.asset(
-                    "assets/images/logo.png",
+                    "assets/images/logo.png", width: 200, height: 200,
                   ),
                 )
               ],
@@ -47,7 +47,7 @@ class _LoginState extends State<Login> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
+                  padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
                   child: TextField(
                     controller: _emailController,
                     decoration: InputDecoration(

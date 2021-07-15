@@ -31,6 +31,7 @@ class _TestScreenState extends State<TestScreen> {
           AsyncSnapshot<List<DocumentSnapshot>> snapshots) {
           ParentBarberModel barber = ParentBarberModel.fromSnapshot(snapshots.data[0]);
           print("BARBER NAME!!" + barber.name);
+          print(snapshots.data.length);
           return Container();
       },
     );
