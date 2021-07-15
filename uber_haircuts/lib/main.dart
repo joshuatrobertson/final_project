@@ -58,10 +58,10 @@ class AuthenticationWrapper extends StatelessWidget {
 
     // If the user is logged in with their GPS taken then show the home screen
     if (user != null && status.authStatus == AuthStatus.AUTHENTICATED) {
-      return Login();
+      return UserGPS();
     }
     else if (user != null && status.authStatus == AuthStatus.AUTH_WITH_MAPS) {
-      return UserGPS();
+      return NavBar();
     }
     // Else they must login
     else {

@@ -38,11 +38,11 @@ class ParentBarbersProvider extends ChangeNotifier {
   _loadParents() async {
     try {
       // Load all the items into memory to reduce server calls and decrease load/ lookup times
-      _parents = await _parentFirestore.getAllParentBarbers();
+      _parents = await _parentFirestore.getLocalItems(51.466627397117726, -2.61624, 100000000);
       print("Parent barbers loaded!");
+      print("PARENT 1 = " + _parents[0].name);
     } catch (e) {
-      print("Loading of parent barbers failed with error: " + e.toString());
-    }
+      print("Loading of parent barbers failed with error: " + e.toString());    }
   }
 
   // Returns a list of BarberModel

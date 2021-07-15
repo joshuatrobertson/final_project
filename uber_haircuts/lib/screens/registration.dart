@@ -37,9 +37,9 @@ class _RegistrationState extends State<Registration> {
                   child: Stack(
                     children: [
                       Container(
-                        padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
+                        padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
                         child: Image.asset(
-                          "assets/images/logo.png",
+                          "assets/images/logo.png", width: 200, height: 200,
                         ),
                       )
                     ],
@@ -49,7 +49,7 @@ class _RegistrationState extends State<Registration> {
                   child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
+                          padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
                           child: TextField(
                               controller: _nameController,
                               decoration: InputDecoration(

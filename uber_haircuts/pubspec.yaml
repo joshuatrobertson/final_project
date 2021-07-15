@@ -41,11 +41,18 @@ dependencies:
   uuid: 3.0.4
   geoflutterfire: ^3.0.0-nullsafety.2
   flutter_geofire: ^2.0.0
+  flutter_launcher_icons: ^0.9.0
+
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/icon.png"
 
 
 

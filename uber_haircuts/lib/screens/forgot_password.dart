@@ -33,9 +33,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   child: Stack(
                     children: [
                       Container(
-                        padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
+                        padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
                         child: Image.asset(
-                          "assets/images/logo.png",
+                          "assets/images/logo.png", width: 200, height: 200,
                         ),
                       )
                     ],

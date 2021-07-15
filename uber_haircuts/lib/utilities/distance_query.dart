@@ -12,7 +12,7 @@ class DistanceQuery {
   Stream<List<DocumentSnapshot>> getLocalItems() {
     GeoFirePoint center = geo.point(latitude: 51.466627397117726, longitude: -2.61624);
     CollectionReference collectionReference = _firestore.collection('parentBarber');
-    double radius = 1;
+    double radius = 200;
     String field = 'location';
     var geoRef = geo.collection(collectionRef: collectionReference);
     return geoRef.within(center: center, radius: radius, field: 'location', strictMode: true);

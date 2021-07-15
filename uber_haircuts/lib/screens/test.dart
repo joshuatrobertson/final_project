@@ -14,27 +14,20 @@ class TestScreen extends StatefulWidget {
 class _TestScreenState extends State<TestScreen> {
   DistanceQuery _distanceQuery = DistanceQuery();
   var items;
+  List<ParentBarberModel> parentBarbers = [];
 
   @override
   Widget build(BuildContext context) {
     Stream<List<DocumentSnapshot>> stream = _distanceQuery.getLocalItems();
-
     stream.listen((List<DocumentSnapshot> list) {
       for (DocumentSnapshot parent in list) {
-        ParentBarberModel parentBarberModel = ParentBarberModel.fromSnapshot(parent);
-        print(parentBarberModel.name);
+        ParentBarberModel barber = ParentBarberModel.fromSnapshot(parent);
+        print(barber.name);
+        parentBarbers.add(barber);
       }
     });
-    return StreamBuilder(
-      stream: stream,
-      builder: (BuildContext context,
-          AsyncSnapshot<List<DocumentSnapshot>> snapshots) {
-          ParentBarberModel barber = ParentBarberModel.fromSnapshot(snapshots.data[0]);
-          print("BARBER NAME!!" + barber.name);
-          print(snapshots.data.length);
-          return Container();
-      },
-    );
+    print("LIST:!!" + parentBarbers[0].name + parentBarbers[1].name);
+    return ReturnText(text: parentBarbers[0].name + parentBarbers[1].name);
   }
 }
 

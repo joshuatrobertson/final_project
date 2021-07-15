@@ -17,6 +17,7 @@ class ParentBarbersFirestore {
   final _distanceQuery = DistanceQuery();
   final _firestore = FirebaseFirestore.instance;
   List<String> boundaryGeohash;
+  var items;
 
 
   // Fetch the featured barbers to use in top_rated.dart
@@ -24,9 +25,6 @@ class ParentBarbersFirestore {
       // Go through the collection 'parentBarbers' and order by rating (descending) to fetch the top 5 rated barbers
   _collectionReferenceParents
       .orderBy("rating", descending: true)
-          //Fetch the hashes given the current location of the user
-      .where('locationGeohash', isGreaterThanOrEqualTo: _distanceQuery.getHash()[0])
-      .where('locationGeohash', isLessThanOrEqualTo: _distanceQuery.getHash()[1])
       .limit(5).get().then((value) {
     List<ParentBarberModel> parents = [];
     // for each item within the parent barbers add to a list and return
@@ -38,11 +36,8 @@ class ParentBarbersFirestore {
 
   // Get all parent barbers within the local area to use for the search function
   Future<List<ParentBarberModel>> getAllParentBarbers() async =>
-
       // Go through the collection 'parentBarbers'
   _collectionReferenceParents
-      .where('locationGeohash', isGreaterThanOrEqualTo: _distanceQuery.getHash()[0])
-      .where('locationGeohash', isLessThanOrEqualTo: _distanceQuery.getHash()[1])
       .get().then((value) {
     List<ParentBarberModel> parents = [];
     // for each item within the parent barbers add to a list and return
@@ -51,6 +46,25 @@ class ParentBarbersFirestore {
     }
     return parents;
   });
+
+  Future<List<ParentBarberModel>> getLocalItems(double latitude, double longitude, double searchRadius) async {
+    // Set the centre point given the latitude and longitude
+    GeoFirePoint center = geoflutterfire.point(latitude: latitude, longitude: longitude);
+    var geoRef = geoflutterfire.collection(collectionRef: _collectionReferenceParents);
+    List<ParentBarberModel> parentBarbers = [];
+
+    // Create a stream using the center, search radius and 'location' field in the database. Strict mode limits the range to strictly the given one
+    Stream<List<DocumentSnapshot>> stream = geoRef.within(center: center, radius: searchRadius, field: 'location', strictMode: true);
+
+    stream.listen((List<DocumentSnapshot> list) {
+      // Get the parent barber from firebase and add to a list, before returning it
+      for (DocumentSnapshot parent in list) {
+        ParentBarberModel barber = ParentBarberModel.fromSnapshot(parent);
+        parentBarbers.add(barber);
+      }
+    });
+    return parentBarbers;
+  }
 
   // Fetch the featured barbers to use in featured.dart
   Future<List<ParentBarberModel>> getFeaturedParents() async =>
