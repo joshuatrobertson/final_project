@@ -49,13 +49,11 @@ class ParentBarbersFirestore {
   Future<List<ParentBarberModel>> getLocalItems(double latitude, double longitude, double searchRadius) async {
     // Set the centre point given the latitude and longitude
     GeoFirePoint center = geoflutterfire.point(latitude: latitude, longitude: longitude);
-    double radius = 200;
-    String field = 'location';
 
     try {
       Stream<List<DocumentSnapshot>> stream = geoflutterfire
           .collection(collectionRef: _collectionReferenceParents)
-          .within(center: center, radius: radius, field: field);
+          .within(center: center, radius: searchRadius, field: 'location');
       await for (var docs in stream) {
         List<ParentBarberModel> parentBarbers = [];
         for (DocumentSnapshot parent in docs) {

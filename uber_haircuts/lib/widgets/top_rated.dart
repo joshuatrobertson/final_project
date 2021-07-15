@@ -18,14 +18,18 @@ class TopRated extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final _parentsBarbers = Provider.of<ParentBarbersProvider>(context);
+    final Future<List<ParentBarberModel>> _topRatedParents = _filterList.getTopRatedParents(_parentsBarbers.allParents);
 
+    return FutureBuilder(
+        future: _topRatedParents,
+        builder: (context, snapshot) {
     return ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: _parentsBarbers..length,
+        itemCount: snapshot.data.length,
         itemBuilder: (_, index){
           return GestureDetector(
             onTap: () {
-              navigateToScreen(_, BarberDetails(parentBarberModel: _topRatedParents[index], parentBarbersProvider: _parentsBarbers));
+              navigateToScreen(_, BarberDetails(parentBarberModel: snapshot.data[index], parentBarbersProvider: _parentsBarbers));
             },
             child: Container(
               padding: const EdgeInsets.only(left: 8.0, right: 8.0),
@@ -34,21 +38,21 @@ class TopRated extends StatelessWidget {
                 children:[
                   Container(
                       alignment: Alignment.center,
-                      child: ReturnImage(image: _topRatedParents[index].image, width: 200, height: 120, boxFit: BoxFit.cover)
+                      child: ReturnImage(image: snapshot.data[index].image, width: 200, height: 120, boxFit: BoxFit.cover)
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 15.0),
                     child: Container(
 
                       alignment: Alignment.bottomCenter,
-                      child: ReturnText(text: _topRatedParents[index].name, size: 15, color: white,),
+                      child: ReturnText(text: snapshot.data[index].name, size: 15, color: white,),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10.0, left: 6),
                     child: Row(
                       children: [
-                        ReturnText(text: _topRatedParents[index].rating.toString(), size: 24, color: white, fontWeight: FontWeight.w600,),
+                        ReturnText(text: snapshot.data[index].rating.toString(), size: 24, color: white, fontWeight: FontWeight.w600,),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 8.0),
                           child: Icon(Icons.star, color: white, size: 14),
@@ -61,5 +65,6 @@ class TopRated extends StatelessWidget {
             ),
           );
         });
+    });
   }
 }
