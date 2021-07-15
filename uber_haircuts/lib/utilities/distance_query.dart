@@ -18,9 +18,4 @@ class DistanceQuery {
     return geoRef.within(center: center, radius: radius, field: 'location', strictMode: true);
   }
 
-  List<String> getHash() {
-
-    return ["12", "14"];
-  }
-
 }

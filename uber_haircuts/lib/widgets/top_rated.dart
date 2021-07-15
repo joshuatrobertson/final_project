@@ -18,11 +18,10 @@ class TopRated extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final _parentsBarbers = Provider.of<ParentBarbersProvider>(context);
-    final List<ParentBarberModel> _topRatedParents = _filterList.getTopRatedParents(_parentsBarbers.parents);
 
     return ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: _topRatedParents.length,
+        itemCount: _parentsBarbers..length,
         itemBuilder: (_, index){
           return GestureDetector(
             onTap: () {

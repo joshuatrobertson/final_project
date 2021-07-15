@@ -1,19 +1,29 @@
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/utilities/parent_barbers_firestore.dart';
+import 'package:uber_haircuts/widgets/filter_list.dart';
+
+import 'authenticate.dart';
 
 class ParentBarbersProvider extends ChangeNotifier {
 
   // Create an instance of firestore
   ParentBarbersFirestore _parentFirestore = ParentBarbersFirestore();
-  List<ParentBarberModel> _parents = [];
+  final FilterList _filterList = new FilterList();
 
+
+  List<ParentBarberModel> _allParents = [];
+  List<ParentBarberModel> _featuredParents = [];
+  List<ParentBarberModel> _topRatedParents = [];
   List<BarberModel> _barbers = [];
   List<ProductModel> _products = [];
 
-  get parents => _parents;
+  get allParents => _allParents;
+  get featuredParents => _featuredParents;
+  get topRatedParents => _topRatedParents;
   get barbers => _barbers;
   get products => _products;
 
@@ -37,10 +47,11 @@ class ParentBarbersProvider extends ChangeNotifier {
   // Returns a list of ParentBarberModel
   _loadParents() async {
     try {
+      _allParents = await _parentFirestore.getLocalItems(51.466627397117726, -2.61624, 100000000);
+      _featuredParents = _filterList.getFeaturedParents(_allParents);
+      _topRatedParents = _filterList.getTopRatedParents(_allParents);
       // Load all the items into memory to reduce server calls and decrease load/ lookup times
-      _parents = await _parentFirestore.getLocalItems(51.466627397117726, -2.61624, 100000000);
       print("Parent barbers loaded!");
-      print("PARENT 1 = " + _parents[0].name);
     } catch (e) {
       print("Loading of parent barbers failed with error: " + e.toString());    }
   }

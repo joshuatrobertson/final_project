@@ -14,8 +14,7 @@ class ParentBarbersFirestore {
   final CollectionReference _collectionReferenceBarbers = FirebaseFirestore.instance.collection('barbers');
   final CollectionReference _collectionReferenceProducts = FirebaseFirestore.instance.collection('products');
   final geoflutterfire = Geoflutterfire();
-  final _distanceQuery = DistanceQuery();
-  final _firestore = FirebaseFirestore.instance;
+  DistanceQuery _distanceQuery = DistanceQuery();
   List<String> boundaryGeohash;
   var items;
 
@@ -50,20 +49,26 @@ class ParentBarbersFirestore {
   Future<List<ParentBarberModel>> getLocalItems(double latitude, double longitude, double searchRadius) async {
     // Set the centre point given the latitude and longitude
     GeoFirePoint center = geoflutterfire.point(latitude: latitude, longitude: longitude);
-    var geoRef = geoflutterfire.collection(collectionRef: _collectionReferenceParents);
-    List<ParentBarberModel> parentBarbers = [];
+    double radius = 200;
+    String field = 'location';
 
-    // Create a stream using the center, search radius and 'location' field in the database. Strict mode limits the range to strictly the given one
-    Stream<List<DocumentSnapshot>> stream = geoRef.within(center: center, radius: searchRadius, field: 'location', strictMode: true);
-
-    stream.listen((List<DocumentSnapshot> list) {
-      // Get the parent barber from firebase and add to a list, before returning it
-      for (DocumentSnapshot parent in list) {
-        ParentBarberModel barber = ParentBarberModel.fromSnapshot(parent);
-        parentBarbers.add(barber);
+    try {
+      Stream<List<DocumentSnapshot>> stream = geoflutterfire
+          .collection(collectionRef: _collectionReferenceParents)
+          .within(center: center, radius: radius, field: field);
+      await for (var docs in stream) {
+        List<ParentBarberModel> parentBarbers = [];
+        for (DocumentSnapshot parent in docs) {
+          ParentBarberModel barber = ParentBarberModel.fromSnapshot(parent);
+          parentBarbers.add(barber);
+          print("BARBER NAME!!: " + barber.name);
+        }
+        return parentBarbers;
       }
-    });
-    return parentBarbers;
+    }
+    catch(e) {
+      print("Fetching local items failed with error: " + e.toString());
+    }
   }
 
   // Fetch the featured barbers to use in featured.dart
@@ -100,10 +105,6 @@ class ParentBarbersFirestore {
       }
       return products;
     });
-
-  List<ProductModel> distanceQuery(List<ProductModel> products) {
-    GeoFirePoint center = geoflutterfire.point(latitude: 12.960632, longitude: 77.641603);
-  }
 
 
   ParentBarbersFirestore();
