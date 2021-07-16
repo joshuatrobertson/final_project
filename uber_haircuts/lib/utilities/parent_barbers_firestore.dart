@@ -5,7 +5,6 @@ import 'package:uber_haircuts/models/product.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:uber_haircuts/utilities/distance_query.dart';
 
 class ParentBarbersFirestore {
 
@@ -14,8 +13,6 @@ class ParentBarbersFirestore {
   final CollectionReference _collectionReferenceBarbers = FirebaseFirestore.instance.collection('barbers');
   final CollectionReference _collectionReferenceProducts = FirebaseFirestore.instance.collection('products');
   final geoflutterfire = Geoflutterfire();
-  DistanceQuery _distanceQuery = DistanceQuery();
-  List<String> boundaryGeohash;
   var items;
 
 
@@ -59,7 +56,6 @@ class ParentBarbersFirestore {
         for (DocumentSnapshot parent in docs) {
           ParentBarberModel barber = ParentBarberModel.fromSnapshot(parent);
           parentBarbers.add(barber);
-          print("BARBER NAME!!: " + barber.name);
         }
         return parentBarbers;
       }

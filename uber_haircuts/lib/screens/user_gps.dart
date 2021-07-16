@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import '../theme/main_theme.dart';
 import 'package:uuid/uuid.dart';
-
+import 'package:geolocator/geolocator.dart';
 import 'home.dart';
 
 class UserGPS extends StatelessWidget {
@@ -38,6 +38,9 @@ class _FireMapState extends State<FireMap> {
   UserDatabase _userDatabase = new UserDatabase();
   final _textController = TextEditingController();
   Location location = new Location();
+  // To get users current location to load barbers
+  Position _currentPosition;
+  final Geolocator geolocator = Geolocator();
 
   Widget build(BuildContext context) {
 
@@ -96,5 +99,8 @@ class _FireMapState extends State<FireMap> {
     );
   }
 }
+
+
+
 
 

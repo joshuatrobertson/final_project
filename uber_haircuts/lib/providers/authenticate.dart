@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
@@ -141,6 +142,7 @@ class Authenticate extends ChangeNotifier {
       Map<String, dynamic> newUser = {
         "uid": _authResult.user.uid,
         "name": name,
+        "location": [],
         "email": email,
         "cart": [],
       };
@@ -188,11 +190,13 @@ class Authenticate extends ChangeNotifier {
 
   // Used to add an item to each user, which has their own 'Authenticate' instance
   Future addItemToCart({ProductModel productModel, int quantity}) async {
-    print("Adding " + quantity.toString() + " " + productModel.name.toLowerCase() + " to the basket");
-   // userModel = await _orderHelper.getUserById(userModel.uid);
+
+    OrderUtility _orderUtility = new OrderUtility();
+    print(_firebaseAuth.currentUser.uid);
+    userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
 
     print("Trying with id" + userModel.name);
-    /*
+
     try {
       // Get the current user from the database
       print("user id = " + userModel.uid);
@@ -205,13 +209,11 @@ class Authenticate extends ChangeNotifier {
         "quantity": quantity,
       };
       CartItem item = CartItem.fromMap(cartItem);
-      _orderHelper.addToCart(userId: _user.uid, cartItem: item);
+      _orderUtility.addToCart(userId: _user.uid, cartItem: item);
     }
     catch(e) {
       print("Cart error: " + e.toString());
     }
-
-     */
   }
 
 }

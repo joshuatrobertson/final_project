@@ -44,8 +44,14 @@
 	<key>io.flutter.embedded_views_preview</key>
 	<value>YES</value>
 
-	<key>NSLocationWhenInUsageDescription</key>
-	<value>Tracking whilst using the application</value>
+	<key>NSLocationWhenInUseUsageDescription</key>
+       <string>This app needs access to location when open.</string>
+
+       <key>NSLocationAlwaysUsageDescription</key>
+       <string>This app needs access to location when in the background.</string>
+
+       <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+       <string>This app needs access to location when open and in the background.</string>
 
 
 </dict>

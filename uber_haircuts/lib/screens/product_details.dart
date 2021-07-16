@@ -19,19 +19,6 @@ class ProductDetails extends StatefulWidget {
 
 class _ProductDetailsState extends State<ProductDetails> {
   int x = 1;
-  int _navIndex = 0;
-  List<Widget> _widget = <Widget>[
-    Text('Home'),
-    Text('My Account'),
-    Text('Shopping Cart'),
-    Text('My Orders'),
-  ];
-
-  void _onClick(int index) {
-    setState(() {
-      _navIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {

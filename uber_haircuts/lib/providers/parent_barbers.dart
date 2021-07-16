@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
@@ -47,7 +48,10 @@ class ParentBarbersProvider extends ChangeNotifier {
   // Returns a list of ParentBarberModel
   _loadParents() async {
     try {
-      _allParents = await _parentFirestore.getLocalItems(51.466627397117726, -2.61624, 50);
+      // Get the users current position
+      Position _position = await _getCurrentLocation();
+      // Get the barbers within a search radius of x
+      _allParents = await _parentFirestore.getLocalItems(_position.latitude, _position.longitude, 50);
       notifyListeners();
       // Load all the items into memory to reduce server calls and decrease load/ lookup times
       print("Parent barbers loaded!");
@@ -66,4 +70,7 @@ class ParentBarbersProvider extends ChangeNotifier {
     }
   }
 
+  Future<Position> _getCurrentLocation() async {
+    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  }
 }

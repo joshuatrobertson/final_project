@@ -5,10 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/providers/products.dart';
-import 'package:uber_haircuts/screens/home.dart';
 import 'package:uber_haircuts/screens/login.dart';
-import 'package:uber_haircuts/screens/test.dart';
-import 'package:uber_haircuts/screens/user_gps.dart';
 import 'package:uber_haircuts/widgets/nav_bar.dart';
 
 void main() async {
@@ -39,7 +36,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Chop Chop',
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.blue,
           fontFamily: 'Poppins'
         ),
         home: AuthenticationWrapper(),
@@ -65,7 +62,7 @@ class AuthenticationWrapper extends StatelessWidget {
     }
     // Else they must login
     else {
-      return NavBar();
+      return Login();
       //return Login();
     }
   }
