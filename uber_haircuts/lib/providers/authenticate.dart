@@ -154,6 +154,7 @@ class Authenticate extends ChangeNotifier {
   Future<bool> signUp({String name, String email, String password}) async {
     try {
       UserCredential _authResult = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      // Update the display name so it can be fetched and used
       _firebaseAuth.currentUser.updateDisplayName(name);
       Map<String, dynamic> newUser = {
         "uid": _authResult.user.uid,

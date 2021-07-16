@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/registration.dart';
@@ -21,11 +22,13 @@ class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  // TODO: request location from user here and start getting items
+  // TODO: request location from user here and start getting items to pass through to the home page
   @override
   Widget build(BuildContext context) {
     // Allows use of provider package throughout app
     final authProvider = Provider.of<Authenticate>(context);
+
+    bool _obscurePasswordText = true;
 
     return Scaffold(
       // Shows loading wheel before user is logged in
@@ -58,6 +61,7 @@ class _LoginState extends State<Login> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                   child: TextField(
+                    obscureText: _obscurePasswordText,
                     controller: _passwordController,
                       decoration: InputDecoration(
                         labelText: "Password",

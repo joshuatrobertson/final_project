@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
@@ -51,6 +52,10 @@ class _RegistrationState extends State<Registration> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
                           child: TextField(
+                            // TODO: write about limiting length of username
+                              inputFormatters: [
+                                LengthLimitingTextInputFormatter(15),
+                              ],
                               controller: _nameController,
                               decoration: InputDecoration(
                                 labelText: "Name",
