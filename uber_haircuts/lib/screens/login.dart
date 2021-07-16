@@ -21,6 +21,8 @@ class _LoginState extends State<Login> {
   String email, password;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool _obscurePasswordText = true;
+
 
   // TODO: request location from user here and start getting items to pass through to the home page
   @override
@@ -28,23 +30,24 @@ class _LoginState extends State<Login> {
     // Allows use of provider package throughout app
     final authProvider = Provider.of<Authenticate>(context);
 
-    bool _obscurePasswordText = true;
 
     return Scaffold(
       // Shows loading wheel before user is logged in
       body: authProvider.authStatus == AuthStatus.AUTHENTICATING ? Center(child: CircularProgressIndicator(),) : Column(
         children: [
-          Container(
-            child: Stack(
-              children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
-                  child: Image.asset(
-                    "assets/images/logo.png", width: 200, height: 200,
-                  ),
-                )
-              ],
-            )
+          Expanded(
+            child: Container(
+              child: Stack(
+                children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
+                    child: Image.asset(
+                      "assets/images/logo.png", width: 200, height: 200,
+                    ),
+                  )
+                ],
+              )
+            ),
           ),
           Container(
             child: Column(
@@ -64,7 +67,15 @@ class _LoginState extends State<Login> {
                     obscureText: _obscurePasswordText,
                     controller: _passwordController,
                       decoration: InputDecoration(
-                        labelText: "Password",
+                          labelText: "Password",
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                                _obscurePasswordText = !_obscurePasswordText;
+                              });
+                            },
+                          icon: Icon(Icons.remove_red_eye),
+                        )
                       )
                   ),
                 ),
