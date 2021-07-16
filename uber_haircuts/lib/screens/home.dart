@@ -7,6 +7,7 @@ import 'package:uber_haircuts/widgets/available_now.dart';
 import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/featured.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
+import 'package:uber_haircuts/widgets/side_bar.dart';
 import 'package:uber_haircuts/widgets/top_rated.dart';
 import '../theme/main_theme.dart';
 import 'package:flutter/painting.dart';
@@ -39,19 +40,16 @@ class _HomeState extends State<Home> {
 
     return MaterialApp (
       home: Scaffold (
+        drawer: Drawer(
+          child: SideBar(),
+        ),
         backgroundColor: lightGrey,
         body: SafeArea(
         child: new SingleChildScrollView(
           child: Column(
             children: [
               AppBar(
-                // sidebar
-                leading: IconButton(
-                  onPressed: () {
-
-                  },
-                  icon: Icon(Icons.menu, size: 35, color: theme,),
-                ),
+                iconTheme: IconThemeData(color: theme),
                 elevation: 0,
                 backgroundColor: lightGrey,
                 title: Row(
@@ -63,7 +61,7 @@ class _HomeState extends State<Home> {
                   Padding(
                     padding: const EdgeInsets.all(3),
                     child: IconButton(
-                      icon: const Icon(Icons.exit_to_app_outlined, size: 35, color: theme),
+                      icon: const Icon(Icons.exit_to_app_outlined, color: theme),
                       onPressed: () async {
                           context.read<Authenticate>().signOut();
                       },

@@ -19,7 +19,7 @@ class _AccountState extends State<Account> {
     final User user = auth.currentUser;
     UserDatabase userDatabase = new UserDatabase();
     UserModel userModel = userDatabase.getSingleUserById(user.uid);
-    print("MODEL: " + user.uid);
+    print("MODEL: " + userModel.uid);
 
     return ReturnText(text: "Signed in as: ");
   }

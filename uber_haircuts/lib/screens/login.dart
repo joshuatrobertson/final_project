@@ -21,7 +21,7 @@ class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-
+  // TODO: request location from user here and start getting items
   @override
   Widget build(BuildContext context) {
     // Allows use of provider package throughout app
