@@ -57,6 +57,8 @@ class Authenticate extends ChangeNotifier {
     }
   }
 
+
+  // TODO: split this into smaller functions
   Future<bool> googleSignIn() async {
     try {
       _authStatus = AuthStatus.AUTHENTICATING;
@@ -67,8 +69,19 @@ class Authenticate extends ChangeNotifier {
           idToken: authentication.idToken,
           accessToken: authentication.accessToken
       );
-      final UserCredential authResult = await _firebaseAuth.signInWithCredential(credential);
-      final User user = authResult.user;
+      final UserCredential _authResult = await _firebaseAuth.signInWithCredential(credential);
+      final User user = _authResult.user;
+      // Create a map with the details given to create a user to store in the database
+      Map<String, dynamic> newUser = {
+        "uid": _authResult.user.uid,
+        "name": _authResult.user.displayName,
+        "location": [],
+        "email": _authResult.user.email,
+        "cart": [],
+      };
+      // Create a new user and add to the database
+      // Here we use the auth result user id as the document id so that it can be referred to later
+      _userDatabase.createNewUser(newUser, _authResult.user.uid);
       print("signed in with Google as: " + user.displayName);
       _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
@@ -102,6 +115,7 @@ class Authenticate extends ChangeNotifier {
     _googleSignIn.signOut();
   }
 
+  // TODO: create user in database
   Future<bool> facebookSignIn() async {
     try {
       _authStatus = AuthStatus.AUTHENTICATING;
@@ -121,8 +135,9 @@ class Authenticate extends ChangeNotifier {
     }
   }
 
+  // TODO: create user in database
   // Method to sign in a user via twitter
-  Future<bool> twitterSignIn(String token, String secret) async {
+  Future<void> twitterSignIn(String token, String secret) async {
     _authStatus = AuthStatus.AUTHENTICATING;
     notifyListeners();
     final AuthCredential credential = TwitterAuthProvider.credential(
@@ -139,6 +154,7 @@ class Authenticate extends ChangeNotifier {
   Future<bool> signUp({String name, String email, String password}) async {
     try {
       UserCredential _authResult = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      _firebaseAuth.currentUser.updateDisplayName(name);
       Map<String, dynamic> newUser = {
         "uid": _authResult.user.uid,
         "name": name,
