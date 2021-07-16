@@ -45,6 +45,13 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               AppBar(
+                // sidebar
+                leading: IconButton(
+                  onPressed: () {
+
+                  },
+                  icon: Icon(Icons.menu, size: 35, color: theme,),
+                ),
                 elevation: 0,
                 backgroundColor: lightGrey,
                 title: Row(
@@ -57,7 +64,6 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.all(3),
                     child: IconButton(
                       icon: const Icon(Icons.exit_to_app_outlined, size: 35, color: theme),
-                      tooltip: 'View profile details',
                       onPressed: () async {
                           context.read<Authenticate>().signOut();
                       },

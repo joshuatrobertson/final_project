@@ -195,7 +195,7 @@ class Authenticate extends ChangeNotifier {
     print(_firebaseAuth.currentUser.uid);
     userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
 
-    print("Trying with id" + userModel.name);
+    print("Trying with id: " + userModel.name);
 
     try {
       // Get the current user from the database
@@ -204,7 +204,7 @@ class Authenticate extends ChangeNotifier {
       var key = UniqueKey();
       // Create a map using the relevant json objectes from productModel
       Map cartItem ={
-        "id": key,
+        "id": key.toString(),
         "productId": productModel.id,
         "quantity": quantity,
       };
