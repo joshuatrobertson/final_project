@@ -76,7 +76,8 @@ class AvailableNow extends StatelessWidget {
                                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                         children : [
 
-                                          ReturnText(text: _parentBarbers.barbers[index].firstName, color: Colors.black54, size: 10),
+                                          ReturnText(text: _parentBarbers.allParents.where((parentBarber) =>
+                              parentBarber.id == _barbers[index].parentBarberID).toList()[0].name, color: Colors.black54, size: 10),
                                         ]
                                     )
                                   ],
