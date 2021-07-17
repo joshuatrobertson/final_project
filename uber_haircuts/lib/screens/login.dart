@@ -22,6 +22,7 @@ class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _obscurePasswordText = true;
+  Color _hidePasswordColour = Colors.grey;
 
 
   // TODO: request location from user here and start getting items to pass through to the home page
@@ -67,12 +68,19 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(
                           labelText: "Password",
                         suffixIcon: IconButton(
+                          // TODO: discuss toggles text/ colour
                           onPressed: () {
                             setState(() {
-                                _obscurePasswordText = !_obscurePasswordText;
-                              });
+                              // Toggles the icon colour/ obscures text
+                              if (_hidePasswordColour == Colors.grey) {
+                                _hidePasswordColour = Colors.blueAccent;
+                              } else {
+                                _hidePasswordColour = Colors.grey;
+                              }
+                              _obscurePasswordText = !_obscurePasswordText;
+                            });
                             },
-                          icon: Icon(Icons.remove_red_eye),
+                          icon: Icon(Icons.remove_red_eye, color: _hidePasswordColour,),
                         )
                       )
                   ),
