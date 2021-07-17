@@ -278,6 +278,17 @@ anchorcolor = blue]{hyperref}
 	1) Get the users current location
 	2) Query firestore with the radius
 	
+	\subsubsection{Loading the barbers}
+	When loading the barbers either they were loading through making a database query based on the parentBarberId once the parent barbers were loaded, or every barber was loaded into memory and this was the filtered in memory.
+	\\
+	Pros of first method - Scales well as does not matter how many barbers there are
+	\\
+	Cons of first method - more costly as there are more requests to the db
+	\\
+	Pros of 2nd - cheaper
+	\\
+	cons - does not scale well
+	
 	\subsection{Sprint X - Location}
 	https://firebase.google.com/docs/firestore/solutions/geoqueries
 	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are longitude and latitiude co-ordinates that are hashed into a single Base32 string.
