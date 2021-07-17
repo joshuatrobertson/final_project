@@ -43,14 +43,14 @@ class ParentBarbersFirestore {
     return parents;
   });
 
-  Future<List<ParentBarberModel>> getLocalItems(double latitude, double longitude, double searchRadius) async {
+  Future<List<ParentBarberModel>> getLocalParents(double latitude, double longitude, double radius) async {
     // Set the centre point given the latitude and longitude
     GeoFirePoint center = geoflutterfire.point(latitude: latitude, longitude: longitude);
 
     try {
       Stream<List<DocumentSnapshot>> stream = geoflutterfire
           .collection(collectionRef: _collectionReferenceParents)
-          .within(center: center, radius: searchRadius, field: 'location');
+          .within(center: center, radius: radius, field: 'location');
       await for (var docs in stream) {
         List<ParentBarberModel> parentBarbers = [];
         for (DocumentSnapshot parent in docs) {
@@ -79,15 +79,26 @@ class ParentBarbersFirestore {
   });
 
   // Fetch the barbers
-  Future<List<BarberModel>> getBarbers() async =>
-  _collectionReferenceBarbers.get().then((barber) {
-    List<BarberModel> barbers = [];
-      for (DocumentSnapshot barber in barber.docs) {
-        BarberModel _barberModel = BarberModel.fromSnapshot(barber);
-        barbers.add(_barberModel);
+  Future<List<BarberModel>> getBarbers(double latitude, double longitude, double radius) async {
+    GeoFirePoint center = geoflutterfire.point(
+        latitude: latitude, longitude: longitude);
+    try {
+      Stream<List<DocumentSnapshot>> stream = geoflutterfire
+          .collection(collectionRef: _collectionReferenceBarbers)
+          .within(center: center, radius: radius, field: 'location');
+      await for (var docs in stream) {
+        List<BarberModel> barberList = [];
+        for (DocumentSnapshot barbers in docs) {
+          BarberModel barber = BarberModel.fromSnapshot(barbers);
+          barberList.add(barber);
+        }
+        return barberList;
       }
-      return barbers;
-    });
+    }
+    catch (e) {
+      print('Fetching local barbers failed with error: ' + e.toString());
+    }
+  }
 
   // Fetch the products
   Future<List<ProductModel>> getProducts() async =>

@@ -14,6 +14,7 @@ class ParentBarbersProvider extends ChangeNotifier {
   // Create an instance of firestore
   ParentBarbersFirestore _parentFirestore = ParentBarbersFirestore();
   final FilterList _filterList = new FilterList();
+  Position _position;
 
 
   List<ParentBarberModel> _allParents = [];
@@ -47,11 +48,10 @@ class ParentBarbersProvider extends ChangeNotifier {
 
   // Returns a list of ParentBarberModel
   _loadParents() async {
+    _position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     try {
-      // Get the users current position
-      Position _position = await _getCurrentLocation();
       // Get the barbers within a search radius of x
-      _allParents = await _parentFirestore.getLocalItems(_position.latitude, _position.longitude, 50);
+      _allParents = await _parentFirestore.getLocalParents(_position.latitude, _position.longitude, 50);
       notifyListeners();
       // Load all the items into memory to reduce server calls and decrease load/ lookup times
       print("Parent barbers loaded!");
@@ -61,8 +61,9 @@ class ParentBarbersProvider extends ChangeNotifier {
 
   // Returns a list of BarberModel
   _loadBarbers() async {
+    _position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     try {
-      _barbers = await _parentFirestore.getBarbers();
+      _barbers = await _parentFirestore.getBarbers(_position.latitude, _position.longitude, 50);
       notifyListeners();
       print('Barbers loaded!');
     } catch (e) {
@@ -70,7 +71,4 @@ class ParentBarbersProvider extends ChangeNotifier {
     }
   }
 
-  Future<Position> _getCurrentLocation() async {
-    return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-  }
 }
