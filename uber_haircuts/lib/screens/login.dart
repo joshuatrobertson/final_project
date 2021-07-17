@@ -35,19 +35,17 @@ class _LoginState extends State<Login> {
       // Shows loading wheel before user is logged in
       body: authProvider.authStatus == AuthStatus.AUTHENTICATING ? Center(child: CircularProgressIndicator(),) : Column(
         children: [
-          Expanded(
-            child: Container(
-              child: Stack(
-                children: [
-                  Container(
-                    padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
-                    child: Image.asset(
-                      "assets/images/logo.png", width: 200, height: 200,
-                    ),
-                  )
-                ],
-              )
-            ),
+          Container(
+            child: Stack(
+              children: [
+                Container(
+                  padding: EdgeInsets.fromLTRB(20, 40, 20, 0),
+                  child: Image.asset(
+                    "assets/images/logo.png", width: 200, height: 200,
+                  ),
+                )
+              ],
+            )
           ),
           Container(
             child: Column(
