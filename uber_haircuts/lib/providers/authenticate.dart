@@ -11,11 +11,11 @@ import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
 
 enum AuthStatus {
-UNINITIALISED,
-NOT_AUTHENTICATED,
-AUTHENTICATING,
-AUTHENTICATED,
-AUTH_WITH_MAPS,
+  UNINITIALISED,
+  NOT_AUTHENTICATED,
+  AUTHENTICATING,
+  AUTHENTICATED,
+  AUTH_WITH_MAPS,
 }
 
 class Authenticate extends ChangeNotifier {
@@ -70,8 +70,9 @@ class Authenticate extends ChangeNotifier {
           accessToken: authentication.accessToken
       );
       final UserCredential _authResult = await _firebaseAuth.signInWithCredential(credential);
+      //TODO: this deletes the whole cart with each sign in
       final User user = _authResult.user;
-      if (_userDatabase.checkUserExists(user.uid)) {
+      if (!_userDatabase.checkUserExists(user.uid)) {
         // Create a map with the details given to create a user to store in the database
         Map<String, dynamic> newUser = {
           "uid": _authResult.user.uid,
@@ -213,21 +214,18 @@ class Authenticate extends ChangeNotifier {
     OrderUtility _orderUtility = new OrderUtility();
     userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
 
-    print("Trying with id: " + userModel.name);
-
     try {
-      print("PRODUCT MODEL: " + productModel.name);
       // Get the current user from the database
-      print("user id = " + userModel.uid);
       // Generate a unique key for each cart item
       var key = UniqueKey();
       // Create a map using the relevant json objects from productModel
-      Map cartItem ={
+      Map cartItem = {
         "id": key.toString(),
-        "productId": productModel.id,
+        "productId": productModel.id.toString(),
         "quantity": quantity,
       };
       CartItem item = CartItem.fromMap(cartItem);
+
       _orderUtility.addToCart(userId: userModel.uid, cartItem: item);
     }
     catch(e) {

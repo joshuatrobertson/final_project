@@ -73,7 +73,7 @@ class _CartState extends State<Cart> {
                                               8.0, 8.0, 8.0, 0),
                                           child: ClipRRect(
                                               borderRadius: BorderRadius.circular(6.0),
-                                              child: ReturnImage(image: user.userModel.cart[index].image, width: 150, height: 100)
+                                              child: ReturnImage(image: user.userModel.cart[index].id, width: 150, height: 100)
                                           )
                                         ),
                                         Padding(
@@ -84,7 +84,7 @@ class _CartState extends State<Cart> {
                                             child: Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                ReturnText(text: user.userModel.cart[index].name,
+                                                ReturnText(text: user.userModel.cart[index].id,
                                                   size: 15,
                                                   fontWeight: FontWeight.bold,
                                                   align: TextAlign.left,),
@@ -95,11 +95,11 @@ class _CartState extends State<Cart> {
                                                     children: [
 
                                                       ReturnText(
-                                                          text: user.userModel.cart[index].name,
+                                                          text: user.userModel.cart[index].id,
                                                           color: Colors.black54,
                                                           size: 10),
                                                       ReturnText(text: "£" +
-                                                          user.userModel.cart[index].price.toString(),
+                                                          user.userModel.cart[index].id,
                                                         size: 14,
                                                         color: Colors.redAccent,),
                                                     ]

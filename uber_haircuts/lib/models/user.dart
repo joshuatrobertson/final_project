@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/models/product.dart';
 
 // User model to store data within firebase
@@ -12,7 +14,7 @@ class UserModel {
   String _name;
   String _email;
   String _uid;
-  List<ProductModel> cart;
+  List<CartItem> cart;
 
   String get name => _name;
   String get email => _email;
@@ -22,20 +24,21 @@ class UserModel {
   set email(String email) => _email;
   set uid(String uid) => _uid;
 
+
   UserModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _name = documentSnapshot.data()[NAME];
     _email = documentSnapshot.data()[EMAIL];
     _uid = documentSnapshot.data()[UID];
-    cart = _convertFromMap(documentSnapshot.data()[CART]) ?? [];
+    cart = _convertFromMap(documentSnapshot.data()[CART]);
   }
 
-  List<ProductModel> _convertFromMap(List cart) {
-    List<ProductModel> _result = [];
-    if (cart.isNotEmpty ?? true) {
-      cart.forEach((element) {
-        _result.add(ProductModel.fromSnapshot(element));
-      });
-    }
+  List<CartItem> _convertFromMap(List cart) {
+    List<CartItem> _result = [];
+    cart.forEach((element) {
+      CartItem cartItem = CartItem.fromMap(element);
+      _result.add(cartItem);
+    });
+
     return _result;
   }
 }

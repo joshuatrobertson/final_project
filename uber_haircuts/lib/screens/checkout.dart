@@ -69,7 +69,7 @@ class _CheckoutState extends State<Checkout> {
                                             8.0, 8.0, 8.0, 0),
                                         child: ClipRRect(
                                             borderRadius: BorderRadius.circular(6.0),
-                                            child: ReturnImage(image: user.userModel.cart[index].image,
+                                            child: ReturnImage(image: user.userModel.cart[index].id,
                                               height: 100, width: 150,)
                                         ),
                                       ),
