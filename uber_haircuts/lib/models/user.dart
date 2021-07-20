@@ -31,9 +31,11 @@ class UserModel {
 
   List<ProductModel> _convertFromMap(List cart) {
     List<ProductModel> _result = [];
-    cart.forEach((element) {
-      _result.add(ProductModel.fromSnapshot(element));
-    });
+    if (cart.isNotEmpty ?? true) {
+      cart.forEach((element) {
+        _result.add(ProductModel.fromSnapshot(element));
+      });
+    }
     return _result;
   }
 }

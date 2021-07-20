@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
 
@@ -29,7 +28,6 @@ class _CategoriesFilterState extends State<CategoriesFilter> {
   final List<String> _filters = <String>[];
 
   Iterable<Widget> get categoryWidget sync* {
-    final productsProvider = Provider.of<ProductsProvider>(context);
 
     for (final CategoryFilterEntry category in _items) {
       yield Padding(

@@ -8,7 +8,7 @@ import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
 import 'package:uber_haircuts/utilities/order.dart';
-import 'package:uber_haircuts/utilities/user_database.dart';
+import 'package:uber_haircuts/utilities/user_firestore.dart';
 
 enum AuthStatus {
 UNINITIALISED,
@@ -24,7 +24,7 @@ class Authenticate extends ChangeNotifier {
   FirebaseAuth _firebaseAuth;
   User _user;
   UserModel userModel;
-  UserDatabase _userDatabase = UserDatabase();
+  UserFirestore _userDatabase = UserFirestore();
   AuthStatus _authStatus = AuthStatus.UNINITIALISED;
   // Function to test for logged in user and return relevant page
   Stream<User> get stateChanges => _firebaseAuth.authStateChanges();
@@ -71,17 +71,19 @@ class Authenticate extends ChangeNotifier {
       );
       final UserCredential _authResult = await _firebaseAuth.signInWithCredential(credential);
       final User user = _authResult.user;
-      // Create a map with the details given to create a user to store in the database
-      Map<String, dynamic> newUser = {
-        "uid": _authResult.user.uid,
-        "name": _authResult.user.displayName,
-        "location": [],
-        "email": _authResult.user.email,
-        "cart": [],
-      };
-      // Create a new user and add to the database
-      // Here we use the auth result user id as the document id so that it can be referred to later
-      _userDatabase.createNewUser(newUser, _authResult.user.uid);
+      if (_userDatabase.checkUserExists(user.uid)) {
+        // Create a map with the details given to create a user to store in the database
+        Map<String, dynamic> newUser = {
+          "uid": _authResult.user.uid,
+          "name": _authResult.user.displayName,
+          "location": [],
+          "email": _authResult.user.email,
+          "cart": [],
+        };
+        // Create a new user and add to the database
+        // Here we use the auth result user id as the document id so that it can be referred to later
+        _userDatabase.createNewUser(newUser, _authResult.user.uid);
+      }
       print("signed in with Google as: " + user.displayName);
       _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
@@ -209,24 +211,24 @@ class Authenticate extends ChangeNotifier {
   Future addItemToCart({ProductModel productModel, int quantity}) async {
 
     OrderUtility _orderUtility = new OrderUtility();
-    print(_firebaseAuth.currentUser.uid);
     userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
 
     print("Trying with id: " + userModel.name);
 
     try {
+      print("PRODUCT MODEL: " + productModel.name);
       // Get the current user from the database
       print("user id = " + userModel.uid);
       // Generate a unique key for each cart item
       var key = UniqueKey();
-      // Create a map using the relevant json objectes from productModel
+      // Create a map using the relevant json objects from productModel
       Map cartItem ={
         "id": key.toString(),
         "productId": productModel.id,
         "quantity": quantity,
       };
       CartItem item = CartItem.fromMap(cartItem);
-      _orderUtility.addToCart(userId: _user.uid, cartItem: item);
+      _orderUtility.addToCart(userId: userModel.uid, cartItem: item);
     }
     catch(e) {
       print("Cart error: " + e.toString());

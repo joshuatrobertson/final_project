@@ -77,7 +77,7 @@ class AvailableNow extends StatelessWidget {
                                         children : [
 
                                           ReturnText(text: _parentBarbers.allParents.where((parentBarber) =>
-                              parentBarber.id == _barbers[index].parentBarberID).toList()[0].name, color: Colors.black54, size: 10),
+                                            parentBarber.id == _barbers[index].parentBarberID).toList()[0].name, color: Colors.black54, size: 10),
                                         ]
                                     )
                                   ],

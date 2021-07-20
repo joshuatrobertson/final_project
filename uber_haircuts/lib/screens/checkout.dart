@@ -1,16 +1,14 @@
-/*
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:uber_haircuts/helpers/navigate.dart';
-import 'package:uber_haircuts/models/order.dart';
-import 'package:uber_haircuts/models/product.dart';
-import 'package:uber_haircuts/screens/product_details.dart';
-import 'package:uber_haircuts/widgets/return_text.dart';
-import '../main_theme.dart';
 
-import '../main_theme.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uber_haircuts/models/product.dart';
+import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/theme/main_theme.dart';
+import 'package:uber_haircuts/widgets/navigate.dart';
+import 'package:uber_haircuts/widgets/return_image.dart';
+import 'package:uber_haircuts/widgets/return_text.dart';
+
 import 'cart.dart';
 
 class Checkout extends StatefulWidget {
@@ -27,7 +25,8 @@ class _CheckoutState extends State<Checkout> {
   @override
   Widget build(BuildContext context) {
 
-    final List<ProductModel> _shoppingCart;
+    final user = Provider.of<Authenticate>(context);
+    List<ProductModel> _shoppingCart;
 
     return MaterialApp(
         home: Scaffold(
@@ -42,7 +41,7 @@ class _CheckoutState extends State<Checkout> {
                         padding: const EdgeInsets.fromLTRB(0, 35, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
-                            itemCount: _shoppingCart.length,
+                            itemCount: user.userModel.cart.length,
                             itemBuilder: (_, index) {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -70,8 +69,7 @@ class _CheckoutState extends State<Checkout> {
                                             8.0, 8.0, 8.0, 0),
                                         child: ClipRRect(
                                             borderRadius: BorderRadius.circular(6.0),
-                                            child: Image.asset(
-                                              "assets/images/${_shoppingCart[index].image}.jpg",
+                                            child: ReturnImage(image: user.userModel.cart[index].image,
                                               height: 100, width: 150,)
                                         ),
                                       ),
@@ -137,4 +135,4 @@ class _CheckoutState extends State<Checkout> {
         ));
   }
 }
- */
+

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
-import 'package:uber_haircuts/providers/products.dart';
 import 'package:uber_haircuts/screens/login.dart';
 import 'package:uber_haircuts/widgets/nav_bar.dart';
 
@@ -25,9 +24,6 @@ class MyApp extends StatelessWidget {
         ),
         StreamProvider(
           create: (context) => context.read<Authenticate>().stateChanges, initialData: null,
-        ),
-        ListenableProvider<ProductsProvider>(
-          create: (_) => ProductsProvider(),
         ),
         ListenableProvider<ParentBarbersProvider>(
           create: (_) => ParentBarbersProvider(),

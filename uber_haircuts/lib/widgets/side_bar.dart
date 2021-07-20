@@ -6,7 +6,7 @@ import 'package:uber_haircuts/models/user.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/contact_us.dart';
 import 'package:uber_haircuts/theme/main_theme.dart';
-import 'package:uber_haircuts/utilities/user_database.dart';
+import 'package:uber_haircuts/utilities/user_firestore.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 

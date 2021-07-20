@@ -9,6 +9,7 @@ class OrderUtility {
   void addToCart({String userId, CartItem cartItem}){
     // Update the 'users' database with the new cart item
     _firestore.collection(USERS).doc(userId).update({
+      // FieldValue arrayUnion will add item to the end of the array if not already present
       "cart": FieldValue.arrayUnion([cartItem.toMap()])
     });
   }
