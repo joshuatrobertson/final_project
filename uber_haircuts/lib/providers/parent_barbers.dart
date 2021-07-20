@@ -1,19 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/utilities/parent_barbers_firestore.dart';
-import 'package:uber_haircuts/widgets/filter_list.dart';
-
-import 'authenticate.dart';
 
 class ParentBarbersProvider extends ChangeNotifier {
 
   // Create an instance of firestore
   ParentBarbersFirestore _parentFirestore = ParentBarbersFirestore();
-  final FilterList _filterList = new FilterList();
   Position _position;
 
 

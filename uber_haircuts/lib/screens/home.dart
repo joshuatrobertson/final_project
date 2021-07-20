@@ -1,11 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/providers/parent_barbers.dart';
+import 'package:uber_haircuts/screens/barber_details.dart';
+import 'package:uber_haircuts/screens/parent_barber_details.dart';
 import 'package:uber_haircuts/screens/user_orders.dart';
 import 'package:uber_haircuts/widgets/available_now.dart';
 import 'package:uber_haircuts/widgets/categories_filter.dart';
 import 'package:uber_haircuts/widgets/featured.dart';
+import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:uber_haircuts/widgets/side_bar.dart';
 import 'package:uber_haircuts/widgets/top_rated.dart';
@@ -37,6 +42,9 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+
+    ParentBarbersProvider _barberProvider = Provider.of<ParentBarbersProvider>(context);
+    ParentBarberModel _parentBarbers;
 
     return MaterialApp (
       home: Scaffold (
@@ -88,6 +96,14 @@ class _HomeState extends State<Home> {
                   ),
                   child: ListTile(
                     title: TextField(
+                      onSubmitted: (text) {
+                        // Search through parent barbers
+                        List<ParentBarberModel> newParents = _barberProvider.allParents.where((barber) =>
+                        barber.name.toLowerCase().contains(text) ? true : false ).toList();
+                        if (newParents.isNotEmpty) {
+                          navigateToScreen(context, ParentBarberDetails(parents: newParents, provider: _barberProvider));
+                        }
+                      },
                       style: TextStyle(fontFamily: 'Poppins'),
                       // Add search text to the search bar and remove the border
                       decoration: InputDecoration(
@@ -128,3 +144,6 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+
+
