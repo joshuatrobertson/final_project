@@ -106,18 +106,13 @@ class _ParentBarberDetailsState extends State<ParentBarberDetails> {
                                                       size: 16,
                                                       fontWeight: FontWeight.bold,
                                                       align: TextAlign.left,),
-                                                    Row(
-                                                        mainAxisAlignment: MainAxisAlignment
-                                                            .spaceBetween,
-                                                        children: [
-                                                          ReturnText(text: widget.parents[index].rating.toString(), size: 20, color: black, fontWeight: FontWeight.w600,),
-                                                          Padding(
-                                                            padding: const EdgeInsets.only(bottom: 8.0),
-                                                            child: Icon(Icons.star, color: theme, size: 14),
-                                                          ),
-                                                        ]
-                                                    )
-                                                  ],
+                                                    Row(children:[
+                                                    ReturnText(text: widget.parents[index].rating.toString(), size: 20, color: black, fontWeight: FontWeight.w600,),
+                                                    Padding(
+                                                      padding: const EdgeInsets.only(bottom: 8.0),
+                                                      child: Icon(Icons.star, color: theme, size: 14),
+                                                    )]
+                                                    )],
                                                 ),
                                               ),
                                             ),
