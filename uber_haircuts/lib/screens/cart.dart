@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
@@ -20,6 +21,7 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
 
     final user = Provider.of<Authenticate>(context);
+    OrderUtility orderUtility = new OrderUtility();
     num x = 0;
 
     return MaterialApp(
@@ -150,6 +152,7 @@ class _CartState extends State<Cart> {
                                       onPressed: () {
                                         setState(() {
                                           user.userModel.removeFromCart(index);
+                                          orderUtility.deleteItemFromCart(userId: user.userModel.uid, index: index);
                                         });
                                       },
                                     ),

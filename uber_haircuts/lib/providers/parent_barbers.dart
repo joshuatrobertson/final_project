@@ -45,7 +45,7 @@ class ParentBarbersProvider extends ChangeNotifier {
   _loadParents() async {
     _position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     try {
-      // Get the barbers within a search radius of x
+      // Get the barbers within a search radius of x km
       _allParents = await _parentFirestore.getLocalParents(_position.latitude, _position.longitude, 50);
       notifyListeners();
       // Load all the items into memory to reduce server calls and decrease load/ lookup times

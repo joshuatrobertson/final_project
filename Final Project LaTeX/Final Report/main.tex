@@ -289,6 +289,9 @@ anchorcolor = blue]{hyperref}
 	\\
 	cons - does not scale well
 	
+	\subsubsection{Shopping Cart}
+	Chose to store the cart items in a nested array as this adds to readbility and structure and although this restricts look up time, this is not relevant due to the limited number of items a user will order.
+	
 	\subsection{Sprint X - Location}
 	https://firebase.google.com/docs/firestore/solutions/geoqueries
 	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are longitude and latitiude co-ordinates that are hashed into a single Base32 string.

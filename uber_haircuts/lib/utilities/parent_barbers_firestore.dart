@@ -16,33 +16,6 @@ class ParentBarbersFirestore {
   var items;
 
 
-  // Fetch the featured barbers to use in top_rated.dart
-  Future<List<ParentBarberModel>> getTopRatedParents() async =>
-      // Go through the collection 'parentBarbers' and order by rating (descending) to fetch the top 5 rated barbers
-  _collectionReferenceParents
-      .orderBy("rating", descending: true)
-      .limit(5).get().then((value) {
-    List<ParentBarberModel> parents = [];
-    // for each item within the parent barbers add to a list and return
-    for (DocumentSnapshot parent in value.docs) {
-      parents.add(ParentBarberModel.fromSnapshot(parent));
-    }
-    return parents;
-  });
-
-  // Get all parent barbers within the local area to use for the search function
-  Future<List<ParentBarberModel>> getAllParentBarbers() async =>
-      // Go through the collection 'parentBarbers'
-  _collectionReferenceParents
-      .get().then((value) {
-    List<ParentBarberModel> parents = [];
-    // for each item within the parent barbers add to a list and return
-    for (DocumentSnapshot parent in value.docs) {
-      parents.add(ParentBarberModel.fromSnapshot(parent));
-    }
-    return parents;
-  });
-
   Future<List<ParentBarberModel>> getLocalParents(double latitude, double longitude, double radius) async {
     // Set the centre point given the latitude and longitude
     GeoFirePoint center = geoflutterfire.point(latitude: latitude, longitude: longitude);
@@ -65,23 +38,10 @@ class ParentBarbersFirestore {
     }
   }
 
-  // Fetch the featured barbers to use in featured.dart
-  Future<List<ParentBarberModel>> getFeaturedParents() async =>
-      // Go through the collection 'parentBarbers'
-  _collectionReferenceParents.where("featured", isEqualTo: true).get().then((parentBarber) {
-    // Create an array of ParentBarberModel to pass back from the function
-    List<ParentBarberModel> parents = [];
-    // for each item within the parent barbers add to a list and return
-    for (DocumentSnapshot parent in parentBarber.docs) {
-      parents.add(ParentBarberModel.fromSnapshot(parent));
-    }
-    return parents;
-  });
-
   // Fetch the barbers
   Future<List<BarberModel>> getBarbers(double latitude, double longitude, double radius) async {
-    GeoFirePoint center = geoflutterfire.point(
-        latitude: latitude, longitude: longitude);
+    GeoFirePoint center = geoflutterfire.point(latitude: latitude, longitude: longitude);
+
     try {
       Stream<List<DocumentSnapshot>> stream = geoflutterfire
           .collection(collectionRef: _collectionReferenceBarbers)
@@ -111,13 +71,12 @@ class ParentBarbersFirestore {
       return products;
     });
 
-  // ignore: missing_return
-  ProductModel getProductFromId(String productId) {
+  Future<ProductModel> getProductFromId(String productId) async =>
       _collectionReferenceProducts.doc(productId).get().then((value) {
-        ProductModel product = ProductModel.fromSnapshot(value);
-        return product;
-      });
-  }
+        ProductModel productModel;
+        productModel = ProductModel.fromSnapshot(value);
+        return productModel;
+    });
 
 
   ParentBarbersFirestore();

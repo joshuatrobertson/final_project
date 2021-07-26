@@ -89,8 +89,9 @@ class Authenticate extends ChangeNotifier {
       }
       else {
         userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
-        userModel.cart = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
-        print("USER MODEL CART = " + userModel.cart.first.productId);
+        List<CartItem> orders = [];
+        orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
+        userModel.cart = orders;
       }
       print("signed in with Google as: " + user.displayName);
       _authStatus = AuthStatus.AUTHENTICATED;
