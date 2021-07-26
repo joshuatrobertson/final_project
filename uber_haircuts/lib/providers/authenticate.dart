@@ -20,8 +20,10 @@ enum AuthStatus {
 
 class Authenticate extends ChangeNotifier {
 
+  bool firstOrder = true;
   // Create an instance of firebase and authenticate it
   FirebaseAuth _firebaseAuth;
+  OrderUtility _orderUtility = new OrderUtility();
   User _user;
   UserModel userModel;
   UserFirestore _userDatabase = UserFirestore();
@@ -33,7 +35,6 @@ class Authenticate extends ChangeNotifier {
     consumerKey: '1403651379705663488-I6gxGAkJqPrkSRXTxysm5wmI3Hc5no',
     consumerSecret: 'KVP7xVAAdZYZ5TV1xW5tQBAriXR8QOPvOxqhYc9OWi0L4',
   );
-  OrderUtility _orderUtility;
   Authenticate(this._firebaseAuth);
 
   // Getters
@@ -70,9 +71,9 @@ class Authenticate extends ChangeNotifier {
           accessToken: authentication.accessToken
       );
       final UserCredential _authResult = await _firebaseAuth.signInWithCredential(credential);
-      //TODO: this deletes the whole cart with each sign in
       final User user = _authResult.user;
-      if (!_userDatabase.checkUserExists(user.uid)) {
+      bool userExists = await _userDatabase.checkUserExists(user.uid);
+      if (!userExists) {
         // Create a map with the details given to create a user to store in the database
         Map<String, dynamic> newUser = {
           "uid": _authResult.user.uid,
@@ -81,9 +82,15 @@ class Authenticate extends ChangeNotifier {
           "email": _authResult.user.email,
           "cart": [],
         };
+
         // Create a new user and add to the database
         // Here we use the auth result user id as the document id so that it can be referred to later
         _userDatabase.createNewUser(newUser, _authResult.user.uid);
+      }
+      else {
+        userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
+        userModel.cart = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
+        print("USER MODEL CART = " + userModel.cart.first.productId);
       }
       print("signed in with Google as: " + user.displayName);
       _authStatus = AuthStatus.AUTHENTICATED;
@@ -212,7 +219,11 @@ class Authenticate extends ChangeNotifier {
   Future addItemToCart({ProductModel productModel, int quantity}) async {
 
     OrderUtility _orderUtility = new OrderUtility();
-    userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
+    bool alreadyInCart = false;
+    if (firstOrder) {
+      userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
+      firstOrder = false;
+    }
 
     try {
       // Get the current user from the database
@@ -225,7 +236,21 @@ class Authenticate extends ChangeNotifier {
         "quantity": quantity,
       };
       CartItem item = CartItem.fromMap(cartItem);
+      
 
+      userModel.cart.forEach((element) {
+        if (element.productId == productModel.id) {
+          alreadyInCart = true;
+          return;
+        }
+      });
+      if (!alreadyInCart) {
+        item.product = productModel;
+        userModel.addToCart(item);
+      }
+      else {
+        print("Item is already in the cart");
+      }
       _orderUtility.addToCart(userId: userModel.uid, cartItem: item);
     }
     catch(e) {

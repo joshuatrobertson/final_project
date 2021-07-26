@@ -104,12 +104,20 @@ class ParentBarbersFirestore {
   Future<List<ProductModel>> getProducts() async =>
       _collectionReferenceProducts.get().then((product) {
     List<ProductModel> products = [];
-      for (DocumentSnapshot barber in product.docs) {
-        ProductModel _productModel = ProductModel.fromSnapshot(barber);
+      for (DocumentSnapshot newProduct in product.docs) {
+        ProductModel _productModel = ProductModel.fromSnapshot(newProduct);
         products.add(_productModel);
       }
       return products;
     });
+
+  // ignore: missing_return
+  ProductModel getProductFromId(String productId) {
+      _collectionReferenceProducts.doc(productId).get().then((value) {
+        ProductModel product = ProductModel.fromSnapshot(value);
+        return product;
+      });
+  }
 
 
   ParentBarbersFirestore();

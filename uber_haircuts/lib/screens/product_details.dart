@@ -67,6 +67,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   }),
                   GestureDetector(
                   onTap: () {
+                    // TODO: display snackbar when item is already in cart
                     // Add the item to the current user fetched from Provider of Authenticate class
                     user.addItemToCart(productModel: widget.product, quantity: x);
                   },

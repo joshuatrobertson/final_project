@@ -19,6 +19,7 @@ import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 
 import 'account.dart';
+import 'cart.dart';
 
 
 class Home extends StatefulWidget {
@@ -69,9 +70,9 @@ class _HomeState extends State<Home> {
                   Padding(
                     padding: const EdgeInsets.all(3),
                     child: IconButton(
-                      icon: const Icon(Icons.exit_to_app_outlined, color: theme),
+                      icon: const Icon(Icons.shopping_basket, color: theme),
                       onPressed: () async {
-                          context.read<Authenticate>().signOut();
+                        navigateToScreen(context, Cart());
                       },
                     ),
                   ),

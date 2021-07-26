@@ -20,11 +20,6 @@ class UserModel {
   String get email => _email;
   String get uid => _uid;
 
-  set name(String name) => _name;
-  set email(String email) => _email;
-  set uid(String uid) => _uid;
-
-
   UserModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _name = documentSnapshot.data()[NAME];
     _email = documentSnapshot.data()[EMAIL];
@@ -38,7 +33,19 @@ class UserModel {
       CartItem cartItem = CartItem.fromMap(element);
       _result.add(cartItem);
     });
-
     return _result;
   }
+
+  void addToCart(CartItem cartItem) {
+    try {
+      cart.add(cartItem);
+    } catch(e) {
+      print("Error adding item to local cart: " + e.toString());
+    }
+  }
+
+  void removeFromCart(int index) {
+    cart.removeAt(index);
+  }
+
 }

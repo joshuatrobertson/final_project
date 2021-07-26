@@ -18,7 +18,6 @@ class ProductModel {
   static const FEATURED = "featured";
   static const BARBER_ID = "barberID";
 
-
   String _id;
   String _name;
   String _description;
@@ -41,7 +40,7 @@ class ProductModel {
   set price(num price) => _price;
   set image(String image) => _image;
   set featured(bool featured) => _featured;
-  set parentBarber(String parentBarber) => _barberID;
+  set barberID(String barberID) => _barberID;
 
   ProductModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.id;

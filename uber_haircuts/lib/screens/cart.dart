@@ -15,11 +15,12 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  int total = 0;
+  num total = 0.0;
   @override
   Widget build(BuildContext context) {
 
     final user = Provider.of<Authenticate>(context);
+    num x = 0;
 
     return MaterialApp(
         home: Scaffold(
@@ -42,8 +43,10 @@ class _CartState extends State<Cart> {
                         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
-                            itemCount: 0 ?? user.userModel.cart.length,
+                            itemCount: user.userModel.cart.length ?? 0,
                             itemBuilder: (_, index) {
+                             //total = user.userModel.cart[index].product.price + total;
+
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Row(
@@ -73,7 +76,7 @@ class _CartState extends State<Cart> {
                                               8.0, 8.0, 8.0, 0),
                                           child: ClipRRect(
                                               borderRadius: BorderRadius.circular(6.0),
-                                              child: ReturnImage(image: user.userModel.cart[index].id, width: 150, height: 100)
+                                              child: ReturnImage(image: user.userModel.cart[index].product.image, width: 150, height: 100)
                                           )
                                         ),
                                         Padding(
@@ -84,7 +87,7 @@ class _CartState extends State<Cart> {
                                             child: Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                ReturnText(text: user.userModel.cart[index].id,
+                                                ReturnText(text: user.userModel.cart[index].product.name,
                                                   size: 15,
                                                   fontWeight: FontWeight.bold,
                                                   align: TextAlign.left,),
@@ -93,13 +96,8 @@ class _CartState extends State<Cart> {
                                                     mainAxisAlignment: MainAxisAlignment
                                                         .spaceBetween,
                                                     children: [
-
-                                                      ReturnText(
-                                                          text: user.userModel.cart[index].id,
-                                                          color: Colors.black54,
-                                                          size: 10),
                                                       ReturnText(text: "£" +
-                                                          user.userModel.cart[index].id,
+                                                          user.userModel.cart[index].product.price.toString(),
                                                         size: 14,
                                                         color: Colors.redAccent,),
                                                     ]
@@ -112,9 +110,48 @@ class _CartState extends State<Cart> {
                                       ],
                                     ),
                                   ),
+                                      Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children:[
+                                            IconButton(icon: Icon(Icons.remove), onPressed: (){
+                                              setState(() {
+                                                if (user.userModel.cart[index].quantity > 1) {
+                                                  user.userModel.cart[index].updateQuantity('decrease');
+                                                }
+                                              });
+                                            }),
+                                            GestureDetector(
+                                              onTap: () {
+                                                // TODO: display snackbar when item is already in cart
+                                                // Add the item to the current user fetched from Provider of Authenticate class
+                                              },
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: lightGrey,
+                                                  border: Border.all(color: Colors.black12),
+                                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                                  child: ReturnText(text: user.userModel.cart[index].quantity.toString(), color: Colors.black,),
+                                                ),
+                                              ),
+                                            ),
+                                            IconButton(icon: Icon(Icons.add), onPressed: (){
+                                              if (user.userModel.cart[index].quantity < 99) {
+                                                setState(() {
+                                                  user.userModel.cart[index].updateQuantity('increase');
+                                                });
+                                              }
+                                            }),
+                                          ]),
                                     IconButton(
                                       icon: Icon(Icons.delete_forever, color: theme,),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        setState(() {
+                                          user.userModel.removeFromCart(index);
+                                        });
+                                      },
                                     ),
                                     ]),
                               );

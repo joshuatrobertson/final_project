@@ -41,13 +41,17 @@ class UserFirestore {
     _firebaseFirestore.collection(USERS).doc(userId).update(value);
   }
 
-  bool checkUserExists(String userId) {
-    bool val = false;
-    _firebaseFirestore.collection(USERS).doc(userId).get().then((value) => {
-      if (value.exists) {
-        val = true
-      }
-      });
-    return val;
+  Future<dynamic> checkUserExists(String userId) async {
+    DocumentSnapshot snapshot = await _firebaseFirestore.collection(USERS).doc(userId).get();
+
+    if (snapshot == null || !snapshot.exists) {
+      print("User does not exist");
+      return false;
     }
+    else {
+      print("User exists");
+      return true;
+    }
+  }
+
 }

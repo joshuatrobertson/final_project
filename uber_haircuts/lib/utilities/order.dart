@@ -27,7 +27,21 @@ class OrderUtility {
       });
     }
   }
+  
+  // ignore: missing_return
+  Future<List<CartItem>> getDatabaseCartItems(String userId) async {
+    final DocumentSnapshot snapshot = await _firestore.collection(USERS).doc(userId).get();
+    List<dynamic> items = snapshot.get("cart");
+    List<CartItem> orders = [];
 
+    items.forEach((element) {
+      CartItem newItem = CartItem.fromMap(element);
+      orders.add(newItem);
+    });
+      return orders;
+  }
+
+  
 
   Future<UserModel> getUserById(String userId) => _firestore.collection(USERS).doc(userId).get().then((value){
     return UserModel.fromSnapshot(value);
