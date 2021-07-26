@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
@@ -12,7 +13,6 @@ class Cart extends StatefulWidget {
   createState() => _CartState();
 
   Cart();
-
 }
 
 class _CartState extends State<Cart> {
@@ -23,6 +23,9 @@ class _CartState extends State<Cart> {
     final user = Provider.of<Authenticate>(context);
     OrderUtility orderUtility = new OrderUtility();
     num x = 0;
+
+    getTotalPrice(user.userModel.cart);
+
 
     return MaterialApp(
         home: Scaffold(
@@ -47,8 +50,6 @@ class _CartState extends State<Cart> {
                             scrollDirection: Axis.vertical,
                             itemCount: user.userModel.cart.length ?? 0,
                             itemBuilder: (_, index) {
-                             //total = user.userModel.cart[index].product.price + total;
-
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Row(
@@ -171,4 +172,15 @@ class _CartState extends State<Cart> {
         )
     );
   }
+
+  void getTotalPrice(List<CartItem> items) {
+    double totalPrice = 0;
+    items.forEach((item) {
+      totalPrice += item.quantity * item.product.price;
+    });
+    setState(() {
+      total = totalPrice;
+    });
+  }
+
 }
