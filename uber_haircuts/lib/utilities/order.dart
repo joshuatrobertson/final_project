@@ -34,10 +34,9 @@ class OrderUtility {
   }
 
 
-  Future<void> deleteItemFromCart({String userId, int index}) async {
+  Future<void> updateCartFirestore({String userId}) async {
     UserModel userModel = await getUserById(userId);
     List<CartItem> orderItems = userModel.cart;
-    orderItems.removeAt(index);
 
     try {
       List<dynamic> newOrders = [];
@@ -71,8 +70,6 @@ class OrderUtility {
     }
       return orders;
   }
-
-  
 
   Future<UserModel> getUserById(String userId) => _firestore.collection(USERS).doc(userId).get().then((value){
     return UserModel.fromSnapshot(value);

@@ -25,12 +25,7 @@ class ParentBarberModel {
   double get rating => _rating;
   bool get featured => _featured;
 
-  set id(String id) => _id;
-  set name(String name) => _name;
-  set image(String image) => _image;
-  set description(String description) => _description;
-  set rating(double rating) => _rating;
-  set featured(bool featured) => _featured;
+
 
   ParentBarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.id;

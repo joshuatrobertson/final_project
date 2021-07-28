@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/utilities/order.dart';
+import 'package:uber_haircuts/utilities/user_firestore.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
@@ -16,16 +17,20 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  num total = 0.0;
+  num total = 0;
+  num serviceCharge = 1.99;
+
+  // Regular expression to remove any trailing zeroes to add to UI design
+  RegExp _regex = RegExp(r"([.]*0)(?!.*\d)");
+
   @override
   Widget build(BuildContext context) {
 
     final user = Provider.of<Authenticate>(context);
     OrderUtility orderUtility = new OrderUtility();
-    num x = 0;
+    UserFirestore userFirestore = new UserFirestore();
 
     getTotalPrice(user.userModel.cart);
-
 
     return MaterialApp(
         home: Scaffold(
@@ -35,16 +40,18 @@ class _CartState extends State<Cart> {
             icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
             onPressed: () {Navigator.pop(context);},
           ),
-          title: Center(child: ReturnText(text: "Shopping Cart", size: 25, fontWeight: FontWeight.w400,)),
+          title: Center(child: ReturnText(text: "Shopping Cart", size: 15, fontWeight: FontWeight.w400,)),
           ),
 
           body: SafeArea(
-            child: Container(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
-                child: Stack(
-                    children: [
-                      Padding(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+              child: Expanded(
+                child: ListView(
+                  children: [
+                    SizedBox(
+                      height: 300,
+                      child: Padding(
                         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
@@ -102,7 +109,7 @@ class _CartState extends State<Cart> {
                                                       ReturnText(text: "£" +
                                                           user.userModel.cart[index].product.price.toString(),
                                                         size: 14,
-                                                        color: Colors.redAccent,),
+                                                        color: accent_1,),
                                                     ]
                                                 )
                                               ],
@@ -153,7 +160,6 @@ class _CartState extends State<Cart> {
                                       onPressed: () {
                                         setState(() {
                                           user.userModel.removeFromCart(index);
-                                          orderUtility.deleteItemFromCart(userId: user.userModel.uid, index: index);
                                         });
                                       },
                                     ),
@@ -161,12 +167,114 @@ class _CartState extends State<Cart> {
                               );
                             }),
                       ),
-                      Container(
-                        padding: const EdgeInsets.fromLTRB(15, 0, 15, 20),
-                        alignment: Alignment.bottomLeft,
-                          child: ReturnText(text: 'Total = £' + total.toString(), size: 24,)),
-                    ])
-              ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 50, 0, 20),
+                      child: ReturnText(text: "Customer Location", size: 22, align: TextAlign.left, fontWeight: FontWeight.bold,),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(right: 15.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+                            child: Row(
+                              children: [
+                                Icon(Icons.location_on_rounded, color: theme,),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 15.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      ReturnText(text: user.userModel.locationDetails.number + " " + user.userModel.locationDetails.street, fontWeight: FontWeight.bold),
+                                      ReturnText(text: user.userModel.locationDetails.postcode),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          ReturnText(text: "Edit", decoration: TextDecoration.underline, color: Colors.blue,),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 50.0),
+                      child: Column(
+                        children: [
+                          Container(
+                              padding: const EdgeInsets.fromLTRB(15, 0, 15, 20),
+                              alignment: Alignment.bottomLeft,
+                              child: ReturnText(text: 'Order Info', size: 22, align: TextAlign.left, fontWeight: FontWeight.bold,),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(15, 0, 15, 5),
+                                child: ReturnText(text: "Subtotal"),
+                                alignment: Alignment.bottomLeft,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(15, 0, 15, 5),
+                                child: ReturnText(text: "£" + total.toString().replaceAll(_regex, "")),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                                child: ReturnText(text: "Service Charge"),
+                                alignment: Alignment.bottomLeft,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                                child: ReturnText(text: "£" + serviceCharge.toString().replaceAll(_regex, "")),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                                child: ReturnText(text: "Total Cost"),
+                                alignment: Alignment.bottomLeft,
+                              ),
+                              Container(
+                                padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                                child: ReturnText(text: "£" + (total + serviceCharge).toString().replaceAll(_regex, ""), size: 20, fontWeight: FontWeight.bold,),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 20),
+                      child: GestureDetector(
+                        onTap: () {
+                          // TODO: navigate to checkout screen
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: theme,
+                            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                            child: ReturnText(text: "Checkout", color: white,),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
             ),
           ),
         )

@@ -25,7 +25,7 @@ class Authenticate extends ChangeNotifier {
   FirebaseAuth _firebaseAuth;
   OrderUtility _orderUtility = new OrderUtility();
   User _user;
-  UserModel userModel;
+  UserModel userModel = new UserModel();
   UserFirestore _userDatabase = UserFirestore();
   AuthStatus _authStatus = AuthStatus.UNINITIALISED;
   // Function to test for logged in user and return relevant page
@@ -48,7 +48,7 @@ class Authenticate extends ChangeNotifier {
       notifyListeners();
       await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       print("signed in " + email);
-      _authStatus = AuthStatus.AUTHENTICATED;
+      _authStatus = AuthStatus.AUTH_WITH_MAPS;
       notifyListeners();
       return true;
     } on FirebaseAuthException catch (e) {
@@ -83,18 +83,23 @@ class Authenticate extends ChangeNotifier {
           "cart": [],
         };
 
+        userModel.fromMap(newUser);
         // Create a new user and add to the database
         // Here we use the auth result user id as the document id so that it can be referred to later
         _userDatabase.createNewUser(newUser, _authResult.user.uid);
+        UserModel newModel;
+        this.userModel = newModel;
+        _authStatus = AuthStatus.AUTHENTICATED;
       }
       else {
         userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
         List<CartItem> orders = [];
         orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
         userModel.cart = orders;
+        _authStatus = AuthStatus.AUTH_WITH_MAPS;
+
       }
       print("signed in with Google as: " + user.displayName);
-      _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
       return true;
   } catch (e) {
@@ -202,6 +207,7 @@ class Authenticate extends ChangeNotifier {
   // Sign out of all providers and then from firebase
   Future signOut() async {
     try {
+      _orderUtility.updateCartFirestore(userId: _user.uid);
       await _googleSignIn.signOut();
       await FacebookAuth.instance.logOut();
       await _twitterSignIn.logOut();

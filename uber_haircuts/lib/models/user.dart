@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:uber_haircuts/models/cart.dart';
+import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/product.dart';
 
 // User model to store data within firebase
@@ -15,6 +16,7 @@ class UserModel {
   String _email;
   String _uid;
   List<CartItem> cart;
+  PlaceModel locationDetails;
 
   String get name => _name;
   String get email => _email;
@@ -24,10 +26,13 @@ class UserModel {
     _name = documentSnapshot.data()[NAME];
     _email = documentSnapshot.data()[EMAIL];
     _uid = documentSnapshot.data()[UID];
-    cart = _convertFromMap(documentSnapshot.data()[CART]);
+    cart = _convertCartFromMap(documentSnapshot.data()[CART]);
+    locationDetails = _convertLocationDetails(documentSnapshot.data()[LOCATION]);
   }
 
-  List<CartItem> _convertFromMap(List cart) {
+  UserModel();
+
+  List<CartItem> _convertCartFromMap(List cart) {
     List<CartItem> _result = [];
     cart.forEach((element) {
       CartItem cartItem = CartItem.fromMap(element);
@@ -35,6 +40,16 @@ class UserModel {
     });
     return _result;
   }
+
+  void fromMap(Map map) {
+    _name = map[NAME];
+    _email =  map[EMAIL];
+    _uid =  map[UID];
+    cart = [];
+    }
+
+  PlaceModel _convertLocationDetails(List location) =>
+      new PlaceModel(number: location[0]["number"], street: location[1]["street"], city: location[2]["city"], postcode: location[3]["postcode"]);
 
   void addToCart(CartItem cartItem) {
     try {

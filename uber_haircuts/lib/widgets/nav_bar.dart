@@ -3,6 +3,8 @@ import 'package:uber_haircuts/screens/account.dart';
 import 'package:uber_haircuts/screens/home.dart';
 import 'package:uber_haircuts/screens/user_orders.dart';
 
+// TODO: nav bar always shows home
+
 class NavBar extends StatefulWidget {
   @override
   _NavBarState createState() => _NavBarState();
