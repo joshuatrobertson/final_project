@@ -45,6 +45,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
 
     ParentBarbersProvider _barberProvider = Provider.of<ParentBarbersProvider>(context);
+    Authenticate _user = Provider.of<Authenticate>(context);
+
     ParentBarberModel _parentBarbers;
 
     return MaterialApp (
@@ -72,7 +74,14 @@ class _HomeState extends State<Home> {
                     child: IconButton(
                       icon: const Icon(Icons.shopping_basket, color: theme),
                       onPressed: () async {
-                        navigateToScreen(context, Cart());
+                        if (_user.userModel.cart != null && _user.userModel.cart.isNotEmpty) {
+                          navigateToScreen(context, Cart());
+                        }
+                        else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: ReturnText(text: "Basket Empty", color: white,)));
+                        }
                       },
                     ),
                   ),

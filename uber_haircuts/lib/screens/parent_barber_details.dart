@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
+import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/barber_details.dart';
 import 'package:uber_haircuts/screens/product_list.dart';
@@ -25,8 +27,10 @@ class ParentBarberDetails extends StatefulWidget {
 
 class _ParentBarberDetailsState extends State<ParentBarberDetails> {
   int _currentNav = 0;
+
   @override
     Widget build(BuildContext context) {
+    Authenticate _user = Provider.of<Authenticate>(context);
 
     return MaterialApp(
       home: Scaffold(
@@ -40,7 +44,14 @@ class _ParentBarberDetailsState extends State<ParentBarberDetails> {
             IconButton(
               icon: Icon(Icons.shopping_basket, color: theme,),
               onPressed: () {
-                navigateToScreen(context, Cart());
+                if (_user.userModel.cart != null && _user.userModel.cart.isNotEmpty) {
+                  navigateToScreen(context, Cart());
+                }
+                else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          content: ReturnText(text: "Basket Empty", color: white,)));
+                }
               },
             )
           ],

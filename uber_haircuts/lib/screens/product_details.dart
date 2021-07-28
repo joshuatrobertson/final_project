@@ -22,7 +22,7 @@ class _ProductDetailsState extends State<ProductDetails> {
 
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<Authenticate>(context);
+    final _user = Provider.of<Authenticate>(context);
     return Scaffold(
         backgroundColor: Colors.white,
         body: Column(
@@ -43,7 +43,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                       IconButton(
                         icon: Icon(Icons.shopping_basket, color: theme,),
                         onPressed: () {
-                          navigateToScreen(context, Cart());
+                          if (_user.userModel.cart != null && _user.userModel.cart.isNotEmpty) {
+                            navigateToScreen(context, Cart());
+                          }
+                          else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: ReturnText(text: "Basket Empty", color: white,)));
+                          }
                         },
                       )],
                   ),
@@ -69,7 +76,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   onTap: () {
                     // TODO: display snackbar when item is already in cart
                     // Add the item to the current user fetched from Provider of Authenticate class
-                    user.addItemToCart(productModel: widget.product, quantity: x);
+                    _user.addItemToCart(productModel: widget.product, quantity: x);
                   },
                   child: Container(
                     decoration: BoxDecoration(

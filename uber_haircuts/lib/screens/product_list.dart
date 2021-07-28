@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/product.dart';
+import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
 import 'package:uber_haircuts/screens/product_details.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
@@ -23,6 +25,8 @@ class ProductList extends StatefulWidget {
 class _ProductList extends State<ProductList> {
   @override
   Widget build(BuildContext context) {
+    final _user = Provider.of<Authenticate>(context);
+
     List<ProductModel> _products = widget.parentBarbersProvider.products.where((product) =>
     product.barberID == widget.barberModel.id).toList();
     return MaterialApp(
@@ -37,7 +41,14 @@ class _ProductList extends State<ProductList> {
             IconButton(
               icon: Icon(Icons.shopping_basket, color: theme,),
               onPressed: () {
-                navigateToScreen(context, Cart());
+                if (_user.userModel.cart != null && _user.userModel.cart.isNotEmpty) {
+                  navigateToScreen(context, Cart());
+                }
+                else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                          content: ReturnText(text: "Basket Empty", color: white,)));
+                }
               },
             )
           ],
