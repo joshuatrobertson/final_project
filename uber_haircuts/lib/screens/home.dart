@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
     Authenticate _user = Provider.of<Authenticate>(context);
 
     ParentBarberModel _parentBarbers;
-
+    // TODO: Items not loading from fresh install
     return MaterialApp (
       home: Scaffold (
         drawer: Drawer(

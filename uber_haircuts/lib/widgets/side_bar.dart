@@ -18,7 +18,6 @@ class SideBar extends StatefulWidget {
 class _SideBarState extends State<SideBar> {
   UserModel _user;
 
-
   @override
   Widget build(BuildContext context) {
 
@@ -34,7 +33,7 @@ class _SideBarState extends State<SideBar> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
             children: [
-              ReturnText(text: "Hello, \n", size: 22, fontWeight: FontWeight.normal,),
+              ReturnText(text: "Good " + getGreetingMessage() + "\n", size: 22, fontWeight: FontWeight.normal,),
               ReturnText(text: _getUsername(), size: 28, fontWeight: FontWeight.bold,),
             ],
             ),
@@ -130,4 +129,19 @@ class _SideBarState extends State<SideBar> {
     FirebaseAuth _auth = FirebaseAuth.instance;
     return _auth.currentUser.displayName;
   }
+
+  String getGreetingMessage(){
+
+    var currentTime = DateTime.now().hour;
+    if(currentTime <= 11){
+      return 'Morning';
+    } else if (currentTime > 11 && currentTime < 5){
+      return 'Afternoon';
+    } else if (currentTime > 4 && currentTime <= 11){
+      return 'Evening';
+    } else {
+      return 'Morning';
+    }
+  }
+
 }

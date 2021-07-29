@@ -46,8 +46,12 @@ class Authenticate extends ChangeNotifier {
     try {
       _authStatus = AuthStatus.AUTHENTICATING;
       notifyListeners();
-      await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+      final UserCredential _authResult = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       print("signed in " + email);
+      userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
+      List<CartItem> orders = [];
+      orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
+      userModel.cart = orders;
       _authStatus = AuthStatus.AUTH_WITH_MAPS;
       notifyListeners();
       return true;
@@ -108,6 +112,7 @@ class Authenticate extends ChangeNotifier {
       orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
       userModel.cart = orders;
       _authStatus = AuthStatus.AUTH_WITH_MAPS;
+      notifyListeners();
     }
     return user;
   }
@@ -214,6 +219,7 @@ class Authenticate extends ChangeNotifier {
   }
   
   // Sign out of all providers and then from firebase
+  // TODO: sign out not working when log in from fresh install
   Future signOut() async {
     try {
       _orderUtility.updateCartFirestore(userId: userModel.uid);

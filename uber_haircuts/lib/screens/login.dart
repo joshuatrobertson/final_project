@@ -166,7 +166,8 @@ class _LoginState extends State<Login> {
                       ReturnText(text: "Don't have an account?   "),
                       GestureDetector(
                         onTap: () {navigateToScreen(context, Registration());},
-                          child: ReturnText(text: "Sign Up", color: Colors.red, decoration: TextDecoration.underline,)),
+                          child: ReturnText(text: "Sign Up", color: Colors.red, decoration: TextDecoration.underline,)
+                      ),
                     ],
                   ),
                 )

@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/screens/checkout.dart';
 import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
+import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
@@ -26,11 +28,9 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<Authenticate>(context);
-    OrderUtility orderUtility = new OrderUtility();
-    UserFirestore userFirestore = new UserFirestore();
+    final _user = Provider.of<Authenticate>(context);
 
-    getTotalPrice(user.userModel.cart);
+    getTotalPrice(_user.userModel.cart);
 
     return MaterialApp(
         home: Scaffold(
@@ -55,7 +55,7 @@ class _CartState extends State<Cart> {
                         padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                         child: ListView.builder(
                             scrollDirection: Axis.vertical,
-                            itemCount: user.userModel.cart.length ?? 0,
+                            itemCount: _user.userModel.cart.length ?? 0,
                             itemBuilder: (_, index) {
                               return Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -86,7 +86,7 @@ class _CartState extends State<Cart> {
                                               8.0, 8.0, 8.0, 0),
                                           child: ClipRRect(
                                               borderRadius: BorderRadius.circular(6.0),
-                                              child: ReturnImage(image: user.userModel.cart[index].product.image, width: 150, height: 100)
+                                              child: ReturnImage(image: _user.userModel.cart[index].product.image, width: 150, height: 100)
                                           )
                                         ),
                                         Padding(
@@ -97,7 +97,7 @@ class _CartState extends State<Cart> {
                                             child: Column(
                                               crossAxisAlignment: CrossAxisAlignment.start,
                                               children: [
-                                                ReturnText(text: user.userModel.cart[index].product.name,
+                                                ReturnText(text: _user.userModel.cart[index].product.name,
                                                   size: 15,
                                                   fontWeight: FontWeight.bold,
                                                   align: TextAlign.left,),
@@ -107,7 +107,7 @@ class _CartState extends State<Cart> {
                                                         .spaceBetween,
                                                     children: [
                                                       ReturnText(text: "£" +
-                                                          user.userModel.cart[index].product.price.toString(),
+                                                          _user.userModel.cart[index].product.price.toString(),
                                                         size: 14,
                                                         color: accent_1,),
                                                     ]
@@ -125,8 +125,8 @@ class _CartState extends State<Cart> {
                                           children:[
                                             IconButton(icon: Icon(Icons.remove), onPressed: (){
                                               setState(() {
-                                                if (user.userModel.cart[index].quantity > 1) {
-                                                  user.userModel.cart[index].updateQuantity('decrease');
+                                                if (_user.userModel.cart[index].quantity > 1) {
+                                                  _user.userModel.cart[index].updateQuantity('decrease');
                                                 }
                                               });
                                             }),
@@ -138,13 +138,13 @@ class _CartState extends State<Cart> {
                                               ),
                                               child: Padding(
                                                 padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                                                child: ReturnText(text: user.userModel.cart[index].quantity.toString(), color: Colors.black,),
+                                                child: ReturnText(text: _user.userModel.cart[index].quantity.toString(), color: Colors.black,),
                                               ),
                                             ),
                                             IconButton(icon: Icon(Icons.add), onPressed: (){
-                                              if (user.userModel.cart[index].quantity < 99) {
+                                              if (_user.userModel.cart[index].quantity < 99) {
                                                 setState(() {
-                                                  user.userModel.cart[index].updateQuantity('increase');
+                                                  _user.userModel.cart[index].updateQuantity('increase');
                                                 });
                                               }
                                             }),
@@ -153,7 +153,7 @@ class _CartState extends State<Cart> {
                                       icon: Icon(Icons.delete_forever, color: theme,),
                                       onPressed: () {
                                         setState(() {
-                                          user.userModel.removeFromCart(index);
+                                          _user.userModel.removeFromCart(index);
                                         });
                                       },
                                     ),
@@ -182,8 +182,8 @@ class _CartState extends State<Cart> {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      ReturnText(text: user.userModel.locationDetails.number + " " + user.userModel.locationDetails.street, fontWeight: FontWeight.bold),
-                                      ReturnText(text: user.userModel.locationDetails.postcode),
+                                      ReturnText(text: _user.userModel.locationDetails.number + " " + _user.userModel.locationDetails.street, fontWeight: FontWeight.bold),
+                                      ReturnText(text: _user.userModel.locationDetails.postcode),
                                     ],
                                   ),
                                 ),
@@ -252,7 +252,16 @@ class _CartState extends State<Cart> {
                       padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 20),
                       child: GestureDetector(
                         onTap: () {
-                          // TODO: navigate to checkout screen
+                          if (_user.userModel.cart != null && _user.userModel.cart.isNotEmpty) {
+                            navigateToScreen(context, Checkout());
+                          }
+                          else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                    content: ReturnText(text: "Basket Empty", color: white,)
+                                )
+                            );
+                          }
                         },
                         child: Container(
                           decoration: BoxDecoration(
