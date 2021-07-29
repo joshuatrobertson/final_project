@@ -58,8 +58,6 @@ class Authenticate extends ChangeNotifier {
     }
   }
 
-
-  // TODO: split this into smaller functions
   Future<bool> googleSignIn() async {
     try {
       _authStatus = AuthStatus.AUTHENTICATING;
@@ -71,34 +69,7 @@ class Authenticate extends ChangeNotifier {
           accessToken: authentication.accessToken
       );
       final UserCredential _authResult = await _firebaseAuth.signInWithCredential(credential);
-      final User user = _authResult.user;
-      bool userExists = await _userDatabase.checkUserExists(user.uid);
-      if (!userExists) {
-        // Create a map with the details given to create a user to store in the database
-        Map<String, dynamic> newUser = {
-          "uid": _authResult.user.uid,
-          "name": _authResult.user.displayName,
-          "location": [],
-          "email": _authResult.user.email,
-          "cart": [],
-        };
-
-        userModel.fromMap(newUser);
-        // Create a new user and add to the database
-        // Here we use the auth result user id as the document id so that it can be referred to later
-        _userDatabase.createNewUser(newUser, _authResult.user.uid);
-        UserModel newModel;
-        this.userModel = newModel;
-        _authStatus = AuthStatus.AUTHENTICATED;
-      }
-      else {
-        userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
-        List<CartItem> orders = [];
-        orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
-        userModel.cart = orders;
-        _authStatus = AuthStatus.AUTH_WITH_MAPS;
-
-      }
+      User user = await signInCreateUser(_authResult);
       print("signed in with Google as: " + user.displayName);
       notifyListeners();
       return true;
@@ -108,6 +79,37 @@ class Authenticate extends ChangeNotifier {
       notifyListeners();
       return false;
     }
+  }
+
+  Future<User> signInCreateUser(UserCredential _authResult) async {
+    final User user = _authResult.user;
+    bool userExists = await _userDatabase.checkUserExists(user.uid);
+    if (!userExists) {
+      // Create a map with the details given to create a user to store in the database
+      Map<String, dynamic> newUser = {
+        "uid": _authResult.user.uid,
+        "name": _authResult.user.displayName,
+        "location": [],
+        "email": _authResult.user.email,
+        "cart": [],
+      };
+    
+      userModel.fromMap(newUser);
+      // Create a new user and add to the database
+      // Here we use the auth result user id as the document id so that it can be referred to later
+      _userDatabase.createNewUser(newUser, _authResult.user.uid);
+      UserModel newModel;
+      this.userModel = newModel;
+      _authStatus = AuthStatus.AUTHENTICATED;
+    }
+    else {
+      userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
+      List<CartItem> orders = [];
+      orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
+      userModel.cart = orders;
+      _authStatus = AuthStatus.AUTH_WITH_MAPS;
+    }
+    return user;
   }
 
   // Turn the location values into a JSON format map to store in firebase
@@ -126,24 +128,18 @@ class Authenticate extends ChangeNotifier {
     return location;
   }
 
-  Future googleSignOut() async {
-    print("signed out google account");
-    _googleSignIn.signOut();
-  }
-
-  // TODO: create user in database
   Future<bool> facebookSignIn() async {
     try {
       _authStatus = AuthStatus.AUTHENTICATING;
+      notifyListeners();
       final AccessToken result = await FacebookAuth.instance.login();
       final facebookAuthCredential = FacebookAuthProvider.credential(result.token);
-      _firebaseAuth.signInWithCredential(facebookAuthCredential);
+      final UserCredential _authResult = await _firebaseAuth.signInWithCredential(facebookAuthCredential);
+      await signInCreateUser(_authResult);
       print("Signed in with Facebook ID: " + result.userId);
-      _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
       return true;
-
-    } catch(e) {
+    } catch (e) {
       print(e);
       _authStatus = AuthStatus.NOT_AUTHENTICATED;
       notifyListeners();
@@ -151,18 +147,26 @@ class Authenticate extends ChangeNotifier {
     }
   }
 
-  // TODO: create user in database
   // Method to sign in a user via twitter
   Future<void> twitterSignIn(String token, String secret) async {
-    _authStatus = AuthStatus.AUTHENTICATING;
+    try {
+      _authStatus = AuthStatus.AUTHENTICATING;
+      notifyListeners();
+      final AuthCredential credential = TwitterAuthProvider.credential(
+            accessToken: token,
+            secret: secret
+        );
+      final UserCredential _authResult = await _firebaseAuth.signInWithCredential(credential);
+      await signInCreateUser(_authResult);
+      print("Signed in with Twitter ID: " + _authResult.user.uid);
+      notifyListeners();
+      return true;
+    } catch (e) {
+    print(e);
+    _authStatus = AuthStatus.NOT_AUTHENTICATED;
     notifyListeners();
-    final AuthCredential credential = TwitterAuthProvider.credential(
-          accessToken: token,
-          secret: secret
-      );
-      await _firebaseAuth.signInWithCredential(credential);
-      _authStatus = AuthStatus.AUTHENTICATED;
-    notifyListeners();
+    return false;
+    }
   }
 
   // Method to sign a user up. Creates a Map<String, dynamic> to pass through the values to the method createNewUser which then
@@ -203,11 +207,16 @@ class Authenticate extends ChangeNotifier {
       print(error);
     }
   }
-
+  
+  Future googleSignOut() async {
+    print("signed out google account");
+    _googleSignIn.signOut();
+  }
+  
   // Sign out of all providers and then from firebase
   Future signOut() async {
     try {
-      _orderUtility.updateCartFirestore(userId: _user.uid);
+      _orderUtility.updateCartFirestore(userId: userModel.uid);
       await _googleSignIn.signOut();
       await FacebookAuth.instance.logOut();
       await _twitterSignIn.logOut();

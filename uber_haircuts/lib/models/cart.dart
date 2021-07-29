@@ -42,7 +42,6 @@ class CartItem {
     _quantity = documentSnapshot.data()[QUANTITY];
   }
 
-  // TODO: update quantity in firestore
   void updateQuantity(String quantity) {
     if(quantity == 'increase') {
       _quantity++;

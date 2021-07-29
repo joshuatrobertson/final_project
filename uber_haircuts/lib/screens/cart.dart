@@ -130,21 +130,15 @@ class _CartState extends State<Cart> {
                                                 }
                                               });
                                             }),
-                                            GestureDetector(
-                                              onTap: () {
-                                                // TODO: display snackbar when item is already in cart
-                                                // Add the item to the current user fetched from Provider of Authenticate class
-                                              },
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  color: lightGrey,
-                                                  border: Border.all(color: Colors.black12),
-                                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                                                ),
-                                                child: Padding(
-                                                  padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                                                  child: ReturnText(text: user.userModel.cart[index].quantity.toString(), color: Colors.black,),
-                                                ),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                color: lightGrey,
+                                                border: Border.all(color: Colors.black12),
+                                                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                                child: ReturnText(text: user.userModel.cart[index].quantity.toString(), color: Colors.black,),
                                               ),
                                             ),
                                             IconButton(icon: Icon(Icons.add), onPressed: (){
