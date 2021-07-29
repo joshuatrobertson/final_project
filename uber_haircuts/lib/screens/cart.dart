@@ -5,6 +5,7 @@ import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/checkout.dart';
 import 'package:uber_haircuts/utilities/order.dart';
+import 'package:uber_haircuts/utilities/promo_code.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
@@ -29,6 +30,10 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
 
     final _user = Provider.of<Authenticate>(context);
+
+    final PromoCodeUtility promoCodeUtility = new PromoCodeUtility();
+
+    final TextEditingController _promoCodeText = new TextEditingController();
 
     getTotalPrice(_user.userModel.cart);
 
@@ -192,6 +197,66 @@ class _CartState extends State<Cart> {
                           ),
                           ReturnText(text: "Edit", decoration: TextDecoration.underline, color: Colors.blue,),
                         ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 50, 10, 0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: lightGrey,
+                          borderRadius: BorderRadius.all(
+                              Radius.circular(12.0)
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.35),
+                              spreadRadius: 2,
+                              blurRadius: 3,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        padding: const EdgeInsets.fromLTRB(15, 5, 0, 5),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 200,
+                              child: TextField(
+                                controller: _promoCodeText,
+                                textCapitalization: TextCapitalization.characters,
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  focusedBorder: InputBorder.none,
+                                  enabledBorder: InputBorder.none,
+                                  errorBorder: InputBorder.none,
+                                  disabledBorder: InputBorder.none,
+                                  labelText: "Promo Code",
+                                ),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () async {
+                                print(_promoCodeText.text);
+                                if (await promoCodeUtility.checkPromoCodeValid(_promoCodeText.text)) {
+                                  print("VALID PROMO CODE");
+                                }
+                                else {
+                                  print("INVALID PROMO CODE");
+                                }
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: theme,
+                                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(53, 20, 53, 20),
+                                  child: ReturnText(text: "Apply", color: white,),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Padding(
