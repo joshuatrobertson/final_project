@@ -103,7 +103,6 @@ class _LoginState extends State<Login> {
                     height: 70,
                     child: Material(
                       borderRadius: BorderRadius.circular(15),
-                      shadowColor: theme,
                       color: theme,
                       child: GestureDetector(
                         onTap: () async {

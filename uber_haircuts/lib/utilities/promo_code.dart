@@ -13,4 +13,10 @@ class PromoCodeUtility {
     }
     return false;
   }
+
+  Future<num> getDiscount(String promoCode) async {
+    final DocumentSnapshot snapshot = await _firestore.collection(DISCOUNT_CODE).doc(promoCode).get();
+
+    return snapshot.get('discount');
+  }
 }
