@@ -68,7 +68,7 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(
                           labelText: "Password",
                         suffixIcon: IconButton(
-                          // TODO: discuss toggles text/ colour
+                          // TODO : discuss toggles text/ colour
                           onPressed: () {
                             setState(() {
                               // Toggles the icon colour/ obscures text
@@ -94,7 +94,8 @@ class _LoginState extends State<Login> {
                     onTap: () {
                       navigateToScreen(context, ForgotPassword());
                     },
-                    child: ReturnText(text: "Forgot Password?", color: Colors.red, decoration: TextDecoration.underline,)),
+                    child: ReturnText(text: "Forgot Password?", color: Colors.red, decoration: TextDecoration.underline,)
+                    ),
                   ),
                 ),
                 Padding(
@@ -123,7 +124,16 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(70.0, 20, 70, 0),
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: GestureDetector(
+                      onTap: () {
+                        authProvider.resetAuthStatus();
+                      },
+                      child: ReturnText(text: "Sign in as a barber", color: Colors.red, decoration: TextDecoration.underline,)
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(70.0, 0, 70, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

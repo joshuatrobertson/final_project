@@ -12,6 +12,8 @@ import 'package:uber_haircuts/utilities/user_firestore.dart';
 
 enum AuthStatus {
   UNINITIALISED,
+  UNAUTHORISED_USER,
+  UNAUTHORISED_BARBER,
   NOT_AUTHENTICATED,
   AUTHENTICATING,
   AUTHENTICATED,
@@ -58,7 +60,24 @@ class Authenticate extends ChangeNotifier {
     } on FirebaseAuthException catch (e) {
       print(e);
       _authStatus = AuthStatus.NOT_AUTHENTICATED;
+      notifyListeners();
       return false;
+    }
+  }
+
+  void resetAuthStatus() {
+    _authStatus = AuthStatus.UNINITIALISED;
+    notifyListeners();
+  }
+
+  void chooseUser(String user) {
+    if (user == 'user') {
+      _authStatus = AuthStatus.UNAUTHORISED_USER;
+      notifyListeners();
+    }
+    else {
+      _authStatus = AuthStatus.UNAUTHORISED_BARBER;
+      notifyListeners();
     }
   }
 
@@ -105,6 +124,7 @@ class Authenticate extends ChangeNotifier {
       UserModel newModel;
       this.userModel = newModel;
       _authStatus = AuthStatus.AUTHENTICATED;
+      notifyListeners();
     }
     else {
       userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
@@ -228,7 +248,7 @@ class Authenticate extends ChangeNotifier {
       await _twitterSignIn.logOut();
       await _firebaseAuth.signOut();
       print("User signed out");
-      _authStatus = AuthStatus.UNINITIALISED;
+      _authStatus = AuthStatus.UNAUTHORISED_USER;
       notifyListeners();
 
     } catch (exception) {

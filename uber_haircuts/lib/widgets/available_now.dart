@@ -12,6 +12,9 @@ import '../theme/main_theme.dart';
 
 class AvailableNow extends StatelessWidget {
   const AvailableNow({Key key}) : super(key: key);
+
+
+
   @override
   Widget build(BuildContext context) {
     final _parentBarbers = Provider.of<ParentBarbersProvider>(context);

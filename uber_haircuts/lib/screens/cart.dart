@@ -12,7 +12,6 @@ import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
-import 'package:stripe_payment/stripe_payment.dart';
 
 class Cart extends StatefulWidget {
 
@@ -33,12 +32,15 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
 
+    /*
     StripePayment.setOptions(
         StripeOptions(
             publishableKey:"pk_test_51JIZXjCjTeZnChw52p8wViZ2jm7q1sDU1JMfhFSu2WVO3eQ2ghYNwJaRkALzWYaUmHKo96mJElOQjah1bS2VHrZ900h7Q34F7J",
             merchantId: "acct_1JIZXjCjTeZnChw5",
             androidPayMode: 'test'
         ));
+
+     */
 
     final _user = Provider.of<Authenticate>(context);
     final PromoCodeUtility promoCodeUtility = new PromoCodeUtility();
