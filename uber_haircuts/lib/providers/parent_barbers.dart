@@ -17,7 +17,6 @@ class ParentBarbersProvider extends ChangeNotifier {
   List<ParentBarberModel> _topRatedParents = [];
   List<BarberModel> _barbers = [];
   List<ProductModel> _products = [];
-
   get allParents => _allParents;
   get featuredParents => _featuredParents;
   get topRatedParents => _topRatedParents;
@@ -43,7 +42,7 @@ class ParentBarbersProvider extends ChangeNotifier {
 
   // Returns a list of ParentBarberModel
   _loadParents() async {
-    _position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    _position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
     try {
       // Get the barbers within a search radius of x km
       _allParents = await _parentFirestore.getLocalParents(_position.latitude, _position.longitude, 50);

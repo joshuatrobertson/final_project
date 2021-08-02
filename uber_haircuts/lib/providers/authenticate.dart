@@ -224,6 +224,35 @@ class Authenticate extends ChangeNotifier {
     }
   }
 
+
+  Future<bool> barberSignUp({String name, String email, String password, String image}) async {
+    try {
+      UserCredential _authResult = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      // Update the display name so it can be fetched and used
+      _firebaseAuth.currentUser.updateDisplayName(name);
+      Map<String, dynamic> newBarber = {
+        "uid": _authResult.user.uid,
+        "name": name,
+        "image": image,
+        "email": email,
+        "rating": 0,
+        "featured": false
+      };
+      // Create a new user and add to the database
+      // Here we use the auth result user id as the document id so that it can be referred to later
+      _userDatabase.createNewUser(newBarber, _authResult.user.uid);
+      _authStatus = AuthStatus.AUTHENTICATED;
+      notifyListeners();
+      print(email + " signed up");
+      return true;
+    }
+    on FirebaseAuthException catch (e) {
+      print(e);
+      _authStatus = AuthStatus.NOT_AUTHENTICATED;
+      notifyListeners();
+      return false;
+    }
+  }
   // Method to send a password reset to the user given their specified email
   Future resetPassword(String email) async {
     try {
