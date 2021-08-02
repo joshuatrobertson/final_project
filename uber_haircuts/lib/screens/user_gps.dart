@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/google_maps.dart';
 import 'package:uber_haircuts/models/location.dart';
+import 'package:uber_haircuts/utilities/barber_firestore.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
 import 'package:uber_haircuts/widgets/location_search.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,7 @@ class FireMap extends StatefulWidget {
 
 class _FireMapState extends State<FireMap> {
   UserFirestore _userDatabase = new UserFirestore();
+  BarberFirestore _barberFirestore = new BarberFirestore();
   final _textController = TextEditingController();
   Location location = new Location();
   // To get users current location to load barbers
@@ -81,7 +83,13 @@ class _FireMapState extends State<FireMap> {
                     final placeDetails = await GoogleMapsAPI(sessionToken)
                         .getLocationDetails(searchResult.placeId);
                     Map<String, dynamic> values = authProvider.createLocationMap(placeDetails);
-                    _userDatabase.addLocationDetails(values, _user.uid);
+                    // Add to the barber or user document within the database
+                    if (authProvider.currentUser == CurrentUser.CUSTOMER) {
+                      _userDatabase.addLocationDetails(values, _user.uid);
+                    }
+                    else {
+                      _barberFirestore.addLocationDetails(values, _user.uid);
+                    }
                     navigateToScreen(context, Home());
                   }
                 },

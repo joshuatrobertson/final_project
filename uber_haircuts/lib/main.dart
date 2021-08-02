@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
+import 'package:uber_haircuts/screens/barber_home.dart';
 import 'package:uber_haircuts/screens/barber_login.dart';
 import 'package:uber_haircuts/screens/login.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
@@ -65,6 +66,9 @@ class AuthenticationWrapper extends StatelessWidget {
     // If the user is logged in with their GPS taken then show the home screen
     else if (user != null && status.authStatus == AuthStatus.AUTHENTICATED) {
       return UserGPS();
+    }
+    else if (user != null && status.authStatus == AuthStatus.BARBER_AUTHENTICATED) {
+      return BarberHome();
     }
     else if (user != null && status.authStatus == AuthStatus.AUTH_WITH_MAPS) {
       return NavBar();

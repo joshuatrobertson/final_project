@@ -7,6 +7,7 @@ import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
+import 'package:uber_haircuts/utilities/barber_firestore.dart';
 import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
 
@@ -17,18 +18,26 @@ enum AuthStatus {
   NOT_AUTHENTICATED,
   AUTHENTICATING,
   AUTHENTICATED,
-  AUTH_WITH_MAPS,
+  BARBER_AUTHENTICATED,
+  AUTH_WITH_MAPS
+}
+
+enum CurrentUser {
+  CUSTOMER,
+  BARBER
 }
 
 class Authenticate extends ChangeNotifier {
 
   bool firstOrder = true;
+  CurrentUser _currentUser;
   // Create an instance of firebase and authenticate it
   FirebaseAuth _firebaseAuth;
   OrderUtility _orderUtility = new OrderUtility();
   User _user;
   UserModel userModel = new UserModel();
   UserFirestore _userDatabase = UserFirestore();
+  BarberFirestore _barberFirestore = BarberFirestore();
   AuthStatus _authStatus = AuthStatus.UNINITIALISED;
   // Function to test for logged in user and return relevant page
   Stream<User> get stateChanges => _firebaseAuth.authStateChanges();
@@ -41,6 +50,7 @@ class Authenticate extends ChangeNotifier {
 
   // Getters
   AuthStatus get authStatus => _authStatus;
+  CurrentUser get currentUser => _currentUser;
   User get user => _user;
   Stream<User> get userStateChanges => _firebaseAuth.authStateChanges();
 
@@ -73,10 +83,12 @@ class Authenticate extends ChangeNotifier {
   void chooseUser(String user) {
     if (user == 'user') {
       _authStatus = AuthStatus.UNAUTHORISED_USER;
+      _currentUser = CurrentUser.CUSTOMER;
       notifyListeners();
     }
     else {
       _authStatus = AuthStatus.UNAUTHORISED_BARBER;
+      _currentUser = CurrentUser.BARBER;
       notifyListeners();
     }
   }
@@ -140,7 +152,7 @@ class Authenticate extends ChangeNotifier {
   // Turn the location values into a JSON format map to store in firebase
   Map<String, dynamic> createLocationMap(PlaceModel placeModel) {
     Map<String, dynamic> location = {
-      "location": [
+      "address": [
         {"number": placeModel.number},
         {"street": placeModel.street},
         {"city": placeModel.city},
@@ -204,7 +216,7 @@ class Authenticate extends ChangeNotifier {
       Map<String, dynamic> newUser = {
         "uid": _authResult.user.uid,
         "name": name,
-        "location": [],
+        "address": [],
         "email": email,
         "cart": [],
       };
@@ -225,7 +237,7 @@ class Authenticate extends ChangeNotifier {
   }
 
 
-  Future<bool> barberSignUp({String name, String email, String password, String image}) async {
+  Future<bool> barberSignUp({String name, String description, String email, String password, String image}) async {
     try {
       UserCredential _authResult = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
       // Update the display name so it can be fetched and used
@@ -233,6 +245,7 @@ class Authenticate extends ChangeNotifier {
       Map<String, dynamic> newBarber = {
         "uid": _authResult.user.uid,
         "name": name,
+        "description": description,
         "image": image,
         "email": email,
         "rating": 0,
@@ -240,7 +253,7 @@ class Authenticate extends ChangeNotifier {
       };
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
-      _userDatabase.createNewUser(newBarber, _authResult.user.uid);
+      _barberFirestore.createNewBarber(newBarber, _authResult.user.uid);
       _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
       print(email + " signed up");

@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'location.dart';
+
 
 // Class representing a barber including a list of Product classes
 class ParentBarberModel {
@@ -11,6 +13,7 @@ class ParentBarberModel {
   static const DESCRIPTION = "description";
   static const RATING = "rating";
   static const FEATURED = "featured";
+  static const ADDRESS = "address";
 
   String _id;
   String _name;
@@ -19,6 +22,7 @@ class ParentBarberModel {
   String _description;
   double _rating;
   bool _featured;
+  PlaceModel address;
 
   String get id => _id;
   String get name => _name;
@@ -27,8 +31,6 @@ class ParentBarberModel {
   String get description => _description;
   double get rating => _rating;
   bool get featured => _featured;
-
-
 
   ParentBarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.id;
@@ -39,4 +41,5 @@ class ParentBarberModel {
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
   }
+
 }

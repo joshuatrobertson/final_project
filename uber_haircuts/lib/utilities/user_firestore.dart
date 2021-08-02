@@ -37,10 +37,6 @@ class UserFirestore {
     _firebaseFirestore.collection(USERS).doc(userId).update(values);
   }
 
-  void addCurrentLocation(Map<String, dynamic> value, String userId) {
-    _firebaseFirestore.collection(USERS).doc(userId).update(value);
-  }
-
   Future<dynamic> checkUserExists(String userId) async {
     DocumentSnapshot snapshot = await _firebaseFirestore.collection(USERS).doc(userId).get();
 

@@ -24,6 +24,11 @@ class BarberFirestore {
     });
   }
 
+  // Method to add location details to the user
+  void addLocationDetails(Map<String, dynamic> values, String barberId)  {
+    _firebaseFirestore.collection(BARBERS).doc(barberId).update(values);
+  }
+
   // Fetch the user based on a given ID
   ParentBarberModel getSingleBarberById(String barberId) {
     _firebaseFirestore.collection(BARBERS).doc(barberId).get().then((value) {
