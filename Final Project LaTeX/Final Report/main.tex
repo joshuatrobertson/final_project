@@ -106,6 +106,10 @@ anchorcolor = blue]{hyperref}
 	\subsection{Ideation and Concept}
 	\blindtext
 	
+	\subsection{Project Management}
+	\blindtext
+	TODO: Add project management gantt chart in appendix
+	
 	\subsection{Market Analysis}
 	In order to gauge whether there is a market for the proposed analysis, a survey was carried out in which users were asked about whether they could see themselves using the application features, among other things.
 	
@@ -136,8 +140,7 @@ anchorcolor = blue]{hyperref}
 	Initially a relational database model was created, which can be seen below (ADD DATABASE). This was later changed to use Google Firestore (\cite{firestore}), a noSQL database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform.
 	
 	Another important feature of noSQL databases is the ability to easily modify the internal data in response to changing business requirements, in an interactive way that allows fordo you use relationship data in firebase stackoverflow modification throughout the application lifestyle and therefore easy scaling.
-	Finally, the current model requires that each separate barbers will need similar, although different data. For example, although two barbers will likely share the product 'haircut', the description of each is likely to be entirely different making a normal SQL database difficult to implement.
-	
+
 	
 	
 	\subsubsection{The Target User}
@@ -222,17 +225,35 @@ anchorcolor = blue]{hyperref}
 		\caption{Sign In Page Made with Adobe XD}
 		\label{fig:sign-in}
 	\end{figure}
+	
 
 	\section{System Design}
 	This section discusses the process of the ideation and creation of the system design, including the initial scope, requirements, application architecture and state management.
 	\subsection{Application Scope}
-	The scope of the project was to create a fully working and functional barber application with several features, including a booking system, an ordering system, and a delivery system that was integrated with google maps API. To further aid in scoping the project, epics were created, which were further split into stories that could be carried out. Although it could be argued that this type of agile methodology is more relevant when working within a team of developers, it helped to determine a stringent workflow and timeline and aided in project delivery.
+	The scope of the project was to create a fully working and functional barber application with several features, which are discussed in the User Needs below. To further aid in scoping the project, epics were created, which were further split into stories that could be carried out. Although it could be argued that this type of agile methodology is more relevant when working within a team of developers, it helped to determine a stringent workflow and timeline and aided in project delivery.
 	The scope was further defined when wire-framing in Adobe XD, which allowed for the first tangible design to be made.
+	
+	\subsection{User Needs}
+	$\bullet$ Allow the application to run on a mobile device.
+	\\
+	$\bullet$ Allow the user to book a beauty treatment to receive at their home address.
+	\\
+	$\bullet$ Allow a barber to set up an account and specify their own product details.
 
 	\subsection{Requirements}
 	\subsubsection{Functional Requirements}
+	
+	$\bullet$ The application shall allow a barber to create an account and login
+	\\
+	$\bullet$ The application shall allow a customer to create an account and login
+	
+	The	
 	\subsubsection{Non-Functional Requirements}
-	\subsection{Architecture}
+	\subsection{System Architecture}
+	(INSERT SYSTEM ARCHITECTURE DIAGRAM)
+	https://www.researchgate.net/profile/Wei-Jung-Shiang/publication/267418345/figure/fig1/AS:295656959823872@1447501520198/Architecture-for-XML-based-data-exchange-model.png - 
+	https://www.researchgate.net/figure/Overview-of-the-schema-matching-system_fig2_267418345
+	Good example
 	\subsection{State Management}
 	Simple state management used (Provider) -
 	involves: ChangeNotifier and Provider.of
@@ -276,6 +297,8 @@ anchorcolor = blue]{hyperref}
 	When entering the app it is more effecient to make one call to the server rather than multiple due to GPS restrictions. Therefore ParentBarbers, barbers and all of their products are loaded within a certain radius, rather than loading parentBarbers and barbers separately throughout the app. 
 	
 	Don't nest as calls will fetch all of the parent and nested structured so better to have separate data.
+	
+	(INSERT DATABASE SCHEMA)
 	
 	\subsection{Connecting the Frontend and Backend}
 	To get the list of items within a range

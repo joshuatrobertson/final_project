@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/parent_barbers.dart';
+import 'package:uber_haircuts/screens/barber_login.dart';
 import 'package:uber_haircuts/screens/login.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
+import 'package:uber_haircuts/screens/user_type.dart';
 import 'package:uber_haircuts/widgets/nav_bar.dart';
 
 void main() async {
@@ -50,8 +52,18 @@ class AuthenticationWrapper extends StatelessWidget {
     final status = Provider.of<Authenticate>(context);
     final user = context.watch<Authenticate>();
 
+
+    if (status.authStatus == AuthStatus.UNINITIALISED) {
+      return UserType();
+    }
+    if (status.authStatus == AuthStatus.UNAUTHORISED_BARBER) {
+      return BarberLogin();
+    }
+    if (status.authStatus == AuthStatus.UNAUTHORISED_USER) {
+      return Login();
+    }
     // If the user is logged in with their GPS taken then show the home screen
-    if (user != null && status.authStatus == AuthStatus.AUTHENTICATED) {
+    else if (user != null && status.authStatus == AuthStatus.AUTHENTICATED) {
       return UserGPS();
     }
     else if (user != null && status.authStatus == AuthStatus.AUTH_WITH_MAPS) {
@@ -59,7 +71,7 @@ class AuthenticationWrapper extends StatelessWidget {
     }
     // Else they must login
     else {
-      return Login();
+      return UserType();
     }
   }
 }
