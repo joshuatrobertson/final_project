@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  17 JUL 2021 09:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  2 AUG 2021 10:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -394,7 +394,7 @@ LaTeX Info: Redefining \nameref on input line 29.
 \openout3 = `main.out'.
 
 \c@lstlisting=\count301
-<images/logo.png, id=164, 3651.14063pt x 1102.87032pt>
+<images/logo.png, id=184, 3651.14063pt x 1102.87032pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
 Package pdftex.def Info: images/logo.png  used on input line 44.
@@ -427,7 +427,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
 
-<images/npd.png, id=175, 1697.34125pt x 1861.95625pt>
+<images/npd.png, id=195, 1697.34125pt x 1861.95625pt>
 File: images/npd.png Graphic file (type png)
 <use images/npd.png>
 Package pdftex.def Info: images/npd.png  used on input line 100.
@@ -441,7 +441,7 @@ been already used, duplicate ignored
                    \relax 
 l.104 	
         [1] [2 <./images/npd.png>]
-<images/ios-android.png, id=186, 1027.84pt x 578.16pt>
+<images/ios-android.png, id=207, 1027.84pt x 578.16pt>
 File: images/ios-android.png Graphic file (type png)
 <use images/ios-android.png>
 Package pdftex.def Info: images/ios-android.png  used on input line 123.
@@ -501,7 +501,7 @@ e 149.
 
 LaTeX Warning: Citation `2008' on page 5 undefined on input line 149.
 
-<images/persona_1.png, id=198, 2007.5pt x 1405.25pt>
+<images/persona_1.png, id=218, 2007.5pt x 1405.25pt>
 File: images/persona_1.png Graphic file (type png)
 <use images/persona_1.png>
 Package pdftex.def Info: images/persona_1.png  used on input line 160.
@@ -532,7 +532,7 @@ Overfull \hbox (11.49289pt too wide) in paragraph at lines 185--186
  []
 
 [7]
-<images/persona_4.png, id=216, 2007.5pt x 1405.25pt>
+<images/persona_4.png, id=236, 2007.5pt x 1405.25pt>
 File: images/persona_4.png Graphic file (type png)
 <use images/persona_4.png>
 Package pdftex.def Info: images/persona_4.png  used on input line 198.
@@ -547,7 +547,7 @@ Overfull \hbox (11.49289pt too wide) in paragraph at lines 198--199
 LaTeX Warning: Citation `Arnowitz Arent Berger' on page 9 undefined on input li
 ne 206.
 
-<images/prototyping-components.png, id=223, 623.32875pt x 670.75594pt>
+<images/prototyping-components.png, id=243, 623.32875pt x 670.75594pt>
 File: images/prototyping-components.png Graphic file (type png)
 <use images/prototyping-components.png>
 Package pdftex.def Info: images/prototyping-components.png  used on input line 
@@ -563,61 +563,72 @@ LaTeX Warning: Citation `nielson-normal-group-2020' on page 10 undefined on inp
 ut line 217.
 
 [10 <./images/prototyping-components.png>]
-<images/sign-in.png, id=237, 218.31563pt x 438.8897pt>
+<images/sign-in.png, id=257, 218.31563pt x 438.8897pt>
 File: images/sign-in.png Graphic file (type png)
 <use images/sign-in.png>
 Package pdftex.def Info: images/sign-in.png  used on input line 221.
 (pdftex.def)             Requested size: 185.56914pt x 373.058pt.
-
-Overfull \hbox (62.46614pt too wide) in paragraph at lines 233--236
+ [11 <./images/sign-in.png>]
+Overfull \hbox (62.46614pt too wide) in paragraph at lines 237--240
 \OT1/cmr/m/n/12 Provider.of https://flutter.dev/docs/development/data-and-backe
 nd/state-mgmt/simple 
  []
 
-[11 <./images/sign-in.png>] [12]
-Overfull \hbox (2.11537pt too wide) in paragraph at lines 282--291
+[12] [13]
+Overfull \hbox (2.11537pt too wide) in paragraph at lines 286--295
 \OT1/cmr/m/n/12 When load-ing the bar-bers ei-ther they were load-ing through m
 ak-ing a database
  []
 
-[13]
-Overfull \hbox (6.42783pt too wide) in paragraph at lines 293--295
+
+Overfull \hbox (6.42783pt too wide) in paragraph at lines 300--302
 \OT1/cmr/m/n/12 https://firebase.google.com/docs/firestore/solutions/geoqueries
  Once the user
  []
 
+[14]
 
-LaTeX Warning: Citation `medium-comerge' on page 14 undefined on input line 300
+LaTeX Warning: Citation `medium-comerge' on page 15 undefined on input line 307
 .
 
 
-LaTeX Warning: Citation `requests' on page 14 undefined on input line 305.
+LaTeX Warning: Citation `requests' on page 15 undefined on input line 312.
 
-[14]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-308.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+315.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [15] (./main.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 336.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 336.
+) [15]
+
+LaTeX Warning: Citation `Humble and Farley' on page 16 undefined on input line 
+337.
+
+
+LaTeX Warning: Citation `2010' on page 16 undefined on input line 337.
+
+
+LaTeX Warning: Citation `chapter 8' on page 16 undefined on input line 337.
+
+(./main.bbl) [16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 350.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 350.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 336.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 336.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 350.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 350.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5B1F8E01C84F14888AAC707CEDC034AF;2728.
+(rerunfilecheck)             Checksum: 26149CB98B4A3B026A969CD709B60949;3042.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 336.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 350.
  ) 
 Here is how much of TeX's memory you used:
- 8434 strings out of 483183
- 123829 string characters out of 5966292
- 410126 words of memory out of 5000000
- 23229 multiletter control sequences out of 15000+600000
+ 8445 strings out of 483183
+ 123986 string characters out of 5966292
+ 414129 words of memory out of 5000000
+ 23234 multiletter control sequences out of 15000+600000
  539319 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  34i,8n,36p,968b,1259s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -628,10 +639,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (17 pages, 1859718 bytes).
+Output written on main.pdf (18 pages, 1861689 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 280 compressed objects within 3 object streams
- 73 named destinations out of 1000 (max. 500000)
- 356 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 304 compressed objects within 4 object streams
+ 79 named destinations out of 1000 (max. 500000)
+ 396 words of extra memory for PDF output out of 10000 (max. 10000000)
 

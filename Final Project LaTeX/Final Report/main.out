@@ -28,13 +28,18 @@
 \BOOKMARK [2][-]{subsection.4.5}{Sprint X - Backend Design}{section.4}% 28
 \BOOKMARK [2][-]{subsection.4.6}{Connecting the Frontend and Backend}{section.4}% 29
 \BOOKMARK [3][-]{subsubsection.4.6.1}{Loading the barbers}{subsection.4.6}% 30
-\BOOKMARK [2][-]{subsection.4.7}{Sprint X - Location}{section.4}% 31
-\BOOKMARK [3][-]{subsubsection.4.7.1}{Autocomplete locations}{subsection.4.7}% 32
-\BOOKMARK [2][-]{subsection.4.8}{Widgets and Common Items}{section.4}% 33
-\BOOKMARK [3][-]{subsubsection.4.8.1}{Widgets}{subsection.4.8}% 34
-\BOOKMARK [3][-]{subsubsection.4.8.2}{Common Items}{subsection.4.8}% 35
-\BOOKMARK [1][-]{section.5}{Random stuff}{}% 36
-\BOOKMARK [2][-]{subsection.5.1}{Launcher Icons}{section.5}% 37
-\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 38
-\BOOKMARK [1][-]{appendix.B}{Application Images}{}% 39
-\BOOKMARK [1][-]{appendix.C}{Code Snippets}{}% 40
+\BOOKMARK [3][-]{subsubsection.4.6.2}{Shopping Cart}{subsection.4.6}% 31
+\BOOKMARK [2][-]{subsection.4.7}{Sprint X - Location}{section.4}% 32
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Autocomplete locations}{subsection.4.7}% 33
+\BOOKMARK [2][-]{subsection.4.8}{Sprint X - Payment}{section.4}% 34
+\BOOKMARK [2][-]{subsection.4.9}{Widgets and Common Items}{section.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.9.1}{Widgets}{subsection.4.9}% 36
+\BOOKMARK [3][-]{subsubsection.4.9.2}{Common Items}{subsection.4.9}% 37
+\BOOKMARK [1][-]{section.5}{Testing}{}% 38
+\BOOKMARK [2][-]{subsection.5.1}{User Testing}{section.5}% 39
+\BOOKMARK [2][-]{subsection.5.2}{Acceptance Testing}{section.5}% 40
+\BOOKMARK [1][-]{section.6}{Random stuff}{}% 41
+\BOOKMARK [2][-]{subsection.6.1}{Launcher Icons}{section.6}% 42
+\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 43
+\BOOKMARK [1][-]{appendix.B}{Application Images}{}% 44
+\BOOKMARK [1][-]{appendix.C}{Code Snippets}{}% 45
