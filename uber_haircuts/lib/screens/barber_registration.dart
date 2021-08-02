@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -10,9 +11,9 @@ import 'package:uber_haircuts/screens/user_gps.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
-import 'home.dart';
 import 'login.dart';
 import 'package:provider/provider.dart';
+import 'package:path/path.dart';
 
 class BarberRegistration extends StatefulWidget {
   const BarberRegistration({Key key}) : super(key: key);
@@ -28,7 +29,8 @@ class _BarberRegistrationState extends State<BarberRegistration> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
-  String _pathToImage;
+  String _pathToImage = "";
+  String _uploadedImageRef;
   final _imagePicker = ImagePicker();
   File _imageFile;
 
@@ -98,6 +100,19 @@ class _BarberRegistrationState extends State<BarberRegistration> {
                               ),
                             ),
                             Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Container(
+                                  child: Text(() {
+                                    if (_imageFile != null) {
+                                      return ("Image Uploaded");
+                                    }
+                                    else {
+                                      return "";
+                                    }
+                                  }())
+                              ),
+                            ),
+                            Padding(
                               padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
                               child: TextField(
                                   controller: _emailController,
@@ -129,8 +144,9 @@ class _BarberRegistrationState extends State<BarberRegistration> {
                                       if (!await authProvider.barberSignUp(
                                           name: _nameController.text.trim(),
                                           email: _emailController.text.trim(),
+                                          description: _descriptionController.text.trim(),
                                           password: _passwordController.text.trim(),
-                                          image: _pathToImage.trim(),
+                                          image: _uploadedImageRef.trim(),
                                       )) {
                                         ScaffoldMessenger.of(context).showSnackBar(
                                             SnackBar(
@@ -169,11 +185,30 @@ class _BarberRegistrationState extends State<BarberRegistration> {
 
   Future getImage() async {
     final pickedImage = await _imagePicker.pickImage(source: ImageSource.gallery);
-
     setState(() {
       _imageFile = File(pickedImage.path);
+      uploadImage();
     });
   }
+
+  Future uploadImage() async {
+    FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+    Reference firebaseRef = firebaseStorage
+        .ref()
+        .child('barber_shops/${basename(_imageFile.path)}' + DateTime.now().toString());
+    UploadTask uploadTask = firebaseRef.putFile(_imageFile);
+    await uploadTask.whenComplete(() =>
+        print(basename(_imageFile.path) + 'uploaded')
+    );
+    firebaseRef.getDownloadURL().then((fileURL) {
+      setState(() {
+        _uploadedImageRef = fileURL;
+      });
+    });
+  }
+
+
+
 
 
 }
