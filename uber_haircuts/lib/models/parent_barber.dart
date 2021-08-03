@@ -13,6 +13,7 @@ class ParentBarberModel {
   static const DESCRIPTION = "description";
   static const RATING = "rating";
   static const FEATURED = "featured";
+  static const APPROVED = "approved";
   static const ADDRESS = "address";
 
   String _id;
@@ -20,8 +21,10 @@ class ParentBarberModel {
   String _email;
   String _image;
   String _description;
-  double _rating;
+  num _rating;
   bool _featured;
+  // TODO: discuss approved boolean value and why it isn't implemented now (in test mode)
+  bool _approved;
   PlaceModel address;
 
   String get id => _id;
@@ -29,8 +32,9 @@ class ParentBarberModel {
   String get email => _email;
   String get image => _image;
   String get description => _description;
-  double get rating => _rating;
+  num get rating => _rating;
   bool get featured => _featured;
+  bool get approved => _approved;
 
   ParentBarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.id;
@@ -40,6 +44,13 @@ class ParentBarberModel {
     _description = documentSnapshot.data()[DESCRIPTION];
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
+    address = _convertLocationDetails(documentSnapshot.data()[ADDRESS]);
+
   }
+
+  ParentBarberModel();
+
+  PlaceModel _convertLocationDetails(List location) =>
+      new PlaceModel(number: location[0]["number"], street: location[1]["street"], city: location[2]["city"], postcode: location[3]["postcode"]);
 
 }

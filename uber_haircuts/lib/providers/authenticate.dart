@@ -5,9 +5,10 @@ import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/models/location.dart';
+import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
-import 'package:uber_haircuts/utilities/barber_firestore.dart';
+import 'package:uber_haircuts/utilities/parent_barber_firestore.dart';
 import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
 
@@ -36,8 +37,9 @@ class Authenticate extends ChangeNotifier {
   OrderUtility _orderUtility = new OrderUtility();
   User _user;
   UserModel userModel = new UserModel();
+  ParentBarberModel barberModel = new ParentBarberModel();
   UserFirestore _userDatabase = UserFirestore();
-  BarberFirestore _barberFirestore = BarberFirestore();
+  ParentBarberFirestore _barberFirestore = ParentBarberFirestore();
   AuthStatus _authStatus = AuthStatus.UNINITIALISED;
   // Function to test for logged in user and return relevant page
   Stream<User> get stateChanges => _firebaseAuth.authStateChanges();
@@ -65,6 +67,23 @@ class Authenticate extends ChangeNotifier {
       orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
       userModel.cart = orders;
       _authStatus = AuthStatus.AUTH_WITH_MAPS;
+      notifyListeners();
+      return true;
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      _authStatus = AuthStatus.NOT_AUTHENTICATED;
+      notifyListeners();
+      return false;
+    }
+  }
+
+  Future<bool> barberSignIn({String email, String password}) async {
+    try {
+      _authStatus = AuthStatus.AUTHENTICATING;
+      notifyListeners();
+      print("signed in barber " + email);
+      barberModel = await _orderUtility.getBarberById(_firebaseAuth.currentUser.uid);
+      _authStatus = AuthStatus.BARBER_AUTHENTICATED;
       notifyListeners();
       return true;
     } on FirebaseAuthException catch (e) {
@@ -237,7 +256,7 @@ class Authenticate extends ChangeNotifier {
   }
 
 
-  Future<bool> barberSignUp({String name, String description, String email, String password, String image}) async {
+  Future<bool> parentBarberSignUp({String name, String description, String email, String password, String image}) async {
     try {
       UserCredential _authResult = await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
       // Update the display name so it can be fetched and used
@@ -249,11 +268,11 @@ class Authenticate extends ChangeNotifier {
         "image": image,
         "email": email,
         "rating": 0,
-        "featured": false
+        "featured": false,
       };
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
-      _barberFirestore.createNewBarber(newBarber, _authResult.user.uid);
+      _barberFirestore.createNewParentBarber(newBarber, _authResult.user.uid);
       _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
       print(email + " signed up");
@@ -266,6 +285,7 @@ class Authenticate extends ChangeNotifier {
       return false;
     }
   }
+
   // Method to send a password reset to the user given their specified email
   Future resetPassword(String email) async {
     try {
@@ -284,7 +304,8 @@ class Authenticate extends ChangeNotifier {
   // TODO: sign out not working when log in from fresh install
   Future signOut() async {
     try {
-      _orderUtility.updateCartFirestore(userId: userModel.uid);
+      final User user = FirebaseAuth.instance.currentUser;
+      _orderUtility.updateCartFirestore(userId: user.uid);
       await _googleSignIn.signOut();
       await FacebookAuth.instance.logOut();
       await _twitterSignIn.logOut();

@@ -107,7 +107,7 @@ class _BarberLoginState extends State<BarberLogin> {
                               color: theme,
                               child: GestureDetector(
                                 onTap: () async {
-                                  if (!await authProvider.signIn(
+                                  if (!await authProvider.barberSignIn(
                                       email: _emailController.text.trim(),
                                       password: _passwordController.text.trim()
                                   )) {
@@ -117,7 +117,7 @@ class _BarberLoginState extends State<BarberLogin> {
                                   }
                                 },
                                 child: Center(
-                                  child: ReturnText(text: 'Login', fontWeight: FontWeight.w400, size: 30, color: white,),
+                                  child: ReturnText(text: 'Barber Login', fontWeight: FontWeight.w400, size: 30, color: white,),
                                 ),
                               ),
                             ),

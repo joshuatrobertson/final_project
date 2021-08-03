@@ -126,8 +126,8 @@ class _SideBarState extends State<SideBar> {
   }
 
   String _getUsername() {
-    FirebaseAuth _auth = FirebaseAuth.instance;
-    return _auth.currentUser.displayName;
+    final User user = FirebaseAuth.instance.currentUser;
+    return user.displayName;
   }
 
   String getGreetingMessage(){

@@ -3,16 +3,11 @@ import 'package:uber_haircuts/models/parent_barber.dart';
 
 
 class BarberFirestore {
-  static const BARBERS = "parentBarber";
+  static const BARBERS = "barbers";
   FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
-  // Method to add a new user through using collection.set
-  void createNewBarber(Map<String, dynamic> values, String userId)  {
-    _firebaseFirestore.collection(BARBERS).doc(userId).set(values);
-  }
-
   // Method to update an existing user
-  void editUser(Map<String, dynamic> values)  {
+  void editBarber(Map<String, dynamic> values)  {
     String id = values["uid"];
     _firebaseFirestore.collection(BARBERS).doc(values[id]).update(values);
   }
@@ -24,11 +19,6 @@ class BarberFirestore {
     });
   }
 
-  // Method to add location details to the user
-  void addLocationDetails(Map<String, dynamic> values, String barberId)  {
-    _firebaseFirestore.collection(BARBERS).doc(barberId).update(values);
-  }
-
   // Fetch the user based on a given ID
   ParentBarberModel getSingleBarberById(String barberId) {
     _firebaseFirestore.collection(BARBERS).doc(barberId).get().then((value) {
@@ -36,16 +26,25 @@ class BarberFirestore {
     });
   }
 
-  Future<dynamic> checkBarberExists(String barberId) async {
-    DocumentSnapshot snapshot = await _firebaseFirestore.collection(BARBERS).doc(barberId).get();
-    if (snapshot == null || !snapshot.exists) {
-      print("Barber does not exist");
+  Future<bool> createAddBarber({String firstName, String lastName, String description, String image}) async {
+
+    Map<String, dynamic> newBarber = {
+      "firstName": firstName,
+      "lastName": lastName,
+      "description": description,
+      "image": image,
+      "rating": 0,
+      "featured": false,
+    };
+    try {
+      await  _firebaseFirestore.collection(BARBERS).doc().set(newBarber);
+      return true;
+    } catch(e) {
+      print("Error with adding barber: " + e.toString());
       return false;
     }
-    else {
-      print("Barber exists");
-      return true;
-    }
+
   }
+
 
 }

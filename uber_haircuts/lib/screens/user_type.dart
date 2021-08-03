@@ -51,7 +51,7 @@ class _UserTypeState extends State<UserType> {
                                 shadowColor: theme,
                                 color: theme,
                                 child: GestureDetector(
-                                  onTap: () async {
+                                  onTap: () {
                                     authProvider.chooseUser('user');
                                   },
                                   child: Center(
@@ -76,7 +76,7 @@ class _UserTypeState extends State<UserType> {
                               shadowColor: theme,
                               color: theme,
                               child: GestureDetector(
-                                onTap: () async {
+                                onTap: () {
                                   authProvider.chooseUser('barber');
                                 },
                                 child: Center(

@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
+import 'package:uber_haircuts/utilities/barber_firestore.dart';
 import 'package:uber_haircuts/utilities/files.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
@@ -16,24 +17,27 @@ import 'login.dart';
 import 'package:provider/provider.dart';
 import 'package:path/path.dart';
 
-class BarberRegistration extends StatefulWidget {
-  const BarberRegistration({Key key}) : super(key: key);
+class AddBarber extends StatefulWidget {
+  const AddBarber({Key key}) : super(key: key);
 
   @override
-  _BarberRegistrationState createState() => _BarberRegistrationState();
+  _AddBarberState createState() => _AddBarberState();
 }
 
-class _BarberRegistrationState extends State<BarberRegistration> {
+class _AddBarberState extends State<AddBarber> {
   final key = new GlobalKey<FormState>();
 
-  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
   String _uploadedImageRef;
+  final _imagePicker = ImagePicker();
   File _imageFile;
+  final BarberFirestore _barberFirestore = new BarberFirestore();
 
-  // TODO: add location details for location search
+
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +47,20 @@ class _BarberRegistrationState extends State<BarberRegistration> {
           children: [
             Column(
                 children: [
-                  Container(
-                      child: Stack(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
-                            child: Image.asset(
-                              "assets/images/logo.png", width: 200, height: 200,
-                            ),
-                          )
-                        ],
+                  Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20.0, left: 10, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            IconButton(
+                              icon: Icon(Icons.arrow_back_ios_outlined, color: theme,),
+                              onPressed: () {Navigator.pop(context);},),
+                          ],
+                        ),
                       )
+                    ],
                   ),
                   Container(
                       child: Column(
@@ -64,9 +71,21 @@ class _BarberRegistrationState extends State<BarberRegistration> {
                                   inputFormatters: [
                                     LengthLimitingTextInputFormatter(15),
                                   ],
-                                  controller: _nameController,
+                                  controller: _firstNameController,
                                   decoration: InputDecoration(
-                                    labelText: "Barber Name",
+                                    labelText: "First Name",
+                                  )
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                              child: TextField(
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(15),
+                                  ],
+                                  controller: _lastNameController,
+                                  decoration: InputDecoration(
+                                    labelText: "Last Name",
                                   )
                               ),
                             ),
@@ -87,7 +106,7 @@ class _BarberRegistrationState extends State<BarberRegistration> {
                               child: GestureDetector(
                                 onTap: () async {
                                   _imageFile = await getImage();
-                                  _uploadedImageRef = await uploadImage(_imageFile, 'parentBarbers');
+                                  _uploadedImageRef = await uploadImage(_imageFile, 'barbers');
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -143,23 +162,22 @@ class _BarberRegistrationState extends State<BarberRegistration> {
                                   color: theme,
                                   child: GestureDetector(
                                     onTap: () async {
-                                      if (!await authProvider.parentBarberSignUp(
-                                          name: _nameController.text.trim(),
-                                          email: _emailController.text.trim(),
-                                          description: _descriptionController.text.trim(),
-                                          password: _passwordController.text.trim(),
-                                          image: _uploadedImageRef.trim(),
+                                      if (!await _barberFirestore.createAddBarber(
+                                        firstName: _firstNameController.text.trim(),
+                                        lastName: _lastNameController.text.trim(),
+                                        description: _descriptionController.text.trim(),
+                                        image: _uploadedImageRef.trim(),
                                       )) {
                                         ScaffoldMessenger.of(context).showSnackBar(
                                             SnackBar(
-                                                content: ReturnText(text: "Sign Up failed!", color: white,)));
+                                                content: ReturnText(text: "Adding new barber failed!", color: white,)));
                                       }
                                       else {
                                         navigateToScreen(context, UserGPS());
                                       }
                                     },
                                     child: Center(
-                                      child: ReturnText(text: 'Sign Up', fontWeight: FontWeight.w400, size: 30, color: white,),
+                                      child: ReturnText(text: 'Add Barber', fontWeight: FontWeight.w400, size: 30, color: white,),
                                     ),
                                   ),
                                 ),
@@ -184,5 +202,9 @@ class _BarberRegistrationState extends State<BarberRegistration> {
         )
     );
   }
+
+
+
+
 
 }
