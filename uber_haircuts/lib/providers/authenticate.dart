@@ -81,13 +81,14 @@ class Authenticate extends ChangeNotifier {
     try {
       _authStatus = AuthStatus.AUTHENTICATING;
       notifyListeners();
-      print("signed in barber " + email);
+      await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       barberModel = await _orderUtility.getBarberById(_firebaseAuth.currentUser.uid);
       _authStatus = AuthStatus.BARBER_AUTHENTICATED;
+      print("signed in barber " + email);
       notifyListeners();
       return true;
     } on FirebaseAuthException catch (e) {
-      print(e);
+      print('Failed to sign in barber with exception: ' + e.toString());
       _authStatus = AuthStatus.NOT_AUTHENTICATED;
       notifyListeners();
       return false;
@@ -273,7 +274,7 @@ class Authenticate extends ChangeNotifier {
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
       _barberFirestore.createNewParentBarber(newBarber, _authResult.user.uid);
-      _authStatus = AuthStatus.AUTHENTICATED;
+      _authStatus = AuthStatus.BARBER_AUTHENTICATED;
       notifyListeners();
       print(email + " signed up");
       return true;

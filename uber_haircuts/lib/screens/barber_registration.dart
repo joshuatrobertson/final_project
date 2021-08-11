@@ -86,8 +86,9 @@ class _BarberRegistrationState extends State<BarberRegistration> {
                               padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                               child: GestureDetector(
                                 onTap: () async {
-                                  _imageFile = await getImage();
-                                  _uploadedImageRef = await uploadImage(_imageFile, 'barber_shops');
+                                    _imageFile = await getImage();
+                                    uploadImage(_imageFile, 'barber_shops').then((value) =>
+                                    _uploadedImageRef = value);
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(

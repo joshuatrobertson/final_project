@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/providers/google_maps.dart';
 import 'package:uber_haircuts/models/location.dart';
+import 'package:uber_haircuts/screens/barber_home.dart';
 import 'package:uber_haircuts/utilities/parent_barber_firestore.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
 import 'package:uber_haircuts/widgets/location_search.dart';
@@ -83,14 +84,16 @@ class _FireMapState extends State<FireMap> {
                     final placeDetails = await GoogleMapsAPI(sessionToken)
                         .getLocationDetails(searchResult.placeId);
                     Map<String, dynamic> values = authProvider.createLocationMap(placeDetails);
-                    // Add to the barber or user document within the database
+                    // Add to the barber or user document within the database and navigate to the respective home pages
                     if (authProvider.currentUser == CurrentUser.CUSTOMER) {
                       _userDatabase.addLocationDetails(values, _user.uid);
+                      navigateToScreen(context, Home());
                     }
                     else {
                       _barberFirestore.addLocationDetails(values, _user.uid);
+                      navigateToScreen(context, BarberHome());
                     }
-                    navigateToScreen(context, Home());
+
                   }
                 },
                 decoration: InputDecoration(

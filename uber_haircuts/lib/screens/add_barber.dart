@@ -172,9 +172,7 @@ class _AddBarberState extends State<AddBarber> {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                               child: GestureDetector(
-                                onTap: () async {
-                                  if (await _barberFirestore.addProduct())
-                                },
+                                onTap: () async {},
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: Colors.grey,
