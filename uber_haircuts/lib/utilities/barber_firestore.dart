@@ -4,6 +4,7 @@ import 'package:uber_haircuts/models/parent_barber.dart';
 
 class BarberFirestore {
   static const BARBERS = "barbers";
+  static const PRODUCTS = "products";
   FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   // Method to update an existing user
@@ -43,7 +44,26 @@ class BarberFirestore {
       print("Error with adding barber: " + e.toString());
       return false;
     }
+  }
 
+
+  // TODO: get barber product
+  Future<bool> addProduct({String barberId, String name, String description, String image, num price}) async {
+    Map<String, dynamic> products = {
+      "barberId": barberId,
+      "name": name,
+      "description": description,
+      "image": image,
+      "price": price,
+      "featured": false,
+    };
+    try {
+      await _firebaseFirestore.collection(PRODUCTS).doc().set(products);
+      return true;
+    } catch(e) {
+      print("Error adding product: " + e.toString());
+      return false;
+    }
   }
 
 

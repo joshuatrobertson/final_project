@@ -87,7 +87,7 @@ class _BarberRegistrationState extends State<BarberRegistration> {
                               child: GestureDetector(
                                 onTap: () async {
                                   _imageFile = await getImage();
-                                  _uploadedImageRef = await uploadImage(_imageFile, 'parentBarbers');
+                                  _uploadedImageRef = await uploadImage(_imageFile, 'barber_shops');
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(

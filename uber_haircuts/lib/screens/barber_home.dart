@@ -105,6 +105,24 @@ class _BarberHomeState extends State<BarberHome> {
                           ),
                         ),
                       ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(35, 60, 35, 0),
+                        child: SizedBox(
+                          height: 70,
+                          child: Material(
+                            borderRadius: BorderRadius.circular(15),
+                            color: theme,
+                            child: GestureDetector(
+                              onTap: () async {
+                                authProvider.signOut();
+                              },
+                              child: Center(
+                                child: ReturnText(text: 'Sign Out', fontWeight: FontWeight.w400, size: 30, color: white,),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                         ])
               ),
             ])

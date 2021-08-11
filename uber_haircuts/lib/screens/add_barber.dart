@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
+import 'package:uber_haircuts/theme/common_items.dart';
 import 'package:uber_haircuts/utilities/barber_firestore.dart';
 import 'package:uber_haircuts/utilities/files.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
@@ -15,7 +16,6 @@ import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
 import 'login.dart';
 import 'package:provider/provider.dart';
-import 'package:path/path.dart';
 
 class AddBarber extends StatefulWidget {
   const AddBarber({Key key}) : super(key: key);
@@ -29,15 +29,13 @@ class _AddBarberState extends State<AddBarber> {
 
   final TextEditingController _firstNameController = TextEditingController();
   final TextEditingController _lastNameController = TextEditingController();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _productDescriptionController = TextEditingController();
+  final TextEditingController _productPriceController = TextEditingController();
   String _uploadedImageRef;
   final _imagePicker = ImagePicker();
   File _imageFile;
   final BarberFirestore _barberFirestore = new BarberFirestore();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -133,25 +131,62 @@ class _AddBarberState extends State<AddBarber> {
                                   }())
                               ),
                             ),
+                            ReturnText(text: "Add Products", size: 22,),
+                            // Drop down menu with only the 'allowed' products
+                            DropdownButton<String>(
+                              items: availableProducts.map((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: new Text(value),
+                                );
+                              }).toList(),
+                              onChanged: (_) {},
+                            ),
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
+                              padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
                               child: TextField(
-                                  controller: _emailController,
+                                  keyboardType: TextInputType.multiline,
+                                  minLines: 3,
+                                  maxLines: null,
+                                  controller: _productDescriptionController,
                                   decoration: InputDecoration(
-                                    labelText: "Email",
+                                    labelText: "Product Description",
                                   )
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
+                              padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
                               child: TextField(
-                                  controller: _passwordController,
+                                  // The keyboard will only show numbers
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    // Only allow numbers
+                                    FilteringTextInputFormatter.allow(RegExp(r'[0-9].')),
+                                  ],
+                                  controller: _productDescriptionController,
                                   decoration: InputDecoration(
-                                    labelText: "Password",
+                                    labelText: "Price",
                                   )
                               ),
                             ),
-
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
+                              child: GestureDetector(
+                                onTap: () async {
+                                  if (await _barberFirestore.addProduct())
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey,
+                                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                    child: ReturnText(text: "Add Product", color: white,),
+                                  ),
+                                ),
+                              ),
+                            ),
                             Padding(
                               padding: const EdgeInsets.fromLTRB(35, 40, 35, 0),
                               child: SizedBox(

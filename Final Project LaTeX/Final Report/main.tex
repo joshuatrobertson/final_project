@@ -4,12 +4,13 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[12pt]{article}
+\usepackage{appendix}
 \usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[colorlinks = true,
-linkcolor = blue,
+linkcolor = black,
 urlcolor  = blue,
 citecolor = blue,
 anchorcolor = blue]{hyperref}
@@ -24,9 +25,13 @@ anchorcolor = blue]{hyperref}
 	tabsize=2,
 	basicstyle=\ttfamily,
 }
+\usepackage{hyperref}
+\hypersetup{linktoc = all}
+
 
 
 \begin{document}
+
 	
 	\begin{titlepage}
 		
@@ -80,19 +85,58 @@ anchorcolor = blue]{hyperref}
 		\vfill % Fill the rest of the page with whitespace
 		
 	\end{titlepage}
+
+	\tableofcontents
+	\pagebreak
+
+	\section*{Abstract}
+
+	\pagebreak
+
+	\section*{Acknowledgements}
+	\pagebreak
+	
+	\section*{Author's Declaration}
+
+	I declare that the work in this dissertation was carried out in accordance with the 
+	requirements of the University’s Regulations and Code of Practice for Taught Programmes 
+	and that it has not been submitted for any other academic award.  Except where indicated 
+	by specific reference in the text, this work is my own work. Work done in collaboration with, 
+	or with the assistance of others, is indicated as such. I have identified all material in this 
+	dissertation which is not my own work through appropriate referencing and 
+	acknowledgement. Where I have quoted or otherwise incorporated material which is the 
+	work of others, I have included the source in the references.  Any views expressed in the 
+	dissertation, other than referenced material, are those of the author. 
+	\\
+	\\
+	SIGNED: Joshua Robertson DATE: 14.09.2021 
+	\pagebreak
 	
 	\section{Introduction}
-	Plan - 
-	1) Covid has caused an increase in homeworking
-	2) People want greater access to remote services
-	3) People also want quick access to products
-	2 reasons for application is that people want fast and easy access to services, and it is expected now with companies i.e. amazon now offering same day delivery. and also peoples views around covid
-	
-	There is little dispute that the recent COVID-19 pandemic has had a significant impact on our daily lives. Along with having a devestating both on a societal and individual level, it has brought with it a shift in perceptions around leaving the home. Subsequently, this has led to a desire for homeworking and easier access to remote services, with employers . Even with a reduction in COVID cases following a wave of vaccinations, it is likely that home working will continue to a greater extent than was seen previously, with home workers showing an increase in job satisfaction \cite{flexjobs, 2019}, \cite{CNBC, 2020}, productivity, mental health \cite(flexjobs, 2020) and even making more money (ADD CITE). 
-	Although there already exists several apps that allow for home bookings, none follow the "uber" model, of allowing for immediate booking and delivery of home haircuts. This app therefore will facilitate this, along with aiming to explore any other market gaps through early research.
+
+
 	
 	
-	New Product Development refers to the entirety of processes leading to bringing a product to market and encompasses several steps as seen in figure \ref{fig:npd} below.
+	The recent COVID-19 pandemic has brought with it a shift in perceptions around leaving the home, with the global home services market expected to grow by almost 20\% per year until 2026 \cite{owen-ray}. With this change brings an opportunity for applications, such as the one proposed here to capitalise through providing remote services to the public. 
+	\\
+	
+	There already exists a range of applications suited towards providing home haircuts. For example, Shortcut \cite{shortcut}, TRIM-IT\cite{trim-it} and TrimCheck\cite{trimcheck} all provide bookable home haircuts. Despite this, none of the aforementioned applications follow the "uber" model, of allowing for immediate booking and delivery of home haircuts. 
+	\\
+	
+	This application will therefore aim to facilitate this, along with exploring any other market gaps through early research and will aim to achieve this through the following objectives:
+	\\
+	
+	\noindent
+	$\bullet$ Conduct research to elucidate any market gaps
+	\\
+	$\bullet$ Through a user centric methodology design and prototype the user interface of the application
+	\\
+	$\bullet$ Create a minimum viable product (MVP) using new product development
+	\\
+	
+	The research aspect of the project will aim to analyse the strength and weaknesses of existing applications within the field, therefore exposing any market gaps that may be present. 
+	
+	For the implementation of the application, a heavy focus on the end user was taken through using a user centric design (UCD) methodology, along with New Product Development, which refers to the  entirety of processes leading to bringing a product to market and encompasses several steps as seen in figure \ref{fig:npd} below and discussed throughout the proceeding chapters.
 	\newline
 	
 	\begin{figure}[H]
@@ -104,13 +148,43 @@ anchorcolor = blue]{hyperref}
 	
 	
 	\subsection{Ideation and Concept}
-	\blindtext
+	The first stage of NPD starts with conceptualisation of a product idea. For the application the initial concept came from an external partner, who proposed a mobile hairdresser application to capitalise on the increased need for home delivery services. This was further defined during several meetings carried out in the initial stages of the project. Through these meetings and discussion with other students, family and friends the following core functionality was created:
+	\\
+	The application should allow the user to login, select from a range of barbers and book a home haircut.
 	
 	\subsection{Project Management}
-	\blindtext
-	TODO: Add project management gantt chart in appendix
+
+	The project management for the application focused on two key aspects; a clear vision and scope, including a detailed project plan; and an execution phase, which utilized an agile methodology.
 	
-	\subsection{Market Analysis}
+	\subsubsection{Vision and Scope}
+	
+	
+	\subsubsection{Agile Methodology}
+	To carry out the project, an agile methodology was utilised. Although this approach is usually relevant to a team of developers, approaching the project management in this way allowed for a stringent and well defined timeline to be used, aiding in project delivery and outcome. This involved several key stages.
+	Firstly, individual 'epics' were defined, which included:
+	\\
+	$\bullet$ Define the Scope and Market Research
+	\\
+	$\bullet$ Design and Architect the Application
+	\\
+	$\bullet$ Setup and Create The Backend
+	\\
+	$\bullet$ Write the Dissertation
+	\\
+	
+	These were then used to create 'stories' which were placed into a timeline. For this, the project management tool monday.com \cite{monday.com} was used, which can be seen in figure \ref{fig:monday.com}. Using Monday.com allowed for a timeline to be easily created, along with updating the status of each story when relevant to follow the completion of the project.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.25]{images/monday.png}
+		\caption{Screenshot of Monday.com displaying the project stories}
+		\label{fig:monday.com}
+		\cite{monday.com}
+	\end{figure}
+
+	Finally, using the aforementioned timeline, a gantt chart was created, which gave an overarching view of the project, with tasks performed represented along the vertical axis and the timeline represented along the horizontal axis. This can be seen in the 
+	
+	\subsection{Research and Market Analysis}
 	In order to gauge whether there is a market for the proposed analysis, a survey was carried out in which users were asked about whether they could see themselves using the application features, among other things.
 	
 	\subsubsection{Existing Applications}
@@ -130,7 +204,7 @@ anchorcolor = blue]{hyperref}
 		\cite{stat-counter-21}
 	\end{figure}
 	
-	With this change has brought with it a push towards frameworks that allow for development across multiple platforms, such as React Native (https://reactnative.dev/) and Flutter (flutter.dev/). For this reason, it was decided that a cross platform would be used, which is further discussed below.
+	With this change has brought with it a push towards frameworks that allow for development across multiple platforms, such as React Native (\cite{https://reactnative.dev/}) and Flutter (\cite{flutter.dev}). For this reason, it was decided that a cross platform would be used, which is further discussed below.
 	
 	\subsection{Frontend: Programming Language}
 	\subsubsection{Programming Language}
@@ -149,7 +223,7 @@ anchorcolor = blue]{hyperref}
 	
 	
 	\subsection{User Personas}
-	The creation of user personas representing fictitious, archetypal users is an essential part of application development \cite{Grudin and Pruitt, 2002} and allows a deep understanding of the target user to be sought and implemented within the features and design of the application \cite{Long, 2009}. There are, however, some shortcomings to qualitative persona generation, such as validity concerns and user bias \cite{Chapman and Milham, 2007} and although they are addressed by other methods, such as data-driven personas \cite{Mcginn and Kotamraju, 2008}, there require a broad user base and therefore we have decided to stick with qualitative methods, which allow for enough brevity and depth for the scope of the project.
+	The creation of user personas representing fictitious, archetypal users is an essential part of application development \cite{Grudin and Pruitt, 2002} and allows a deep understanding of the target user to be sought and implemented within the features and design of the application \cite{Long, 2009}. There are, however, some shortcomings to qualitative persona generation, such as validity concerns and user bias \cite{Chapman and Milham, 2007} and although they are addressed by other methods, such as data-driven personas \cite{Mcginn and Kotamraju, 2008}, these require a broad user base and therefore we have decided to stick with qualitative methods, which allow for enough brevity and depth for the scope of the project.
 	
 	Here 3 user personas were created, which are discussed in detail below.
 	\begin{itemize}
@@ -252,9 +326,12 @@ anchorcolor = blue]{hyperref}
 	\subsection{System Architecture}
 	(INSERT SYSTEM ARCHITECTURE DIAGRAM)
 	https://www.researchgate.net/profile/Wei-Jung-Shiang/publication/267418345/figure/fig1/AS:295656959823872@1447501520198/Architecture-for-XML-based-data-exchange-model.png - 
-	https://www.researchgate.net/figure/Overview-of-the-schema-matching-system_fig2_267418345
+	
+	https://www.researchgate.net/figure/Overview-of-the-schema-matching-system\_fig2\_267418345
 	Good example
+	
 	\subsection{State Management}
+	
 	Simple state management used (Provider) -
 	involves: ChangeNotifier and Provider.of
 	https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple
@@ -366,7 +443,10 @@ anchorcolor = blue]{hyperref}
 	\bibliography{bib file}
 	
 	\appendix
+	\appendixpage
 	\section{Use Cases}
+	\section{Figures}
+	
 	\section{Application Images}
 	\section{Code Snippets}
 	
