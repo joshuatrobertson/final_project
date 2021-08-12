@@ -86,8 +86,6 @@ anchorcolor = blue]{hyperref}
 		
 	\end{titlepage}
 
-	\tableofcontents
-	\pagebreak
 
 	\section*{Abstract}
 
@@ -110,6 +108,13 @@ anchorcolor = blue]{hyperref}
 	\\
 	\\
 	SIGNED: Joshua Robertson DATE: 14.09.2021 
+	
+	\pagebreak
+	
+	\tableofcontents
+	\pagebreak
+	
+	\listoffigures
 	\pagebreak
 	
 	\section{Introduction}
@@ -117,7 +122,8 @@ anchorcolor = blue]{hyperref}
 
 	
 	
-	The recent COVID-19 pandemic has brought with it a shift in perceptions around leaving the home, with the global home services market expected to grow by almost 20\% per year until 2026 \cite{owen-ray}. With this change brings an opportunity for applications, such as the one proposed here to capitalise through providing remote services to the public. 
+	The COVID-19 pandemic has impacted virtually all areas of our life, from work, to travel, to how we socialise. Some of these changes are temporary, such as mask wearing, but others, such as the adoption of more digital services and flexible homeworking seem likely to be more permanent (ADD CITE). 
+	The restriction of movement has caused consumers to migrate to online services at an unprecedented rate and with the global home services market expected to grow by almost 20\% per year until 2026 \cite{owen-ray} there exists a wealth of opportunity for companies to capitalise through digitalising previously physical services. One of these is hairdressing, which saw a sizeable uptake in demand throughout the pandemic. 
 	\\
 	
 	There already exists a range of applications suited towards providing home haircuts. For example, Shortcut \cite{shortcut}, TRIM-IT\cite{trim-it} and TrimCheck\cite{trimcheck} all provide bookable home haircuts. Despite this, none of the aforementioned applications follow the "uber" model, of allowing for immediate booking and delivery of home haircuts. 
@@ -129,14 +135,14 @@ anchorcolor = blue]{hyperref}
 	\noindent
 	$\bullet$ Conduct research to elucidate any market gaps
 	\\
-	$\bullet$ Through a user centric methodology design and prototype the user interface of the application
+	$\bullet$ Through a user centric methodology design (UCD) and prototype the user interface of the application
 	\\
 	$\bullet$ Create a minimum viable product (MVP) using new product development
 	\\
 	
 	The research aspect of the project will aim to analyse the strength and weaknesses of existing applications within the field, therefore exposing any market gaps that may be present. 
 	
-	For the implementation of the application, a heavy focus on the end user was taken through using a user centric design (UCD) methodology, along with New Product Development, which refers to the  entirety of processes leading to bringing a product to market and encompasses several steps as seen in figure \ref{fig:npd} below and discussed throughout the proceeding chapters.
+	For the implementation of the application, a heavy focus on the end user was taken through using a UCD methodology, along with NPD, which refers to the  entirety of processes leading to bringing a product to market and encompasses several steps as seen in figure \ref{fig:npd} below and discussed throughout the proceeding chapters.
 	\newline
 	
 	\begin{figure}[H]
@@ -160,7 +166,9 @@ anchorcolor = blue]{hyperref}
 	
 	
 	\subsubsection{Agile Methodology}
-	To carry out the project, an agile methodology was utilised. Although this approach is usually relevant to a team of developers, approaching the project management in this way allowed for a stringent and well defined timeline to be used, aiding in project delivery and outcome. This involved several key stages.
+	To carry out the project, an agile methodology was utilised, which allowed for short, iterative cycles of production, providing value in the form of quick creation and constant revision. Taking on an agile methodology also served the project well in the sense that there was a strong focus on prioritising providing value to the end user over comprehensive documentation and lengthy processes. 
+	
+	Although this approach is more commonly relevant to a team of developers, approaching the project management in this way allowed for a stringent and well defined timeline to be used, aiding in project delivery and outcome. This involved several key stages.
 	Firstly, individual 'epics' were defined, which included:
 	\\
 	$\bullet$ Define the Scope and Market Research
@@ -172,26 +180,49 @@ anchorcolor = blue]{hyperref}
 	$\bullet$ Write the Dissertation
 	\\
 	
-	These were then used to create 'stories' which were placed into a timeline. For this, the project management tool monday.com \cite{monday.com} was used, which can be seen in figure \ref{fig:monday.com}. Using Monday.com allowed for a timeline to be easily created, along with updating the status of each story when relevant to follow the completion of the project.
+	These were then used to create 'stories' which were placed into a timeline. For this, the project management tool monday.com \cite{monday.com} was used, which can be seen in figure \ref{fig:monday.com}. Using Monday.com allowed for a timeline to be easily created, along with updating the status of each story when relevant to follow the completion of the project. In this way, a change management approach (ADD CITE) could be carried out, in which the project could easily be updated and reflected in the tasks. This was especially important as both agile methodology and the UCD rely on constant feedback from the end user which informs the project.
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.25]{images/monday.png}
-		\caption{Screenshot of Monday.com displaying the project stories}
+		\caption{Screenshot of Monday.com Displaying the Project Stories}
 		\label{fig:monday.com}
 		\cite{monday.com}
 	\end{figure}
 
-	Finally, using the aforementioned timeline, a gantt chart was created, which gave an overarching view of the project, with tasks performed represented along the vertical axis and the timeline represented along the horizontal axis. This can be found in the appendix (ADD CITE).
+	Finally, using the created timeline, a gantt chart was implemented, which gave an overarching view of the project, with tasks performed represented along the vertical axis and the timeline represented along the horizontal axis. This can be found in the appendix (ADD CITE).
 	
 	\subsection{Research and Market Analysis}
 	In order to gauge whether there is a market for the proposed analysis, a survey was carried out in which users were asked about whether they could see themselves using the application features, among other things. The full survey can be found within the appendix (ADD CITE)
 	
 	\subsubsection{Existing Applications}
-	As previously discusses there exists a variety of similar applications, for which the most prominent will be discussed below, along with
+	As previously discusses there exists a variety of similar applications, for which the most prominent will be discussed below, along with the salient and limiting features of each.
+	\\
+	
+	\noindent
+	\underline{Shortcut}
+	\\
+	Shortcut is a US based application..
+	One of the defining features of the shortcut app is the availability, with the app providing the ability to request a haircut from 8am to as late as midnight capatilising on a previously unventured late night hair cut market.
+	
+	The application is limited on it's features, with it only having the option to request a Hair Cut only or a Hair Cut and Beard Trim. 
+	Another limiting feature of the application is the price. For a single haircut the cost starts at 75\$ (around £54), which is most likely a reflection of high start up costs and is a problem seen in other similar applications, such as uber and lyft that can only be mitigated through losses (\cite{tech-crunch}).
+	\\
+	
+	\noindent
+	\underline{TRIM-IT}
+	https://www.bbc.co.uk/news/stories-47711610
+	\\
+	TRIM-IT is a UK based mobile hairdressor application. Their business model is franchise based similar to that seen by Mcdonald's, whereby barbers would invest through a monthly fee and be provided with the tools necessary, such as a mobile barber unit. 
+	
+	\noindent
+	\underline{TrimCheck}
+	
 	
 	\subsubsection{Novelty of the Proposed Application}
-	As discussed in the previous chapter, there exists a range of applications that are suited towards providing a mobile barber service. 
+	As discussed in the previous chapter, there exists a range of applications that are suited towards providing a mobile barber service.
+	
+	(shortcut)The ability to offer a variety of services not limited to just a haircut or beardtrim.
 	
 	\subsection{Deciding on a Platform}
 	\subsubsection{Mobile vs Desktop}
@@ -299,7 +330,7 @@ anchorcolor = blue]{hyperref}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.85]{images/sign-in.png}
-		\caption{Sign In Page Made with Adobe XD}
+		\caption{Sign In Page Made With Adobe XD}
 		\label{fig:sign-in}
 	\end{figure}
 	

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  11 AUG 2021 12:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  12 AUG 2021 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -412,304 +412,321 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/scit' undefined
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logo.png>]
-(./main.tocpdfTeX warning (ext4): destination with the same identifier (name{pa
-ge.1}) has been already used, duplicate ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logo.png>]pdfTeX 
+warning (ext4): destination with the same identifier (name{page.1}) has been al
+ready used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ...ding the barbers}{21}{subsubsection.4.6.1}
-                                                  % [1])
+l.93 
+      [1] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 99--111
+
+ []
+
+[3] (./main.toc [4])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 101--114
+ [5] (./main.lof)
+\tf@lof=\write5
+\openout5 = `main.lof'.
 
- []
+ [6]
 
-[5]
-
-LaTeX Warning: Citation `owen-ray' on page 6 undefined on input line 120.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--122
-
- []
+LaTeX Warning: Citation `owen-ray' on page 7 undefined on input line 126.
 
 
-LaTeX Warning: Citation `shortcut' on page 6 undefined on input line 123.
-
-
-LaTeX Warning: Citation `trim-it' on page 6 undefined on input line 123.
-
-
-LaTeX Warning: Citation `trimcheck' on page 6 undefined on input line 123.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--125
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
+LaTeX Warning: Citation `shortcut' on page 7 undefined on input line 129.
+
+
+LaTeX Warning: Citation `trim-it' on page 7 undefined on input line 129.
+
+
+LaTeX Warning: Citation `trimcheck' on page 7 undefined on input line 129.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--136
+Underfull \hbox (badness 10000) in paragraph at lines 132--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--141
+Underfull \hbox (badness 10000) in paragraph at lines 135--142
 
  []
 
-<images/npd.png, id=377, 1697.34125pt x 1861.95625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
+
+ []
+
+<images/npd.png, id=410, 1697.34125pt x 1861.95625pt>
 File: images/npd.png Graphic file (type png)
 <use images/npd.png>
-Package pdftex.def Info: images/npd.png  used on input line 144.
+Package pdftex.def Info: images/npd.png  used on input line 150.
 (pdftex.def)             Requested size: 254.5902pt x 279.28139pt.
 
-LaTeX Warning: Citation `shopify' on page 6 undefined on input line 146.
+LaTeX Warning: Citation `shopify' on page 7 undefined on input line 152.
 
-[6] [7 <./images/npd.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 163--174
+[7] [8 <./images/npd.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 171--182
 
  []
 
 
-LaTeX Warning: Citation `monday.com' on page 8 undefined on input line 175.
+LaTeX Warning: Citation `monday.com' on page 9 undefined on input line 183.
 
-<images/monday.png, id=390, 1787.67876pt x 878.28125pt>
+<images/monday.png, id=421, 1787.67876pt x 878.28125pt>
 File: images/monday.png Graphic file (type png)
 <use images/monday.png>
-Package pdftex.def Info: images/monday.png  used on input line 179.
+Package pdftex.def Info: images/monday.png  used on input line 187.
 (pdftex.def)             Requested size: 446.9186pt x 219.56978pt.
 
-Overfull \hbox (56.9186pt too wide) in paragraph at lines 179--180
+Overfull \hbox (56.9186pt too wide) in paragraph at lines 187--188
  [][] 
  []
 
 
-LaTeX Warning: Citation `monday.com' on page 8 undefined on input line 182.
+LaTeX Warning: Citation `monday.com' on page 9 undefined on input line 190.
 
-[8] [9 <./images/monday.png>]
-<images/ios-android.png, id=402, 1027.84pt x 578.16pt>
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
+
+ []
+
+[10 <./images/monday.png>]
+
+LaTeX Warning: Citation `tech-crunch' on page 11 undefined on input line 209.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--211
+
+ []
+
+<images/ios-android.png, id=432, 1027.84pt x 578.16pt>
 File: images/ios-android.png Graphic file (type png)
 <use images/ios-android.png>
-Package pdftex.def Info: images/ios-android.png  used on input line 204.
+Package pdftex.def Info: images/ios-android.png  used on input line 235.
 (pdftex.def)             Requested size: 411.12872pt x 231.2599pt.
 
-Overfull \hbox (21.12872pt too wide) in paragraph at lines 204--205
+Overfull \hbox (21.12872pt too wide) in paragraph at lines 235--236
  [][] 
  []
 
 
-LaTeX Warning: Citation `stat-counter-21' on page 10 undefined on input line 20
-7.
-
-
-LaTeX Warning: Citation `https://reactnative.dev/' on page 10 undefined on inpu
-t line 210.
-
-
-LaTeX Warning: Citation `flutter.dev' on page 10 undefined on input line 210.
-
-[10 <./images/ios-android.png>]
-
-LaTeX Warning: Citation `flutter' on page 11 undefined on input line 214.
-
-
-LaTeX Warning: Citation `Github' on page 11 undefined on input line 214.
-
-
-LaTeX Warning: Citation `2018' on page 11 undefined on input line 214.
-
-
-LaTeX Warning: Citation `firestore' on page 11 undefined on input line 217.
-
-
-LaTeX Warning: Citation `Grudin and Pruitt' on page 11 undefined on input line 
-229.
-
-
-LaTeX Warning: Citation `2002' on page 11 undefined on input line 229.
-
-
-LaTeX Warning: Citation `Long' on page 11 undefined on input line 229.
-
-
-LaTeX Warning: Citation `2009' on page 11 undefined on input line 229.
-
-
-LaTeX Warning: Citation `Chapman and Milham' on page 11 undefined on input line
- 229.
-
-
-LaTeX Warning: Citation `2007' on page 11 undefined on input line 229.
-
-
-LaTeX Warning: Citation `Mcginn and Kotamraju' on page 11 undefined on input li
-ne 229.
-
-
-LaTeX Warning: Citation `2008' on page 11 undefined on input line 229.
+LaTeX Warning: Citation `stat-counter-21' on page 11 undefined on input line 23
+8.
 
 [11]
-<images/persona_1.png, id=413, 2007.5pt x 1405.25pt>
+
+LaTeX Warning: Citation `https://reactnative.dev/' on page 12 undefined on inpu
+t line 241.
+
+
+LaTeX Warning: Citation `flutter.dev' on page 12 undefined on input line 241.
+
+
+LaTeX Warning: Citation `flutter' on page 12 undefined on input line 245.
+
+
+LaTeX Warning: Citation `Github' on page 12 undefined on input line 245.
+
+
+LaTeX Warning: Citation `2018' on page 12 undefined on input line 245.
+
+[12 <./images/ios-android.png>]
+
+LaTeX Warning: Citation `firestore' on page 13 undefined on input line 248.
+
+
+LaTeX Warning: Citation `Grudin and Pruitt' on page 13 undefined on input line 
+260.
+
+
+LaTeX Warning: Citation `2002' on page 13 undefined on input line 260.
+
+
+LaTeX Warning: Citation `Long' on page 13 undefined on input line 260.
+
+
+LaTeX Warning: Citation `2009' on page 13 undefined on input line 260.
+
+
+LaTeX Warning: Citation `Chapman and Milham' on page 13 undefined on input line
+ 260.
+
+
+LaTeX Warning: Citation `2007' on page 13 undefined on input line 260.
+
+
+LaTeX Warning: Citation `Mcginn and Kotamraju' on page 13 undefined on input li
+ne 260.
+
+
+LaTeX Warning: Citation `2008' on page 13 undefined on input line 260.
+
+<images/persona_1.png, id=445, 2007.5pt x 1405.25pt>
 File: images/persona_1.png Graphic file (type png)
 <use images/persona_1.png>
-Package pdftex.def Info: images/persona_1.png  used on input line 240.
+Package pdftex.def Info: images/persona_1.png  used on input line 271.
 (pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
 
-Overfull \hbox (11.49289pt too wide) in paragraph at lines 240--241
+Overfull \hbox (11.49289pt too wide) in paragraph at lines 271--272
 [][] 
  []
 
-[12]
+[13]
 File: images/persona_1.png Graphic file (type png)
 <use images/persona_1.png>
-Package pdftex.def Info: images/persona_1.png  used on input line 253.
+Package pdftex.def Info: images/persona_1.png  used on input line 284.
 (pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
 
-Overfull \hbox (11.49289pt too wide) in paragraph at lines 253--254
+Overfull \hbox (11.49289pt too wide) in paragraph at lines 284--285
 [][] 
  []
 
-[13 <./images/persona_1.png>]
+[14 <./images/persona_1.png>]
 File: images/persona_1.png Graphic file (type png)
 <use images/persona_1.png>
-Package pdftex.def Info: images/persona_1.png  used on input line 265.
+Package pdftex.def Info: images/persona_1.png  used on input line 296.
 (pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
 
-Overfull \hbox (11.49289pt too wide) in paragraph at lines 265--266
-[][] 
- []
-
-[14]
-<images/persona_4.png, id=431, 2007.5pt x 1405.25pt>
-File: images/persona_4.png Graphic file (type png)
-<use images/persona_4.png>
-Package pdftex.def Info: images/persona_4.png  used on input line 278.
-(pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
-
-Overfull \hbox (11.49289pt too wide) in paragraph at lines 278--279
+Overfull \hbox (11.49289pt too wide) in paragraph at lines 296--297
 [][] 
  []
 
 [15]
+<images/persona_4.png, id=459, 2007.5pt x 1405.25pt>
+File: images/persona_4.png Graphic file (type png)
+<use images/persona_4.png>
+Package pdftex.def Info: images/persona_4.png  used on input line 309.
+(pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
 
-LaTeX Warning: Citation `Arnowitz Arent Berger' on page 16 undefined on input l
-ine 286.
+Overfull \hbox (11.49289pt too wide) in paragraph at lines 309--310
+[][] 
+ []
 
-<images/prototyping-components.png, id=439, 623.32875pt x 670.75594pt>
+[16]
+
+LaTeX Warning: Citation `Arnowitz Arent Berger' on page 17 undefined on input l
+ine 317.
+
+<images/prototyping-components.png, id=465, 623.32875pt x 670.75594pt>
 File: images/prototyping-components.png Graphic file (type png)
 <use images/prototyping-components.png>
 Package pdftex.def Info: images/prototyping-components.png  used on input line 
-289.
+320.
 (pdftex.def)             Requested size: 311.6636pt x 335.37714pt.
-[16 <./images/persona_4.png>]
+[17 <./images/persona_4.png>]
 
-LaTeX Warning: Citation `smashing-magazine' on page 17 undefined on input line 
-295.
+LaTeX Warning: Citation `smashing-magazine' on page 18 undefined on input line 
+326.
 
 
-LaTeX Warning: Citation `nielson-normal-group-2020' on page 17 undefined on inp
-ut line 297.
+LaTeX Warning: Citation `nielson-normal-group-2020' on page 18 undefined on inp
+ut line 328.
 
-[17 <./images/prototyping-components.png>]
-<images/sign-in.png, id=453, 218.31563pt x 438.8897pt>
+[18 <./images/prototyping-components.png>]
+<images/sign-in.png, id=478, 218.31563pt x 438.8897pt>
 File: images/sign-in.png Graphic file (type png)
 <use images/sign-in.png>
-Package pdftex.def Info: images/sign-in.png  used on input line 301.
+Package pdftex.def Info: images/sign-in.png  used on input line 332.
 (pdftex.def)             Requested size: 185.56914pt x 373.058pt.
- [18 <./images/sign-in.png>]
-Overfull \hbox (99.22177pt too wide) in paragraph at lines 330--332
+ [19 <./images/sign-in.png>]
+Overfull \hbox (99.22177pt too wide) in paragraph at lines 361--363
 \OT1/cmr/m/n/12 (INSERT SYS-TEM AR-CHI-TEC-TURE DI-A-GRAM) https://www.research
 gate.net/profile/Wei-
  []
 
 
-Overfull \hbox (126.16826pt too wide) in paragraph at lines 330--332
+Overfull \hbox (126.16826pt too wide) in paragraph at lines 361--363
 \OT1/cmr/m/n/12 Jung-Shiang/publication/267418345/figure/fig1/AS:29565695982387
 2@1447501520198/Architecture-
  []
 
 
-Overfull \hbox (113.26031pt too wide) in paragraph at lines 333--335
+Overfull \hbox (113.26031pt too wide) in paragraph at lines 364--366
 []\OT1/cmr/m/n/12 https://www.researchgate.net/figure/Overview-of-the-schema-ma
 tching-system[]fig2[]267418345
  []
 
-[19]
-Overfull \hbox (62.46614pt too wide) in paragraph at lines 338--341
+[20]
+Overfull \hbox (62.46614pt too wide) in paragraph at lines 369--372
 \OT1/cmr/m/n/12 Provider.of https://flutter.dev/docs/development/data-and-backe
 nd/state-mgmt/simple 
  []
 
-[20]
-Overfull \hbox (2.11537pt too wide) in paragraph at lines 389--398
+[21]
+Overfull \hbox (2.11537pt too wide) in paragraph at lines 420--429
 \OT1/cmr/m/n/12 When load-ing the bar-bers ei-ther they were load-ing through m
 ak-ing a database
  []
 
-[21]
-Overfull \hbox (6.42783pt too wide) in paragraph at lines 403--405
+[22]
+Overfull \hbox (6.42783pt too wide) in paragraph at lines 434--436
 \OT1/cmr/m/n/12 https://firebase.google.com/docs/firestore/solutions/geoqueries
  Once the user
  []
 
 
-LaTeX Warning: Citation `medium-comerge' on page 22 undefined on input line 410
+LaTeX Warning: Citation `medium-comerge' on page 23 undefined on input line 441
 .
 
 
-LaTeX Warning: Citation `requests' on page 22 undefined on input line 415.
+LaTeX Warning: Citation `requests' on page 23 undefined on input line 446.
 
-[22]
+[23]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-418.
+449.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [23]
+) [24]
 
-LaTeX Warning: Citation `Humble and Farley' on page 24 undefined on input line 
-440.
-
-
-LaTeX Warning: Citation `2010' on page 24 undefined on input line 440.
+LaTeX Warning: Citation `Humble and Farley' on page 25 undefined on input line 
+471.
 
 
-LaTeX Warning: Citation `chapter 8' on page 24 undefined on input line 440.
+LaTeX Warning: Citation `2010' on page 25 undefined on input line 471.
+
+
+LaTeX Warning: Citation `chapter 8' on page 25 undefined on input line 471.
 
 (./main.bbl)
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 454.
+(hyperref)                than one, level fixed on input line 485.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 466.
-[24] [25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 466.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 497.
+[25] [26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 497.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 466.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 466.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 497.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 497.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D4CF5A9ECFFDB5F79B2A7AE7F09D29FC;3872.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 466.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 497.
  ) 
 Here is how much of TeX's memory you used:
- 8586 strings out of 483183
- 126046 string characters out of 5966292
- 411639 words of memory out of 5000000
- 23344 multiletter control sequences out of 15000+600000
+ 8593 strings out of 483183
+ 126099 string characters out of 5966292
+ 411640 words of memory out of 5000000
+ 23346 multiletter control sequences out of 15000+600000
  539925 words of font info for 50 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,36p,968b,1259s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,36p,968b,1257s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/josh/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1200.600p
 k> </home/josh/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600p
 k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
@@ -717,10 +734,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (26 pages, 2014271 bytes).
+Output written on main.pdf (27 pages, 2018195 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 496 compressed objects within 5 object streams
- 103 named destinations out of 1000 (max. 500000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 105 named destinations out of 1000 (max. 500000)
  489 words of extra memory for PDF output out of 10000 (max. 10000000)
 
