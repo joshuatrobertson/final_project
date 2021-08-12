@@ -395,7 +395,7 @@ class _CartState extends State<Cart> {
     );
   }
 
-  void getTotalPrice(List<CartItem> items) {
+  void getTotalPrice(List<CartModel> items) {
     double totalPrice = 0;
     items.forEach((item) {
       totalPrice += item.quantity * item.product.price;

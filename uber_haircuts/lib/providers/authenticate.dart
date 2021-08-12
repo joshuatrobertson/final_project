@@ -63,7 +63,7 @@ class Authenticate extends ChangeNotifier {
       final UserCredential _authResult = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       print("signed in " + email);
       userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
-      List<CartItem> orders = [];
+      List<CartModel> orders = [];
       orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
       userModel.cart = orders;
       _authStatus = AuthStatus.AUTH_WITH_MAPS;
@@ -160,7 +160,7 @@ class Authenticate extends ChangeNotifier {
     }
     else {
       userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
-      List<CartItem> orders = [];
+      List<CartModel> orders = [];
       orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
       userModel.cart = orders;
       _authStatus = AuthStatus.AUTH_WITH_MAPS;
@@ -341,11 +341,11 @@ class Authenticate extends ChangeNotifier {
         "productId": productModel.id.toString(),
         "quantity": quantity,
       };
-      CartItem item = CartItem.fromMap(cartItem);
+      CartModel item = CartModel.fromMap(cartItem);
       
 
       userModel.cart.forEach((element) {
-        if (element.productId == productModel.id) {
+        if (element.productID == productModel.id) {
           alreadyInCart = true;
           return;
         }

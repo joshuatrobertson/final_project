@@ -13,7 +13,7 @@ class OrderUtility {
   static const BARBERS = "parentBarber";
 
 
-  Future<void> addToCart({String userId, CartItem cartItem}) async {
+  Future<void> addToCart({String userId, CartModel cartItem}) async {
 
     final DocumentSnapshot snapshot = await _firestore.collection(USERS).doc(userId).get();
     List<dynamic> items = snapshot.get("cart");
@@ -21,8 +21,8 @@ class OrderUtility {
 
     // Loop through each item within the cart and add to firebase if it doesn't already exist
     items.forEach((element) {
-      CartItem newItem = CartItem.fromMap(element);
-      if (newItem.productId == cartItem.productId) {
+      CartModel newItem = CartModel.fromMap(element);
+      if (newItem.productID == cartItem.productID) {
         itemExistsInCart = true;
       }
     });
@@ -38,11 +38,11 @@ class OrderUtility {
 
   Future<void> updateCartFirestore({String userId}) async {
     UserModel userModel = await getUserById(userId);
-    List<CartItem> orderItems = userModel.cart;
+    List<CartModel> orderItems = userModel.cart;
 
     try {
       List<dynamic> newOrders = [];
-      for (CartItem cartItem in orderItems) {
+      for (CartModel cartItem in orderItems) {
           newOrders.add(cartItem.toMap());
       }
       await _firestore.collection(USERS).doc(userId).update({
@@ -53,18 +53,18 @@ class OrderUtility {
     }
   }
 
-  Future<List<CartItem>> getDatabaseCartItems(String userId) async {
+  Future<List<CartModel>> getDatabaseCartItems(String userId) async {
     ParentBarbersFirestore _parentBarbersFirestore = new ParentBarbersFirestore();
     final DocumentSnapshot snapshot = await _firestore.collection(USERS).doc(userId).get();
     List<dynamic> items = snapshot.get("cart");
-    List<CartItem> orders = [];
+    List<CartModel> orders = [];
 
     if (items.isNotEmpty) {
       items.forEach((element) async {
         // Fetch the CartItem from the database
-        CartItem newItem = CartItem.fromMap(element);
+        CartModel newItem = CartModel.fromMap(element);
         // Fetch the ProductModel from the product Id
-        ProductModel product = await _parentBarbersFirestore.getProductFromId(newItem.productId);
+        ProductModel product = await _parentBarbersFirestore.getProductFromId(newItem.productID);
         newItem.product = product;
         orders.add(newItem);
       });

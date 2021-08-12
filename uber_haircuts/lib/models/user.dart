@@ -15,7 +15,7 @@ class UserModel {
   String _name;
   String _email;
   String _uid;
-  List<CartItem> cart;
+  List<CartModel> cart;
   PlaceModel locationDetails;
 
   String get name => _name;
@@ -32,10 +32,10 @@ class UserModel {
 
   UserModel();
 
-  List<CartItem> _convertCartFromMap(List cart) {
-    List<CartItem> _result = [];
+  List<CartModel> _convertCartFromMap(List cart) {
+    List<CartModel> _result = [];
     cart.forEach((element) {
-      CartItem cartItem = CartItem.fromMap(element);
+      CartModel cartItem = CartModel.fromMap(element);
       _result.add(cartItem);
     });
     return _result;
@@ -51,7 +51,7 @@ class UserModel {
   PlaceModel _convertLocationDetails(List location) =>
       new PlaceModel(number: location[0]["number"], street: location[1]["street"], city: location[2]["city"], postcode: location[3]["postcode"]);
 
-  void addToCart(CartItem cartItem) {
+  void addToCart(CartModel cartItem) {
     try {
       cart.add(cartItem);
     } catch(e) {
