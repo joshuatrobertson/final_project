@@ -15,42 +15,49 @@
 \BOOKMARK [3][-]{subsubsection.1.6.1}{The Target User}{subsection.1.6}% 15
 \BOOKMARK [2][-]{subsection.1.7}{User Personas}{section.1}% 16
 \BOOKMARK [1][-]{section.2}{Prototyping}{}% 17
-\BOOKMARK [1][-]{section.3}{System Design}{}% 18
-\BOOKMARK [2][-]{subsection.3.1}{Application Scope}{section.3}% 19
-\BOOKMARK [2][-]{subsection.3.2}{User Needs}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.3}{Requirements}{section.3}% 21
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Functional Requirements}{subsection.3.3}% 22
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Non-Functional Requirements}{subsection.3.3}% 23
-\BOOKMARK [2][-]{subsection.3.4}{System Architecture}{section.3}% 24
-\BOOKMARK [2][-]{subsection.3.5}{State Management}{section.3}% 25
-\BOOKMARK [1][-]{section.4}{Production}{}% 26
-\BOOKMARK [2][-]{subsection.4.1}{Version Control}{section.4}% 27
-\BOOKMARK [2][-]{subsection.4.2}{Sprint 1 - Setup}{section.4}% 28
-\BOOKMARK [3][-]{subsubsection.4.2.1}{File Structure}{subsection.4.2}% 29
-\BOOKMARK [2][-]{subsection.4.3}{Sprint X - UI}{section.4}% 30
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Cupertino vs Material}{subsection.4.3}% 31
-\BOOKMARK [2][-]{subsection.4.4}{Sprint X - Login and Sign Up}{section.4}% 32
-\BOOKMARK [2][-]{subsection.4.5}{Sprint X - Backend Design}{section.4}% 33
-\BOOKMARK [2][-]{subsection.4.6}{Connecting the Frontend and Backend}{section.4}% 34
-\BOOKMARK [3][-]{subsubsection.4.6.1}{Loading the barbers}{subsection.4.6}% 35
-\BOOKMARK [3][-]{subsubsection.4.6.2}{Shopping Cart}{subsection.4.6}% 36
-\BOOKMARK [2][-]{subsection.4.7}{Sprint X - Location}{section.4}% 37
-\BOOKMARK [3][-]{subsubsection.4.7.1}{Autocomplete locations}{subsection.4.7}% 38
-\BOOKMARK [2][-]{subsection.4.8}{Sprint X - Payment}{section.4}% 39
-\BOOKMARK [2][-]{subsection.4.9}{Widgets and Common Items}{section.4}% 40
-\BOOKMARK [3][-]{subsubsection.4.9.1}{Widgets}{subsection.4.9}% 41
-\BOOKMARK [3][-]{subsubsection.4.9.2}{Common Items}{subsection.4.9}% 42
-\BOOKMARK [1][-]{section.5}{Testing}{}% 43
-\BOOKMARK [2][-]{subsection.5.1}{User Testing}{section.5}% 44
-\BOOKMARK [2][-]{subsection.5.2}{Acceptance Testing}{section.5}% 45
-\BOOKMARK [1][-]{section.6}{Random stuff}{}% 46
-\BOOKMARK [2][-]{subsection.6.1}{Launcher Icons}{section.6}% 47
-\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 48
-\BOOKMARK [2][-]{subsubsection.a.A..1}{Use case 1 - }{appendix.A}% 49
-\BOOKMARK [3][-]{subsubsection.a.A..2}{Use case 2 - }{subsubsection.a.A..1}% 50
-\BOOKMARK [3][-]{subsubsection.a.A..3}{Use case 3 - }{subsubsection.a.A..1}% 51
-\BOOKMARK [3][-]{subsubsection.a.A..4}{Use case 4 - }{subsubsection.a.A..1}% 52
-\BOOKMARK [3][-]{subsubsection.a.A..5}{Use case 5 - }{subsubsection.a.A..1}% 53
-\BOOKMARK [1][-]{appendix.B}{Figures}{}% 54
-\BOOKMARK [1][-]{appendix.C}{Application Images}{}% 55
-\BOOKMARK [1][-]{appendix.D}{Code Snippets}{}% 56
+\BOOKMARK [2][-]{subsection.2.1}{Initial Sketches and Brainstorming}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.2}{Wireframing}{section.2}% 19
+\BOOKMARK [1][-]{section.3}{System Design}{}% 20
+\BOOKMARK [2][-]{subsection.3.1}{Application Scope}{section.3}% 21
+\BOOKMARK [2][-]{subsection.3.2}{User Needs}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.3}{Requirements}{section.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Functional Requirements}{subsection.3.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Non-Functional Requirements}{subsection.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.4}{Use Cases}{section.3}% 26
+\BOOKMARK [1][-]{section.4}{Architecture and State Management}{}% 27
+\BOOKMARK [2][-]{subsection.4.1}{System Architecture}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Deciding on a Framework}{subsection.4.1}% 29
+\BOOKMARK [2][-]{subsection.4.2}{State Management}{section.4}% 30
+\BOOKMARK [2][-]{subsection.4.3}{Data Management}{section.4}% 31
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Database Design}{subsection.4.3}% 32
+\BOOKMARK [1][-]{section.5}{Production}{}% 33
+\BOOKMARK [2][-]{subsection.5.1}{Version Control}{section.5}% 34
+\BOOKMARK [2][-]{subsection.5.2}{Sprint 1 - Setup}{section.5}% 35
+\BOOKMARK [3][-]{subsubsection.5.2.1}{File Structure}{subsection.5.2}% 36
+\BOOKMARK [2][-]{subsection.5.3}{Sprint X - UI}{section.5}% 37
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Cupertino vs Material}{subsection.5.3}% 38
+\BOOKMARK [2][-]{subsection.5.4}{Sprint X - Login and Sign Up}{section.5}% 39
+\BOOKMARK [2][-]{subsection.5.5}{Sprint X - Backend Design}{section.5}% 40
+\BOOKMARK [2][-]{subsection.5.6}{Connecting the Frontend and Backend}{section.5}% 41
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Loading the barbers}{subsection.5.6}% 42
+\BOOKMARK [3][-]{subsubsection.5.6.2}{Shopping Cart}{subsection.5.6}% 43
+\BOOKMARK [2][-]{subsection.5.7}{Sprint X - Location}{section.5}% 44
+\BOOKMARK [3][-]{subsubsection.5.7.1}{Autocomplete locations}{subsection.5.7}% 45
+\BOOKMARK [2][-]{subsection.5.8}{Sprint X - Payment}{section.5}% 46
+\BOOKMARK [2][-]{subsection.5.9}{Widgets and Common Items}{section.5}% 47
+\BOOKMARK [3][-]{subsubsection.5.9.1}{Widgets}{subsection.5.9}% 48
+\BOOKMARK [3][-]{subsubsection.5.9.2}{Common Items}{subsection.5.9}% 49
+\BOOKMARK [1][-]{section.6}{Testing}{}% 50
+\BOOKMARK [2][-]{subsection.6.1}{User Testing}{section.6}% 51
+\BOOKMARK [2][-]{subsection.6.2}{Acceptance Testing}{section.6}% 52
+\BOOKMARK [1][-]{section.7}{Random stuff}{}% 53
+\BOOKMARK [2][-]{subsection.7.1}{Launcher Icons}{section.7}% 54
+\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 55
+\BOOKMARK [2][-]{subsubsection.a.A..1}{Use case 1 - }{appendix.A}% 56
+\BOOKMARK [3][-]{subsubsection.a.A..2}{Use case 2 - }{subsubsection.a.A..1}% 57
+\BOOKMARK [3][-]{subsubsection.a.A..3}{Use case 3 - }{subsubsection.a.A..1}% 58
+\BOOKMARK [3][-]{subsubsection.a.A..4}{Use case 4 - }{subsubsection.a.A..1}% 59
+\BOOKMARK [3][-]{subsubsection.a.A..5}{Use case 5 - }{subsubsection.a.A..1}% 60
+\BOOKMARK [1][-]{appendix.B}{Figures}{}% 61
+\BOOKMARK [1][-]{appendix.C}{Application Images}{}% 62
+\BOOKMARK [1][-]{appendix.D}{Code Snippets}{}% 63

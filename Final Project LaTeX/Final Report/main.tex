@@ -314,6 +314,10 @@ anchorcolor = blue]{hyperref}
 	\end{itemize}
 	
 	\section{Prototyping}
+	\subsection{Initial Sketches and Brainstorming}
+	(UPDATE PHOTO WITH INITIAL SKETCHES)
+	
+	\subsection{Wireframing}
 	An important component of UCD and more generally UX is wireframing, which involves making a mock-up of the application that acts as an early prototype to influence later development, along with allowing for early beta testing \cite{Arnowitz Arent Berger}. For the wireframing application Adobe XD was chosen for several reasons. Firstly, it has strong prototyping functionality, allowing the user to click around the application through the use of ‘components’. This interactivity means that early testers can get a real feel for how the application works. An illustration of this can be seen below, whereby each arrow represents a state change in the form of a trigger/ action pair, whereby for example a user could click on ‘Available Right Now’ and be taken to the ‘Checkout’ as seen in figure \ref{fig:prot-comp} below.
 	\begin{figure}[H]
 		\centering
@@ -357,18 +361,46 @@ anchorcolor = blue]{hyperref}
 	
 	The	
 	\subsubsection{Non-Functional Requirements}
+	\subsection{Use Cases}
+
+	
+	\section{Architecture and State Management}
 	\subsection{System Architecture}
+	System Architecture can be broadly defined as a conceptual model which outlines the structure, behaviour and interactions between internal and external components of the system. Modelling and creating a structured and well-defined architecture allows for the development of a sustainable, scalable and stable software which can easily grow relevant to the demands placed on it's features.
+	
+	When designing the system architecture several 
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{images/model-class-diagrams.png}
+		\caption{Model Class Diagrams}
+		\label{fig:model-class-diagrams}
+	\end{figure}
+	(TODO: REMOVE WATERMARK)
+	
+	\subsubsection{Deciding on a Framework}
+	There exists a variety of software architectural frameworks, although not exhaustive this includes Client-server, Peer-to-peer, Microservices and Model-view controller. For brevity
+	
 	(INSERT SYSTEM ARCHITECTURE DIAGRAM)
 	https://www.researchgate.net/profile/Wei-Jung-Shiang/publication/267418345/figure/fig1/AS:295656959823872@1447501520198/Architecture-for-XML-based-data-exchange-model.png - 
 	
 	https://www.researchgate.net/figure/Overview-of-the-schema-matching-system\_fig2\_267418345
 	Good example
-	
-	\subsection{State Management}
-	
+	\subsection{State Management}	
 	Simple state management used (Provider) -
 	involves: ChangeNotifier and Provider.of
 	https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple
+	
+	\subsection{Data Management}
+	\subsubsection{Database Design}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{images/database-schema.png}
+		\caption{Database Schema}
+		\label{fig:database-schema}
+	\end{figure}
+	(TODO: REMOVE WATERMARK)
 	
 	\section{Production}
 	\subsection{Version Control}
@@ -384,6 +416,8 @@ anchorcolor = blue]{hyperref}
 	
 	\subsection{Sprint X - UI}
 	Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possible.
+	
+	(DISCUSS HOW FOLLOWED WIREFRAME AND COMPARE IMAGES TO REAL APPLICATION)
 	
 	\subsubsection{Cupertino vs Material}
 	The final project was built using material due to..
