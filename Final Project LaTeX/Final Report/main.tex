@@ -341,6 +341,15 @@ anchorcolor = blue]{hyperref}
 
 	\section{System Design}
 	This section discusses the process of the ideation and creation of the system design, including the initial scope, requirements, application architecture and state management.
+	\begin{figure}[H]
+		\centering
+ 		\includegraphics[scale=0.85]{images/minimal-prototype.png}
+		\caption{ChopChop Minimal Design Prototype}
+		\label{fig:minimal-prototype}
+	\end{figure}
+
+	(TODO: Add prototype)
+
 	\subsection{Application Scope}
 	The scope of the project was to create a fully working and functional barber application with several features, which are discussed in the User Needs below. To further aid in scoping the project, epics were created, which were further split into stories that could be carried out. Although it could be argued that this type of agile methodology is more relevant when working within a team of developers, it helped to determine a stringent workflow and timeline and aided in project delivery.
 	The scope was further defined when wire-framing in Adobe XD, which allowed for the first tangible design to be made.
@@ -366,9 +375,10 @@ anchorcolor = blue]{hyperref}
 	
 	\section{Architecture and State Management}
 	\subsection{System Architecture}
-	System Architecture can be broadly defined as a conceptual model which outlines the structure, behaviour and interactions between internal and external components of the system. Modelling and creating a structured and well-defined architecture allows for the development of a sustainable, scalable and stable software which can easily grow relevant to the demands placed on it's features.
+	https://www.raywenderlich.com/6373413-state-management-with-provider
+	System Architecture can be broadly defined as a conceptual model which outlines the structure, behaviour and interactions between internal and external components of the system. Modelling and creating a structured and well-defined architecture allows for the development of a sustainable, scalable and stable software product which can easily grow relevant to the demands placed on it's features.
 	
-	When designing the system architecture several 
+	When designing the architecture, core business logic was kept separate from the UI, database and network. For example, when interacting with the database the UI called upon the utilities package and any API calls where contained within the providers package.
 	
 	
 	\begin{figure}[H]
@@ -377,7 +387,7 @@ anchorcolor = blue]{hyperref}
 		\caption{Model Class Diagrams}
 		\label{fig:model-class-diagrams}
 	\end{figure}
-	(TODO: REMOVE WATERMARK)
+	(TODO: REMOVE WATERMARK and discuss why modelled as a relational database)
 	
 	\subsubsection{Deciding on a Framework}
 	There exists a variety of software architectural frameworks, although not exhaustive this includes Client-server, Peer-to-peer, Microservices and Model-view controller. For brevity
@@ -391,6 +401,8 @@ anchorcolor = blue]{hyperref}
 	Simple state management used (Provider) -
 	involves: ChangeNotifier and Provider.of
 	https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple
+	
+	PARENTBARBERSPROVIDER provides to a lot of classes
 	
 	\subsection{Data Management}
 	\subsubsection{Database Design}
@@ -490,7 +502,7 @@ anchorcolor = blue]{hyperref}
 	
 	\subsection{Sprint X - Payment}
 	
-	\subsection{Widgets and Common Items}
+	\subsection{Widgets and Common Items and Added Features}
 	Here we discuss any items not covered within a specified sprint.
 	
 	\subsubsection{Widgets}
@@ -499,14 +511,19 @@ anchorcolor = blue]{hyperref}
 	\subsubsection{Common Items}
 	The common items contains global variables that were accessible throughout the project. Initially this included structures and arrays that served as objects to test the functionality of the frontend, for example a barber shop class with a nested list of barbers classes, each with a name, age, description etc. As backend functionality was added these items were removed. A theme class was then added which contains dart files that can be implemented. Doing it in this way meant that the application could be easily styled, without any unnecessary refactoring of code.
 	
+	\subsubsection{Launcher Icons}
+	Created using GIMP. Plugin flutter\_launcher\_icons used to install icons across android and iOS
+	
+	\subsubsection{Discount Codes}
+	
+	\subsubsection{Hide and Show Password}
+	
 	\section{Testing}
 	\subsection{User Testing}
 	\subsection{Acceptance Testing}
 	\cite{Humble and Farley, 2010, chapter 8}
 	
-	\section{Random stuff}
-	\subsection{Launcher Icons}
-	Created using GIMP. Plugin flutter\_launcher\_icons used to install icons across android and iOS
+
 	
 	\bibliography{bib file}
 	
