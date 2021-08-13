@@ -45,7 +45,6 @@ class ParentBarberModel {
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
     address = _convertLocationDetails(documentSnapshot.data()[ADDRESS]);
-
   }
 
   ParentBarberModel();

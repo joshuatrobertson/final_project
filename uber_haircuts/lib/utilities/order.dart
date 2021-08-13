@@ -5,7 +5,7 @@ import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
-import 'package:uber_haircuts/utilities/parent_barbers_firestore.dart';
+import 'package:uber_haircuts/utilities/location_firestore.dart';
 
 class OrderUtility {
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -54,7 +54,7 @@ class OrderUtility {
   }
 
   Future<List<CartModel>> getDatabaseCartItems(String userId) async {
-    ParentBarbersFirestore _parentBarbersFirestore = new ParentBarbersFirestore();
+    LocationFirestore _parentBarbersFirestore = new LocationFirestore();
     final DocumentSnapshot snapshot = await _firestore.collection(USERS).doc(userId).get();
     List<dynamic> items = snapshot.get("cart");
     List<CartModel> orders = [];

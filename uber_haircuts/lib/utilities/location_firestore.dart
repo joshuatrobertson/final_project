@@ -2,11 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
-class ParentBarbersFirestore {
+class LocationFirestore {
 
   // Connect to the database and create a collection reference with the top level collection (ParentBarber)
   final CollectionReference _collectionReferenceParents = FirebaseFirestore.instance.collection('parentBarber');
@@ -79,7 +77,7 @@ class ParentBarbersFirestore {
     });
 
 
-  ParentBarbersFirestore();
+  LocationFirestore();
 
 
 

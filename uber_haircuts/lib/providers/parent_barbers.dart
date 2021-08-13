@@ -3,13 +3,14 @@ import 'package:geolocator/geolocator.dart';
 import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
-import 'package:uber_haircuts/utilities/parent_barbers_firestore.dart';
+import 'package:uber_haircuts/utilities/location_firestore.dart';
 
 class ParentBarbersProvider extends ChangeNotifier {
 
   // Create an instance of firestore
-  ParentBarbersFirestore _parentFirestore = ParentBarbersFirestore();
+  LocationFirestore _parentFirestore = LocationFirestore();
   Position _position;
+  static const RADIUS = 100.0;
 
 
   List<ParentBarberModel> _allParents = [];
@@ -29,7 +30,7 @@ class ParentBarbersProvider extends ChangeNotifier {
     _loadProducts();
   }
 
-  // Returns a list of ProductModel using getProducts() of parent_barbers_firestore.dart
+  // Returns a list of ProductModel using getProducts() of location_firestore.dart
   _loadProducts() async {
     try {
       _products = await _parentFirestore.getProducts();
@@ -44,8 +45,8 @@ class ParentBarbersProvider extends ChangeNotifier {
   _loadParents() async {
     _position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
     try {
-      // Get the barbers within a search radius of x km
-      _allParents = await _parentFirestore.getLocalParents(_position.latitude, _position.longitude, 50);
+      // Get the barbers within a search radius of RADIUS km
+      _allParents = await _parentFirestore.getLocalParents(_position.latitude, _position.longitude, RADIUS);
       notifyListeners();
       // Load all the items into memory to reduce server calls and decrease load/ lookup times
       print("Parent barbers loaded!");
@@ -57,7 +58,7 @@ class ParentBarbersProvider extends ChangeNotifier {
   _loadBarbers() async {
     _position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
     try {
-      _barbers = await _parentFirestore.getBarbers(_position.latitude, _position.longitude, 50);
+      _barbers = await _parentFirestore.getBarbers(_position.latitude, _position.longitude, RADIUS);
       notifyListeners();
       print('Barbers loaded!');
     } catch (e) {
