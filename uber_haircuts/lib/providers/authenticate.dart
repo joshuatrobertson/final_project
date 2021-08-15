@@ -88,7 +88,7 @@ class Authenticate extends ChangeNotifier {
       notifyListeners();
       return true;
     } on FirebaseAuthException catch (e) {
-      print('Failed to sign in barber with exception: ' + e.toString());
+      print('Failed to sign in barber: ' + e.toString());
       _authStatus = AuthStatus.NOT_AUTHENTICATED;
       notifyListeners();
       return false;
@@ -97,6 +97,12 @@ class Authenticate extends ChangeNotifier {
 
   void resetAuthStatus() {
     _authStatus = AuthStatus.UNINITIALISED;
+    notifyListeners();
+  }
+
+  void setAuthStatus(AuthStatus status) {
+    _authStatus = status;
+    print("Auth status set to: " + status.toString());
     notifyListeners();
   }
 
@@ -243,6 +249,7 @@ class Authenticate extends ChangeNotifier {
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
       _userDatabase.createNewUser(newUser, _authResult.user.uid);
+      userModel.fromMap(newUser);
       _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
       print(email + " signed up");
@@ -303,18 +310,20 @@ class Authenticate extends ChangeNotifier {
   
   // Sign out of all providers and then from firebase
   // TODO: sign out not working when log in from fresh install
-  Future signOut() async {
+  Future signOut(String userType) async {
     try {
       final User user = FirebaseAuth.instance.currentUser;
-      _orderUtility.updateCartFirestore(userId: user.uid);
+      // Persistently store the users cart when the user signs out
+      if (userType == 'customer') {
+        _orderUtility.updateCartFirestore(userId: user.uid);
+      }
       await _googleSignIn.signOut();
       await FacebookAuth.instance.logOut();
       await _twitterSignIn.logOut();
       await _firebaseAuth.signOut();
       print("User signed out");
-      _authStatus = AuthStatus.UNAUTHORISED_USER;
+      _authStatus = AuthStatus.UNINITIALISED;
       notifyListeners();
-
     } catch (exception) {
       print(exception.toString());
       return null;

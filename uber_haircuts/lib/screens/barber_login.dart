@@ -4,6 +4,8 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/screens/barber_home.dart';
+import 'package:uber_haircuts/screens/login.dart';
 import 'package:uber_haircuts/screens/registration.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
@@ -109,11 +111,16 @@ class _BarberLoginState extends State<BarberLogin> {
                                 onTap: () async {
                                   if (!await authProvider.barberSignIn(
                                       email: _emailController.text.trim(),
-                                      password: _passwordController.text.trim()
-                                  )) {
+                                      password: _passwordController.text.trim(),
+                                  )
+                                    )
+                                  {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                         SnackBar(
                                             content: ReturnText(text: "Login failed!", color: white,)));
+                                  }
+                                  else {
+                                    navigateToScreen(context, BarberHome());
                                   }
                                 },
                                 child: Center(
@@ -127,7 +134,7 @@ class _BarberLoginState extends State<BarberLogin> {
                           padding: const EdgeInsets.only(top: 8.0),
                           child: GestureDetector(
                               onTap: () {
-                                authProvider.resetAuthStatus();
+                                navigateToScreen(context, Login());
                               },
                               child: ReturnText(text: "Sign in as a customer", color: Colors.red, decoration: TextDecoration.underline,)
                           ),

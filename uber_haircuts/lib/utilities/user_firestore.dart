@@ -25,6 +25,10 @@ class UserFirestore {
     });
   }
 
+  void updateAddress(Map<String, dynamic> address, String userId) {
+    _firebaseFirestore.collection(USERS).doc(userId).update(address);
+  }
+
   // Fetch the user based on a given ID
   UserModel getSingleUserById(String userId) {
     _firebaseFirestore.collection(USERS).doc(userId).get().then((value) {

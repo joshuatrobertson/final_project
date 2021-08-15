@@ -4,6 +4,8 @@ import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/user.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/screens/barber_registration.dart';
+import 'package:uber_haircuts/screens/change_address.dart';
 import 'package:uber_haircuts/screens/contact_us.dart';
 import 'package:uber_haircuts/theme/main_theme.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
@@ -69,7 +71,7 @@ class _SideBarState extends State<SideBar> {
           padding: const EdgeInsets.fromLTRB(75, 10, 0, 0),
           child: GestureDetector(
             onTap: () async {
-              authProvider.signOut();
+              authProvider.signOut('customer');
             },
             child: Container(
                 alignment: Alignment.bottomLeft,
@@ -78,9 +80,14 @@ class _SideBarState extends State<SideBar> {
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(75, 10, 0, 0),
-          child: Container(
-              alignment: Alignment.bottomLeft,
-              child: ReturnText(text: "My Address")),
+          child: GestureDetector(
+            onTap: () async {
+              navigateToScreen(context, ChangeAddress());
+            },
+            child: Container(
+                alignment: Alignment.bottomLeft,
+                child: ReturnText(text: "Change Address")),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(75, 10, 0, 0),
@@ -105,9 +112,15 @@ class _SideBarState extends State<SideBar> {
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(75, 10, 0, 0),
-          child: Container(
-              alignment: Alignment.bottomLeft,
-              child: ReturnText(text: "Join as a Barber")),
+          child: GestureDetector(
+            onTap: () async {
+              authProvider.signOut('customer');
+              navigateToScreen(context, BarberRegistration());
+            },
+            child: Container(
+                alignment: Alignment.bottomLeft,
+                child: ReturnText(text: "Join as a Barber")),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(75, 10, 0, 0),

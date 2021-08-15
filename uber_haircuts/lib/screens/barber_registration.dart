@@ -1,11 +1,8 @@
 import 'dart:io';
-
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
 import 'package:uber_haircuts/utilities/files.dart';
@@ -14,7 +11,6 @@ import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
 import 'login.dart';
 import 'package:provider/provider.dart';
-import 'package:path/path.dart';
 
 class BarberRegistration extends StatefulWidget {
   const BarberRegistration({Key key}) : super(key: key);

@@ -11,9 +11,9 @@ class LocationModel {
 }
 
 class CoordModel {
-  final double longitude;
-  final double latitude;
-  final String geohash;
+  double longitude;
+  double latitude;
+  String geohash;
 
   CoordModel(this.longitude, this.latitude, this.geohash);
 }

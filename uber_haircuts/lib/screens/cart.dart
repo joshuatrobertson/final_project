@@ -4,10 +4,8 @@ import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
-import 'package:uber_haircuts/screens/checkout.dart';
 import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/utilities/promo_code.dart';
-import 'package:uber_haircuts/utilities/user_firestore.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
@@ -44,6 +42,7 @@ class _CartState extends State<Cart> {
 
     final _user = Provider.of<Authenticate>(context);
     final PromoCodeUtility promoCodeUtility = new PromoCodeUtility();
+    final OrderUtility orderUtility = new OrderUtility();
     final TextEditingController _promoCodeText = new TextEditingController();
 
     getTotalPrice(_user.userModel.cart);
@@ -361,17 +360,9 @@ class _CartState extends State<Cart> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 20),
                         child: GestureDetector(
-                          onTap: () {
-                            if (_user.userModel.cart != null && _user.userModel.cart.isNotEmpty) {
-                              navigateToScreen(context, Checkout());
-                            }
-                            else {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                      content: ReturnText(text: "Basket Empty", color: white,)
-                                  )
-                              );
-                            }
+                          onTap: () async {
+                            print("CHECKOUT!");
+                            await orderUtility.createNewOrder(_user.userModel.cart, _user.userModel.uid, total);
                           },
                           child: Container(
                             decoration: BoxDecoration(

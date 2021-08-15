@@ -4,6 +4,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/screens/barber_login.dart';
 import 'package:uber_haircuts/screens/registration.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
@@ -127,7 +128,7 @@ class _LoginState extends State<Login> {
                   padding: const EdgeInsets.only(top: 8.0),
                   child: GestureDetector(
                       onTap: () {
-                        authProvider.resetAuthStatus();
+                        navigateToScreen(context, BarberLogin());
                       },
                       child: ReturnText(text: "Sign in as a barber", color: Colors.red, decoration: TextDecoration.underline,)
                   ),

@@ -1,16 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/cart.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
-import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/utilities/location_firestore.dart';
+import 'orders_firestore.dart';
 
 class OrderUtility {
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
   static const USERS = "users";
   static const BARBERS = "parentBarber";
+  final OrdersFirestore ordersFirestore = new OrdersFirestore();
 
 
   Future<void> addToCart({String userId, CartModel cartItem}) async {
@@ -33,6 +33,26 @@ class OrderUtility {
         "cart": FieldValue.arrayUnion([cartItem.toMap()])
       });
     }
+  }
+
+  Future<void> createNewOrder(List<CartModel> cart, String userID, num cost) {
+    String barberID = cart[0].product.barberID;
+    List products = [];
+
+    cart.forEach((item) {
+      products.add({
+        "productID": item.product.id,
+        "quantity": item.quantity
+      });
+    });
+
+    Map<String, dynamic> orders = {
+      "userID": userID,
+      "barberID": barberID,
+      "products": products,
+      "cost": cost
+    };
+    ordersFirestore.addOrder(orders);
   }
 
 

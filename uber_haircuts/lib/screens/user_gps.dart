@@ -13,6 +13,7 @@ import 'package:uber_haircuts/utilities/user_firestore.dart';
 import 'package:uber_haircuts/widgets/location_search.dart';
 import 'package:flutter/material.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
+import 'package:uber_haircuts/widgets/location_helper.dart';
 import '../theme/main_theme.dart';
 import 'package:uuid/uuid.dart';
 import 'package:geolocator/geolocator.dart';
@@ -87,11 +88,18 @@ class _FireMapState extends State<FireMap> {
                     // Add to the barber or user document within the database and navigate to the respective home pages
                     if (authProvider.currentUser == CurrentUser.CUSTOMER) {
                       _userDatabase.addLocationDetails(values, _user.uid);
-                      navigateToScreen(context, Home());
+                      authProvider.setAuthStatus(AuthStatus.AUTHENTICATED);
+                      replaceScreen(context, Home());
                     }
                     else {
+                      // If it is a barber then also fetch the co-ordinates and geohash to use for the location query
                       _barberFirestore.addLocationDetails(values, _user.uid);
-                      navigateToScreen(context, BarberHome());
+                      var address = values['address'][0]['number'] + ", " + values['address'][1]['street'];
+                      CoordModel coordModel = await returnGeohash(address);
+                      var coordValues = createCoordMap(coordModel);
+                      _barberFirestore.addLocationDetails(coordValues, _user.uid);
+                      authProvider.setAuthStatus(AuthStatus.BARBER_AUTHENTICATED);
+                      replaceScreen(context, BarberHome());
                     }
 
                   }
