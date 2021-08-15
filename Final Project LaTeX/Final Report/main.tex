@@ -6,6 +6,7 @@
 \documentclass[12pt]{article}
 \usepackage{appendix}
 \usepackage[english]{babel}
+\usepackage{minted}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
@@ -15,6 +16,7 @@ urlcolor  = blue,
 citecolor = blue,
 anchorcolor = blue]{hyperref}
 \usepackage{blindtext}
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{listings}
 \usepackage{color}
 \definecolor{light-gray}{gray}{0.95}
@@ -25,8 +27,17 @@ anchorcolor = blue]{hyperref}
 	tabsize=2,
 	basicstyle=\ttfamily,
 }
+\newminted{dart}{
+	fontsize=\footnotesize, 
+	escapeinside=||,
+	mathescape=true,
+	numbersep=5pt,
+	linenos=true,
+	gobble=2,
+	framesep=3mm} 
 \usepackage{hyperref}
 \hypersetup{linktoc = all}
+\renewcommand{\arraystretch}{1.5}	% Increase row space between tables
 
 
 
@@ -88,7 +99,8 @@ anchorcolor = blue]{hyperref}
 
 
 	\section*{Abstract}
-
+	(300 words)
+	
 	\pagebreak
 
 	\section*{Acknowledgements}
@@ -122,8 +134,8 @@ anchorcolor = blue]{hyperref}
 
 	
 	
-	The COVID-19 pandemic has impacted virtually all areas of our life, from work, to travel, to how we socialise. Some of these changes are temporary, such as mask wearing, but others, such as the adoption of more digital services and flexible homeworking seem likely to be more permanent (ADD CITE). 
-	The restriction of movement has caused consumers to migrate to online services at an unprecedented rate and with the global home services market expected to grow by almost 20\% per year until 2026 \cite{owen-ray} there exists a wealth of opportunity for companies to capitalise through digitalising previously physical services. One of these is hairdressing, which saw a sizeable uptake in demand throughout the pandemic. 
+	The COVID-19 pandemic has had a ubiquitous impact on our lives, from work, to travel, to how we socialise. Some of these changes are temporary, such as mask wearing, but others, such as the adoption of more digital services and flexible homeworking seem likely to be permanent (ADD CITE). 
+	Subsequently, the restriction of movement has caused consumers to migrate to online services at an unprecedented rate. With the global home services market expected to grow by almost 20\% per year until 2026 \cite{owen-ray} there exists a wealth of opportunity for companies to capitalise through digitalising previously physical services. One of these services is hairdressing, which saw a sizeable uptake in demand throughout the pandemic. 
 	\\
 	
 	There already exists a range of applications suited towards providing home haircuts. For example, Shortcut \cite{shortcut}, TRIM-IT\cite{trim-it} and TrimCheck\cite{trimcheck} all provide bookable home haircuts. Despite this, none of the aforementioned applications follow the "uber" model, of allowing for immediate booking and delivery of home haircuts. 
@@ -142,7 +154,7 @@ anchorcolor = blue]{hyperref}
 	
 	The research aspect of the project will aim to analyse the strength and weaknesses of existing applications within the field, therefore exposing any market gaps that may be present. 
 	
-	For the implementation of the application, a heavy focus on the end user was taken through using a UCD methodology, along with NPD, which refers to the  entirety of processes leading to bringing a product to market and encompasses several steps as seen in figure \ref{fig:npd} below and discussed throughout the proceeding chapters.
+	For the implementation of the application, a heavy focus on the end user was taken through using a UCD methodology, along with NPD, which refers to the  entirety of processes leading to bringing a product to market and encompasses several steps as seen in figure \ref{fig:npd} below and discussed throughout the proceeding sections.
 	\newline
 	
 	\begin{figure}[H]
@@ -180,7 +192,7 @@ anchorcolor = blue]{hyperref}
 	$\bullet$ Write the Dissertation
 	\\
 	
-	These were then used to create 'stories' which were placed into a timeline. For this, the project management tool monday.com \cite{monday.com} was used, which can be seen in figure \ref{fig:monday.com}. Using Monday.com allowed for a timeline to be easily created, along with updating the status of each story when relevant to follow the completion of the project. In this way, a change management approach (ADD CITE) could be carried out, in which the project could easily be updated and reflected in the tasks. This was especially important as both agile methodology and the UCD rely on constant feedback from the end user which informs the project.
+	These were then used to create 'stories' which were further split into individual tasks placed into a timeline and carried out in . For this, the project management tool monday.com \cite{monday.com} was used, which can be seen in figure \ref{fig:monday.com}. Using Monday.com allowed for a timeline to be easily created, along with updating the status of each story when relevant to follow the completion of the project. In this way, a change management approach (ADD CITE) could be carried out, in which the project could easily be updated and reflected in the tasks. This was especially important as both agile methodology and the UCD rely on constant feedback from the end user which informs the project.
 	
 	\begin{figure}[H]
 		\centering
@@ -220,7 +232,7 @@ anchorcolor = blue]{hyperref}
 	
 	
 	\subsubsection{Novelty of the Proposed Application}
-	As discussed in the previous chapter, there exists a range of applications that are suited towards providing a mobile barber service.
+	As discussed in the previous sections, there exists a range of applications that are suited towards providing a mobile barber service.
 	
 	(shortcut)The ability to offer a variety of services not limited to just a haircut or beardtrim.
 	
@@ -245,9 +257,11 @@ anchorcolor = blue]{hyperref}
 	When deciding on the programming software, several metrics were taken into consideration, including cross-platform functionality, speed, speed of development and performance. For this reason, Dart and the corresponding Flutter software development kit (SDK) were chosen for the primary software. Flutter is a cross-platform development kit, meaning that it will natively run on both iOS and android applications created by Google \cite{flutter}. Dart is compiled ahead-of-time into native ARM code giving better performance compared to other similar development kits, such as React Native and the user interface  is implemented within a fast, low-level C++ library giving great speed to the application. Dart has also seen a large increase in usage within recent years, jumping up 532\% from 2018 to 2019 \cite{Github, 2018} meaning that there is now an extensible list of third-party plugins available and a large community.
 	
 	\subsection{Backend: SQL vs noSQL database}
-	Initially a relational database model was created, which can be seen below (ADD DATABASE). This was later changed to use Google Firestore (\cite{firestore}), a noSQL database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform.
+	For the database, it was decided to use Google Firestore (\cite{firestore}), a noSQL database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform. The cloud firestore also integrates well with Firebases Authentication service, which is used throughout and discussed extensively in \autoref{chap:implementation}
 	
 	Another important feature of noSQL databases is the ability to easily modify the internal data in response to changing business requirements, in an interactive way that allows fordo you use relationship data in firebase stackoverflow modification throughout the application lifestyle and therefore easy scaling.
+	
+	
 
 	
 	
@@ -257,6 +271,7 @@ anchorcolor = blue]{hyperref}
 	
 	
 	\subsection{User Personas}
+	\label{user-personas}
 	The creation of user personas representing fictitious, archetypal users is an essential part of application development \cite{Grudin and Pruitt, 2002} and allows a deep understanding of the target user to be sought and implemented within the features and design of the application \cite{Long, 2009}. There are, however, some shortcomings to qualitative persona generation, such as validity concerns and user bias \cite{Chapman and Milham, 2007} and although they are addressed by other methods, such as data-driven personas \cite{Mcginn and Kotamraju, 2008}, these require a broad user base and therefore we have decided to stick with qualitative methods, which allow for enough brevity and depth for the scope of the project.
 	
 	Here 3 user personas were created, which are discussed in detail below.
@@ -272,6 +287,8 @@ anchorcolor = blue]{hyperref}
 			\caption{Persona 1}
 			\label{fig:persona_1}
 		\end{figure}
+	
+		(TODO: personas share same name)
 		
 		\item Persona 2:
 		
@@ -313,38 +330,14 @@ anchorcolor = blue]{hyperref}
 		
 	\end{itemize}
 	
-	\section{Prototyping}
-	\subsection{Initial Sketches and Brainstorming}
-	(UPDATE PHOTO WITH INITIAL SKETCHES)
-	
-	\subsection{Wireframing}
-	An important component of UCD and more generally UX is wireframing, which involves making a mock-up of the application that acts as an early prototype to influence later development, along with allowing for early beta testing \cite{Arnowitz Arent Berger}. For the wireframing application Adobe XD was chosen for several reasons. Firstly, it has strong prototyping functionality, allowing the user to click around the application through the use of ‘components’. This interactivity means that early testers can get a real feel for how the application works. An illustration of this can be seen below, whereby each arrow represents a state change in the form of a trigger/ action pair, whereby for example a user could click on ‘Available Right Now’ and be taken to the ‘Checkout’ as seen in figure \ref{fig:prot-comp} below.
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.5]{images/prototyping-components.png}
-		\caption{Component Interactivity within Adobe XD}
-		\label{fig:prot-comp}
-	\end{figure}
-	
-	
-	Adobe XD also allows for easy distribution of the prototype in the form of a sharable link that opens in the browser and encompasses the same functionality and components that can be found within the application itself, meaning that anyone with access to a browser can test the prototype. Along with this, the prototype also allows for comments to be made, which are fed back to the owner. This comment capability was used early on during beta testing when it was sent out with the early questionnaire and influenced initial design decisions \cite{smashing-magazine}.
-	
-	When designing the screens there was a strong focus on user experience following Nielsons 10 Heuristics for User Interface Design \cite{nielson-normal-group-2020} . For example, the functionality was kept as minimal as possible to avoid clittering and avoid cognitive load on the user, the user was given control to go back and forward between previous screens to allow for user control and freedom and simple and self-explanatory language was used to apply recognition over recall. For example, the Sign In screen below extraneous text was kept to a minimum by using images for the login items, such as Google, Facebook and Twitter, a sign up button was included to allow the user to access the application through creating a new account and large, clear sign in forms and buttons were used. The full interactive Adobe XD wireframe can be found \href{https://xd.adobe.com/view/c6aeda9c-9b9a-456a-b699-cc4cd8b4cefa-93fd/}{here}. 
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.85]{images/sign-in.png}
-		\caption{Sign In Page Made With Adobe XD}
-		\label{fig:sign-in}
-	\end{figure}
-	
+		
 
 	\section{System Design}
 	This section discusses the process of the ideation and creation of the system design, including the initial scope, requirements, application architecture and state management.
 	\begin{figure}[H]
 		\centering
- 		\includegraphics[scale=0.85]{images/minimal-prototype.png}
-		\caption{ChopChop Minimal Design Prototype}
+ 		\includegraphics[scale=0.2]{images/placeholder.jpg}
+		\caption{Application Minimal Design Prototype}
 		\label{fig:minimal-prototype}
 	\end{figure}
 
@@ -359,27 +352,139 @@ anchorcolor = blue]{hyperref}
 	\\
 	$\bullet$ Allow the user to book a beauty treatment to receive at their home address.
 	\\
-	$\bullet$ Allow a barber to set up an account and specify their own product details.
+	$\bullet$ Allow a barber to set up an account and specify their product details.
 
 	\subsection{Requirements}
 	\subsubsection{Functional Requirements}
 	
-	$\bullet$ The application shall allow a barber to create an account and login
-	\\
-	$\bullet$ The application shall allow a customer to create an account and login
+	\begin{itemize}
+		\item Customer-side Application
+		\begin{itemize}
+			\item The application shall allow a customer to create an account and login
+			\item The application shall provide the user with basic account management capabilities
+			\item The application shall allow for the user to pick from a range of relevant products and add them to their cart
+			\item The application shall allow the user full management of their shopping cart
+			\item The application shall provide only geographically relevant barbers and products to the user
+			\item The application shall allow the user to view their past orders
+			
+		\end{itemize}
+	\end{itemize}
+
+	\begin{itemize}
+		\item Barber-side Application
+		\begin{itemize}
+			\item The application shall allow a parent barber to create an account and login
+			\item The application shall allow for integrated back-end management of it's barbers and products
+			\item The application shall allow for the parent barber to view its orders
+		\end{itemize}
+	\end{itemize}
 	
-	The	
 	\subsubsection{Non-Functional Requirements}
+	
+	\begin{itemize}
+		\item Performance
+		\begin{itemize}
+			\item The application shall take no longer than 3 seconds to load the users home screen
+		\end{itemize}
+	\end{itemize}
+
+	\begin{itemize}
+	\item Data
+	\begin{itemize}
+		\item The application shall cache data where possible
+		\item The application shall minimise calls to the database and make them only when relevant
+	\end{itemize}
+	\end{itemize}
+
+	\begin{itemize}
+		\item Use-ability
+		\begin{itemize}
+			\item The application shall follow nielsen's usability heuristics and be easily usable for the user without any guidance or help
+		\end{itemize}
+	\end{itemize}
+
+	\begin{itemize}
+		\item Security
+		\begin{itemize}
+			\item The application shall ensure that all app data be secured and encrypted
+			\item The application should use OAuth for access delegation
+		\end{itemize}
+	\end{itemize}
+
+	\begin{itemize}
+		\item OS Requirements
+		\begin{itemize}
+			\item The application shall run on both iOS and android devices
+			\item The application shall run on all devices newer than android 5.0 (API 21) - around 94.1\% of android devices
+			\item The application shall run on all devices newer than iOS 9.0 - around 99.6\% of iOS devices
+		\end{itemize}
+	\end{itemize}
+	
 	\subsection{Use Cases}
+	Here the use cases are presented, which are described by Ivar Jacobson as “a description of a set of sequences of actions and variants that a system performs that yield an observable result of value to an actor.” (Jacobson, et. al., 1999, p.41). To produce the use cases we reference both the user personas created in \autoref{user-personas} and the functional and non-functional requirements discussed in the previous section.
+	
+	The following contains the most pertinent use cases, which can be found within \autoref{chap:use-cases}
+	
+
 
 	
-	\section{Architecture and State Management}
+	\section{Software Specification}
+	In this section, Iwe discuss the structure of the project, the system and software architectures and data and state management
+	
 	\subsection{System Architecture}
 	https://www.raywenderlich.com/6373413-state-management-with-provider
 	System Architecture can be broadly defined as a conceptual model which outlines the structure, behaviour and interactions between internal and external components of the system. Modelling and creating a structured and well-defined architecture allows for the development of a sustainable, scalable and stable software product which can easily grow relevant to the demands placed on it's features.
 	
-	When designing the architecture, core business logic was kept separate from the UI, database and network. For example, when interacting with the database the UI called upon the utilities package and any API calls where contained within the providers package.
+	The overall system architecture can be seen below in figure \ref{fig:system-architecture}.
 	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{images/system-architecture.png}
+		\caption{High-level System Architecture}
+		\label{fig:system-architecture}
+	\end{figure}
+	
+	When designing the architecture, core business logic was kept separate from the UI, database and network. For example, when interacting with the database the UI called upon the utilities package and any API calls where contained within the providers package. The project was also split into 3 layers, according to clean architecture principles (\cite{Martin, 2017})
+	
+	\begin{itemize}
+		\item Presentation layer
+		\begin{itemize}
+			\item Screens - Contains unique UI elements
+			\item Widgets - Elements that are used to create the UI and feed into the screens
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{itemize}
+		\item Domain layer
+		\begin{itemize}
+			\item Utilities - Contains business logic and elements that are used to make calls to the database or interact with any external APIs.
+			\item Providers - State management tools that are called on throughout the application.
+		\end{itemize}
+	\end{itemize}
+	
+	\begin{itemize}
+		\item Data layer
+		\begin{itemize}
+			\item Models - Contains the models used for local storage.
+		\end{itemize}
+	\end{itemize}
+
+	 This generally follows clean architecture principles (\cite{Martin, 2017}) and each layer is represented in figure \ref{fig:clean-architecture} below.
+	 
+	 \begin{figure}[H]
+	 	\centering
+	 	\includegraphics[scale=0.7]{images/clean-architecture.png}
+	 	\caption{Clean Architecture (adapted from (\cite{Martin, 2017}))}
+	 	\label{fig:clean-architecture}
+	 \end{figure}
+	 
+	
+
+	
+	\subsection{Client-side Specification}
+
+	\subsubsection{Domain Model}
+	TODO: discuss domain model
 	
 	\begin{figure}[H]
 		\centering
@@ -387,7 +492,6 @@ anchorcolor = blue]{hyperref}
 		\caption{Model Class Diagrams}
 		\label{fig:model-class-diagrams}
 	\end{figure}
-	(TODO: REMOVE WATERMARK and discuss why modelled as a relational database)
 	
 	\subsubsection{Deciding on a Framework}
 	There exists a variety of software architectural frameworks, although not exhaustive this includes Client-server, Peer-to-peer, Microservices and Model-view controller. For brevity
@@ -397,25 +501,46 @@ anchorcolor = blue]{hyperref}
 	
 	https://www.researchgate.net/figure/Overview-of-the-schema-matching-system\_fig2\_267418345
 	Good example
-	\subsection{State Management}	
+	
+	\subsubsection{State Management}	
 	Simple state management used (Provider) -
 	involves: ChangeNotifier and Provider.of
 	https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple
 	
 	PARENTBARBERSPROVIDER provides to a lot of classes
+
 	
-	\subsection{Data Management}
-	\subsubsection{Database Design}
+	\subsection{Server-side Specification}
+	
+	
+	\section{Implementation}
+		\label{chap:implementation}
+	Here we discuss the process of wire-framing the application, along with the sprints, each of which pertains to relevant feature within the application. Finally, we address each use case individually.
+	
+	\subsection{Prototyping}
+	\subsubsection{Initial Sketches and Brainstorming}
+	(UPDATE PHOTO WITH INITIAL SKETCHES)
+	
+	\subsubsection{Wire-framing}
+	An important component of UCD and more generally UX is wire-framing, which involves making a mock-up of the application that acts as an early prototype to influence later development, along with allowing for early beta testing \cite{Arnowitz Arent Berger}. For the wire-framing application Adobe XD was chosen for several reasons. Firstly, it has strong prototyping functionality, allowing the user to click around the application through the use of ‘components’. This interactivity means that early testers can get a real feel for how the application works. An illustration of this can be seen below, whereby each arrow represents a state change in the form of a trigger/ action pair, whereby for example a user could click on ‘Available Right Now’ and be taken to the ‘Checkout’ as seen in figure \ref{fig:prot-comp} below.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.7]{images/database-schema.png}
-		\caption{Database Schema}
-		\label{fig:database-schema}
+		\includegraphics[scale=0.5]{images/prototyping-components.png}
+		\caption{Component Interactivity within Adobe XD}
+		\label{fig:prot-comp}
 	\end{figure}
-	(TODO: REMOVE WATERMARK)
 	
-	\section{Production}
-	\subsection{Version Control}
+	
+	Adobe XD also allows for easy distribution of the prototype in the form of a shareable link that opens in the browser and encompasses the same functionality and components that can be found within the application itself, meaning that anyone with access to a browser can test the prototype. Along with this, the prototype also allows for comments to be made, which are fed back to the owner. This comment capability was used early on during beta testing when it was sent out with the early questionnaire and influenced initial design decisions \cite{smashing-magazine}.
+	
+	When designing the screens there was a strong focus on user experience following Nielsons 10 Heuristics for User Interface Design \cite{nielson-normal-group-2020} . For example, the functionality was kept as minimal as possible to avoid clittering and avoid cognitive load on the user, the user was given control to go back and forward between previous screens to allow for user control and freedom and simple and self-explanatory language was used to apply recognition over recall. For example, the Sign In screen below extraneous text was kept to a minimum by using images for the login items, such as Google, Facebook and Twitter, a sign up button was included to allow the user to access the application through creating a new account and large, clear sign in forms and buttons were used. The full interactive Adobe XD wireframe can be found \href{https://xd.adobe.com/view/c6aeda9c-9b9a-456a-b699-cc4cd8b4cefa-93fd/}{here}. 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.85]{images/sign-in.png}
+		\caption{Sign In Page Made With Adobe XD}
+		\label{fig:sign-in}
+	\end{figure}
 	
 	
 	\subsection{Sprint 1 - Setup}
@@ -435,11 +560,20 @@ anchorcolor = blue]{hyperref}
 	The final project was built using material due to..
 	
 	\subsection{Sprint X - Login and Sign Up}
+	
+	\subsubsection{Authentication}
+	\label{authentication}
+	Firebase has its own built in authentication (Firebase Authentication) which was used for the project due to several considerations -
+	\begin{itemize}
+		\item Excellent built in security features
+		\item Integration with firebase database and storage
+		\item Easy modification through Googles declarative language
+	\end{itemize}
 	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
 	\begin{lstlisting}
 		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
 	\end{lstlisting}
-	which does not scale well due to a search time of $\mathcal{O}$(n), compared to 
+	which does not scale well due to a search time of $\mathcal{O}$(n). Instead, we store the uid as the document id, allowing us to do a similar, although quicker call such as
 	\begin{lstlisting}
 		_firebaseFirestore.collection(collection).doc(userId).get()
 	\end{lstlisting}
@@ -450,6 +584,17 @@ anchorcolor = blue]{hyperref}
 	
 	\subsection{Sprint X - Backend Design}
 	
+	\subsubsection{Database Design}
+	As previously discussed, for the project it was decided to use a noSQL database, instead of a relational one. Despite this, it was decided that a database schema should be constructed to constitute the parent barbers, barbers and products as modelling this way added to readability with the added benefit of the features previously discussed. The schema is represented in figure \ref{fig:database-schema} below.
+	( TODO: add orders to the database schema)
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{images/database-schema.png}
+		\caption{Database Schema}
+		\label{fig:database-schema}
+	\end{figure}
+	
 	Loading all parentBarbers/ barbers and products - 
 	When entering the app it is more effecient to make one call to the server rather than multiple due to GPS restrictions. Therefore ParentBarbers, barbers and all of their products are loaded within a certain radius, rather than loading parentBarbers and barbers separately throughout the app. 
 	
@@ -457,7 +602,7 @@ anchorcolor = blue]{hyperref}
 	
 	(INSERT DATABASE SCHEMA)
 	
-	\subsection{Connecting the Frontend and Backend}
+	\subsection{Sprint X - Connecting the Frontend and Backend}
 	To get the list of items within a range
 	1) Get the users current location
 	2) Query firestore with the radius
@@ -476,9 +621,12 @@ anchorcolor = blue]{hyperref}
 	\subsubsection{Shopping Cart}
 	Chose to store the cart items in a nested array as this adds to readbility and structure and although this restricts look up time, this is not relevant due to the limited number of items a user will order.
 	
+	\subsubsection{Checkout}
+	Similar to section \ref{authentication} to create a search time of $\mathcal{O}$(1) a seperate 'orders' collection was created, with each document representing all of the pertinent order details. Within each barber and user, the document (order) id was then added to each respective order arrays, for quick and easy lookup.
+	
 	\subsection{Sprint X - Location}
 	https://firebase.google.com/docs/firestore/solutions/geoqueries
-	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are longitude and latitiude co-ordinates that are hashed into a single Base32 string.
+	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are longitude and latitiude co-ordinates that are hashed into a single Base32 string. Each character presents a greater level of precision and therefore we opted for 9, which represents an area of 5 x 5 meters.
 	
 	User location access is granted through the following line in the ./android/app/src/main/AndroidManifest.xml file
 	\begin{lstlisting}
@@ -488,6 +636,32 @@ anchorcolor = blue]{hyperref}
 	
 	A textEditingController is used to collect the inputted data from the user and pass through to the showSearch function.
 	
+	\noindent
+	
+	\begin{minted}[obeytabs=true,tabsize=2, linenos]{dart}
+		Future<bool> barberSignIn({String email, String password}) async {
+			try {
+				_authStatus = AuthStatus.AUTHENTICATING;
+				notifyListeners();
+				await _firebaseAuth.signInWithEmailAndPassword(email: email, 
+				password: password);
+				barberModel = await _orderUtility.getBarberById(_firebaseAuth
+				.currentUser.uid);
+				_authStatus = AuthStatus.BARBER_AUTHENTICATED;
+				print("signed in barber " + email);
+				notifyListeners();
+				return true;
+			} on FirebaseAuthException catch (e) {
+				print('Failed to sign in barber: ' + e.toString());
+				_authStatus = AuthStatus.NOT_AUTHENTICATED;
+				notifyListeners();
+				return false;
+			}
+		} 
+	\end{minted}
+	TODO: Remove this example code
+	
+	
 	\subsubsection{Autocomplete locations}
 	As a means for the user to autocomplete their address when signing up, the 'Place Autocomplete service' within the Google Places API, which returns location predictions in response to HTTP requests was implemented using a request adhering to a set of parameters, the full list, along with details of the API can be found on the Google Developers website \cite{requests}.
 	First, we enable the Places API within the Google console, before we then create a location model which can hold the data returned from the API. We then create an API request using the above aforementioned API format. For brevity, not every option is discussed, but those of importance include 'input', which is the user query, 'types', which determines the query returned, for which we specify address as we wish to fetch the users full address and a session token, which is required for each new query. The query can be seen here:
@@ -496,13 +670,17 @@ anchorcolor = blue]{hyperref}
 	\end{lstlisting}
 	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each query (Google recommends to use version 4 UUID and so this is used here). Without our 'user\_gps.dart' file
 	
-	For the content of the search page we use pass in newly created session token into the ShowSearchPage class, which in turn sends an api request and parses the json data to return a list of locations in the form of 'place id's' and 'description' using a FutureBuilder. From here, we pass through the location id to the getLocationDetails function to fetch the address details of each location and put into a PlaceModel object.
+	For the content of the search page we use pass in newly created session token into the ShowSearchPage class, which in turn sends an API request and parses the json data to return a list of locations in the form of 'place id's' and 'description' using a FutureBuilder. From here, we pass through the location id to the getLocationDetails function to fetch the address details of each location and put into a PlaceModel object.
 	
 	Next, we parse the data into JSON format by passing the PlaceModel object into the function 'createLocationMap', which creates a map using the location data. Finally we pass through this map to the 'addLocationDetails', which uses the given user id to update the database with the users location.
 	
-	\subsection{Sprint X - Payment}
+	\subsection{Sprint X - Barber Side Application}
+	In order to create a comprehensive application the final sprint involved coding a barber side app, giving the ability for the barber interact with the database and allow them to create an account, add and remove barbers and view orders.
 	
-	\subsection{Widgets and Common Items and Added Features}
+	\subsubsection{Creating a Parent Barber}
+	As the location functionality of the application requires both longitude and latitude co-ordinates, along with a geohash (EXPLAIN HOW PLUGIN USED TO GET THIS).
+	
+	\subsection{Widgets, Common Items and Added Features}
 	Here we discuss any items not covered within a specified sprint.
 	
 	\subsubsection{Widgets}
@@ -518,6 +696,8 @@ anchorcolor = blue]{hyperref}
 	
 	\subsubsection{Hide and Show Password}
 	
+	\subsection{Use Cases - Implementation}
+	
 	\section{Testing}
 	\subsection{User Testing}
 	\subsection{Acceptance Testing}
@@ -530,14 +710,129 @@ anchorcolor = blue]{hyperref}
 	\appendix
 	\appendixpage
 	\section{Use Cases}
+	\label{chap:use-cases}
 	
 	\begin{subappendices}
 		
-	\subsubsection{Use case 1 - }
-	\subsubsection{Use case 2 - }
+	\subsubsection{Use case 1 - Sign Up}
+	
+	\begin{table}[H]
+		\begin{tabular}{ll}
+			\hline
+			\rowcolor[HTML]{EFEFEF} 
+			\textbf{Use Case X}  & \textbf{Login}                                                 \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Description 		 & \textit{This is a description}                                 \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Pre-conditions       & Authentication enumeration status must be set to UNINITIALISED \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Basic Flow           & This is a basic flow                                           \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Alternative Paths    & 1) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 2) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 3) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 4) This is a basic flow                                       
+		\end{tabular}
+	\end{table}
+
+	\subsubsection{Use case 2 - Login}
+	
+	\begin{table}[H]
+		\begin{tabular}{ll}
+			\hline
+			\rowcolor[HTML]{EFEFEF} 
+			\textbf{Use Case X}  & \textbf{Login}                                                 \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Description 		 & \textit{This is a description}                                 \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Pre-conditions       & Authentication enumeration status must be set to UNINITIALISED \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Basic Flow           & This is a basic flow                                           \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Alternative Paths    & 1) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 2) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 3) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 4) This is a basic flow                                       
+		\end{tabular}
+	\end{table}
+
 	\subsubsection{Use case 3 - }
+	
+	\begin{table}[H]
+		\begin{tabular}{ll}
+			\hline
+			\rowcolor[HTML]{EFEFEF} 
+			\textbf{Use Case X}  & \textbf{Login}                                                 \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Description 		 & \textit{This is a description}                                 \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Pre-conditions       & Authentication enumeration status must be set to UNINITIALISED \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Basic Flow           & This is a basic flow                                           \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Alternative Paths    & 1) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 2) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 3) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 4) This is a basic flow                                       
+		\end{tabular}
+	\end{table}
+
 	\subsubsection{Use case 4 - }
+	
+	\begin{table}[H]
+		\begin{tabular}{ll}
+			\hline
+			\rowcolor[HTML]{EFEFEF} 
+			\textbf{Use Case X}  & \textbf{Login}                                                 \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Description 		 & \textit{This is a description}                                 \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Pre-conditions       & Authentication enumeration status must be set to UNINITIALISED \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Basic Flow           & This is a basic flow                                           \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Alternative Paths    & 1) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 2) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 3) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 4) This is a basic flow                                       
+		\end{tabular}
+	\end{table}
+
 	\subsubsection{Use case 5 - }
+	
+	\begin{table}[H]
+		\begin{tabular}{ll}
+			\hline
+			\rowcolor[HTML]{EFEFEF} 
+			\textbf{Use Case X}  & \textbf{Login}                                                 \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Description 		 & \textit{This is a description}                                 \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Pre-conditions       & Authentication enumeration status must be set to UNINITIALISED \\ \hline
+			\rowcolor[HTML]{F5FBFF} 
+			Basic Flow           & This is a basic flow                                           \\ \hline
+			\rowcolor[HTML]{EFEFEF} 
+			Alternative Paths    & 1) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 2) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 3) This is a basic flow                                        \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 4) This is a basic flow                                       
+		\end{tabular}
+	\end{table}
 	
 	\end{subappendices}
 	\section{Figures}

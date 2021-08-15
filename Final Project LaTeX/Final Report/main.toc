@@ -1,64 +1,70 @@
 \babel@toc {english}{}
-\contentsline {section}{\numberline {1}Introduction}{7}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Ideation and Concept}{8}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Project Management}{9}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Vision and Scope}{9}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Agile Methodology}{9}{subsubsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.3}Research and Market Analysis}{10}{subsection.1.3}%
-\contentsline {subsubsection}{\numberline {1.3.1}Existing Applications}{10}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}Novelty of the Proposed Application}{11}{subsubsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.4}Deciding on a Platform}{11}{subsection.1.4}%
-\contentsline {subsubsection}{\numberline {1.4.1}Mobile vs Desktop}{11}{subsubsection.1.4.1}%
-\contentsline {subsubsection}{\numberline {1.4.2}Frontend: Android vs iOS}{11}{subsubsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.5}Frontend: Programming Language}{12}{subsection.1.5}%
-\contentsline {subsubsection}{\numberline {1.5.1}Programming Language}{12}{subsubsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.6}Backend: SQL vs noSQL database}{13}{subsection.1.6}%
-\contentsline {subsubsection}{\numberline {1.6.1}The Target User}{13}{subsubsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.7}User Personas}{13}{subsection.1.7}%
-\contentsline {section}{\numberline {2}Prototyping}{17}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Initial Sketches and Brainstorming}{17}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Wireframing}{17}{subsection.2.2}%
-\contentsline {section}{\numberline {3}System Design}{20}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Application Scope}{21}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}User Needs}{21}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Requirements}{21}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Functional Requirements}{21}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Non-Functional Requirements}{22}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Use Cases}{22}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Architecture and State Management}{22}{section.4}%
-\contentsline {subsection}{\numberline {4.1}System Architecture}{22}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Deciding on a Framework}{23}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}State Management}{24}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Data Management}{24}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Database Design}{24}{subsubsection.4.3.1}%
-\contentsline {section}{\numberline {5}Production}{25}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Version Control}{25}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Sprint 1 - Setup}{25}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}File Structure}{25}{subsubsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.3}Sprint X - UI}{25}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Cupertino vs Material}{25}{subsubsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.4}Sprint X - Login and Sign Up}{25}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Sprint X - Backend Design}{26}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Connecting the Frontend and Backend}{26}{subsection.5.6}%
-\contentsline {subsubsection}{\numberline {5.6.1}Loading the barbers}{26}{subsubsection.5.6.1}%
-\contentsline {subsubsection}{\numberline {5.6.2}Shopping Cart}{27}{subsubsection.5.6.2}%
-\contentsline {subsection}{\numberline {5.7}Sprint X - Location}{27}{subsection.5.7}%
-\contentsline {subsubsection}{\numberline {5.7.1}Autocomplete locations}{27}{subsubsection.5.7.1}%
-\contentsline {subsection}{\numberline {5.8}Sprint X - Payment}{28}{subsection.5.8}%
-\contentsline {subsection}{\numberline {5.9}Widgets and Common Items and Added Features}{28}{subsection.5.9}%
-\contentsline {subsubsection}{\numberline {5.9.1}Widgets}{28}{subsubsection.5.9.1}%
-\contentsline {subsubsection}{\numberline {5.9.2}Common Items}{28}{subsubsection.5.9.2}%
-\contentsline {subsubsection}{\numberline {5.9.3}Launcher Icons}{29}{subsubsection.5.9.3}%
-\contentsline {subsubsection}{\numberline {5.9.4}Discount Codes}{29}{subsubsection.5.9.4}%
-\contentsline {section}{\numberline {6}Testing}{29}{section.6}%
-\contentsline {subsection}{\numberline {6.1}User Testing}{29}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Acceptance Testing}{29}{subsection.6.2}%
-\contentsline {section}{\numberline {A}Use Cases}{30}{appendix.A}%
-\contentsline {subsubsection}{\numberline {A..1}Use case 1 - }{30}{subsubsection.a.A..1}%
-\contentsline {subsubsection}{\numberline {A..2}Use case 2 - }{30}{subsubsection.a.A..2}%
-\contentsline {subsubsection}{\numberline {A..3}Use case 3 - }{30}{subsubsection.a.A..3}%
-\contentsline {subsubsection}{\numberline {A..4}Use case 4 - }{30}{subsubsection.a.A..4}%
-\contentsline {subsubsection}{\numberline {A..5}Use case 5 - }{30}{subsubsection.a.A..5}%
-\contentsline {section}{\numberline {B}Figures}{30}{appendix.B}%
-\contentsline {section}{\numberline {C}Application Images}{30}{appendix.C}%
-\contentsline {section}{\numberline {D}Code Snippets}{30}{appendix.D}%
+\contentsline {section}{\numberline {1}Introduction}{8}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Ideation and Concept}{9}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Project Management}{10}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Vision and Scope}{10}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Agile Methodology}{10}{subsubsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.3}Research and Market Analysis}{11}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Existing Applications}{11}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Novelty of the Proposed Application}{12}{subsubsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.4}Deciding on a Platform}{12}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Mobile vs Desktop}{12}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Frontend: Android vs iOS}{12}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Frontend: Programming Language}{13}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Programming Language}{13}{subsubsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.6}Backend: SQL vs noSQL database}{14}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}The Target User}{14}{subsubsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.7}User Personas}{14}{subsection.1.7}%
+\contentsline {section}{\numberline {2}System Design}{18}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Application Scope}{19}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}User Needs}{19}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Requirements}{19}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Functional Requirements}{19}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Non-Functional Requirements}{20}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Use Cases}{21}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Software Specification}{21}{section.3}%
+\contentsline {subsection}{\numberline {3.1}System Architecture}{21}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Client-side Specification}{23}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Domain Model}{23}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Deciding on a Framework}{24}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}State Management}{24}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Server-side Specification}{25}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Implementation}{25}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Prototyping}{25}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Initial Sketches and Brainstorming}{25}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Wire-framing}{25}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Sprint 1 - Setup}{28}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}File Structure}{28}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Sprint X - UI}{28}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Cupertino vs Material}{28}{subsubsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.4}Sprint X - Login and Sign Up}{28}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Authentication}{28}{subsubsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.5}Sprint X - Backend Design}{29}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Database Design}{29}{subsubsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.6}Sprint X - Connecting the Frontend and Backend}{31}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Loading the barbers}{31}{subsubsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {4.6.2}Shopping Cart}{31}{subsubsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.3}Checkout}{31}{subsubsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.7}Sprint X - Location}{31}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Autocomplete locations}{32}{subsubsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.8}Sprint X - Barber Side Application}{33}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Creating a Parent Barber}{33}{subsubsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.9}Widgets, Common Items and Added Features}{34}{subsection.4.9}%
+\contentsline {subsubsection}{\numberline {4.9.1}Widgets}{34}{subsubsection.4.9.1}%
+\contentsline {subsubsection}{\numberline {4.9.2}Common Items}{34}{subsubsection.4.9.2}%
+\contentsline {subsubsection}{\numberline {4.9.3}Launcher Icons}{34}{subsubsection.4.9.3}%
+\contentsline {subsubsection}{\numberline {4.9.4}Discount Codes}{34}{subsubsection.4.9.4}%
+\contentsline {subsubsection}{\numberline {4.9.5}Hide and Show Password}{34}{subsubsection.4.9.5}%
+\contentsline {subsection}{\numberline {4.10}Use Cases - Implementation}{34}{subsection.4.10}%
+\contentsline {section}{\numberline {5}Testing}{34}{section.5}%
+\contentsline {subsection}{\numberline {5.1}User Testing}{34}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Acceptance Testing}{34}{subsection.5.2}%
+\contentsline {section}{\numberline {A}Use Cases}{35}{appendix.A}%
+\contentsline {subsubsection}{\numberline {A..1}Use case 1 - Sign Up}{35}{subsubsection.a.A..1}%
+\contentsline {subsubsection}{\numberline {A..2}Use case 2 - Login}{35}{subsubsection.a.A..2}%
+\contentsline {subsubsection}{\numberline {A..3}Use case 3 - }{36}{subsubsection.a.A..3}%
+\contentsline {subsubsection}{\numberline {A..4}Use case 4 - }{36}{subsubsection.a.A..4}%
+\contentsline {subsubsection}{\numberline {A..5}Use case 5 - }{37}{subsubsection.a.A..5}%
+\contentsline {section}{\numberline {B}Figures}{37}{appendix.B}%
+\contentsline {section}{\numberline {C}Application Images}{37}{appendix.C}%
+\contentsline {section}{\numberline {D}Code Snippets}{37}{appendix.D}%
