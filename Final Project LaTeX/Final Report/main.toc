@@ -1,70 +1,152 @@
-\babel@toc {english}{}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {british}{}
+\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1}Introduction}{8}{section.1}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1}Ideation and Concept}{9}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Project Management}{10}{subsection.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2}Project Management}{9}{subsection.1.2}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.2.1}Vision and Scope}{10}{subsubsection.1.2.1}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.2.2}Agile Methodology}{10}{subsubsection.1.2.2}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3}Research and Market Analysis}{11}{subsection.1.3}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.3.1}Existing Applications}{11}{subsubsection.1.3.1}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.3.2}Novelty of the Proposed Application}{12}{subsubsection.1.3.2}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.4}Deciding on a Platform}{12}{subsection.1.4}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.4.1}Mobile vs Desktop}{12}{subsubsection.1.4.1}%
-\contentsline {subsubsection}{\numberline {1.4.2}Frontend: Android vs iOS}{12}{subsubsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.5}Frontend: Programming Language}{13}{subsection.1.5}%
-\contentsline {subsubsection}{\numberline {1.5.1}Programming Language}{13}{subsubsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.6}Backend: SQL vs noSQL database}{14}{subsection.1.6}%
-\contentsline {subsubsection}{\numberline {1.6.1}The Target User}{14}{subsubsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.7}User Personas}{14}{subsection.1.7}%
-\contentsline {section}{\numberline {2}System Design}{18}{section.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.4.2}Mobile Platform: Android vs iOS}{14}{subsubsection.1.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5}Frontend: Programming Language}{15}{subsection.1.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6}Backend: SQL vs noSQL database}{15}{subsection.1.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {1.6.1}The Target User}{15}{subsubsection.1.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.7}User Personas}{16}{subsection.1.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Software Requirements}{19}{section.2}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Application Scope}{19}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}User Needs}{19}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Requirements}{19}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Functional Requirements}{19}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Non-Functional Requirements}{20}{subsubsection.2.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}User Needs}{20}{subsection.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Requirements}{20}{subsection.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.3.1}Functional Requirements}{20}{subsubsection.2.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {2.3.2}Non-Functional Requirements}{21}{subsubsection.2.3.2}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4}Use Cases}{21}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Software Specification}{21}{section.3}%
-\contentsline {subsection}{\numberline {3.1}System Architecture}{21}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Client-side Specification}{23}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Domain Model}{23}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Deciding on a Framework}{24}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}State Management}{24}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Server-side Specification}{25}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Implementation}{25}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Prototyping}{25}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Initial Sketches and Brainstorming}{25}{subsubsection.4.1.1}%
-\contentsline {subsubsection}{\numberline {4.1.2}Wire-framing}{25}{subsubsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.2}Sprint 1 - Setup}{28}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}File Structure}{28}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Sprint X - UI}{28}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Cupertino vs Material}{28}{subsubsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.4}Sprint X - Login and Sign Up}{28}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Authentication}{28}{subsubsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.5}Sprint X - Backend Design}{29}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Database Design}{29}{subsubsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.6}Sprint X - Connecting the Frontend and Backend}{31}{subsection.4.6}%
-\contentsline {subsubsection}{\numberline {4.6.1}Loading the barbers}{31}{subsubsection.4.6.1}%
-\contentsline {subsubsection}{\numberline {4.6.2}Shopping Cart}{31}{subsubsection.4.6.2}%
-\contentsline {subsubsection}{\numberline {4.6.3}Checkout}{31}{subsubsection.4.6.3}%
-\contentsline {subsection}{\numberline {4.7}Sprint X - Location}{31}{subsection.4.7}%
-\contentsline {subsubsection}{\numberline {4.7.1}Autocomplete locations}{32}{subsubsection.4.7.1}%
-\contentsline {subsection}{\numberline {4.8}Sprint X - Barber Side Application}{33}{subsection.4.8}%
-\contentsline {subsubsection}{\numberline {4.8.1}Creating a Parent Barber}{33}{subsubsection.4.8.1}%
-\contentsline {subsection}{\numberline {4.9}Widgets, Common Items and Added Features}{34}{subsection.4.9}%
-\contentsline {subsubsection}{\numberline {4.9.1}Widgets}{34}{subsubsection.4.9.1}%
-\contentsline {subsubsection}{\numberline {4.9.2}Common Items}{34}{subsubsection.4.9.2}%
-\contentsline {subsubsection}{\numberline {4.9.3}Launcher Icons}{34}{subsubsection.4.9.3}%
-\contentsline {subsubsection}{\numberline {4.9.4}Discount Codes}{34}{subsubsection.4.9.4}%
-\contentsline {subsubsection}{\numberline {4.9.5}Hide and Show Password}{34}{subsubsection.4.9.5}%
-\contentsline {subsection}{\numberline {4.10}Use Cases - Implementation}{34}{subsection.4.10}%
-\contentsline {section}{\numberline {5}Testing}{34}{section.5}%
-\contentsline {subsection}{\numberline {5.1}User Testing}{34}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Acceptance Testing}{34}{subsection.5.2}%
-\contentsline {section}{\numberline {A}Use Cases}{35}{appendix.A}%
-\contentsline {subsubsection}{\numberline {A..1}Use case 1 - Sign Up}{35}{subsubsection.a.A..1}%
-\contentsline {subsubsection}{\numberline {A..2}Use case 2 - Login}{35}{subsubsection.a.A..2}%
-\contentsline {subsubsection}{\numberline {A..3}Use case 3 - }{36}{subsubsection.a.A..3}%
-\contentsline {subsubsection}{\numberline {A..4}Use case 4 - }{36}{subsubsection.a.A..4}%
-\contentsline {subsubsection}{\numberline {A..5}Use case 5 - }{37}{subsubsection.a.A..5}%
-\contentsline {section}{\numberline {B}Figures}{37}{appendix.B}%
-\contentsline {section}{\numberline {C}Application Images}{37}{appendix.C}%
-\contentsline {section}{\numberline {D}Code Snippets}{37}{appendix.D}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}System Design}{22}{section.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.1}Domain Model}{22}{subsection.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.1}Entities}{23}{subsubsection.3.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.2}Entities}{23}{subsubsection.3.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2}System Architecture}{23}{subsection.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3}Client-side Specification}{26}{subsection.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.3.1}State Management}{26}{subsubsection.3.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.3.2}Deciding on a Framework}{28}{subsubsection.3.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Implementation}{29}{section.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Prototyping}{29}{section.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1}Initial Sketches and Brainstorming}{29}{subsection.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2}Wire-framing}{30}{subsection.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Implementation}{33}{section.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}Setup}{33}{subsection.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.1.1}File Structure}{33}{subsubsection.6.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2}Sprint X - UI}{33}{subsection.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.2.1}Cupertino vs Material}{33}{subsubsection.6.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3}Sprint X - Login and Sign Up}{34}{subsection.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.3.1}Authentication}{34}{subsubsection.6.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4}Sprint X - Backend Design}{34}{subsection.6.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.4.1}Database Design}{34}{subsubsection.6.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5}Sprint X - Connecting the Frontend and Backend}{36}{subsection.6.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.5.1}Loading the barbers}{36}{subsubsection.6.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.5.2}Shopping Cart}{36}{subsubsection.6.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.5.3}Checkout}{36}{subsubsection.6.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6}Sprint X - Location}{36}{subsection.6.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.6.1}Autocomplete locations}{37}{subsubsection.6.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.7}Sprint X - Barber Side Application}{38}{subsection.6.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.7.1}Creating a Parent Barber}{38}{subsubsection.6.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.8}Widgets, Common Items and Added Features}{38}{subsection.6.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.8.1}Widgets}{38}{subsubsection.6.8.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.8.2}Common Items}{38}{subsubsection.6.8.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.8.3}Launcher Icons}{39}{subsubsection.6.8.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.8.4}Discount Codes}{39}{subsubsection.6.8.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {6.8.5}Hide and Show Password}{39}{subsubsection.6.8.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.9}Use Cases - Implementation}{39}{subsection.6.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Testing}{39}{section.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.1}User Testing}{39}{subsection.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2}Acceptance Testing}{39}{subsection.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A}Use Cases}{43}{appendix.A}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.1}Use case 1 - Sign Up}{43}{subsection.A.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2}Use case 2 - Login}{44}{subsection.A.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3}Use case 3 - Book a Haircut}{44}{subsection.A.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.4}Use case 4 - Search for a Barber}{45}{subsection.A.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.5}Use case 5 - Checkout}{45}{subsection.A.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.6}Use case 6 - View Orders}{46}{subsection.A.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.7}Use case 7 - Sign Out}{46}{subsection.A.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.8}Use case 8 - Add a Barber (\emph {barbers only})}{47}{subsection.A.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.9}Use case 9 - Add a Product (\emph {barbers only})}{47}{subsection.A.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B}Figures}{48}{appendix.B}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {C}Application Images}{48}{appendix.C}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {D}Code Snippets}{48}{appendix.D}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.1}AuthenticateProvider}{48}{subsection.D.1}%

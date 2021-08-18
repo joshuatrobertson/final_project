@@ -23,11 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ListenableProvider<Authenticate>(
-          create: (_) => Authenticate(FirebaseAuth.instance),
+        ListenableProvider<AuthenticateProvider>(
+          create: (_) => AuthenticateProvider(FirebaseAuth.instance),
         ),
         StreamProvider(
-          create: (context) => context.read<Authenticate>().stateChanges, initialData: null,
+          create: (context) => context.read<AuthenticateProvider>().stateChanges, initialData: null,
         ),
         ListenableProvider<ParentBarbersProvider>(
           create: (_) => ParentBarbersProvider(),
@@ -50,8 +50,8 @@ class AuthenticationWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Use Provider.of to fetch the authentication status and return the appropriate screen
-    final status = Provider.of<Authenticate>(context);
-    final user = context.watch<Authenticate>();
+    final status = Provider.of<AuthenticateProvider>(context);
+    final user = context.watch<AuthenticateProvider>();
 
 
     if (status.authStatus == AuthStatus.UNINITIALISED) {
@@ -75,7 +75,11 @@ class AuthenticationWrapper extends StatelessWidget {
     }
     // Else they must login
     else {
-      return UserType();
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
     }
   }
 }

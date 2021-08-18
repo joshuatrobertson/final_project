@@ -1,0 +1,991 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{AndroidVsIOS2021}{online}{}
+    \list{organization}{1}{%
+      {{Statista}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    Android is dominating the market for smartphone operating systems today
+  with Apple's iOS a distant second.%
+    }
+    \field{title}{Android vs {{iOS}} Market Share 2023}
+    \verb{url}
+    \verb https://www.statista.com/statistics/272307/market-share-forecast-for-
+    \verb smartphone-operating-systems/
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/EWAYB74J/market-share-forecast-for-smartpho
+    \verb ne-operating-systems.html
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{15}
+    \field{urlmonth}{03}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{arnowitzChapter15Wireframe2007}{incollection}{}
+    \name{author}{3}{}{%
+      {{hash=AJ}{%
+         family={Arnowitz},
+         familyi={A\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Arent},
+         familyi={A\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BN}{%
+         family={Berger},
+         familyi={B\bibinitperiod},
+         given={Nevin},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=AJ}{%
+         family={Arnowitz},
+         familyi={A\bibinitperiod},
+         given={Jonathan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Arent},
+         familyi={A\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=BN}{%
+         family={Berger},
+         familyi={B\bibinitperiod},
+         given={Nevin},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Morgan Kaufmann}}%
+    }
+    \strng{namehash}{AJAMBN1}
+    \strng{fullhash}{AJAMBN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{abstract}{%
+    Wireframes range from the classic sketch on the back of a napkin to full
+  design comprehensives used for documenting the design to programmers. An
+  early wireframe is intended to provide an early approximation of a software
+  idea. Regardless of the medium in which it is created, a wireframe has a
+  short lifespan. Its quick production allows experimentation with much
+  different visualizations during the early stages of product design. This
+  quickness makes wireframe a low investment in time, cost, and effort, but it
+  is also short-lived because of its nature of addressing immediate needs only.
+  Though short in lifespan, wireframes usually inform a more thorough and
+  longer living prototype, such as a storyboard or digital interactive
+  prototype. Furthermore, wireframes are nevertheless among the most
+  influential and most important prototype methods because the most innovative
+  ideas tend to arise from them. The low resource investment means that more
+  risky ideas can be tried, reiterated, and even thrown away without much cost
+  to the overall project.%
+    }
+    \field{booktitle}{Effective {{Prototyping}} for {{Software Makers}}}
+    \verb{doi}
+    \verb 10.1016/B978-012088568-8/50016-3
+    \endverb
+    \field{isbn}{978-0-12-088568-8}
+    \field{pages}{272\bibrangedash 292}
+    \field{series}{Interactive {{Technologies}}}
+    \field{title}{Chapter 15 - {{Wireframe Prototyping}}}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978012088568850016
+    \verb 3
+    \endverb
+    \field{langid}{english}
+    \list{location}{1}{%
+      {{San Francisco}}%
+    }
+    \verb{file}
+    \verb /home/josh/Zotero/storage/XB6SBUG7/B9780120885688500163.html
+    \endverb
+    \field{day}{01}
+    \field{month}{01}
+    \field{year}{2007}
+    \field{urlday}{27}
+    \field{urlmonth}{05}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{chapmanPersonasNewClothes2005}{article}{}
+    \name{author}{2}{}{%
+      {{hash=CCN}{%
+         family={Chapman},
+         familyi={C\bibinitperiod},
+         given={Christopher\bibnamedelima N},
+         giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=MRP}{%
+         family={Milham},
+         familyi={M\bibinitperiod},
+         given={Russell\bibnamedelima P},
+         giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CCNMRP1}
+    \strng{fullhash}{CCNMRP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    We examine the popular Personas method and consider claims that personas
+  can reflect empirical data and serve as an information source for development
+  teams. We argue that there are significant methodological and practical
+  difficulties for personas. It is difficult to determine how many, if any,
+  users are represented by a persona, and thus is difficult to know whether a
+  persona is relevant for intended users. Personas cannot be adequately
+  verified or falsified and therefore have no demonstrable validity. We believe
+  personas are likely to lead to political conflicts and to undermine the
+  ability for researchers to resolve questions with data. We suggest potential
+  research to evaluate the Personas method more thoroughly. Until the
+  methodological issues are resolved, it is best not to consider personas to be
+  a means to communicate data.%
+    }
+    \field{pages}{6}
+    \field{title}{The {{Personas}}’ {{New Clothes}}: {{Methodological}} and
+  {{Practical Arguments}} against a {{Popular Method}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/YWAQ89KG/Chapman and Milham - The Personas�
+    \verb �� 1ew Clothes Methodological and Prac.pdf
+    \endverb
+    \field{month}{04}
+    \field{year}{2005}
+  \endentry
+
+  \entry{CloudFirestoreFirebase}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Cloud {{Firestore}} ~|~ {{Firebase}}}
+    \verb{url}
+    \verb https://firebase.google.com/docs/firestore
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/5RXSUK8G/firestore.html
+    \endverb
+    \field{urlday}{16}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{DesktopVsMobile2021a}{online}{}
+    \list{organization}{1}{%
+      {{StatCounter Global Stats}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    This graph shows the market share of desktop vs mobile in United Kingdom
+  based on over 10 billion monthly page views.%
+    }
+    \field{title}{Desktop vs {{Mobile Market Share United Kingdom}}}
+    \verb{url}
+    \verb https://gs.statcounter.com/platform-market-share/desktop-mobile/unite
+    \verb d-kingdom/
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/P7PA3JXF/united-kingdom.html
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{17}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{DesktopVsMobile2021}{online}{}
+    \list{organization}{1}{%
+      {{StatCounter Global Stats}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{abstract}{%
+    This graph shows the market share of desktop vs mobile vs tablet worldwide
+  based on over 10 billion monthly page views.%
+    }
+    \field{title}{Desktop vs {{Mobile}} vs {{Tablet Market Share Worldwide}}}
+    \verb{url}
+    \verb https://gs.statcounter.com/platform-market-share/desktop-mobile-table
+    \verb t/
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/8CRKD9S4/desktop-mobile-tablet.html
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{17}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{DownloadAndroidStudio}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{title}{Download {{Android Studio}} and {{SDK}} Tools ~|~ {{Android
+  Developers}}}
+    \verb{url}
+    \verb https://developer.android.com/studio
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/GAEIVQIN/studio.html
+    \endverb
+    \field{urlday}{16}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{evansDomainDrivenDesignTackling2003}{book}{}
+    \name{author}{1}{}{%
+      {{hash=EE}{%
+         family={Evans},
+         familyi={E\bibinitperiod},
+         given={Eric},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Addison-Wesley}}%
+    }
+    \strng{namehash}{EE1}
+    \strng{fullhash}{EE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{abstract}{%
+    “Eric Evans has written a fantastic book on how you can make the design
+  of your software match your mental model of the problem domain you are
+  addressing. “His book is very compatible with XP. It is not about drawing
+  pictures of a domain; it is about how you think of it, the language you use
+  to talk about it, and how you organize your software to reflect your
+  improving understanding of it. Eric thinks that learning about your problem
+  domain is as likely to happen at the end of your project as at the beginning,
+  and so refactoring is a big part of his technique. “The book is a fun read.
+  Eric has lots of interesting stories, and he has a way with words. I see this
+  book as essential reading for software developers―it is a future
+  classic.” ―Ralph Johnson, author of Design Patterns ~ “If you don’t
+  think you are getting value from your investment in object-oriented
+  programming, this book will tell you what you’ve forgotten to do. “Eric
+  Evans convincingly argues for the importance of domain modeling as the
+  central focus of development and provides a solid framework and set of
+  techniques for accomplishing it. This is timeless wisdom, and will hold up
+  long after the methodologies du jour have gone out of fashion.” ―Dave
+  Collins, author of Designing Object-Oriented User Interfaces ~ “Eric weaves
+  real-world experience modeling―and building―business applications into a
+  practical, useful book. Written from the perspective of a trusted
+  practitioner, Eric’s descriptions of ubiquitous language, the benefits of
+  sharing models with users, object life-cycle management, logical and physical
+  application structuring, and the process and results of deep refactoring are
+  major contributions to our field.” ―Luke Hohmann, author of Beyond
+  Software Architecture ~ “This book belongs on the shelf of every thoughtful
+  software developer.” ―Kent Beck ~ “What Eric has managed to capture is
+  a part of the design process that experienced object designers have always
+  used, but that we have been singularly unsuccessful as a group in conveying
+  to the rest of the industry. We've given away bits and pieces of this
+  knowledge...but we've never organized and systematized the principles of
+  building domain logic. This book is important.” ―Kyle Brown, author of
+  Enterprise Java™ Programming with IBM® WebSphere® ~ The software
+  development community widely acknowledges that domain modeling is central to
+  software design. Through domain models, software developers are able to
+  express rich functionality and translate it into a software implementation
+  that truly serves the needs of its users. But despite its obvious importance,
+  there are few practical resources that explain how to incorporate effective
+  domain modeling into the software development process. ~ Domain-Driven Design
+  fills that need. This is not a book about specific technologies. It offers
+  readers a systematic approach to domain-driven design, presenting an
+  extensive set of design best practices, experience-based techniques, and
+  fundamental principles that facilitate the development of software projects
+  facing complex domains. Intertwining design and development practice, this
+  book incorporates numerous examples based on actual projects to illustrate
+  the application of domain-driven design to real-world software development. ~
+  Readers learn how to use a domain model to make a complex development effort
+  more focused and dynamic. A core of best practices and standard patterns
+  provides a common language for the development team. A shift in
+  emphasis―refactoring not just the code but the model underlying the
+  code―in combination with the frequent iterations of Agile development leads
+  to deeper insight into domains and enhanced communication between domain
+  expert and programmer. Domain-Driven Design then builds on this foundation,
+  and addresses modeling and design for complex systems and larger
+  organizations.Specific topics covered include: Getting all team members to
+  speak the same language Connecting model and implementation more deeply
+  Sharpening key distinctions in a model Managing the lifecycle of a domain
+  object Writing domain code that is safe to combine in elaborate ways Making
+  complex code obvious and predictable Formulating a domain vision statement
+  Distilling the core of a complex domain Digging out implicit concepts needed
+  in the model Applying analysis patterns Relating design patterns to the model
+  Maintaining model integrity in a large system Dealing with coexisting models
+  on the same project Organizing systems with large-scale structures
+  Recognizing and responding to modeling breakthroughs With this book in hand,
+  object-oriented developers, system analysts, and designers will have the
+  guidance they need to organize and focus their work, create rich and useful
+  domain models, and leverage those models into quality, long-lasting software
+  implementations.%
+    }
+    \field{edition}{1st edition}
+    \field{isbn}{978-0-321-12521-7}
+    \field{pagetotal}{560}
+    \field{shorttitle}{Domain-{{Driven Design}}}
+    \field{title}{Domain-{{Driven Design}}: {{Tackling Complexity}} in the
+  {{Heart}} of {{Software}}}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {{Boston}}%
+    }
+    \field{day}{04}
+    \field{month}{09}
+    \field{year}{2003}
+  \endentry
+
+  \entry{experience10UsabilityHeuristics}{online}{}
+    \name{author}{1}{}{%
+      {{hash=EWLiRBU}{%
+         family={Experience},
+         familyi={E\bibinitperiod},
+         given={World Leaders in Research-Based\bibnamedelima User},
+         giveni={W\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim
+  i\bibinitperiod\bibinitdelim R\bibinithyphendelim
+  B\bibinitperiod\bibinitdelim U\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {{Nielsen Norman Group}}%
+    }
+    \strng{namehash}{EWLiRBU1}
+    \strng{fullhash}{EWLiRBU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{abstract}{%
+    Jakob Nielsen's 10 general principles for interaction design. They are
+  called "heuristics" because they are broad rules of thumb and not specific
+  usability guidelines.%
+    }
+    \field{title}{10 {{Usability Heuristics}} for {{User Interface Design}}}
+    \verb{url}
+    \verb https://www.nngroup.com/articles/ten-usability-heuristics/
+    \endverb
+    \field{langid}{english}
+    \field{urlday}{16}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{FlutterBeautifulNative}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Flutter - {{Beautiful}} Native Apps in Record Time}
+    \verb{url}
+    \verb https://flutter.dev/
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/DIIJPK8U/flutter.dev.html
+    \endverb
+    \field{urlday}{21}
+    \field{urlmonth}{05}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{humbleContinuousDeliveryReliable2010}{book}{}
+    \name{author}{2}{}{%
+      {{hash=HJ}{%
+         family={Humble},
+         familyi={H\bibinitperiod},
+         given={Jez},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FD}{%
+         family={Farley},
+         familyi={F\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Addison-Wesley Professional}}%
+    }
+    \strng{namehash}{HJFD1}
+    \strng{fullhash}{HJFD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    Winner of the 2011 Jolt Excellence Award! Getting software released to
+  users is often a painful, risky, and time-consuming process. This
+  groundbreaking new book sets out the principles and technical practices that
+  enable rapid, incremental delivery of high quality, valuable new
+  functionality to users. Through automation of the build, deployment, and
+  testing process, and improved collaboration between developers, testers, and
+  operations, delivery teams can get changes released in a matter of hours―
+  sometimes even minutes–no matter what the size of a project or the
+  complexity of its code base. ~ Jez Humble and David Farley begin by
+  presenting the foundations of a rapid, reliable, low-risk delivery process.
+  Next, they introduce the “deployment pipeline,” an automated process for
+  managing all changes, from check-in to release. Finally, they discuss the
+  “ecosystem” needed to support continuous delivery, from infrastructure,
+  data and configuration management to governance. ~ The authors introduce
+  state-of-the-art techniques, including automated infrastructure management
+  and data migration, and the use of virtualization. For each, they review key
+  issues, identify best practices, and demonstrate how to mitigate risks.
+  Coverage includes ~ • Automating all facets of building, integrating,
+  testing, and deploying software • Implementing deployment pipelines at team
+  and organizational levels • Improving collaboration between developers,
+  testers, and operations • Developing features incrementally on large and
+  distributed teams • Implementing an effective configuration management
+  strategy • Automating acceptance testing, from analysis to implementation
+  • Testing capacity and other non-functional requirements • Implementing
+  continuous deployment and zero-downtime releases • Managing infrastructure,
+  data, components and dependencies • Navigating risk management, compliance,
+  and auditing ~ Whether you’re a developer, systems administrator, tester,
+  or manager, this book will help your organization move from idea to release
+  faster than ever―so you can deliver value to your business rapidly and
+  reliably.%
+    }
+    \field{edition}{1st edition}
+    \field{isbn}{978-0-321-60191-9}
+    \field{pagetotal}{512}
+    \field{shorttitle}{Continuous {{Delivery}}}
+    \field{title}{Continuous {{Delivery}}: {{Reliable Software Releases}}
+  through {{Build}}, {{Test}}, and {{Deployment Automation}}}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {{Upper Saddle River, NJ}}%
+    }
+    \field{day}{27}
+    \field{month}{07}
+    \field{year}{2010}
+  \endentry
+
+  \entry{incShortcutInHomeHaircuts}{online}{}
+    \name{author}{1}{}{%
+      {{hash=ISM}{%
+         family={Inc},
+         familyi={I\bibinitperiod},
+         given={Shortcut\bibnamedelima Mobile},
+         giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {{Shortcut}}%
+    }
+    \strng{namehash}{ISM1}
+    \strng{fullhash}{ISM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{abstract}{%
+    Searching for an in-home haircut? Shortcut offers clean and safe haircuts
+  and salon services. Get the app to instantly book salon professionals near
+  you.%
+    }
+    \field{title}{{{Shortcut}}™ | {{In}}-{{Home Haircuts}} and {{More}} from
+  {{Top Local Salons}}}
+    \verb{url}
+    \verb https://www.getshortcut.co/
+    \endverb
+    \field{langid}{american}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/PWSKHPIX/www.getshortcut.co.html
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{larsonUseCasesWhat2004}{online}{}
+    \name{author}{2}{}{%
+      {{hash=LR}{%
+         family={Larson},
+         familyi={L\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=LE}{%
+         family={Larson},
+         familyi={L\bibinitperiod},
+         given={Elizabeth},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LRLE1}
+    \strng{fullhash}{LRLE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{abstract}{%
+    In order to respond to today's rapidly changing business environment, it is
+  necessary to understand the business requirements that surround requests for
+  new products, services, and software. Use case modeling provides an effective
+  technique to capture customer requirements, enhance communication between
+  analyst and business customers, and to form the foundation for user interface
+  design and development. This presentation provides a framework for
+  understanding and modeling use cases, so that product requirements can be
+  more easily managed, and business customers are delighted with the final
+  product.%
+    }
+    \field{title}{Use {{Cases}} - What {{Every Project Manager Should Know}}}
+    \verb{url}
+    \verb https://www.pmi.org/learning/library/use-cases-project-manager-know-8
+    \verb 262
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/VCRJXD7H/use-cases-project-manager-know-826
+    \verb 2.html
+    \endverb
+    \field{year}{2004}
+    \field{urlday}{18}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{martinRapidApplicationDevelopment1991}{online}{}
+    \name{author}{1}{}{%
+      {{hash=MJ}{%
+         family={Martin},
+         familyi={M\bibinitperiod},
+         given={James},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MJ1}
+    \strng{fullhash}{MJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Rapid {{Application Development}}}
+    \verb{url}
+    \verb https://books.google.co.uk/books/about/Rapid_Application_Development.
+    \verb html?id=o6FQAAAAMAAJ&redir_esc=y
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/GFEWP3J5/Rapid_Application_Development.html
+    \endverb
+    \field{year}{1991}
+    \field{urlday}{13}
+    \field{urlmonth}{01}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{mcginnDatadrivenPersonaDevelopment2008}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=MJJ}{%
+         family={McGinn},
+         familyi={M\bibinitperiod},
+         given={Jennifer\bibnamedelima (Jen)},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=KN}{%
+         family={Kotamraju},
+         familyi={K\bibinitperiod},
+         given={Nalini},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Association for Computing Machinery}}%
+    }
+    \keyw{data analysis,data gathering,factor analysis,interview,persona
+  development,personas,survey,user research}
+    \strng{namehash}{MJJKN1}
+    \strng{fullhash}{MJJKN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Much has been written on creating personas --- both what they are good for,
+  and how to create them. A common problem with personas is that they are not
+  based on real customer data, and if they are, the data set is not of a sample
+  size that can be considered statistically significant. In this paper, we
+  describe a new method for creating and validating personas, based on the
+  statistical analysis of data, which is fast and cost effective.%
+    }
+    \field{booktitle}{Proceedings of the {{SIGCHI Conference}} on {{Human
+  Factors}} in {{Computing Systems}}}
+    \verb{doi}
+    \verb 10.1145/1357054.1357292
+    \endverb
+    \field{isbn}{978-1-60558-011-1}
+    \field{pages}{1521\bibrangedash 1524}
+    \field{series}{{{CHI}} '08}
+    \field{title}{Data-Driven Persona Development}
+    \verb{url}
+    \verb https://doi.org/10.1145/1357054.1357292
+    \endverb
+    \list{location}{1}{%
+      {{New York, NY, USA}}%
+    }
+    \field{day}{06}
+    \field{month}{04}
+    \field{year}{2008}
+    \field{urlday}{20}
+    \field{urlmonth}{05}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{MobilePercentageWebsite2021}{online}{}
+    \list{organization}{1}{%
+      {{Statista}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{abstract}{%
+    Mobile accounts for approximately half of web traffic worldwide.%
+    }
+    \field{title}{Mobile Percentage of Website Traffic 2021}
+    \verb{url}
+    \verb https://www.statista.com/statistics/277125/share-of-website-traffic-c
+    \verb oming-from-mobile-devices/
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/72DWFVVM/share-of-website-traffic-coming-fr
+    \verb om-mobile-devices.html
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{17}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{MondayHome2021}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Monday - {{Home}}}
+    \verb{url}
+    \verb https://monday.com/
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/626LYA4F/josh-bristol.monday.com.html
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{15}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{PDFPersonasParticipatory}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{[{{PDF}}] {{Personas}}, {{Participatory Design}} and
+  {{Product Development}}: {{An Infrastructure}} for {{Engagement}} |
+  {{Semantic Scholar}}}
+    \verb{url}
+    \verb https://www.semanticscholar.org/paper/Personas%2C-Participatory-Desig
+    \verb n-and-Product-An-for-Grudin-Pruitt/7ea9505694f1d444a330b1947109c7268a
+    \verb 9704d2
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/Q2PQ2Z73/7ea9505694f1d444a330b1947109c7268a
+    \verb 9704d2.html
+    \endverb
+    \field{urlday}{20}
+    \field{urlmonth}{05}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{PlaceAutocompleteRequests}{online}{}
+    \list{organization}{1}{%
+      {{Google Developers}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{Place {{Autocomplete Requests}} | {{Places API}}}
+    \verb{url}
+    \verb https://developers.google.com/maps/documentation/places/web-service/a
+    \verb utocomplete#place_autocomplete_requests
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/FNTVSNVL/autocomplete.html
+    \endverb
+    \field{urlday}{06}
+    \field{urlmonth}{07}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{ray28StatisticsHome2021}{online}{}
+    \name{author}{1}{}{%
+      {{hash=RO}{%
+         family={Ray},
+         familyi={R\bibinitperiod},
+         given={Owen},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RO1}
+    \strng{fullhash}{RO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{28 {{Statistics Home Services Marketers Need}} to {{Know}} in
+  2021}
+    \verb{url}
+    \verb https://www.invoca.com/blog/home-services-marketing-stats
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/3ZMH5WMR/home-services-marketing-stats.html
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{11}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{ReactNativeLearn}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{abstract}{%
+    A framework for building native apps using React%
+    }
+    \field{title}{React {{Native}} · {{Learn}} Once, Write Anywhere}
+    \verb{url}
+    \verb https://reactnative.dev/
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/W5SQJYIY/reactnative.dev.html
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{sheanLocationSearchAutocomplete2020}{online}{}
+    \name{author}{1}{}{%
+      {{hash=SY}{%
+         family={Shean},
+         familyi={S\bibinitperiod},
+         given={Yong},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {{Medium}}%
+    }
+    \strng{namehash}{SY1}
+    \strng{fullhash}{SY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Have you ever wondered how food delivery and ride-hailing service apps show
+  the autocomplete dropdown as you type your location in the…%
+    }
+    \field{title}{Location {{Search Autocomplete}} in {{Flutter}}}
+    \verb{url}
+    \verb https://medium.com/comerge/location-search-autocomplete-in-flutter-84
+    \verb f155d44721
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/TUYSIS64/location-search-autocomplete-in-fl
+    \verb utter-84f155d44721.html
+    \endverb
+    \field{urlday}{06}
+    \field{urlmonth}{07}
+    \field{urlyear}{2021}
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+  \endentry
+
+  \entry{shopifyWhatProductDevelopment}{online}{}
+    \name{author}{1}{}{%
+      {{hash=S}{%
+         family={Shopify},
+         familyi={S\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {{Shopify}}%
+    }
+    \strng{namehash}{S1}
+    \strng{fullhash}{S1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    Interested in making your own product to sell from scratch? Use this
+  product development process framework to bring your next product to market.%
+    }
+    \field{shorttitle}{What {{Is Product Development}}?}
+    \field{title}{What {{Is Product Development}}? {{Learn The}} 7-{{Step
+  Framework Helping Businesses Get}} to {{Market Faster}}}
+    \verb{url}
+    \verb https://www.shopify.co.uk/blog/product-development-process
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/D699Q29M/product-development-process.html
+    \endverb
+    \field{urlday}{21}
+    \field{urlmonth}{05}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{SketchVsFigma0200}{online}{}
+    \list{organization}{1}{%
+      {{Smashing Magazine}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{abstract}{%
+    For a while now, Sketch has been the de facto application of choice for UX
+  and UI designers. But in the last year or two, we have seen many new
+  contenders for the Sketch’s crown. Two of them that have made the biggest
+  strides are Figma and Adobe XD. In this article, I’ll try to summarize my
+  thoughts on how these apps compete with Sketch and what are their unique
+  features.%
+    }
+    \field{title}{Sketch vs {{Figma}}, {{Adobe XD}}, {{And Other UI Design
+  Applications}}}
+    \verb{url}
+    \verb https://www.smashingmagazine.com/2019/04/sketch-figma-adobe-xd-ui-des
+    \verb ign-applications/
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/IQVAN9YW/sketch-figma-adobe-xd-ui-design-ap
+    \verb plications.html
+    \endverb
+    \field{year}{11:00:16 +0200 +0200}
+    \field{urlday}{27}
+    \field{urlmonth}{05}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{StateOctoverse2019}{online}{}
+    \list{organization}{1}{%
+      {{The State of the Octoverse}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{abstract}{%
+    The State of the Octoverse celebrates a year of building across teams, time
+  zones, and millions of merged pull requests.%
+    }
+    \field{title}{The {{State}} of the {{Octoverse}}}
+    \verb{url}
+    \verb https://octoverse.github.com/2019/
+    \endverb
+    \field{langid}{british}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/RMBKBFHK/2019.html
+    \endverb
+    \field{year}{2019}
+    \field{urlday}{15}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{TRIMITMobileBarbershopsa}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{{{TRIM}}-{{IT Mobile Barbershops}}}
+    \verb{url}
+    \verb https://trimit.app/
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/FAJUIYPK/trimit.app.html
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{TrimCheckHomeHaircuts}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{abstract}{%
+    Book a mobile barber near you to get your home haircut. On-demand call out
+  barbers available on our platform, specialists for each hair type: Afro hair,
+  Asian hair and Caucasian hair. Serving all of London.%
+    }
+    \field{title}{{{TrimCheck}} - {{Home}} Haircuts on-Demand}
+    \verb{url}
+    \verb https://get.trimcheck.com/haircut/
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/9G9DDYYU/haircut.html
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{WillRidehailingProfits}{online}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+    \field{title}{Will Ride-Hailing Profits Ever Come? – {{TechCrunch}}}
+    \verb{url}
+    \verb https://techcrunch.com/2021/02/12/will-ride-hailing-profits-ever-come
+    \verb /?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_ref
+    \verb errer_sig=AQAAALI-wmBgq89Iy5-xw3IGxisaXnb2-j1jMukBMZr0fb_p2OE4cobBWyJ
+    \verb a_VB8ySIkFyuVC5nWlLixn5_o8Y-SQmmd0NJw68rs3Ek9nhL9d6W4Ycu_pzIwjxa948bQ
+    \verb iwzH4HAiSNMcEz0r0Uxnxb0D_RHZM2VX2LLZ8F_II9lS_bqK
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/5Y4UFXRV/will-ride-hailing-profits-ever-com
+    \verb e.html
+    \endverb
+    \field{urlday}{12}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+\enddatalist
+\endinput
