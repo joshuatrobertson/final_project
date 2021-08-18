@@ -39,7 +39,7 @@ class _AddBarberState extends State<AddBarber> {
 
   @override
   Widget build(BuildContext context) {
-    final authProvider = Provider.of<Authenticate>(context);
+    final authProvider = Provider.of<AuthenticateProvider>(context);
     return Scaffold(
         body: ListView(
           children: [

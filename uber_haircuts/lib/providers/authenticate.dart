@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:uber_haircuts/models/cart.dart';
+import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
@@ -28,7 +28,7 @@ enum CurrentUser {
   BARBER
 }
 
-class Authenticate extends ChangeNotifier {
+class AuthenticateProvider extends ChangeNotifier {
 
   bool firstOrder = true;
   CurrentUser _currentUser;
@@ -48,7 +48,7 @@ class Authenticate extends ChangeNotifier {
     consumerKey: '1403651379705663488-I6gxGAkJqPrkSRXTxysm5wmI3Hc5no',
     consumerSecret: 'KVP7xVAAdZYZ5TV1xW5tQBAriXR8QOPvOxqhYc9OWi0L4',
   );
-  Authenticate(this._firebaseAuth);
+  AuthenticateProvider(this._firebaseAuth);
 
   // Getters
   AuthStatus get authStatus => _authStatus;
@@ -63,7 +63,7 @@ class Authenticate extends ChangeNotifier {
       final UserCredential _authResult = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       print("signed in " + email);
       userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
-      List<CartModel> orders = [];
+      List<OrderModel> orders = [];
       orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
       userModel.cart = orders;
       _authStatus = AuthStatus.AUTH_WITH_MAPS;
@@ -148,26 +148,31 @@ class Authenticate extends ChangeNotifier {
     if (!userExists) {
       // Create a map with the details given to create a user to store in the database
       Map<String, dynamic> newUser = {
-        "uid": _authResult.user.uid,
-        "name": _authResult.user.displayName,
+        "uid": user.uid,
+        "name": user.displayName,
         "location": [],
         "email": _authResult.user.email,
         "cart": [],
+        "orders": [],
       };
     
       userModel.fromMap(newUser);
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
-      _userDatabase.createNewUser(newUser, _authResult.user.uid);
+      _userDatabase.createNewUser(newUser, user.uid);
       UserModel newModel;
       this.userModel = newModel;
       _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
     }
     else {
-      userModel = await _orderUtility.getUserById(_firebaseAuth.currentUser.uid);
-      List<CartModel> orders = [];
-      orders = await _orderUtility.getDatabaseCartItems(_authResult.user.uid);
+      print("HEHEHEHEEDD 33");
+      userModel = await _orderUtility.getUserById(user.uid);
+      print("HEHEHEHEEDD 44");
+      List<OrderModel> orders = [];
+      print("HEHEHEHEEDD 55");
+
+      orders = await _orderUtility.getDatabaseCartItems(user.uid);
       userModel.cart = orders;
       _authStatus = AuthStatus.AUTH_WITH_MAPS;
       notifyListeners();
@@ -245,6 +250,7 @@ class Authenticate extends ChangeNotifier {
         "address": [],
         "email": email,
         "cart": [],
+        "orders": [],
       };
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
@@ -277,6 +283,7 @@ class Authenticate extends ChangeNotifier {
         "email": email,
         "rating": 0,
         "featured": false,
+        "orders": [],
       };
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
@@ -350,7 +357,7 @@ class Authenticate extends ChangeNotifier {
         "productId": productModel.id.toString(),
         "quantity": quantity,
       };
-      CartModel item = CartModel.fromMap(cartItem);
+      OrderModel item = OrderModel.fromMap(cartItem);
       
 
       userModel.cart.forEach((element) {
@@ -371,6 +378,10 @@ class Authenticate extends ChangeNotifier {
     catch(e) {
       print("Cart error: " + e.toString());
     }
+  }
+
+  void clearCart() {
+    userModel.cart.clear();
   }
 
 }

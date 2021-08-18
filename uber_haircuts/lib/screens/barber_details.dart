@@ -28,7 +28,7 @@ class _BarberDetailsState extends State<BarberDetails> {
   int _currentNav = 0;
   @override
     Widget build(BuildContext context) {
-    Authenticate _user = Provider.of<Authenticate>(context);
+    AuthenticateProvider _user = Provider.of<AuthenticateProvider>(context);
 
     // Fetch only the barbers which have the parent barber ID
     List<BarberModel> _barbers = widget.parentBarbersProvider.barbers.where((barber) =>

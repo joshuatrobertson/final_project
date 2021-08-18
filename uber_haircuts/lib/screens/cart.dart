@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
-import 'package:uber_haircuts/models/cart.dart';
+import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/utilities/promo_code.dart';
@@ -40,7 +40,7 @@ class _CartState extends State<Cart> {
 
      */
 
-    final _user = Provider.of<Authenticate>(context);
+    final _user = Provider.of<AuthenticateProvider>(context);
     final PromoCodeUtility promoCodeUtility = new PromoCodeUtility();
     final OrderUtility orderUtility = new OrderUtility();
     final TextEditingController _promoCodeText = new TextEditingController();
@@ -361,8 +361,11 @@ class _CartState extends State<Cart> {
                         padding: const EdgeInsets.fromLTRB(0, 30.0, 0, 20),
                         child: GestureDetector(
                           onTap: () async {
-                            print("CHECKOUT!");
+                            // Create a new order and store in firestore
                             await orderUtility.createNewOrder(_user.userModel.cart, _user.userModel.uid, total);
+                            // Clear the users cart
+                            _user.clearCart();
+                            //TODO: tell the user the order was successful and add to users orders
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -386,7 +389,7 @@ class _CartState extends State<Cart> {
     );
   }
 
-  void getTotalPrice(List<CartModel> items) {
+  void getTotalPrice(List<OrderModel> items) {
     double totalPrice = 0;
     items.forEach((item) {
       totalPrice += item.quantity * item.product.price;
@@ -403,7 +406,6 @@ class _CartState extends State<Cart> {
       discount = 1/100 * (total * promo);
     });
   }
-
 
 
 }

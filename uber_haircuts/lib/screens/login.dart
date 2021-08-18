@@ -30,7 +30,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     // Allows use of provider package throughout app
-    final authProvider = Provider.of<Authenticate>(context);
+    final authProvider = Provider.of<AuthenticateProvider>(context);
 
 
     return Scaffold(
@@ -175,7 +175,9 @@ class _LoginState extends State<Login> {
                     children: [
                       ReturnText(text: "Don't have an account?   "),
                       GestureDetector(
-                        onTap: () {navigateToScreen(context, Registration());},
+                        onTap: () {
+                          navigateToScreen(context, Registration());
+                            },
                           child: ReturnText(text: "Sign Up", color: Colors.red, decoration: TextDecoration.underline,)
                       ),
                     ],

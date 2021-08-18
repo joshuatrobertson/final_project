@@ -19,7 +19,7 @@ class _UserTypeState extends State<UserType> {
   @override
   Widget build(BuildContext context) {
 
-    final authProvider = Provider.of<Authenticate>(context);
+    final authProvider = Provider.of<AuthenticateProvider>(context);
 
     return Scaffold(
         body: Column(

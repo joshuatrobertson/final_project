@@ -31,7 +31,7 @@ class _ContactUsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
 
-    final authProvider = Provider.of<Authenticate>(context);
+    final authProvider = Provider.of<AuthenticateProvider>(context);
     String dropdownValue = 'One';
 
     return Scaffold(

@@ -28,7 +28,7 @@ class _BarberHomeState extends State<BarberHome> {
   @override
   Widget build(BuildContext context) {
     // Allows use of provider package throughout app
-    final authProvider = Provider.of<Authenticate>(context);
+    final authProvider = Provider.of<AuthenticateProvider>(context);
 
 
     return Scaffold(

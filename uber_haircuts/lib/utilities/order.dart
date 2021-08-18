@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:uber_haircuts/models/cart.dart';
+import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/models/user.dart';
@@ -13,7 +13,7 @@ class OrderUtility {
   final OrdersFirestore ordersFirestore = new OrdersFirestore();
 
 
-  Future<void> addToCart({String userId, CartModel cartItem}) async {
+  Future<void> addToCart({String userId, OrderModel cartItem}) async {
 
     final DocumentSnapshot snapshot = await _firestore.collection(USERS).doc(userId).get();
     List<dynamic> items = snapshot.get("cart");
@@ -21,7 +21,7 @@ class OrderUtility {
 
     // Loop through each item within the cart and add to firebase if it doesn't already exist
     items.forEach((element) {
-      CartModel newItem = CartModel.fromMap(element);
+      OrderModel newItem = OrderModel.fromMap(element);
       if (newItem.productID == cartItem.productID) {
         itemExistsInCart = true;
       }
@@ -35,7 +35,7 @@ class OrderUtility {
     }
   }
 
-  Future<void> createNewOrder(List<CartModel> cart, String userID, num cost) {
+  Future<void> createNewOrder(List<OrderModel> cart, String userID, num cost) async {
     String barberID = cart[0].product.barberID;
     List products = [];
 
@@ -52,17 +52,17 @@ class OrderUtility {
       "products": products,
       "cost": cost
     };
-    ordersFirestore.addOrder(orders);
+    await ordersFirestore.addOrder(orders);
+    await ordersFirestore.clearCart(userID);
   }
-
 
   Future<void> updateCartFirestore({String userId}) async {
     UserModel userModel = await getUserById(userId);
-    List<CartModel> orderItems = userModel.cart;
+    List<OrderModel> orderItems = userModel.cart;
 
     try {
       List<dynamic> newOrders = [];
-      for (CartModel cartItem in orderItems) {
+      for (OrderModel cartItem in orderItems) {
           newOrders.add(cartItem.toMap());
       }
       await _firestore.collection(USERS).doc(userId).update({
@@ -73,16 +73,16 @@ class OrderUtility {
     }
   }
 
-  Future<List<CartModel>> getDatabaseCartItems(String userId) async {
+  Future<List<OrderModel>> getDatabaseCartItems(String userId) async {
     LocationFirestore _parentBarbersFirestore = new LocationFirestore();
     final DocumentSnapshot snapshot = await _firestore.collection(USERS).doc(userId).get();
     List<dynamic> items = snapshot.get("cart");
-    List<CartModel> orders = [];
+    List<OrderModel> orders = [];
 
     if (items.isNotEmpty) {
       items.forEach((element) async {
         // Fetch the CartItem from the database
-        CartModel newItem = CartModel.fromMap(element);
+        OrderModel newItem = OrderModel.fromMap(element);
         // Fetch the ProductModel from the product Id
         ProductModel product = await _parentBarbersFirestore.getProductFromId(newItem.productID);
         newItem.product = product;

@@ -30,7 +30,7 @@ class _ParentBarberDetailsState extends State<ParentBarberDetails> {
 
   @override
     Widget build(BuildContext context) {
-    Authenticate _user = Provider.of<Authenticate>(context);
+    AuthenticateProvider _user = Provider.of<AuthenticateProvider>(context);
 
     return MaterialApp(
       home: Scaffold(

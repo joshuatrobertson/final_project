@@ -64,7 +64,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                               color: theme,
                               child: GestureDetector(
                                 onTap: () {
-                                  context.read<Authenticate>().resetPassword(
+                                  context.read<AuthenticateProvider>().resetPassword(
                                     emailController.text.trim()
                                   );
                                   navigateToScreen(context, Login());

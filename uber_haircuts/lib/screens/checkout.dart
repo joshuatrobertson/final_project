@@ -25,7 +25,7 @@ class _CheckoutState extends State<Checkout> {
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<Authenticate>(context);
+    final user = Provider.of<AuthenticateProvider>(context);
     List<ProductModel> _shoppingCart;
 
     return MaterialApp(

@@ -37,7 +37,7 @@ class _ChangeAddressState extends State<ChangeAddress> {
 
   @override
   Widget build(BuildContext context) {
-    final _user = Provider.of<Authenticate>(context);
+    final _user = Provider.of<AuthenticateProvider>(context);
     return Scaffold(
         body: ListView(
           children: [

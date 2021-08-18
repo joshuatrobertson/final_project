@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:uber_haircuts/models/cart.dart';
+import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/location.dart';
-import 'package:uber_haircuts/models/product.dart';
 
 // User model to store data within firebase
 class UserModel {
@@ -11,12 +9,14 @@ class UserModel {
   static const UID = "uid";
   static const LOCATION = "location";
   static const CART = "cart";
+  static const ORDERS = "orders";
 
   String _name;
   String _email;
   String _uid;
-  List<CartModel> cart;
+  List<OrderModel> cart;
   PlaceModel locationDetails;
+  List<OrderModel> orders;
 
   String get name => _name;
   String get email => _email;
@@ -26,16 +26,17 @@ class UserModel {
     _name = documentSnapshot.data()[NAME];
     _email = documentSnapshot.data()[EMAIL];
     _uid = documentSnapshot.data()[UID];
-    cart = _convertCartFromMap(documentSnapshot.data()[CART]);
+    cart = _convertOrderFromMap(documentSnapshot.data()[CART]);
+    orders = _convertOrderFromMap(documentSnapshot.data()[ORDERS]);
     locationDetails = _convertLocationDetails(documentSnapshot.data()[LOCATION]);
   }
 
   UserModel();
 
-  List<CartModel> _convertCartFromMap(List cart) {
-    List<CartModel> _result = [];
-    cart.forEach((element) {
-      CartModel cartItem = CartModel.fromMap(element);
+  List<OrderModel> _convertOrderFromMap(List orders) {
+    List<OrderModel> _result = [];
+    orders.forEach((element) {
+      OrderModel cartItem = OrderModel.fromMap(element);
       _result.add(cartItem);
     });
     return _result;
@@ -51,7 +52,8 @@ class UserModel {
   PlaceModel _convertLocationDetails(List location) =>
       new PlaceModel(number: location[0]["number"], street: location[1]["street"], city: location[2]["city"], postcode: location[3]["postcode"]);
 
-  void addToCart(CartModel cartItem) {
+  // Add an item to the local cart
+  void addToCart(OrderModel cartItem) {
     try {
       cart.add(cartItem);
     } catch(e) {
@@ -59,8 +61,18 @@ class UserModel {
     }
   }
 
+  // Remove an item from the local cart
   void removeFromCart(int index) {
     cart.removeAt(index);
+  }
+
+  // Add to the local orders array
+  void addToOrders(OrderModel order) {
+    try {
+      orders.add(order);
+    } catch(e) {
+      print("Error adding item to local orders: " + e.toString());
+    }
   }
 
 }

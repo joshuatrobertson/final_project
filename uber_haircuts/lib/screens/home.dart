@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
 
     ParentBarbersProvider _barberProvider = Provider.of<ParentBarbersProvider>(context);
-    Authenticate _user = Provider.of<Authenticate>(context);
+    AuthenticateProvider _user = Provider.of<AuthenticateProvider>(context);
 
     ParentBarberModel _parentBarbers;
     // TODO: Items not loading from fresh install

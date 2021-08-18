@@ -22,7 +22,7 @@ class _ProductDetailsState extends State<ProductDetails> {
 
   @override
   Widget build(BuildContext context) {
-    final _user = Provider.of<Authenticate>(context);
+    final _user = Provider.of<AuthenticateProvider>(context);
     return Scaffold(
         backgroundColor: Colors.white,
         body: Column(

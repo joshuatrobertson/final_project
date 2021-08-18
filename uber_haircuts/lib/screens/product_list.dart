@@ -25,7 +25,7 @@ class ProductList extends StatefulWidget {
 class _ProductList extends State<ProductList> {
   @override
   Widget build(BuildContext context) {
-    final _user = Provider.of<Authenticate>(context);
+    final _user = Provider.of<AuthenticateProvider>(context);
 
     List<ProductModel> _products = widget.parentBarbersProvider.products.where((product) =>
     product.barberID == widget.barberModel.id).toList();

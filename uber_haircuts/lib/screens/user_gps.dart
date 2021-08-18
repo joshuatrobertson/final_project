@@ -48,7 +48,7 @@ class _FireMapState extends State<FireMap> {
 
   Widget build(BuildContext context) {
 
-    final authProvider = Provider.of<Authenticate>(context);
+    final authProvider = Provider.of<AuthenticateProvider>(context);
     return Stack(
       children: [
         GoogleMap(initialCameraPosition: CameraPosition(

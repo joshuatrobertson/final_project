@@ -1,9 +1,9 @@
-// Class representing a cart item to be used for the shopping cart
+// Class representing an order item to be used for the shopping cart and orders
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uber_haircuts/models/product.dart';
 
-class CartModel {
+class OrderModel {
   static const ID = "id";
   static const PRODUCT_ID = "productID";
   static const QUANTITY = "quantity";
@@ -23,7 +23,7 @@ class CartModel {
   set quantity(int quantity) => _quantity = quantity;
 
   // Get a map from data
-  CartModel.fromMap(Map item){
+  OrderModel.fromMap(Map item){
     _id = item[ID];
     _productID =  item[PRODUCT_ID];
     _quantity =  item[QUANTITY];
@@ -36,7 +36,7 @@ class CartModel {
     QUANTITY: _quantity
   };
 
-  CartModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
+  OrderModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.data()[ID];
     _productID = documentSnapshot.data()[PRODUCT_ID];
     _quantity = documentSnapshot.data()[QUANTITY];
