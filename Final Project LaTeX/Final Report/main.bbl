@@ -407,6 +407,27 @@
     \field{urlyear}{2021}
   \endentry
 
+  \entry{FirebaseAuthentication2021}{online}{}
+    \list{organization}{1}{%
+      {{Firebase}}%
+    }
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Firebase {{Authentication}}}
+    \verb{url}
+    \verb https://firebase.google.com/docs/auth
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/IHPWAALR/auth.html
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{25}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
   \entry{FlutterBeautifulNative}{online}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{F}
@@ -903,6 +924,44 @@
     \field{urlday}{27}
     \field{urlmonth}{05}
     \field{urlyear}{2021}
+  \endentry
+
+  \entry{techblogEBayMotorsState2021}{online}{}
+    \name{author}{1}{}{%
+      {{hash=Te}{%
+         family={TechBlog},
+         familyi={T\bibinitperiod},
+         given={eBay},
+         giveni={e\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {{eBayTech}}%
+    }
+    \strng{namehash}{Te1}
+    \strng{fullhash}{Te1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{abstract}{%
+    Learn how we avoided the state management debate when building the eBay
+  Motors app.%
+    }
+    \field{title}{{{eBay Motors}} \& {{State Management}}}
+    \verb{url}
+    \verb https://medium.com/ebaytech/ebay-motors-state-management-bd85cfc602a2
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/3AY3GYKT/ebay-motors-state-management-bd85c
+    \verb fc602a2.html
+    \endverb
+    \field{urlday}{24}
+    \field{urlmonth}{08}
+    \field{urlyear}{2021}
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
   \endentry
 
   \entry{StateOctoverse2019}{online}{}

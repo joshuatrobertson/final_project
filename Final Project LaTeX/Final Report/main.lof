@@ -17,7 +17,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {8}{\ignorespaces Persona 4}}{19}{figure.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9}{\ignorespaces Model Class Diagrams for the Models}}{23}{figure.9}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Model Class Diagrams}}{23}{figure.9}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {10}{\ignorespaces High-level System Architecture}}{24}{figure.10}%
 \defcounter {refsection}{0}\relax 
@@ -25,12 +25,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {12}{\ignorespaces Application Minimal Activity Diagram}}{26}{figure.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {13}{\ignorespaces Widget Tree Diagram}}{28}{figure.13}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Pen and Paper Sketches and Brainstorming}}{29}{figure.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {14}{\ignorespaces Pen and Paper Sketches and Brainstorming}}{30}{figure.14}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Component Interactivity within Adobe XD}}{30}{figure.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {15}{\ignorespaces Component Interactivity within Adobe XD}}{31}{figure.15}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Sign In Page Made With Adobe XD}}{32}{figure.15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {16}{\ignorespaces Sign In Page Made With Adobe XD}}{32}{figure.16}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Enum Found in authenticate.dart}}{36}{figure.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {17}{\ignorespaces Database Schema}}{35}{figure.17}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Widget Tree Diagram}}{37}{figure.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {18}{\ignorespaces Database Schema}}{38}{figure.18}%

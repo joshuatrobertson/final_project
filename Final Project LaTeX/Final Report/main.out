@@ -11,8 +11,8 @@
 \BOOKMARK [3][-]{subsubsection.1.4.2}{Mobile Platform: Android vs iOS}{subsection.1.4}% 11
 \BOOKMARK [2][-]{subsection.1.5}{Frontend: Programming Language}{section.1}% 12
 \BOOKMARK [2][-]{subsection.1.6}{Backend: SQL vs noSQL database}{section.1}% 13
-\BOOKMARK [3][-]{subsubsection.1.6.1}{The Target User}{subsection.1.6}% 14
-\BOOKMARK [2][-]{subsection.1.7}{User Personas}{section.1}% 15
+\BOOKMARK [2][-]{subsection.1.7}{The Target User}{section.1}% 14
+\BOOKMARK [3][-]{subsubsection.1.7.1}{User Personas}{subsection.1.7}% 15
 \BOOKMARK [1][-]{section.2}{Software Requirements}{}% 16
 \BOOKMARK [2][-]{subsection.2.1}{Application Scope}{section.2}% 17
 \BOOKMARK [2][-]{subsection.2.2}{User Needs}{section.2}% 18
@@ -23,53 +23,63 @@
 \BOOKMARK [1][-]{section.3}{System Design}{}% 23
 \BOOKMARK [2][-]{subsection.3.1}{Domain Model}{section.3}% 24
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Entities}{subsection.3.1}% 25
-\BOOKMARK [3][-]{subsubsection.3.1.2}{Entities}{subsection.3.1}% 26
-\BOOKMARK [2][-]{subsection.3.2}{System Architecture}{section.3}% 27
-\BOOKMARK [2][-]{subsection.3.3}{Client-side Specification}{section.3}% 28
-\BOOKMARK [3][-]{subsubsection.3.3.1}{State Management}{subsection.3.3}% 29
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Deciding on a Framework}{subsection.3.3}% 30
-\BOOKMARK [1][-]{section.4}{Implementation}{}% 31
-\BOOKMARK [1][-]{section.5}{Prototyping}{}% 32
-\BOOKMARK [2][-]{subsection.5.1}{Initial Sketches and Brainstorming}{section.5}% 33
-\BOOKMARK [2][-]{subsection.5.2}{Wire-framing}{section.5}% 34
-\BOOKMARK [1][-]{section.6}{Implementation}{}% 35
-\BOOKMARK [2][-]{subsection.6.1}{Setup}{section.6}% 36
-\BOOKMARK [3][-]{subsubsection.6.1.1}{File Structure}{subsection.6.1}% 37
-\BOOKMARK [2][-]{subsection.6.2}{Sprint X - UI}{section.6}% 38
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Cupertino vs Material}{subsection.6.2}% 39
-\BOOKMARK [2][-]{subsection.6.3}{Sprint X - Login and Sign Up}{section.6}% 40
-\BOOKMARK [3][-]{subsubsection.6.3.1}{Authentication}{subsection.6.3}% 41
-\BOOKMARK [2][-]{subsection.6.4}{Sprint X - Backend Design}{section.6}% 42
-\BOOKMARK [3][-]{subsubsection.6.4.1}{Database Design}{subsection.6.4}% 43
-\BOOKMARK [2][-]{subsection.6.5}{Sprint X - Connecting the Frontend and Backend}{section.6}% 44
-\BOOKMARK [3][-]{subsubsection.6.5.1}{Loading the barbers}{subsection.6.5}% 45
-\BOOKMARK [3][-]{subsubsection.6.5.2}{Shopping Cart}{subsection.6.5}% 46
-\BOOKMARK [3][-]{subsubsection.6.5.3}{Checkout}{subsection.6.5}% 47
-\BOOKMARK [2][-]{subsection.6.6}{Sprint X - Location}{section.6}% 48
-\BOOKMARK [3][-]{subsubsection.6.6.1}{Autocomplete locations}{subsection.6.6}% 49
-\BOOKMARK [2][-]{subsection.6.7}{Sprint X - Barber Side Application}{section.6}% 50
-\BOOKMARK [3][-]{subsubsection.6.7.1}{Creating a Parent Barber}{subsection.6.7}% 51
-\BOOKMARK [2][-]{subsection.6.8}{Widgets, Common Items and Added Features}{section.6}% 52
-\BOOKMARK [3][-]{subsubsection.6.8.1}{Widgets}{subsection.6.8}% 53
-\BOOKMARK [3][-]{subsubsection.6.8.2}{Common Items}{subsection.6.8}% 54
-\BOOKMARK [3][-]{subsubsection.6.8.3}{Launcher Icons}{subsection.6.8}% 55
-\BOOKMARK [3][-]{subsubsection.6.8.4}{Discount Codes}{subsection.6.8}% 56
-\BOOKMARK [3][-]{subsubsection.6.8.5}{Hide and Show Password}{subsection.6.8}% 57
-\BOOKMARK [2][-]{subsection.6.9}{Use Cases - Implementation}{section.6}% 58
-\BOOKMARK [1][-]{section.7}{Testing}{}% 59
-\BOOKMARK [2][-]{subsection.7.1}{User Testing}{section.7}% 60
-\BOOKMARK [2][-]{subsection.7.2}{Acceptance Testing}{section.7}% 61
-\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 62
-\BOOKMARK [2][-]{subsection.A.1}{Use case 1 - Sign Up}{appendix.A}% 63
-\BOOKMARK [2][-]{subsection.A.2}{Use case 2 - Login}{appendix.A}% 64
-\BOOKMARK [2][-]{subsection.A.3}{Use case 3 - Book a Haircut}{appendix.A}% 65
-\BOOKMARK [2][-]{subsection.A.4}{Use case 4 - Search for a Barber}{appendix.A}% 66
-\BOOKMARK [2][-]{subsection.A.5}{Use case 5 - Checkout}{appendix.A}% 67
-\BOOKMARK [2][-]{subsection.A.6}{Use case 6 - View Orders}{appendix.A}% 68
-\BOOKMARK [2][-]{subsection.A.7}{Use case 7 - Sign Out}{appendix.A}% 69
-\BOOKMARK [2][-]{subsection.A.8}{Use case 8 - Add a Barber \(barbers only\)}{appendix.A}% 70
-\BOOKMARK [2][-]{subsection.A.9}{Use case 9 - Add a Product \(barbers only\)}{appendix.A}% 71
-\BOOKMARK [1][-]{appendix.B}{Figures}{}% 72
-\BOOKMARK [1][-]{appendix.C}{Application Images}{}% 73
-\BOOKMARK [1][-]{appendix.D}{Code Snippets}{}% 74
-\BOOKMARK [2][-]{subsection.D.1}{AuthenticateProvider}{appendix.D}% 75
+\BOOKMARK [2][-]{subsection.3.2}{System Architecture}{section.3}% 26
+\BOOKMARK [2][-]{subsection.3.3}{Client-side Specification}{section.3}% 27
+\BOOKMARK [3][-]{subsubsection.3.3.1}{State Management}{subsection.3.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Provider}{subsection.3.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Deciding on a Framework}{subsection.3.3}% 30
+\BOOKMARK [1][-]{section.4}{Prototyping}{}% 31
+\BOOKMARK [2][-]{subsection.4.1}{Initial Sketches and Brainstorming}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.2}{Wire-framing}{section.4}% 33
+\BOOKMARK [1][-]{section.5}{Implementation}{}% 34
+\BOOKMARK [2][-]{subsection.5.1}{Setup}{section.5}% 35
+\BOOKMARK [3][-]{subsubsection.5.1.1}{File Structure}{subsection.5.1}% 36
+\BOOKMARK [2][-]{subsection.5.2}{Sprint X - UI}{section.5}% 37
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Cupertino vs Material}{subsection.5.2}% 38
+\BOOKMARK [2][-]{subsection.5.3}{Sprint X - Sign Up and Login}{section.5}% 39
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Authentication}{subsection.5.3}% 40
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Sign Up}{subsection.5.3}% 41
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Login}{subsection.5.3}% 42
+\BOOKMARK [3][-]{subsubsection.5.3.4}{State Management}{subsection.5.3}% 43
+\BOOKMARK [2][-]{subsection.5.4}{Sprint X - Backend Design}{section.5}% 44
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Database Design}{subsection.5.4}% 45
+\BOOKMARK [2][-]{subsection.5.5}{Sprint X - Connecting the Frontend and Backend}{section.5}% 46
+\BOOKMARK [3][-]{subsubsection.5.5.1}{Persistent Storage of the User}{subsection.5.5}% 47
+\BOOKMARK [3][-]{subsubsection.5.5.2}{Loading the barbers}{subsection.5.5}% 48
+\BOOKMARK [3][-]{subsubsection.5.5.3}{Shopping Cart}{subsection.5.5}% 49
+\BOOKMARK [3][-]{subsubsection.5.5.4}{Checkout}{subsection.5.5}% 50
+\BOOKMARK [2][-]{subsection.5.6}{Sprint X - Location}{section.5}% 51
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Autocomplete locations}{subsection.5.6}% 52
+\BOOKMARK [2][-]{subsection.5.7}{Sprint X - Barber Side Application}{section.5}% 53
+\BOOKMARK [3][-]{subsubsection.5.7.1}{Creating a Parent Barber}{subsection.5.7}% 54
+\BOOKMARK [2][-]{subsection.5.8}{Widgets, Common Items and Added Features}{section.5}% 55
+\BOOKMARK [3][-]{subsubsection.5.8.1}{Widgets}{subsection.5.8}% 56
+\BOOKMARK [3][-]{subsubsection.5.8.2}{Common Items}{subsection.5.8}% 57
+\BOOKMARK [3][-]{subsubsection.5.8.3}{Launcher Icons}{subsection.5.8}% 58
+\BOOKMARK [3][-]{subsubsection.5.8.4}{Discount Codes}{subsection.5.8}% 59
+\BOOKMARK [3][-]{subsubsection.5.8.5}{Hide and Show Password}{subsection.5.8}% 60
+\BOOKMARK [1][-]{section.6}{Testing}{}% 61
+\BOOKMARK [2][-]{subsection.6.1}{User Testing}{section.6}% 62
+\BOOKMARK [2][-]{subsection.6.2}{Acceptance Testing}{section.6}% 63
+\BOOKMARK [2][-]{subsection.6.3}{Use Cases}{section.6}% 64
+\BOOKMARK [1][-]{section.7}{Conclusion and Further Work}{}% 65
+\BOOKMARK [2][-]{subsection.7.1}{Conclusion}{section.7}% 66
+\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 67
+\BOOKMARK [2][-]{subsection.A.1}{Use case 1 - Sign Up}{appendix.A}% 68
+\BOOKMARK [2][-]{subsection.A.2}{Use case 2 - Login}{appendix.A}% 69
+\BOOKMARK [2][-]{subsection.A.3}{Use case 3 - Book a Haircut}{appendix.A}% 70
+\BOOKMARK [2][-]{subsection.A.4}{Use case 4 - Search for a Barber}{appendix.A}% 71
+\BOOKMARK [2][-]{subsection.A.5}{Use case 5 - Checkout}{appendix.A}% 72
+\BOOKMARK [2][-]{subsection.A.6}{Use case 6 - View Orders}{appendix.A}% 73
+\BOOKMARK [2][-]{subsection.A.7}{Use case 7 - Sign Out}{appendix.A}% 74
+\BOOKMARK [2][-]{subsection.A.8}{Use case 8 - Add a Barber \(barbers only\)}{appendix.A}% 75
+\BOOKMARK [2][-]{subsection.A.9}{Use case 9 - Add a Product \(barbers only\)}{appendix.A}% 76
+\BOOKMARK [1][-]{appendix.B}{Figures}{}% 77
+\BOOKMARK [1][-]{appendix.C}{Application Images}{}% 78
+\BOOKMARK [1][-]{appendix.D}{Code Snippets}{}% 79
+\BOOKMARK [2][-]{subsection.D.1}{Partial Code for Authenticate.dart Showing the Email and Password Sign In}{appendix.D}% 80
+\BOOKMARK [2][-]{subsection.D.2}{Partial Code for forgot\137password.dart}{appendix.D}% 81
+\BOOKMARK [2][-]{subsection.D.3}{Code for navigate.dart}{appendix.D}% 82
+\BOOKMARK [2][-]{subsection.D.4}{Code for navigation\137bar.dart}{appendix.D}% 83
+\BOOKMARK [2][-]{subsection.D.5}{Partial Code for main.dart}{appendix.D}% 84
+\BOOKMARK [2][-]{subsection.D.6}{Partial Code for user\137model.dart}{appendix.D}% 85

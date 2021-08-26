@@ -100,8 +100,8 @@
 	\end{titlepage}
 
 
-	\section*{Abstract}
-	The COVID pandemic has
+	\section*{Executive Summary}
+
 	
 	\pagebreak
 
@@ -154,9 +154,9 @@
 	\noindent
 	$\bullet$ Conduct research to elucidate any market gaps
 	\\
-	$\bullet$ Through a user centric methodology design (UCD) and prototype the user interface of the application
+	$\bullet$ Through a user centric design (UCD) methodology plan and prototype the user interface of the application
 	\\
-	$\bullet$ Create a minimum viable product (MVP) using new product development
+	$\bullet$ Create a minimum viable product (MVP) using new product development (NPD) methodologies
 	\\
 	
 	The research aspect of the project will aim to analyse the strength and weaknesses of existing applications within the field, therefore exposing any market gaps that may be present. 
@@ -213,6 +213,7 @@
 	Finally, using the created timeline, a gantt chart was implemented, which gave an overarching view of the project, with tasks performed represented along the vertical axis and the timeline represented along the horizontal axis. This can be found in the appendix (ADD CITE).
 	
 	\subsection{Research and Market Analysis}
+	\label{market-analysis}
 	In order to gauge whether there is a market for the proposed analysis, a survey was carried out in which users were asked about whether they could see themselves using the application features, among other things. The full survey can be found within the appendix (ADD CITE)
 	
 	\subsubsection{Existing Applications}
@@ -233,6 +234,7 @@
 	\noindent
 	\underline{TRIM-IT}
 	https://www.bbc.co.uk/news/stories-47711610
+	TODO: discuss more here
 	\\
 	TRIM-IT is a UK based mobile hairdressor application. Their business model is franchise based similar to that seen by Mcdonald's, whereby barbers would invest through a monthly fee and be provided with the tools necessary, such as a mobile barber unit. 
 	
@@ -246,6 +248,7 @@
 	(shortcut)The ability to offer a variety of services not limited to just a haircut or beardtrim.
 	
 	\subsection{Deciding on a Platform}
+	\label{chap:platform}
 	\subsubsection{Mobile vs Desktop}
 	An important consideration in NPD is determining which platform best suits the project, mobile or desktop. Here, we will discuss the merits and pitfalls of each, before concluding which is most relevant for the project. 
 	\\
@@ -296,73 +299,60 @@
 
 	
 	
-	\subsubsection{The Target User}
+	\subsection{The Target User}
+	\label{chap:target-user}
 	The planned application targets any user who wishes to get a haircut from their home.
 	TODO: finish target user section 
 
 	
 	
-	\subsection{User Personas}
+	\subsubsection{User Personas}
 	\label{user-personas}
 	The creation of user personas representing fictitious, archetypal users is an essential part of application development \cite{PDFPersonasParticipatory} and allows a deep understanding of the target user to be sought and implemented within the features and design of the application \cite{arnowitzChapter15Wireframe2007}. There are, however, some shortcomings to qualitative persona generation, such as validity concerns and user bias \cite{chapmanPersonasNewClothes2005} and although they are addressed by other methods, such as data-driven personas \cite{mcginnDatadrivenPersonaDevelopment2008}, these require a broad user base and therefore we have decided to stick with qualitative methods, which allow for enough brevity and depth for the scope of the project.
 	
-	Here 3 user personas were created, which are discussed in detail below.
-	\begin{itemize}
-		\item Persona 1: 
-		
-		Name: Sarah Johnson
+	Here 4 user personas were created, which are discussed in detail below.
+	\newline
+	
+		\underline{Persona 1 - Sarah Johnson}
 		
 		Profile: 
 		\begin{figure}[H]
-			
 			\includegraphics[scale=0.2]{images/persona_1.png}
 			\caption{Persona 1}
 			\label{fig:persona_1}
 		\end{figure}
 	
-		(TODO: personas share same name)
+
 		
-		\item Persona 2:
-		
-		Name:  Claire Sheppard
+		\underline{Persona 2 - Juan Smith}
 		
 		
 		Profile: 
-		\begin{figure}[H]
-			
-			\includegraphics[scale=0.2]{images/persona_1.png}
+		\begin{figure}[H]			
+			\includegraphics[scale=0.2]{images/persona_2.png}
 			\caption{Persona 2}
 			\label{fig:persona_2}
 		\end{figure}
 		
-		\item Persona 3:
-		
-		Name: Emma Bradford
+		\underline{Persona 3 - Emily White}
 		
 		Profile: 
-		\begin{figure}[H]
-			
-			\includegraphics[scale=0.2]{images/persona_1.png}
+		\begin{figure}[H]			
+			\includegraphics[scale=0.2]{images/persona_3.png}
 			\caption{Persona 3}
 			\label{fig:persona_3}
 		\end{figure}
 		
-		\item Persona 4:
-		
-		Name:  Claire Sheppard
+		\underline{Persona 4 - Alastair Craig}
 		
 		
 		Profile: 
-		\begin{figure}[H]
-			
+		\begin{figure}[H]			
 			\includegraphics[scale=0.2]{images/persona_4.png}
 			\caption{Persona 4}
 			\label{fig:persona_4}
 		\end{figure}
-		
-	\end{itemize}
-	
-		
+			
 
 	\section{Software Requirements}
 	Here we discuss and outline the software requirements, for which this section is similar to that found within a software requirements specification (SRS) document and lays the framework for the entire project. Here we discuss the application scope, user needs, functional and non-functional requirements, along with use cases.
@@ -474,12 +464,11 @@
 	TODO: discuss domain model
 	Domain driven design (DDD), which originated from a 2003 book by Eric Evans \cite{evansDomainDrivenDesignTackling2003} depicts a paradigm whereby data is visualised as a lexicon of abstractions, with the data model clearly representing key data concepts and the relationships between them. Modelling in this way bridges the gap between activities and interests of the users with the software and allows.
 	
-	\subsubsection{Entities}
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.7]{images/model-class-diagrams.png}
-		\caption{Model Class Diagrams for the Models}
+		\caption{Model Class Diagrams}
 		\label{fig:model-class-diagrams}
 	\end{figure}
 	
@@ -553,64 +542,48 @@
 
 
 	
-	
-
-	
-
-	
-	
 	\subsubsection{State Management}
-	State management is an important feature within flutter. As flutter is declarative, rather than allow for changes in the widget or UI, each time a change is required the UI is rebuilt to reflect the applications current state. Within flutter there exists a variety of different methods for managing the state of the app, of which Provider, BLoC and GetX are some of the most popular and widely used. Here we will discuss the merits and pitfalls of each before settling on a framework for the application.
+	State management is an important feature within flutter. As flutter is declarative, rather than allow for changes in the widget or UI, each time a change is required the UI is rebuilt to reflect the applications current state. Within flutter there exists a variety of different methods for managing the state of the app, of which Provider, BLoC and GetX are some of the most popular and widely used. Here we will discuss the merits and pitfalls of each before settling on a framework for the application for both the local and global scope.
 	\\
 	
 	\noindent \underline{Provider}
 	\\
 	\noindent
-	By far the most commonly used state management framework is Provider, which works by exposing all of the relevant daughter widgets to a value, so that data can be created, listened to and disposed of globally. To do this, a class is created that extends 'ChangeNotifier', which works by allowing classes to 'subscribe' to the senders data, through using the method 'notifyListeners()'
+	By far the most commonly used state management framework is Provider, a wrapper for the InheritedWidget class, which works by exposing all of the relevant daughter widgets to a value, so that data can be created, listened to and disposed of globally. To do this, a class is first created that extends 'ChangeNotifier', which allows classes 'subscribe' to the senders data. Then, through using the method 'notifyListeners()' all of the daughter widgets will be updated with the current value and the UI rebuilt.
 	
 	One negative of Provider is that it is only optimised for relatively few listeners, with it being $\mathcal{O}(n^2)$. With large applications and where speed is important this could be an issue.
 	\\
 	
 	\noindent \underline{BLoC}
 	\\
-	DISCUSS BLOC
+	BLoC is a state management tool within flutter that is based on event driven states. For example, when adding to the basket you could trigger and AddBasketState, before checking out and triggering a CheckoutState. The benefit of this is that the code becomes fairly inflexible, which in a team working environment could reduce the risk of accidental bug implementation.
+	
+	BLoC is also beneficial in acting to separate the logic from the widgets, which aligns with the previously discussed architecture principles.
 	\\
 	
 
 	\noindent \underline{GetX}
 	\\
 	\noindent
-	DISCUSS GETX
-		
-	TODO: discuss different state management techniques and why provider was chosen
-	Simple state management used (Provider) -
-	involves: ChangeNotifier and Provider.of
-	https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple
+	A large benefit of GetX is that, unlike Provider and BLoC, it acts not only as a state management tool, but as a "micro framework". For example, one does not need to access the widget tree and context to navigate between routes, allowing for seamless navigation between pages and also finding the object anywhere using 'Get.find(), allowing for more separation between the business and presentation logic. Not needing to access context means that GetX also allows for dependency injection separate from using inheritedwidget, which removes unnecessary boiler plate code and aids in speed.
+
 	
-	PARENTBARBERSPROVIDER provides to a lot of classes and the enumeration type AuthStatus is tracked... TODO: talk about main.dart 
+	\subsubsection{Provider}
+	For locally managing state, 'setState()' can be utilised within a statefulWidget, which was used extensively throughout the project, for example in the Checkout screen when updating the total to match the given products.
 	
-	'Authentication extends ChangeNotifier' {
-	}
+	For managing the global state within the project it was decided that Provider would be used as the primary global state management framework for several reasons. Firstly, it is fairly simple to understand, and when used with ChangeNotifier allows for the required state management for the proposed application. Secondly, Provider lends itself to a clean architecture with the logic seperated from the UI, meaning that a simple widget tree can be designed and implemented, which can be seen in figure \ref{fig:widget-tree} bellow, which displays the widget tree diagram for the application. Unlike BLoC, Provider allows for good flexibility, which as there was only 1 developer on the project makes more sense, giving greater scope for changes throughout the project. Despite this, future growth could lend itself towards also implementing BLoC alongside Provider, to improve structure and increase growth potential, a good example can be seen with Ebay's Motor App \cite{techblogEBayMotorsState2021}.
 	
-	Similar to - this https://codewithandrea.com/articles/simple-authentication-flow-with-flutter/ 
+	 Finally, although GetX makes an excellent framework for larger projects, due to it's "micro framework" that encompasses several features not limited to controlling state management, the fairly simplistic nature of Provider better suited the relatively small project and hence was chosen here. The overall state management can be seen in the implementation section in \ref{fig:widget-tree}.
+	 	
+	 	
 	
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.55]{images/widget-tree.png}
-		\caption{Widget Tree Diagram}
-		\label{fig:widget-tree}
-	\end{figure}
+
 
 	\subsubsection{Deciding on a Framework}
 	There exists a variety of software architectural frameworks, although not exhaustive this includes Client-server, Peer-to-peer, Microservices and Model-view controller (MVC). For this project, we decided to go with MVC as the architectural framework, which, for brevity is the only discussed here.
 	Used the screens as the view
 	Used ChangeNotifier as the controller
 	TODO: talk about MVC
-	
-	\section{Implementation}
-	\label{chap:implementation}
-	Here we discuss the process of wire-framing the application, along with the sprints, each of which pertains to relevant feature within the application. Finally, we address each use case individually.
 	
 	\section{Prototyping}
 	An essential component of UCD and more generally UX design is prototyping, which involves making mock-ups of the application that act as early prototypes to influence later development \cite{arnowitzChapter15Wireframe2007}. Mobile app prototyping has many benefits to the project, including:
@@ -658,50 +631,112 @@
 	\end{figure}
 	
 	\section{Implementation}
+	Here we discuss the implementation of the application, which is divided into separate sprints, each of which pertains to a relevant feature within the application. Finally, we address the implementation each use case individually.
+	
+	\label{chap:implementation}
 	\subsection{Setup}
-	Before beginning the development sprints, the first task involved setting up the developer environment. To code the application it was decided that an integrated development environment (IDE) was used due to the comprehensive features it provides to aid in development and maximise productivity. For this, it was decided that the IDE 'Android Studio' by JetBrains \cite{DownloadAndroidStudio} was to be used, due to previous experience and familiarity with other JetBrains applications, along with Android Studios excellent built in features and seamless integration with flutter.
+	Before beginning the development sprints, the first task involved setting up the developer environment. To code the application it was decided that an integrated development environment (IDE) was used due to the comprehensive features it provides to aid in development and maximise productivity. For this, it was decided that the IDE 'Android Studio' by JetBrains \cite{DownloadAndroidStudio} was to be used, due to previous experience and familiarity with other JetBrains applications, along with Android Studios excellent built in features and seamless integration with flutter. 
 
 
 	\subsubsection{File Structure}
-	Although there is no official recommendation for structuring the app, here we follow a commonly used structure which includes models; the files that serve as collections of data that are used in conjunction with the widgets to form the user interface of the application; providers; screens; utilities; and widgets; .
+	Although there is no official recommendation for structuring the app, here we follow a commonly used scheme which aligns with the previously discussed architecture principle and includes models; the files that serve as collections of data that are used in conjunction with the widgets to form the user interface of the application; providers, which inhabit the state management tools of the application; screens, which display the UI of the app; utilities, which are used to connect to the back-end; and widgets, which contain the business logic of the app.
 	
 	
 	
 	\subsection{Sprint X - UI}
-	Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possible.
+	The first sprint involved implementing the UI, which was previously wire-framed within Adove XD. Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning that would not scale. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possible, therefore the UI was implemented manually.
 	
-	(DISCUSS HOW FOLLOWED WIREFRAME AND COMPARE IMAGES TO REAL APPLICATION)
+	Within Flutter, the UI is built through using widgets, which describe not only the look of the application, but also provide the state and can be rebuilt to reflect a change in state. As an example we can look at the forgot password screen, a segment of which is shown in \ref{code:forgot-password}. The UI here is built using a variety of widgets. For example, line 2 shows a Column widget, which allows for daughter widgets to be stacked alongside each-other vertically. The first daughter widget is a TextField that allows us to get text from the user and this is wrapped within a padding widget, which allows us to specify the required padding to aid in UI design. Finally, a button is placed within the application using the GestureDetector widget, which, by implementing the 'onTap' function looks for input from the user and then navigates to the Login screen after using the AuthenticateProvider to send a password reset link.  
+	
 	
 	\subsubsection{Cupertino vs Material}
-	The final project was built using material due to..
+	A consideration when building the UI was on whether to model the application using Cupertino, which gives the app an iOS type look and feel or material, which is more generalised across android and iOS. As the project was designed to be multi-platform, it was decided that material would be used throughout. 
 	
-	\subsection{Sprint X - Login and Sign Up}
+	Using material also lends itself well to the project for other reasons, For example, it gives us access to a number of useful widgets at the root of the application. For example, the Navigator allows us to keep a track of the users chosen screens as a stack and by using Navigator.pop() and Navigator.push() we can navigate between screens. This is implemented in the Navigate widget, which can be seen in appendix \ref{code:navigate} and allows us to easily navigate the user around the application. Using material also gives us access to both a bottom navigation bar, which can be seen in appendix \ref{code:nav-bar} and a side bar. Finally using material allows for easy styling of the app by using the built in class 'ThemeData'. The implementation of material can be seen in the main.dart file in appendix \ref{code:MyApp} which serves as the root and entry point to the application.
+	
+	
+	
+	\subsection{Sprint X - Sign Up and Login}
+	Once the UI was built the Login and Sign Up page logic was implemented. This involved creating an authentication page (aunthenticate.dart), which acted as a provider for the user and other authentication logic that could be injected into the UI along with using a database to store users so that user data could be persistent.
 	
 	\subsubsection{Authentication}
 	\label{authentication}
-	Firebase has its own built in authentication (Firebase Authentication) which was used for the project due to several considerations -
+	Firebase has its own built in authentication library \cite{FirebaseAuthentication2021}, which works by providing email and password based authentication along with OAuth 2.0 capabilities, both which were used extensively throughout. Firebase Authentication was used for the project due to several considerations -
 	\begin{itemize}
 		\item Excellent built in security features
+		\begin{itemize}
+			\item Can easily restrict access to different specified groups within an organisation
+			\item Security is enforced by server-side rules, limiting unsafe usage within the app itself
+			\item Uses token generation to ensure confirmed data
+		\end{itemize}
 		\item Integration with firebase database and storage
 		\item Easy modification through Googles declarative language
+		\item Excellent integration with OAuth 2.0
+		\begin{itemize}
+			\item Using OAuth allowed for sign in methods with Google, Facebook and Twitter to align with the previously drawn wireframes
+		\end{itemize}
 	\end{itemize}
-	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
-	\begin{lstlisting}
-		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
-	\end{lstlisting}
-	which does not scale well due to a search time of $\mathcal{O}$(n). Instead, we store the uid as the document id, allowing us to do a similar, although quicker call such as
-	\begin{lstlisting}
-		_firebaseFirestore.collection(collection).doc(userId).get()
-	\end{lstlisting}
-	which gives a search time of $\mathcal{O}$(1).
 	
-	When authenticating through Google, Facebook and Twitter, a user is created so that data can be persistently stored alongside the credentials.
+	
+	\subsubsection{Sign Up}
+	The user is first presented with the sign up screen whereby they can enter their name, email and password and click through to make an account. Once the user clicks the Sign Up button, a token is created within Firebase Authentication and the credentials are stored. Inside of authenticate.dart there is a signUp method which carries out the logic behind user sign up, which works in several steps.
+	\begin{itemize}
+		\item First, a UserCredential (which holds the return value of firebases sign up method) is returned from an attempt to create a new user with the email and password
+		\item Next, a created model (UserModel, which can be seen in appendix \ref{code:user-model}) is assigned to the user which holds all pertinent information, such as name, email, shopping cart items etc
+		\item The Authenticate enum status is set to AUTHENTICATED as discussed below
+	\end{itemize}
+	
+
+	
+	\subsubsection{Login}
+	Once the user has been created and the credentials are stored, the user can login using the given name and password. This is then authenticated with Firebase and a response is returned to the client, before the user is then logged in for the session. To follow the authentication status of the application we created an enum seen in figure \ref{fig:authenticate-enum} below. This can then be tracked by using 'Provider.of<AuthenticateProvider>(context)', allowing us to manage and alter the state of the application based on the status of the user.
+	
+	\begin{figure}[H]
+	\centering
+	\label{fig:authenticate-enum}
+	\begin{minted}{dart}
+		enum AuthStatus {
+			UNINITIALISED,
+			UNAUTHORISED_USER,
+			UNAUTHORISED_BARBER,
+			NOT_AUTHENTICATED,
+			AUTHENTICATING,
+			AUTHENTICATED,
+			BARBER_AUTHENTICATED,
+			AUTH_WITH_MAPS
+		}
+	\end{minted}
+	\caption{Enum Found in authenticate.dart}
+	\end{figure}
+	
+	The user can also be authenticated and signed in using Google sign in; for which the 'google\_sign\_in' package was utilised, Twitter sign in; for which the package flutter\_twitter\_login was used and Facebook sign in; whereby the package flutter\_facebook\_auth was used. All of these work by returning a respective OAuth token and therefore is a secure way to authenticate the user.
+	
+	
+	Similar to when signing up, on login, a User Model is created, which locally stores the details needed for the user, i.e. id, name, email, address and any other relevant data such as their cart items within the Authenticate class. In this way, the data contained within can be accessed using Provider and data such as cart items accessed globally. Part of the user model can be seen in appendix \ref{code:user-model}.
+	
+	
+	\subsubsection{State Management}
+	
+	TODO: move below figure in relevant place
+	
+		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.55]{images/widget-tree.png}
+		\caption{Widget Tree Diagram}
+		\label{fig:widget-tree}
+	\end{figure}
+	
+	
+
+
 	
 	
 	\subsection{Sprint X - Backend Design}
+	The next sprint involved modelling and creating the database to suit the needs of the project. As previously discussed, for the project it was decided that a noSQL database, instead of a relational one was to be implemented.
 	
 	\subsubsection{Database Design}
-	As previously discussed, for the project it was decided to use a noSQL database, instead of a relational one. Despite this, it was decided that a database schema should be constructed to constitute the parent barbers, barbers and products as modelling this way added to readability with the added benefit of the features previously discussed. The schema is represented in figure \ref{fig:database-schema} below.
+	Although noSQL is most frequently used for non-relational data a database schema was constructed to constitute the parent barbers, barbers and products as modelling this way added to readability with the added benefit of the features previously discussed. The schema is represented in figure \ref{fig :database-schema} below.
 	( TODO: add orders to the database schema)
 	
 	\begin{figure}[H]
@@ -716,9 +751,27 @@
 	
 	Don't nest as calls will fetch all of the parent and nested structured so better to have separate data.
 	
-	(INSERT DATABASE SCHEMA)
+	
+	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
+	\begin{lstlisting}
+		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
+	\end{lstlisting}
+	which does not scale well due to a search time of $\mathcal{O}$(n). Instead, we store the uid as the document id, allowing us to do a similar, although quicker call such as
+	\begin{lstlisting}
+		_firebaseFirestore.collection(collection).doc(userId).get()
+	\end{lstlisting}
+	which gives a search time of $\mathcal{O}$(1).
+	
+	
 	
 	\subsection{Sprint X - Connecting the Frontend and Backend}
+	
+	\subsubsection{Persistent Storage of the User}
+	Although the above methods allow the user to login and sign up  along with locally store the data, there is no mentioned way to persistently store any user data.
+	
+	 
+	
+	
 	To get the list of items within a range
 	1) Get the users current location
 	2) Query firestore with the radius
@@ -769,6 +822,7 @@
 	Next, we parse the data into JSON format by passing the PlaceModel object into the function 'createLocationMap', which creates a map using the location data. Finally we pass through this map to the 'addLocationDetails', which uses the given user id to update the database with the users location.
 	
 	\subsection{Sprint X - Barber Side Application}
+	The next sprint involved..
 	In order to create a comprehensive application the final sprint involved coding a barber side app, giving the ability for the barber interact with the database and allow them to create an account, add and remove barbers and view orders.
 	
 	\subsubsection{Creating a Parent Barber}
@@ -790,13 +844,39 @@
 	
 	\subsubsection{Hide and Show Password}
 	
-	\subsection{Use Cases - Implementation}
+	
 	
 	\section{Testing}
 	\label{use-case-implementation}
 	\subsection{User Testing}
 	\subsection{Acceptance Testing}
 	\cite{humbleContinuousDeliveryReliable2010}
+	It is recommended that acceptance testing is used throughout development as a metric to ensure a continious link between the customer and development and is an important tool within UCD. To implement this, here we analyse against the previously defined use cases as set out below.
+	
+	\subsection{Use Cases}
+	TODO: refer to screenshots of app in use cases
+	
+	\section{Conclusion and Further Work}
+	\subsection{Conclusion}
+	The motivation for this project was to create a cross-platform working MVP of a delivery barber app that attained the required objectives as stated in the introductory chapter, which are addressed here.
+	\newline
+	
+	\noindent
+	\underline{Conduct Research to elucidate any market gaps}
+	\newline
+	
+	\noindent
+	I begin the thesis by discussing the methodologies that will be utilised throughout the project, for example new product development - which encompassed the stages involved to bring the app from ideation to market and agile, which was used as a more general project management tool to guide the work. In section \ref{market-analysis} I then go on to discuss existing applications in the field, any market gaps and define the novelty of the proposed application. I therefore believe that this first objective was met well.
+	\newline
+	
+	\noindent
+	\underline{Through a user centric design methodology plan and prototype the}
+	\\
+	\underline{user interface of the application} 
+	\newline
+	
+	\noindent
+	After discussing market gaps I then go on to decide on which platform best suits the application which can be seen in section \ref{chap:platform}, where I also discuss the most suitable software modalities, including frontend and backend platforms. I then move on to presenting the target user and the conception of user personas, an integral component of UCD. The next chapter I present as a software requirements specification document, outlining the scope, user needs and requirements of the application, along with any pertinent use cases.
 	
 	
 	\printbibliography
@@ -1013,30 +1093,223 @@
 	
 	\section{Application Images}
 	\section{Code Snippets}
-	\subsection{AuthenticateProvider}
-	
+	\subsection{Partial Code for Authenticate.dart Showing the Email and Password Sign In}
+	\label{code:authenticate}
 	\begin{minted}[]{dart}
-		Future<bool> barberSignIn({String email, String password}) async {
+		Future<bool> signIn({String email, String password}) async {
 			try {
 				_authStatus = AuthStatus.AUTHENTICATING;
 				notifyListeners();
-				await _firebaseAuth.signInWithEmailAndPassword(email: 
-				email, password: password);
-				barberModel = await _orderUtility.getBarberById(
-				_firebaseAuth.currentUser.uid);
-				_authStatus = AuthStatus.BARBER_AUTHENTICATED;
-				print("signed in barber " + email);
+				final UserCredential _authResult = await
+				_firebaseAuth.signInWithEmailAndPassword(email: email, 
+				password: password);
+				print("signed in " + email);
+				userModel = await
+				_orderUtility.getUserById(_firebaseAuth.currentUser.uid);
+				List<OrderModel> orders = [];
+				orders = await _orderUtility
+				.getDatabaseCartItems(_authResult.user.uid);
+				userModel.cart = orders;
+				_authStatus = AuthStatus.AUTH_WITH_MAPS;
 				notifyListeners();
 				return true;
 			} on FirebaseAuthException catch (e) {
-				print('Failed to sign in barber: ' + e.toString());
+				print(e);
 				_authStatus = AuthStatus.NOT_AUTHENTICATED;
 				notifyListeners();
 				return false;
 			}
-		} 
+		}
 	\end{minted}
-	TODO: Remove this example code
-	TODO: add authentication provider code
+
+	\subsection{Partial Code for forgot\_password.dart}
+	\label{code:forgot-password}
+	
+	\begin{minted}[]{dart}
+		Container(
+			child: Column(
+				children: [
+					Padding(
+						padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
+							child: TextField(
+								controller: emailController,
+								decoration: InputDecoration(
+								labelText: "Email",
+							)
+						),
+					),
+			Padding(
+				padding: const EdgeInsets.fromLTRB(35, 40, 35, 0),
+				child: SizedBox(
+				height: 70,
+				child: Material(
+					borderRadius: BorderRadius.circular(15),
+					shadowColor: theme,
+					color: theme,
+					child: GestureDetector(
+						onTap: () {
+							context.read<AuthenticateProvider>().resetPassword(
+							emailController.text.trim()
+						);
+						navigateToScreen(context, Login());
+					},
+					child: Center(
+						child: ReturnText(text: 'Send Reset Link', fontWeight:
+						FontWeight.w500, size: 30, color: white,),
+						),
+					),
+				),
+			),
+		),
+
+	\end{minted}
+
+	\subsection{Code for navigate.dart}
+	\label{code:navigate}
+	\begin{minted}[]{dart}
+	import 'package:flutter/material.dart';
+	
+	// Bidirectional screen navigation
+	void navigateToScreen(BuildContext context, Widget widget) {
+		Navigator.push(context, MaterialPageRoute(builder: (context) 
+		=> widget)
+		);
+	}
+	
+	// One way screen replacement
+	void replaceScreen(BuildContext context, Widget widget) {
+		Navigator.pushReplacement(context, MaterialPageRoute(builder: 
+		(context) => widget)
+		);
+	}	
+	\end{minted}
+
+
+	\subsection{Code for navigation\_bar.dart}
+	\label{code:nav-bar}
+	\begin{minted}[]{dart}
+		class NavBar extends StatefulWidget {
+			@override
+			_NavBarState createState() => _NavBarState();
+		}
+		
+		class _NavBarState extends State<NavBar> {
+			int _currentIndex = 0;
+			List<Widget> _pages = <Widget>[
+			Home(),
+			Account(),
+			UserOrders(),
+			];
+			
+			void _onItemTap(int index) {
+				setState(() {
+					_currentIndex = index;
+				});
+			}
+			
+			@override
+			Widget build(BuildContext context) {
+				return Scaffold(
+					body: Center(
+						child: _pages.elementAt(_currentIndex),
+					),
+					bottomNavigationBar: BottomNavigationBar(
+						currentIndex: _currentIndex,
+						items: const <BottomNavigationBarItem>[
+							BottomNavigationBarItem(
+								icon: Icon(Icons.home),
+								label: 'Home',
+							),
+							BottomNavigationBarItem(
+								icon: Icon(Icons.account_box_rounded),
+								label: 'My Account',
+								),
+							BottomNavigationBarItem(
+								icon: Icon(Icons.shopping_basket),
+								label: 'My Orders',
+							),
+						],
+						onTap: (index) {
+							setState(() {
+								_currentIndex = index;
+							});
+						},
+					)
+				);
+			}
+		}
+	\end{minted}
+
+
+	\subsection{Partial Code for main.dart}
+	\label{code:MyApp}
+	\begin{minted}[]{dart}
+	class MyApp extends StatelessWidget {
+		// This widget is the root of your application.
+		@override
+		Widget build(BuildContext context) {
+			return MultiProvider(
+				providers: [
+					ListenableProvider<AuthenticateProvider>(
+						create: (_) => AuthenticateProvider(FirebaseAuth.instance),
+					),
+					StreamProvider(
+						create: (context) =>
+						context.read<AuthenticateProvider>().stateChanges, 
+						initialData: null,
+					),
+					ListenableProvider<ParentBarbersProvider>(
+						create: (_) => ParentBarbersProvider(),
+					),
+				],
+			child: MaterialApp(
+				title: 'Chop Chop',
+				theme: ThemeData(
+					primarySwatch: Colors.blue,
+					fontFamily: 'Poppins'
+				),
+			home: AuthenticationWrapper(),
+			),
+		);
+	}
+	\end{minted}
+
+	\subsection{Partial Code for user\_model.dart}
+	\label{code:user-model}
+	\begin{minted}[]{dart}
+		class UserModel {
+			static const NAME = "name";
+			static const EMAIL = "email";
+			static const UID = "uid";
+			static const LOCATION = "location";
+			static const CART = "cart";
+			static const ORDERS = "orders";
+			
+			String _name;
+			String _email;
+			String _uid;
+			List<OrderModel> cart;
+			PlaceModel locationDetails;
+			List<OrderModel> orders;
+			
+			String get name => _name;
+			String get email => _email;
+			String get uid => _uid;
+			
+			UserModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
+				_name = documentSnapshot.data()[NAME];
+				_email = documentSnapshot.data()[EMAIL];
+				_uid = documentSnapshot.data()[UID];
+				cart = _convertOrderFromMap(documentSnapshot.data()[CART]);
+				orders = _convertOrderFromMap(documentSnapshot.data()[ORDERS]);
+				locationDetails = _convertLocationDetails(documentSnapshot.
+				data()[LOCATION]);
+			}
+			
+			UserModel();
+	\end{minted}
+
+
+
 	
 \end{document}

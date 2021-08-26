@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  18 AUG 2021 15:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  25 AUG 2021 15:05
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -794,6 +794,12 @@ Package biblatex Warning: BibTeX reported the following issues
 (biblatex)                - Invalid format of field 'date' 
 (biblatex)                - Invalid format of field 'date'.
 
+
+Package biblatex Warning: BibTeX reported the following issues
+(biblatex)                with 'techblogEBayMotorsState2021':
+(biblatex)                - Invalid format of field 'date' 
+(biblatex)                - Invalid format of field 'date'.
+
 )
 Package biblatex Info: Reference section=0 on input line 46.
 Package biblatex Info: Reference segment=0 on input line 46.
@@ -846,7 +852,7 @@ LaTeX Info: Redefining \nameref on input line 46.
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 )
 \c@lstlisting=\count465
-<images/logo.png, id=305, 3651.14063pt x 1102.87032pt>
+<images/logo.png, id=345, 3651.14063pt x 1102.87032pt>
 File: images/logo.png Graphic file (type png)
 <use images/logo.png>
 Package pdftex.def Info: images/logo.png  used on input line 62.
@@ -902,7 +908,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--166
 
  []
 
-<images/npd.png, id=560, 1697.34125pt x 1861.95625pt>
+<images/npd.png, id=625, 1697.34125pt x 1861.95625pt>
 File: images/npd.png Graphic file (type png)
 <use images/npd.png>
 Package pdftex.def Info: images/npd.png  used on input line 169.
@@ -917,7 +923,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--202
 
  []
 
-<images/monday.png, id=578, 1787.67876pt x 878.28125pt>
+<images/monday.png, id=643, 1787.67876pt x 878.28125pt>
 File: images/monday.png Graphic file (type png)
 <use images/monday.png>
 Package pdftex.def Info: images/monday.png  used on input line 207.
@@ -928,364 +934,427 @@ Overfull \hbox (56.9186pt too wide) in paragraph at lines 207--208
  []
 
 [10] [11 <./images/monday.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 229--232
+Underfull \hbox (badness 10000) in paragraph at lines 230--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
+Overfull \hbox (8.6306pt too wide) in paragraph at lines 234--240
+$[]$ \OT1/cmr/m/n/12 https://www.bbc.co.uk/news/stories-47711610 TODO: dis-cuss
+ more
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
 
  []
 
 [12]
-<images/GB-mobile-desktop.png, id=603, 1027.84pt x 578.16pt>
+<images/GB-mobile-desktop.png, id=666, 1027.84pt x 578.16pt>
 File: images/GB-mobile-desktop.png Graphic file (type png)
 <use images/GB-mobile-desktop.png>
-Package pdftex.def Info: images/GB-mobile-desktop.png  used on input line 261.
+Package pdftex.def Info: images/GB-mobile-desktop.png  used on input line 264.
 (pdftex.def)             Requested size: 462.52373pt x 260.16959pt.
 
-Overfull \hbox (72.52373pt too wide) in paragraph at lines 261--262
+Overfull \hbox (72.52373pt too wide) in paragraph at lines 264--265
  [][] 
  []
 
 [13 <./images/GB-mobile-desktop.png>]
-<images/ios-android.png, id=613, 1027.84pt x 578.16pt>
+<images/ios-android.png, id=677, 1027.84pt x 578.16pt>
 File: images/ios-android.png Graphic file (type png)
 <use images/ios-android.png>
-Package pdftex.def Info: images/ios-android.png  used on input line 279.
+Package pdftex.def Info: images/ios-android.png  used on input line 282.
 (pdftex.def)             Requested size: 411.12872pt x 231.2599pt.
 
-Overfull \hbox (21.12872pt too wide) in paragraph at lines 279--280
+Overfull \hbox (21.12872pt too wide) in paragraph at lines 282--283
  [][] 
  []
 
 [14 <./images/ios-android.png>] [15]
-<images/persona_1.png, id=639, 2007.5pt x 1405.25pt>
+Underfull \hbox (badness 10000) in paragraph at lines 313--315
+
+ []
+
+<images/persona_1.png, id=703, 2007.5pt x 1405.25pt>
 File: images/persona_1.png Graphic file (type png)
 <use images/persona_1.png>
-Package pdftex.def Info: images/persona_1.png  used on input line 318.
+Package pdftex.def Info: images/persona_1.png  used on input line 320.
 (pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
 
-Overfull \hbox (11.49289pt too wide) in paragraph at lines 318--319
+Overfull \hbox (11.49289pt too wide) in paragraph at lines 320--321
 [][] 
  []
 
 [16 <./images/persona_1.png>]
-File: images/persona_1.png Graphic file (type png)
-<use images/persona_1.png>
-Package pdftex.def Info: images/persona_1.png  used on input line 333.
+<images/persona_2.png, id=713, 2007.5pt x 1405.25pt>
+File: images/persona_2.png Graphic file (type png)
+<use images/persona_2.png>
+Package pdftex.def Info: images/persona_2.png  used on input line 332.
 (pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
 
-Overfull \hbox (11.49289pt too wide) in paragraph at lines 333--334
+Overfull \hbox (11.49289pt too wide) in paragraph at lines 332--333
 [][] 
  []
 
-File: images/persona_1.png Graphic file (type png)
-<use images/persona_1.png>
-Package pdftex.def Info: images/persona_1.png  used on input line 345.
+<images/persona_3.png, id=714, 2007.5pt x 1405.25pt>
+File: images/persona_3.png Graphic file (type png)
+<use images/persona_3.png>
+Package pdftex.def Info: images/persona_3.png  used on input line 341.
 (pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
 
-Overfull \hbox (11.49289pt too wide) in paragraph at lines 345--346
+Overfull \hbox (11.49289pt too wide) in paragraph at lines 341--342
 [][] 
  []
 
-[17]
-<images/persona_4.png, id=653, 2007.5pt x 1405.25pt>
+[17 <./images/persona_2.png>]
+<images/persona_4.png, id=720, 2007.5pt x 1405.25pt>
 File: images/persona_4.png Graphic file (type png)
 <use images/persona_4.png>
-Package pdftex.def Info: images/persona_4.png  used on input line 358.
+Package pdftex.def Info: images/persona_4.png  used on input line 351.
 (pdftex.def)             Requested size: 401.49289pt x 281.04501pt.
 
-Overfull \hbox (11.49289pt too wide) in paragraph at lines 358--359
+Overfull \hbox (11.49289pt too wide) in paragraph at lines 351--352
 [][] 
  []
 
-[18] [19 <./images/persona_4.png>] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 450--452
+[18 <./images/persona_3.png>] [19 <./images/persona_4.png>] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 440--442
 
  []
 
 [21]
-<images/model-class-diagrams.png, id=687, 585.18625pt x 407.5225pt>
+<images/model-class-diagrams.png, id=756, 585.18625pt x 407.5225pt>
 File: images/model-class-diagrams.png Graphic file (type png)
 <use images/model-class-diagrams.png>
-Package pdftex.def Info: images/model-class-diagrams.png  used on input line 48
-1.
+Package pdftex.def Info: images/model-class-diagrams.png  used on input line 47
+0.
 (pdftex.def)             Requested size: 409.62758pt x 285.2638pt.
 
-Overfull \hbox (19.62758pt too wide) in paragraph at lines 481--482
+Overfull \hbox (19.62758pt too wide) in paragraph at lines 470--471
  [][] 
  []
 
 [22]
-Overfull \hbox (16.54578pt too wide) in paragraph at lines 493--495
+Overfull \hbox (16.54578pt too wide) in paragraph at lines 482--484
 \OT1/cmr/m/n/12 https://www.raywenderlich.com/6373413-state-management-with-pro
 vider Sys-
  []
 
 [23 <./images/model-class-diagrams.png>]
-<images/system-architecture.png, id=699, 495.8525pt x 515.9275pt>
+<images/system-architecture.png, id=768, 495.8525pt x 515.9275pt>
 File: images/system-architecture.png Graphic file (type png)
 <use images/system-architecture.png>
-Package pdftex.def Info: images/system-architecture.png  used on input line 500
+Package pdftex.def Info: images/system-architecture.png  used on input line 489
 .
 (pdftex.def)             Requested size: 347.09438pt x 361.14679pt.
  [24 <./images/system-architecture.png>]
-<images/clean-architecture.png, id=709, 614.295pt x 344.28625pt>
+<images/clean-architecture.png, id=778, 614.295pt x 344.28625pt>
 File: images/clean-architecture.png Graphic file (type png)
 <use images/clean-architecture.png>
-Package pdftex.def Info: images/clean-architecture.png  used on input line 534.
+Package pdftex.def Info: images/clean-architecture.png  used on input line 523.
 
 (pdftex.def)             Requested size: 430.00356pt x 240.99872pt.
 
-Overfull \hbox (40.00356pt too wide) in paragraph at lines 534--535
+Overfull \hbox (40.00356pt too wide) in paragraph at lines 523--524
  [][] 
  []
 
 [25 <./images/clean-architecture.png>]
-<images/activities.png, id=718, 707.64375pt x 466.74374pt>
+<images/activities.png, id=786, 707.64375pt x 466.74374pt>
 File: images/activities.png Graphic file (type png)
 <use images/activities.png>
-Package pdftex.def Info: images/activities.png  used on input line 544.
+Package pdftex.def Info: images/activities.png  used on input line 533.
 (pdftex.def)             Requested size: 424.58952pt x 280.0484pt.
 
-Overfull \hbox (34.58952pt too wide) in paragraph at lines 544--545
+Overfull \hbox (34.58952pt too wide) in paragraph at lines 533--534
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--565
+Underfull \hbox (badness 10000) in paragraph at lines 546--548
 
  []
 
 [26 <./images/activities.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 571--573
+Underfull \hbox (badness 10000) in paragraph at lines 554--556
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--578
+Underfull \hbox (badness 10000) in paragraph at lines 561--563
 
  []
 
-
-Overfull \hbox (42.49135pt too wide) in paragraph at lines 585--589
-\OT1/cmr/m/n/12 ti-fier and Provider.of https://flutter.dev/docs/development/da
-ta-and-backend/state-
- []
-
-
-Overfull \hbox (17.26382pt too wide) in paragraph at lines 595--596
-[]\OT1/cmr/m/n/12 Similar to - this https://codewithandrea.com/articles/simple-
-authentication-
- []
-
-<images/widget-tree.png, id=724, 452.69125pt x 734.745pt>
-File: images/widget-tree.png Graphic file (type png)
-<use images/widget-tree.png>
-Package pdftex.def Info: images/widget-tree.png  used on input line 600.
-(pdftex.def)             Requested size: 248.98096pt x 404.111pt.
-[27] [28 <./images/widget-tree.png>]
-<images/placeholder.jpg, id=738, 903.375pt x 498.86375pt>
+[27] [28]
+<images/placeholder.jpg, id=808, 903.375pt x 498.86375pt>
 File: images/placeholder.jpg Graphic file (type jpg)
 <use images/placeholder.jpg>
-Package pdftex.def Info: images/placeholder.jpg  used on input line 633.
+Package pdftex.def Info: images/placeholder.jpg  used on input line 606.
 (pdftex.def)             Requested size: 271.01459pt x 149.66028pt.
- [29]
-<images/prototyping-components.png, id=744, 623.32875pt x 670.75594pt>
+<images/prototyping-components.png, id=810, 623.32875pt x 670.75594pt>
 File: images/prototyping-components.png Graphic file (type png)
 <use images/prototyping-components.png>
 Package pdftex.def Info: images/prototyping-components.png  used on input line 
-643.
+616.
 (pdftex.def)             Requested size: 311.6636pt x 335.37714pt.
- [30 <./images/placeholder.jpg>]
-[31 <./images/prototyping-components.png>]
-<images/sign-in.png, id=760, 218.31563pt x 438.8897pt>
+ [29 <./images/placeholder.jpg>] [30 <./images/prototyping-components.png>]
+<images/sign-in.png, id=824, 218.31563pt x 438.8897pt>
 File: images/sign-in.png Graphic file (type png)
 <use images/sign-in.png>
-Package pdftex.def Info: images/sign-in.png  used on input line 655.
+Package pdftex.def Info: images/sign-in.png  used on input line 628.
 (pdftex.def)             Requested size: 185.56914pt x 373.058pt.
- [32 <./images/sign-in.png>] [33]
+ [31] [32 <./images/sign-in.png>] [33] [34] [35]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/default.pygstyle)
+(./_minted-main/624785CC6DBC69FFF58079307A26600A841CDBE00FC6D64409DC9CAE2DBD3FA
+0.pygtex)
+<images/widget-tree.png, id=860, 452.69125pt x 734.745pt>
+File: images/widget-tree.png Graphic file (type png)
+<use images/widget-tree.png>
+Package pdftex.def Info: images/widget-tree.png  used on input line 725.
+(pdftex.def)             Requested size: 248.98096pt x 404.111pt.
+ [36] [37 <./images/widget-tree.png>]
+
+LaTeX Warning: Reference `fig :database-schema' on page 38 undefined on input l
+ine 739.
+
+<images/database-schema.png, id=873, 508.90125pt x 464.73625pt>
+File: images/database-schema.png Graphic file (type png)
+<use images/database-schema.png>
+Package pdftex.def Info: images/database-schema.png  used on input line 744.
+(pdftex.def)             Requested size: 356.22844pt x 325.31316pt.
+[38 <./images/database-schema.png>]
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
-690.
+757.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-<images/database-schema.png, id=773, 508.90125pt x 464.73625pt>
-File: images/database-schema.png Graphic file (type png)
-<use images/database-schema.png>
-Package pdftex.def Info: images/database-schema.png  used on input line 709.
-(pdftex.def)             Requested size: 356.22844pt x 325.31316pt.
- [34] [35 <./images/database-schema.png>]
-Overfull \hbox (2.11537pt too wide) in paragraph at lines 727--736
+Overfull \hbox (2.11537pt too wide) in paragraph at lines 780--789
 \OT1/cmr/m/n/12 When load-ing the bar-bers ei-ther they were load-ing through m
 ak-ing a database
  []
 
-
-Overfull \hbox (6.42783pt too wide) in paragraph at lines 744--746
+[39]
+Overfull \hbox (6.42783pt too wide) in paragraph at lines 797--799
 \OT1/cmr/m/n/12 https://firebase.google.com/docs/firestore/solutions/geoqueries
  Once the user
  []
 
-[36] [37]
-Overfull \hbox (2.56433pt too wide) in paragraph at lines 775--776
+[40]
+Overfull \hbox (2.56433pt too wide) in paragraph at lines 829--830
 \OT1/cmr/m/n/12 lat-i-tude co-ordinates, along with a geo-hash (EX-PLAIN HOW PL
 U-GIN USED
  []
 
-[38]
-Overfull \hbox (12.09851pt too wide) in paragraph at lines 803--803
+[41] [42]
+Underfull \hbox (badness 10000) in paragraph at lines 861--863
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 864--867
+
+ []
+
+
+Overfull \hbox (4.72516pt too wide) in paragraph at lines 868--871
+\OT1/cmr/m/n/12 I be-gin the the-sis by dis-cussing the method-olo-gies that wi
+ll be utilised through-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 868--871
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 872--877
+
+ []
+
+[43]
+Overfull \hbox (12.09851pt too wide) in paragraph at lines 883--883
 \OT1/cmtt/m/n/12 science / article / pii / B9780120885688500163$[][] \OT1/cmr/m
 /n/12 (vis-ited on 27/05/2021). 
  []
 
-[39]
-Overfull \hbox (14.02652pt too wide) in paragraph at lines 803--803
+
+Overfull \hbox (14.02652pt too wide) in paragraph at lines 883--883
 \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / develop
 er . android . com / studio$[][] \OT1/cmr/m/n/12 (vis-ited on 16/08/2021). 
  []
 
-
-Overfull \hbox (4.5098pt too wide) in paragraph at lines 803--803
+[44]
+Overfull \hbox (4.5098pt too wide) in paragraph at lines 883--883
 \OT1/cmr/m/it/12 of Soft-ware\OT1/cmr/m/n/12 . 1st edi-tion. Boston: Addison-We
 sley, 4th Sept. 2003. 560 pp.
  []
 
 
-Overfull \hbox (7.06825pt too wide) in paragraph at lines 803--803
+Overfull \hbox (7.06825pt too wide) in paragraph at lines 883--883
 []\OT1/cmr/m/it/12 Flutter - Beau-ti-ful Na-tive Apps in Record Time\OT1/cmr/m/
 n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / 
 flutter .
  []
 
 
-Overfull \hbox (16.70265pt too wide) in paragraph at lines 803--803
+Overfull \hbox (16.70265pt too wide) in paragraph at lines 883--883
 \OT1/cmtt/m/n/12 books . google . co . uk / books / about / Rapid _ Application
  _ Development .
  []
 
-[40]
-Overfull \hbox (25.06186pt too wide) in paragraph at lines 803--803
+[45]
+Overfull \hbox (25.06186pt too wide) in paragraph at lines 883--883
 []\OT1/cmr/m/it/12 Monday - Home\OT1/cmr/m/n/12 . 2021. \OT1/cmr/m/sc/12 url\OT
 1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / monday . com/$[][] \OT1/cmr/m/
 n/12 (vis-ited on 15/08/2021). 
  []
 
 
-Overfull \hbox (137.02771pt too wide) in paragraph at lines 803--803
+Overfull \hbox (137.02771pt too wide) in paragraph at lines 883--883
 \OT1/cmtt/m/n/12 Design -[] and -[] Product -[] An -[] for -[] Grudin -[] Pruit
 t / 7ea9505694f1d444a330b1947109c7268a9704d2$[][]
  []
 
 
-Overfull \hbox (16.48196pt too wide) in paragraph at lines 803--803
+Overfull \hbox (16.48196pt too wide) in paragraph at lines 883--883
 []\OT1/cmr/m/it/12 React Na-tive \TS1/cmr/m/it/12 · \OT1/cmr/m/it/12 Learn Once
 , Write Any-where\OT1/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\
 OT1/cmtt/m/n/12 https : / / reactnative .
  []
 
 
-Overfull \hbox (1.66032pt too wide) in paragraph at lines 803--803
+Overfull \hbox (1.66032pt too wide) in paragraph at lines 883--883
 []\OT1/cmr/m/it/12 Sketch vs Figma, Adobe XD, And Other UI De-sign Ap-pli-ca-ti
 ons\OT1/cmr/m/n/12 . Smash-
  []
 
 
-Overfull \hbox (36.67752pt too wide) in paragraph at lines 803--803
+Overfull \hbox (36.67752pt too wide) in paragraph at lines 883--883
 \OT1/cmr/m/n/12 ing Mag-a-zine. 11:00:16 +0200 +0200. \OT1/cmr/m/sc/12 url\OT1/
 cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / www . smashingmagazine .
  []
 
-[41]
-Overfull \hbox (12.29575pt too wide) in paragraph at lines 803--803
+[46]
+Overfull \hbox (12.29575pt too wide) in paragraph at lines 883--883
 []\OT1/cmr/m/it/12 TrimCheck - Home Hair-cuts on-Demand\OT1/cmr/m/n/12 . \OT1/c
 mr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / get . trimche
 ck .
  []
 
 
-Overfull \hbox (41.40266pt too wide) in paragraph at lines 803--803
+Overfull \hbox (41.40266pt too wide) in paragraph at lines 883--883
 \OT1/cmtt/m/n/12 come / ?guccounter = 1 & guce _ referrer = aHR0cHM6Ly93d3cuZ29
 vZ2xlLmNvbS8 &
  []
 
 
-Overfull \hbox (42.90266pt too wide) in paragraph at lines 803--803
+Overfull \hbox (42.90266pt too wide) in paragraph at lines 883--883
 \OT1/cmtt/m/n/12 guce _ referrer _ sig = AQAAALI -[] wmBgq89Iy5 -[] xw3IGxisaXn
 b2 -[] j1jMukBMZr0fb _
  []
 
 
-Overfull \hbox (66.60268pt too wide) in paragraph at lines 803--803
+Overfull \hbox (66.60268pt too wide) in paragraph at lines 883--883
 \OT1/cmtt/m/n/12 p2OE4cobBWyJa _ VB8ySIkFyuVC5nWlLixn5 _ o8Y -[] SQmmd0NJw68rs3
 Ek9nhL9d6W4Ycu _
  []
 
-[42]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 813--834
+[47]
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 893--914
 [][] 
  []
 
 
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 839--858
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 919--938
 [][] 
  []
 
-[43]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 864--883
-[][] 
- []
-
-
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 888--903
-[][] 
- []
-
-[44]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 908--923
+[48]
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 944--963
 [][] 
  []
 
 
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 928--943
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 968--983
 [][] 
  []
 
-[45]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 948--963
+[49]
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 988--1003
 [][] 
  []
 
 
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 968--985
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1008--1023
 [][] 
  []
 
-[46]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 990--1009
+[50]
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1028--1043
+[][] 
+ []
+
+
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1048--1065
+[][] 
+ []
+
+[51]
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1070--1089
 [][] 
  []
 
 \openout3 = `main.pyg'.
 
-(./_minted-main/default-pyg-prefix.pygstyle) (./_minted-main/default.pygstyle)
-[47]
-(./_minted-main/D2384EC544AB309EB9FD404D1297942D841CDBE00FC6D64409DC9CAE2DBD3FA
+[52]
+(./_minted-main/46B1946705DCF01B64F50A8821086F4F841CDBE00FC6D64409DC9CAE2DBD3FA
 0.pygtex
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1042.
- [48]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1042.
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/73A3A2273B43BAB562C716CF7C232CDE841CDBE00FC6D64409DC9CAE2DBD3FA
+0.pygtex) [53]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/88777D894E7F5544B912E236FC5CB4C3841CDBE00FC6D64409DC9CAE2DBD3FA
+0.pygtex) [54]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/552CE7EE426FCEC29A3E69BDD7DAF213841CDBE00FC6D64409DC9CAE2DBD3FA
+0.pygtex) [55]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/C0C439C7D13E9C46AE83E5DE97C547B4841CDBE00FC6D64409DC9CAE2DBD3FA
+0.pygtex) [56]
+\openout3 = `main.pyg'.
+
+
+(./_minted-main/E0AED465B34ED61B2EB95C9F128F6020841CDBE00FC6D64409DC9CAE2DBD3FA
+0.pygtex) [57]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1315.
+ [58]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1315.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1042.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1042.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1315.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1315.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 522745148C0B2B6464E6AA6A0D99C916;5331.
+(rerunfilecheck)             Checksum: 8F3AC6CA63B2AE9BC38A3092D856DEF3;6147.
+
+
+LaTeX Warning: There were undefined references.
+
 runsystem(rm main.pyg)...executed.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1293,31 +1362,32 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19097 strings out of 483183
- 334173 string characters out of 5966292
- 874803 words of memory out of 5000000
- 33625 multiletter control sequences out of 15000+600000
- 540829 words of font info for 53 fonts, out of 8000000 for 9000
+ 19191 strings out of 483183
+ 337899 string characters out of 5966292
+ 874249 words of memory out of 5000000
+ 33675 multiletter control sequences out of 15000+600000
+ 540997 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,11n,61p,1024b,2841s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,61p,1077b,2841s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/josh/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcti1200.600p
 k> </home/josh/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1200.600p
 k> </home/josh/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600p
 k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmtt12.pfb>
-Output written on main.pdf (49 pages, 2382891 bytes).
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t12.pfb>
+Output written on main.pdf (59 pages, 3397770 bytes).
 PDF statistics:
- 1015 PDF objects out of 1200 (max. 8388607)
- 906 compressed objects within 10 object streams
- 183 named destinations out of 1000 (max. 500000)
- 681 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1151 PDF objects out of 1200 (max. 8388607)
+ 1026 compressed objects within 11 object streams
+ 206 named destinations out of 1000 (max. 500000)
+ 771 words of extra memory for PDF output out of 10000 (max. 10000000)
 
