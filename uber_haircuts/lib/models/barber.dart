@@ -12,6 +12,7 @@ class BarberModel {
   static const RATING = "rating";
   static const FEATURED = "featured";
   static const AVAILABLE_NOW = "availableNow";
+  static const ORDERS = "orders";
 
   String _id;
   String _firstName;
@@ -22,6 +23,7 @@ class BarberModel {
   double _rating;
   bool _featured;
   bool _availableNow;
+  List<String> _orders;
 
   String get id => _id;
   String get firstName => _firstName;
@@ -32,6 +34,7 @@ class BarberModel {
   double get rating => _rating;
   bool get featured => _featured;
   bool get availableNow => _availableNow;
+  List<String> get orders => _orders;
 
   set id(String id) => _id;
   set firstName(String firstName) => _firstName;
@@ -53,5 +56,7 @@ class BarberModel {
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
     _availableNow = documentSnapshot.data()[AVAILABLE_NOW];
+    _orders = List.from(documentSnapshot.data()[ORDERS]);
+
   }
 }

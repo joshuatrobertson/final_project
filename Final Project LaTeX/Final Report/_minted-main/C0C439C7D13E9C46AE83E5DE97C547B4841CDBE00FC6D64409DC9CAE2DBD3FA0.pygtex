@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k+kd}{class} \PYG{n+nc}{MyApp} \PYG{k+kd}{extends} \PYG{n}{StatelessWidget} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{// This widget is the root of your application.}
+		\PYG{n+nd}{@override}
+		\PYG{n}{Widget} \PYG{n}{build}\PYG{p}{(}\PYG{n}{BuildContext} \PYG{n}{context}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{n}{MultiProvider}\PYG{p}{(}
+				\PYG{n+nl}{providers:} \PYG{p}{[}
+					\PYG{n}{ListenableProvider}\PYG{o}{\PYGZlt{}}\PYG{n}{AuthenticateProvider}\PYG{o}{\PYGZgt{}}\PYG{p}{(}
+						\PYG{n+nl}{create:} \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)} \PYG{o}{=\PYGZgt{}} \PYG{n}{AuthenticateProvider}\PYG{p}{(}\PYG{n}{FirebaseAuth}\PYG{p}{.}\PYG{n}{instance}\PYG{p}{),}
+					\PYG{p}{),}
+					\PYG{n}{StreamProvider}\PYG{p}{(}
+						\PYG{n+nl}{create:} \PYG{p}{(}\PYG{n}{context}\PYG{p}{)} \PYG{o}{=\PYGZgt{}}
+						\PYG{n}{context}\PYG{p}{.}\PYG{n}{read}\PYG{o}{\PYGZlt{}}\PYG{n}{AuthenticateProvider}\PYG{o}{\PYGZgt{}}\PYG{p}{().}\PYG{n}{stateChanges}\PYG{p}{,}
+						\PYG{n+nl}{initialData:} \PYG{k+kc}{null}\PYG{p}{,}
+					\PYG{p}{),}
+					\PYG{n}{ListenableProvider}\PYG{o}{\PYGZlt{}}\PYG{n}{ParentBarbersProvider}\PYG{o}{\PYGZgt{}}\PYG{p}{(}
+						\PYG{n+nl}{create:} \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)} \PYG{o}{=\PYGZgt{}} \PYG{n}{ParentBarbersProvider}\PYG{p}{(),}
+					\PYG{p}{),}
+				\PYG{p}{],}
+			\PYG{n+nl}{child:} \PYG{n}{MaterialApp}\PYG{p}{(}
+				\PYG{n+nl}{title:} \PYG{l+s+s1}{\PYGZsq{}Chop Chop\PYGZsq{}}\PYG{p}{,}
+				\PYG{n+nl}{theme:} \PYG{n}{ThemeData}\PYG{p}{(}
+					\PYG{n+nl}{primarySwatch:} \PYG{n}{Colors}\PYG{p}{.}\PYG{n}{blue}\PYG{p}{,}
+					\PYG{n+nl}{fontFamily:} \PYG{l+s+s1}{\PYGZsq{}Poppins\PYGZsq{}}
+				\PYG{p}{),}
+			\PYG{n+nl}{home:} \PYG{n}{AuthenticationWrapper}\PYG{p}{(),}
+			\PYG{p}{),}
+		\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

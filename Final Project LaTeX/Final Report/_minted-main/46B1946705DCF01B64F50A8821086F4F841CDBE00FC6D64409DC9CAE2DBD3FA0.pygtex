@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n}{Future}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{bool}\PYG{o}{\PYGZgt{}} \PYG{n}{signIn}\PYG{p}{(\PYGZob{}}\PYG{k+kt}{String} \PYG{n}{email}\PYG{p}{,} \PYG{k+kt}{String} \PYG{n}{password}\PYG{p}{\PYGZcb{})} \PYG{k+kd}{async} \PYG{p}{\PYGZob{}}
+			\PYG{k}{try} \PYG{p}{\PYGZob{}}
+				\PYG{n}{\PYGZus{}authStatus} \PYG{o}{=} \PYG{n}{AuthStatus}\PYG{p}{.}\PYG{n}{AUTHENTICATING}\PYG{p}{;}
+				\PYG{n}{notifyListeners}\PYG{p}{();}
+				\PYG{k+kd}{final} \PYG{n}{UserCredential} \PYG{n}{\PYGZus{}authResult} \PYG{o}{=} \PYG{k+kd}{await}
+				\PYG{n}{\PYGZus{}firebaseAuth}\PYG{p}{.}\PYG{n}{signInWithEmailAndPassword}\PYG{p}{(}\PYG{n+nl}{email:} \PYG{n}{email}\PYG{p}{,}
+				\PYG{n+nl}{password:} \PYG{n}{password}\PYG{p}{);}
+				\PYG{n}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}signed in \PYGZdq{}} \PYG{o}{+} \PYG{n}{email}\PYG{p}{);}
+				\PYG{n}{userModel} \PYG{o}{=} \PYG{k+kd}{await}
+				\PYG{n}{\PYGZus{}orderUtility}\PYG{p}{.}\PYG{n}{getUserById}\PYG{p}{(}\PYG{n}{\PYGZus{}firebaseAuth}\PYG{p}{.}\PYG{n}{currentUser}\PYG{p}{.}\PYG{n}{uid}\PYG{p}{);}
+				\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{OrderModel}\PYG{o}{\PYGZgt{}} \PYG{n}{orders} \PYG{o}{=} \PYG{p}{[];}
+				\PYG{n}{orders} \PYG{o}{=} \PYG{k+kd}{await} \PYG{n}{\PYGZus{}orderUtility}
+				\PYG{p}{.}\PYG{n}{getDatabaseCartItems}\PYG{p}{(}\PYG{n}{\PYGZus{}authResult}\PYG{p}{.}\PYG{n}{user}\PYG{p}{.}\PYG{n}{uid}\PYG{p}{);}
+				\PYG{n}{userModel}\PYG{p}{.}\PYG{n}{cart} \PYG{o}{=} \PYG{n}{orders}\PYG{p}{;}
+				\PYG{n}{\PYGZus{}authStatus} \PYG{o}{=} \PYG{n}{AuthStatus}\PYG{p}{.}\PYG{n}{AUTH\PYGZus{}WITH\PYGZus{}MAPS}\PYG{p}{;}
+				\PYG{n}{notifyListeners}\PYG{p}{();}
+				\PYG{k}{return} \PYG{k+kc}{true}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}} \PYG{k+kd}{on} \PYG{n}{FirebaseAuthException} \PYG{k}{catch} \PYG{p}{(}\PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{print}\PYG{p}{(}\PYG{n}{e}\PYG{p}{);}
+				\PYG{n}{\PYGZus{}authStatus} \PYG{o}{=} \PYG{n}{AuthStatus}\PYG{p}{.}\PYG{n}{NOT\PYGZus{}AUTHENTICATED}\PYG{p}{;}
+				\PYG{n}{notifyListeners}\PYG{p}{();}
+				\PYG{k}{return} \PYG{k+kc}{false}\PYG{p}{;}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

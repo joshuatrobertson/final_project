@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:uber_haircuts/models/made_orders.dart';
 import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
@@ -155,7 +156,7 @@ class AuthenticateProvider extends ChangeNotifier {
         "cart": [],
         "orders": [],
       };
-    
+
       userModel.fromMap(newUser);
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
@@ -166,14 +167,12 @@ class AuthenticateProvider extends ChangeNotifier {
       notifyListeners();
     }
     else {
-      print("HEHEHEHEEDD 33");
       userModel = await _orderUtility.getUserById(user.uid);
-      print("HEHEHEHEEDD 44");
-      List<OrderModel> orders = [];
-      print("HEHEHEHEEDD 55");
-
-      orders = await _orderUtility.getDatabaseCartItems(user.uid);
-      userModel.cart = orders;
+      // Fetch user cart
+      List<OrderModel> cartItems = [];
+      userModel.cart = [];
+      cartItems = await _orderUtility.getDatabaseCartItems(user.uid);
+      userModel.cart = cartItems;
       _authStatus = AuthStatus.AUTH_WITH_MAPS;
       notifyListeners();
     }
@@ -284,6 +283,7 @@ class AuthenticateProvider extends ChangeNotifier {
         "rating": 0,
         "featured": false,
         "orders": [],
+        "barbers": []
       };
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
@@ -321,8 +321,8 @@ class AuthenticateProvider extends ChangeNotifier {
     try {
       final User user = FirebaseAuth.instance.currentUser;
       // Persistently store the users cart when the user signs out
-      if (userType == 'customer') {
-        _orderUtility.updateCartFirestore(userId: user.uid);
+      if (userModel.cart.isNotEmpty) {
+        _orderUtility.updateCartFirestore(userId: user.uid, user: userModel);
       }
       await _googleSignIn.signOut();
       await FacebookAuth.instance.logOut();
@@ -339,7 +339,6 @@ class AuthenticateProvider extends ChangeNotifier {
 
   // Used to add an item to each user, which has their own 'Authenticate' instance
   Future addItemToCart({ProductModel productModel, int quantity}) async {
-
     OrderUtility _orderUtility = new OrderUtility();
     bool alreadyInCart = false;
     if (firstOrder) {
@@ -354,12 +353,10 @@ class AuthenticateProvider extends ChangeNotifier {
       // Create a map using the relevant json objects from productModel
       Map cartItem = {
         "id": key.toString(),
-        "productId": productModel.id.toString(),
+        "productID": productModel.id,
         "quantity": quantity,
       };
       OrderModel item = OrderModel.fromMap(cartItem);
-      
-
       userModel.cart.forEach((element) {
         if (element.productID == productModel.id) {
           alreadyInCart = true;
@@ -373,7 +370,6 @@ class AuthenticateProvider extends ChangeNotifier {
       else {
         print("Item is already in the cart");
       }
-      _orderUtility.addToCart(userId: userModel.uid, cartItem: item);
     }
     catch(e) {
       print("Cart error: " + e.toString());

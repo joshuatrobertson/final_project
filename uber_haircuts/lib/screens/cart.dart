@@ -10,6 +10,7 @@ import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
+import 'home.dart';
 
 class Cart extends StatefulWidget {
 
@@ -29,16 +30,6 @@ class _CartState extends State<Cart> {
 
   @override
   Widget build(BuildContext context) {
-
-    /*
-    StripePayment.setOptions(
-        StripeOptions(
-            publishableKey:"pk_test_51JIZXjCjTeZnChw52p8wViZ2jm7q1sDU1JMfhFSu2WVO3eQ2ghYNwJaRkALzWYaUmHKo96mJElOQjah1bS2VHrZ900h7Q34F7J",
-            merchantId: "acct_1JIZXjCjTeZnChw5",
-            androidPayMode: 'test'
-        ));
-
-     */
 
     final _user = Provider.of<AuthenticateProvider>(context);
     final PromoCodeUtility promoCodeUtility = new PromoCodeUtility();
@@ -200,8 +191,8 @@ class _CartState extends State<Cart> {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        ReturnText(text: _user.userModel.locationDetails.number + " " + _user.userModel.locationDetails.street, fontWeight: FontWeight.bold),
-                                        ReturnText(text: _user.userModel.locationDetails.postcode),
+                                        ReturnText(text: _user.userModel.addressDetails.number + " " + _user.userModel.addressDetails.street, fontWeight: FontWeight.bold),
+                                        ReturnText(text: _user.userModel.addressDetails.postcode),
                                       ],
                                     ),
                                   ),
@@ -365,7 +356,7 @@ class _CartState extends State<Cart> {
                             await orderUtility.createNewOrder(_user.userModel.cart, _user.userModel.uid, total);
                             // Clear the users cart
                             _user.clearCart();
-                            //TODO: tell the user the order was successful and add to users orders
+                            navigateToScreen(context, Home());
                           },
                           child: Container(
                             decoration: BoxDecoration(

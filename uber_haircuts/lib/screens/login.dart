@@ -163,7 +163,8 @@ class _LoginState extends State<Login> {
                         child: Image.asset(
                           "assets/images/twitter.jpeg",
                           height: 40,
-                          width: 40,),
+                          width: 40,
+                        ),
                       ),
                     ],
                   ),

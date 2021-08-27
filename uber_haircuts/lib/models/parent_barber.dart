@@ -15,6 +15,7 @@ class ParentBarberModel {
   static const FEATURED = "featured";
   static const APPROVED = "approved";
   static const ADDRESS = "address";
+  static const BARBERS = "barbers";
 
   String _id;
   String _name;
@@ -26,6 +27,7 @@ class ParentBarberModel {
   // TODO: discuss approved boolean value and why it isn't implemented now (in test mode)
   bool _approved;
   PlaceModel address;
+  List<String> _barbers;
 
   String get id => _id;
   String get name => _name;
@@ -35,6 +37,7 @@ class ParentBarberModel {
   num get rating => _rating;
   bool get featured => _featured;
   bool get approved => _approved;
+  List<String> get barbers => _barbers;
 
   ParentBarberModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.id;
@@ -45,6 +48,7 @@ class ParentBarberModel {
     _rating = documentSnapshot.data()[RATING];
     _featured = documentSnapshot.data()[FEATURED];
     address = _convertLocationDetails(documentSnapshot.data()[ADDRESS]);
+    _barbers = List.from(documentSnapshot.data()[BARBERS]);
   }
 
   ParentBarberModel();

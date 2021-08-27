@@ -1,0 +1,37 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n}{Container}\PYG{p}{(}
+			\PYG{n+nl}{child:} \PYG{n}{Column}\PYG{p}{(}
+				\PYG{n+nl}{children:} \PYG{p}{[}
+					\PYG{n}{Padding}\PYG{p}{(}
+						\PYG{n+nl}{padding:} \PYG{k}{const} \PYG{n}{EdgeInsets}\PYG{p}{.}\PYG{n}{fromLTRB}\PYG{p}{(}\PYG{l+m}{40}\PYG{p}{,} \PYG{l+m}{30}\PYG{p}{,} \PYG{l+m}{40}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{),}
+							\PYG{n+nl}{child:} \PYG{n}{TextField}\PYG{p}{(}
+								\PYG{n+nl}{controller:} \PYG{n}{emailController}\PYG{p}{,}
+								\PYG{n+nl}{decoration:} \PYG{n}{InputDecoration}\PYG{p}{(}
+								\PYG{n+nl}{labelText:} \PYG{l+s+s2}{\PYGZdq{}Email\PYGZdq{}}\PYG{p}{,}
+							\PYG{p}{)}
+						\PYG{p}{),}
+					\PYG{p}{),}
+			\PYG{n}{Padding}\PYG{p}{(}
+				\PYG{n+nl}{padding:} \PYG{k}{const} \PYG{n}{EdgeInsets}\PYG{p}{.}\PYG{n}{fromLTRB}\PYG{p}{(}\PYG{l+m}{35}\PYG{p}{,} \PYG{l+m}{40}\PYG{p}{,} \PYG{l+m}{35}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{),}
+				\PYG{n+nl}{child:} \PYG{n}{SizedBox}\PYG{p}{(}
+				\PYG{n+nl}{height:} \PYG{l+m}{70}\PYG{p}{,}
+				\PYG{n+nl}{child:} \PYG{n}{Material}\PYG{p}{(}
+					\PYG{n+nl}{borderRadius:} \PYG{n}{BorderRadius}\PYG{p}{.}\PYG{n}{circular}\PYG{p}{(}\PYG{l+m}{15}\PYG{p}{),}
+					\PYG{n+nl}{shadowColor:} \PYG{n}{theme}\PYG{p}{,}
+					\PYG{n+nl}{color:} \PYG{n}{theme}\PYG{p}{,}
+					\PYG{n+nl}{child:} \PYG{n}{GestureDetector}\PYG{p}{(}
+						\PYG{n+nl}{onTap:} \PYG{p}{()} \PYG{p}{\PYGZob{}}
+							\PYG{n}{context}\PYG{p}{.}\PYG{n}{read}\PYG{o}{\PYGZlt{}}\PYG{n}{AuthenticateProvider}\PYG{o}{\PYGZgt{}}\PYG{p}{().}\PYG{n}{resetPassword}\PYG{p}{(}
+							\PYG{n}{emailController}\PYG{p}{.}\PYG{n}{text}\PYG{p}{.}\PYG{n}{trim}\PYG{p}{()}
+						\PYG{p}{);}
+						\PYG{n}{navigateToScreen}\PYG{p}{(}\PYG{n}{context}\PYG{p}{,} \PYG{n}{Login}\PYG{p}{());}
+					\PYG{p}{\PYGZcb{},}
+					\PYG{n+nl}{child:} \PYG{n}{Center}\PYG{p}{(}
+						\PYG{n+nl}{child:} \PYG{n}{ReturnText}\PYG{p}{(}\PYG{n+nl}{text:} \PYG{l+s+s1}{\PYGZsq{}Send Reset Link\PYGZsq{}}\PYG{p}{,} \PYG{n+nl}{fontWeight:}
+						\PYG{n}{FontWeight}\PYG{p}{.}\PYG{n}{w500}\PYG{p}{,} \PYG{n+nl}{size:} \PYG{l+m}{30}\PYG{p}{,} \PYG{n+nl}{color:} \PYG{n}{white}\PYG{p}{,),}
+						\PYG{p}{),}
+					\PYG{p}{),}
+				\PYG{p}{),}
+			\PYG{p}{),}
+		\PYG{p}{),}
+\end{Verbatim}

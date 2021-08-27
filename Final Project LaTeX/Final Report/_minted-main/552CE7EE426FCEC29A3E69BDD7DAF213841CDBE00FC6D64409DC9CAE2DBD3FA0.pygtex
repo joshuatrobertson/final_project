@@ -1,0 +1,52 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{k+kd}{class} \PYG{n+nc}{NavBar} \PYG{k+kd}{extends} \PYG{n}{StatefulWidget} \PYG{p}{\PYGZob{}}
+			\PYG{n+nd}{@override}
+			\PYG{n}{\PYGZus{}NavBarState} \PYG{n}{createState}\PYG{p}{()} \PYG{o}{=\PYGZgt{}} \PYG{n}{\PYGZus{}NavBarState}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		
+		\PYG{k+kd}{class} \PYG{n+nc}{\PYGZus{}NavBarState} \PYG{k+kd}{extends} \PYG{n}{State}\PYG{o}{\PYGZlt{}}\PYG{n}{NavBar}\PYG{o}{\PYGZgt{}} \PYG{p}{\PYGZob{}}
+			\PYG{k+kt}{int} \PYG{n}{\PYGZus{}currentIndex} \PYG{o}{=} \PYG{l+m}{0}\PYG{p}{;}
+			\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{Widget}\PYG{o}{\PYGZgt{}} \PYG{n}{\PYGZus{}pages} \PYG{o}{=} \PYG{o}{\PYGZlt{}}\PYG{n}{Widget}\PYG{o}{\PYGZgt{}}\PYG{p}{[}
+			\PYG{n}{Home}\PYG{p}{(),}
+			\PYG{n}{Account}\PYG{p}{(),}
+			\PYG{n}{UserOrders}\PYG{p}{(),}
+			\PYG{p}{];}
+			
+			\PYG{k+kt}{void} \PYG{n}{\PYGZus{}onItemTap}\PYG{p}{(}\PYG{k+kt}{int} \PYG{n}{index}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{setState}\PYG{p}{(()} \PYG{p}{\PYGZob{}}
+					\PYG{n}{\PYGZus{}currentIndex} \PYG{o}{=} \PYG{n}{index}\PYG{p}{;}
+				\PYG{p}{\PYGZcb{});}
+			\PYG{p}{\PYGZcb{}}
+			
+			\PYG{n+nd}{@override}
+			\PYG{n}{Widget} \PYG{n}{build}\PYG{p}{(}\PYG{n}{BuildContext} \PYG{n}{context}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{k}{return} \PYG{n}{Scaffold}\PYG{p}{(}
+					\PYG{n+nl}{body:} \PYG{n}{Center}\PYG{p}{(}
+						\PYG{n+nl}{child:} \PYG{n}{\PYGZus{}pages}\PYG{p}{.}\PYG{n}{elementAt}\PYG{p}{(}\PYG{n}{\PYGZus{}currentIndex}\PYG{p}{),}
+					\PYG{p}{),}
+					\PYG{n+nl}{bottomNavigationBar:} \PYG{n}{BottomNavigationBar}\PYG{p}{(}
+						\PYG{n+nl}{currentIndex:} \PYG{n}{\PYGZus{}currentIndex}\PYG{p}{,}
+						\PYG{n+nl}{items:} \PYG{k}{const} \PYG{o}{\PYGZlt{}}\PYG{n}{BottomNavigationBarItem}\PYG{o}{\PYGZgt{}}\PYG{p}{[}
+							\PYG{n}{BottomNavigationBarItem}\PYG{p}{(}
+								\PYG{n+nl}{icon:} \PYG{n}{Icon}\PYG{p}{(}\PYG{n}{Icons}\PYG{p}{.}\PYG{n}{home}\PYG{p}{),}
+								\PYG{n+nl}{label:} \PYG{l+s+s1}{\PYGZsq{}Home\PYGZsq{}}\PYG{p}{,}
+							\PYG{p}{),}
+							\PYG{n}{BottomNavigationBarItem}\PYG{p}{(}
+								\PYG{n+nl}{icon:} \PYG{n}{Icon}\PYG{p}{(}\PYG{n}{Icons}\PYG{p}{.}\PYG{n}{account\PYGZus{}box\PYGZus{}rounded}\PYG{p}{),}
+								\PYG{n+nl}{label:} \PYG{l+s+s1}{\PYGZsq{}My Account\PYGZsq{}}\PYG{p}{,}
+								\PYG{p}{),}
+							\PYG{n}{BottomNavigationBarItem}\PYG{p}{(}
+								\PYG{n+nl}{icon:} \PYG{n}{Icon}\PYG{p}{(}\PYG{n}{Icons}\PYG{p}{.}\PYG{n}{shopping\PYGZus{}basket}\PYG{p}{),}
+								\PYG{n+nl}{label:} \PYG{l+s+s1}{\PYGZsq{}My Orders\PYGZsq{}}\PYG{p}{,}
+							\PYG{p}{),}
+						\PYG{p}{],}
+						\PYG{n+nl}{onTap:} \PYG{p}{(}\PYG{n}{index}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+							\PYG{n}{setState}\PYG{p}{(()} \PYG{p}{\PYGZob{}}
+								\PYG{n}{\PYGZus{}currentIndex} \PYG{o}{=} \PYG{n}{index}\PYG{p}{;}
+							\PYG{p}{\PYGZcb{});}
+						\PYG{p}{\PYGZcb{},}
+					\PYG{p}{)}
+				\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

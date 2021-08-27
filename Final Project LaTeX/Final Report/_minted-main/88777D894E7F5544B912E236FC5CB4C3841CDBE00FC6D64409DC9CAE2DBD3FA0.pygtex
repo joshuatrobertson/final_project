@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{k}{import} \PYG{l+s+s1}{\PYGZsq{}package:flutter/material.dart\PYGZsq{}}\PYG{p}{;}
+	
+	\PYG{c+c1}{// Bidirectional screen navigation}
+	\PYG{k+kt}{void} \PYG{n}{navigateToScreen}\PYG{p}{(}\PYG{n}{BuildContext} \PYG{n}{context}\PYG{p}{,} \PYG{n}{Widget} \PYG{n}{widget}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Navigator}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{context}\PYG{p}{,} \PYG{n}{MaterialPageRoute}\PYG{p}{(}\PYG{n+nl}{builder:} \PYG{p}{(}\PYG{n}{context}\PYG{p}{)}
+		\PYG{o}{=\PYGZgt{}} \PYG{n}{widget}\PYG{p}{)}
+		\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}
+	
+	\PYG{c+c1}{// One way screen replacement}
+	\PYG{k+kt}{void} \PYG{n}{replaceScreen}\PYG{p}{(}\PYG{n}{BuildContext} \PYG{n}{context}\PYG{p}{,} \PYG{n}{Widget} \PYG{n}{widget}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{Navigator}\PYG{p}{.}\PYG{n}{pushReplacement}\PYG{p}{(}\PYG{n}{context}\PYG{p}{,} \PYG{n}{MaterialPageRoute}\PYG{p}{(}\PYG{n+nl}{builder:}
+		\PYG{p}{(}\PYG{n}{context}\PYG{p}{)} \PYG{o}{=\PYGZgt{}} \PYG{n}{widget}\PYG{p}{)}
+		\PYG{p}{);}
+	\PYG{p}{\PYGZcb{}}	
+\end{Verbatim}

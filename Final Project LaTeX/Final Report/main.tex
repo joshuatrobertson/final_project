@@ -787,6 +787,10 @@
 	\\
 	cons - does not scale well
 	
+	\subsubsection{Loading the users orders}
+	
+	
+	
 	\subsubsection{Shopping Cart}
 	Chose to store the cart items in a nested array as this adds to readbility and structure and although this restricts look up time, this is not relevant due to the limited number of items a user will order.
 	
@@ -827,6 +831,9 @@
 	
 	\subsubsection{Creating a Parent Barber}
 	As the location functionality of the application requires both longitude and latitude co-ordinates, along with a geohash (EXPLAIN HOW PLUGIN USED TO GET THIS).
+	
+	\subsubsection{Loading the barbers orders}
+	Each barber has a list of order ID's from previously made orders. To display the list of parent barbers orders first we fetch each barber ID from the array of barber ID's within the parent barber. Next we fetch the order ID's for each barber.
 	
 	\subsection{Widgets, Common Items and Added Features}
 	Here we discuss any items not covered within a specified sprint.

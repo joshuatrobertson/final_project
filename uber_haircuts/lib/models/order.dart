@@ -8,7 +8,6 @@ class OrderModel {
   static const PRODUCT_ID = "productID";
   static const QUANTITY = "quantity";
 
-
   String _id;
   String _productID;
   ProductModel _product;

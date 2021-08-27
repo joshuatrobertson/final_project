@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{k+kd}{class} \PYG{n+nc}{UserModel} \PYG{p}{\PYGZob{}}
+			\PYG{k+kd}{static} \PYG{k}{const} \PYG{n}{NAME} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}name\PYGZdq{}}\PYG{p}{;}
+			\PYG{k+kd}{static} \PYG{k}{const} \PYG{n}{EMAIL} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}email\PYGZdq{}}\PYG{p}{;}
+			\PYG{k+kd}{static} \PYG{k}{const} \PYG{n}{UID} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}uid\PYGZdq{}}\PYG{p}{;}
+			\PYG{k+kd}{static} \PYG{k}{const} \PYG{n}{LOCATION} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}location\PYGZdq{}}\PYG{p}{;}
+			\PYG{k+kd}{static} \PYG{k}{const} \PYG{n}{CART} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}cart\PYGZdq{}}\PYG{p}{;}
+			\PYG{k+kd}{static} \PYG{k}{const} \PYG{n}{ORDERS} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}orders\PYGZdq{}}\PYG{p}{;}
+			
+			\PYG{k+kt}{String} \PYG{n}{\PYGZus{}name}\PYG{p}{;}
+			\PYG{k+kt}{String} \PYG{n}{\PYGZus{}email}\PYG{p}{;}
+			\PYG{k+kt}{String} \PYG{n}{\PYGZus{}uid}\PYG{p}{;}
+			\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{OrderModel}\PYG{o}{\PYGZgt{}} \PYG{n}{cart}\PYG{p}{;}
+			\PYG{n}{PlaceModel} \PYG{n}{locationDetails}\PYG{p}{;}
+			\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{OrderModel}\PYG{o}{\PYGZgt{}} \PYG{n}{orders}\PYG{p}{;}
+			
+			\PYG{k+kt}{String} \PYG{k+kd}{get} \PYG{n}{name} \PYG{o}{=\PYGZgt{}} \PYG{n}{\PYGZus{}name}\PYG{p}{;}
+			\PYG{k+kt}{String} \PYG{k+kd}{get} \PYG{n}{email} \PYG{o}{=\PYGZgt{}} \PYG{n}{\PYGZus{}email}\PYG{p}{;}
+			\PYG{k+kt}{String} \PYG{k+kd}{get} \PYG{n}{uid} \PYG{o}{=\PYGZgt{}} \PYG{n}{\PYGZus{}uid}\PYG{p}{;}
+			
+			\PYG{n}{UserModel}\PYG{p}{.}\PYG{n}{fromSnapshot}\PYG{p}{(}\PYG{n}{DocumentSnapshot} \PYG{n}{documentSnapshot}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{\PYGZus{}name} \PYG{o}{=} \PYG{n}{documentSnapshot}\PYG{p}{.}\PYG{n}{data}\PYG{p}{()[}\PYG{n}{NAME}\PYG{p}{];}
+				\PYG{n}{\PYGZus{}email} \PYG{o}{=} \PYG{n}{documentSnapshot}\PYG{p}{.}\PYG{n}{data}\PYG{p}{()[}\PYG{n}{EMAIL}\PYG{p}{];}
+				\PYG{n}{\PYGZus{}uid} \PYG{o}{=} \PYG{n}{documentSnapshot}\PYG{p}{.}\PYG{n}{data}\PYG{p}{()[}\PYG{n}{UID}\PYG{p}{];}
+				\PYG{n}{cart} \PYG{o}{=} \PYG{n}{\PYGZus{}convertOrderFromMap}\PYG{p}{(}\PYG{n}{documentSnapshot}\PYG{p}{.}\PYG{n}{data}\PYG{p}{()[}\PYG{n}{CART}\PYG{p}{]);}
+				\PYG{n}{orders} \PYG{o}{=} \PYG{n}{\PYGZus{}convertOrderFromMap}\PYG{p}{(}\PYG{n}{documentSnapshot}\PYG{p}{.}\PYG{n}{data}\PYG{p}{()[}\PYG{n}{ORDERS}\PYG{p}{]);}
+				\PYG{n}{locationDetails} \PYG{o}{=} \PYG{n}{\PYGZus{}convertLocationDetails}\PYG{p}{(}\PYG{n}{documentSnapshot}\PYG{p}{.}
+				\PYG{n}{data}\PYG{p}{()[}\PYG{n}{LOCATION}\PYG{p}{]);}
+			\PYG{p}{\PYGZcb{}}
+			
+			\PYG{n}{UserModel}\PYG{p}{();}
+\end{Verbatim}

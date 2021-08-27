@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n}{enum} \PYG{n}{AuthStatus} \PYG{p}{\PYGZob{}}
+			\PYG{n}{UNINITIALISED}\PYG{p}{,}
+			\PYG{n}{UNAUTHORISED\PYGZus{}USER}\PYG{p}{,}
+			\PYG{n}{UNAUTHORISED\PYGZus{}BARBER}\PYG{p}{,}
+			\PYG{n}{NOT\PYGZus{}AUTHENTICATED}\PYG{p}{,}
+			\PYG{n}{AUTHENTICATING}\PYG{p}{,}
+			\PYG{n}{AUTHENTICATED}\PYG{p}{,}
+			\PYG{n}{BARBER\PYGZus{}AUTHENTICATED}\PYG{p}{,}
+			\PYG{n}{AUTH\PYGZus{}WITH\PYGZus{}MAPS}
+		\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

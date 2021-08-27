@@ -46,40 +46,42 @@
 \BOOKMARK [2][-]{subsection.5.5}{Sprint X - Connecting the Frontend and Backend}{section.5}% 46
 \BOOKMARK [3][-]{subsubsection.5.5.1}{Persistent Storage of the User}{subsection.5.5}% 47
 \BOOKMARK [3][-]{subsubsection.5.5.2}{Loading the barbers}{subsection.5.5}% 48
-\BOOKMARK [3][-]{subsubsection.5.5.3}{Shopping Cart}{subsection.5.5}% 49
-\BOOKMARK [3][-]{subsubsection.5.5.4}{Checkout}{subsection.5.5}% 50
-\BOOKMARK [2][-]{subsection.5.6}{Sprint X - Location}{section.5}% 51
-\BOOKMARK [3][-]{subsubsection.5.6.1}{Autocomplete locations}{subsection.5.6}% 52
-\BOOKMARK [2][-]{subsection.5.7}{Sprint X - Barber Side Application}{section.5}% 53
-\BOOKMARK [3][-]{subsubsection.5.7.1}{Creating a Parent Barber}{subsection.5.7}% 54
-\BOOKMARK [2][-]{subsection.5.8}{Widgets, Common Items and Added Features}{section.5}% 55
-\BOOKMARK [3][-]{subsubsection.5.8.1}{Widgets}{subsection.5.8}% 56
-\BOOKMARK [3][-]{subsubsection.5.8.2}{Common Items}{subsection.5.8}% 57
-\BOOKMARK [3][-]{subsubsection.5.8.3}{Launcher Icons}{subsection.5.8}% 58
-\BOOKMARK [3][-]{subsubsection.5.8.4}{Discount Codes}{subsection.5.8}% 59
-\BOOKMARK [3][-]{subsubsection.5.8.5}{Hide and Show Password}{subsection.5.8}% 60
-\BOOKMARK [1][-]{section.6}{Testing}{}% 61
-\BOOKMARK [2][-]{subsection.6.1}{User Testing}{section.6}% 62
-\BOOKMARK [2][-]{subsection.6.2}{Acceptance Testing}{section.6}% 63
-\BOOKMARK [2][-]{subsection.6.3}{Use Cases}{section.6}% 64
-\BOOKMARK [1][-]{section.7}{Conclusion and Further Work}{}% 65
-\BOOKMARK [2][-]{subsection.7.1}{Conclusion}{section.7}% 66
-\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 67
-\BOOKMARK [2][-]{subsection.A.1}{Use case 1 - Sign Up}{appendix.A}% 68
-\BOOKMARK [2][-]{subsection.A.2}{Use case 2 - Login}{appendix.A}% 69
-\BOOKMARK [2][-]{subsection.A.3}{Use case 3 - Book a Haircut}{appendix.A}% 70
-\BOOKMARK [2][-]{subsection.A.4}{Use case 4 - Search for a Barber}{appendix.A}% 71
-\BOOKMARK [2][-]{subsection.A.5}{Use case 5 - Checkout}{appendix.A}% 72
-\BOOKMARK [2][-]{subsection.A.6}{Use case 6 - View Orders}{appendix.A}% 73
-\BOOKMARK [2][-]{subsection.A.7}{Use case 7 - Sign Out}{appendix.A}% 74
-\BOOKMARK [2][-]{subsection.A.8}{Use case 8 - Add a Barber \(barbers only\)}{appendix.A}% 75
-\BOOKMARK [2][-]{subsection.A.9}{Use case 9 - Add a Product \(barbers only\)}{appendix.A}% 76
-\BOOKMARK [1][-]{appendix.B}{Figures}{}% 77
-\BOOKMARK [1][-]{appendix.C}{Application Images}{}% 78
-\BOOKMARK [1][-]{appendix.D}{Code Snippets}{}% 79
-\BOOKMARK [2][-]{subsection.D.1}{Partial Code for Authenticate.dart Showing the Email and Password Sign In}{appendix.D}% 80
-\BOOKMARK [2][-]{subsection.D.2}{Partial Code for forgot\137password.dart}{appendix.D}% 81
-\BOOKMARK [2][-]{subsection.D.3}{Code for navigate.dart}{appendix.D}% 82
-\BOOKMARK [2][-]{subsection.D.4}{Code for navigation\137bar.dart}{appendix.D}% 83
-\BOOKMARK [2][-]{subsection.D.5}{Partial Code for main.dart}{appendix.D}% 84
-\BOOKMARK [2][-]{subsection.D.6}{Partial Code for user\137model.dart}{appendix.D}% 85
+\BOOKMARK [3][-]{subsubsection.5.5.3}{Loading the users orders}{subsection.5.5}% 49
+\BOOKMARK [3][-]{subsubsection.5.5.4}{Shopping Cart}{subsection.5.5}% 50
+\BOOKMARK [3][-]{subsubsection.5.5.5}{Checkout}{subsection.5.5}% 51
+\BOOKMARK [2][-]{subsection.5.6}{Sprint X - Location}{section.5}% 52
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Autocomplete locations}{subsection.5.6}% 53
+\BOOKMARK [2][-]{subsection.5.7}{Sprint X - Barber Side Application}{section.5}% 54
+\BOOKMARK [3][-]{subsubsection.5.7.1}{Creating a Parent Barber}{subsection.5.7}% 55
+\BOOKMARK [3][-]{subsubsection.5.7.2}{Loading the barbers orders}{subsection.5.7}% 56
+\BOOKMARK [2][-]{subsection.5.8}{Widgets, Common Items and Added Features}{section.5}% 57
+\BOOKMARK [3][-]{subsubsection.5.8.1}{Widgets}{subsection.5.8}% 58
+\BOOKMARK [3][-]{subsubsection.5.8.2}{Common Items}{subsection.5.8}% 59
+\BOOKMARK [3][-]{subsubsection.5.8.3}{Launcher Icons}{subsection.5.8}% 60
+\BOOKMARK [3][-]{subsubsection.5.8.4}{Discount Codes}{subsection.5.8}% 61
+\BOOKMARK [3][-]{subsubsection.5.8.5}{Hide and Show Password}{subsection.5.8}% 62
+\BOOKMARK [1][-]{section.6}{Testing}{}% 63
+\BOOKMARK [2][-]{subsection.6.1}{User Testing}{section.6}% 64
+\BOOKMARK [2][-]{subsection.6.2}{Acceptance Testing}{section.6}% 65
+\BOOKMARK [2][-]{subsection.6.3}{Use Cases}{section.6}% 66
+\BOOKMARK [1][-]{section.7}{Conclusion and Further Work}{}% 67
+\BOOKMARK [2][-]{subsection.7.1}{Conclusion}{section.7}% 68
+\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 69
+\BOOKMARK [2][-]{subsection.A.1}{Use case 1 - Sign Up}{appendix.A}% 70
+\BOOKMARK [2][-]{subsection.A.2}{Use case 2 - Login}{appendix.A}% 71
+\BOOKMARK [2][-]{subsection.A.3}{Use case 3 - Book a Haircut}{appendix.A}% 72
+\BOOKMARK [2][-]{subsection.A.4}{Use case 4 - Search for a Barber}{appendix.A}% 73
+\BOOKMARK [2][-]{subsection.A.5}{Use case 5 - Checkout}{appendix.A}% 74
+\BOOKMARK [2][-]{subsection.A.6}{Use case 6 - View Orders}{appendix.A}% 75
+\BOOKMARK [2][-]{subsection.A.7}{Use case 7 - Sign Out}{appendix.A}% 76
+\BOOKMARK [2][-]{subsection.A.8}{Use case 8 - Add a Barber \(barbers only\)}{appendix.A}% 77
+\BOOKMARK [2][-]{subsection.A.9}{Use case 9 - Add a Product \(barbers only\)}{appendix.A}% 78
+\BOOKMARK [1][-]{appendix.B}{Figures}{}% 79
+\BOOKMARK [1][-]{appendix.C}{Application Images}{}% 80
+\BOOKMARK [1][-]{appendix.D}{Code Snippets}{}% 81
+\BOOKMARK [2][-]{subsection.D.1}{Partial Code for Authenticate.dart Showing the Email and Password Sign In}{appendix.D}% 82
+\BOOKMARK [2][-]{subsection.D.2}{Partial Code for forgot\137password.dart}{appendix.D}% 83
+\BOOKMARK [2][-]{subsection.D.3}{Code for navigate.dart}{appendix.D}% 84
+\BOOKMARK [2][-]{subsection.D.4}{Code for navigation\137bar.dart}{appendix.D}% 85
+\BOOKMARK [2][-]{subsection.D.5}{Partial Code for main.dart}{appendix.D}% 86
+\BOOKMARK [2][-]{subsection.D.6}{Partial Code for user\137model.dart}{appendix.D}% 87
