@@ -23,13 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ListenableProvider<AuthenticateProvider>(
+        ChangeNotifierProvider<AuthenticateProvider>(
           create: (_) => AuthenticateProvider(FirebaseAuth.instance),
         ),
         StreamProvider(
           create: (context) => context.read<AuthenticateProvider>().stateChanges, initialData: null,
         ),
-        ListenableProvider<ParentBarbersProvider>(
+        ChangeNotifierProvider<ParentBarbersProvider>(
           create: (_) => ParentBarbersProvider(),
         ),
       ],

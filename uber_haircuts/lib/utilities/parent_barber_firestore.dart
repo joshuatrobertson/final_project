@@ -5,8 +5,6 @@ import 'package:uber_haircuts/models/parent_barber.dart';
 class ParentBarberFirestore {
   final CollectionReference _collectionReference = FirebaseFirestore.instance.collection('parentBarber');
 
-  FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
-
   // Method to add a new user through using collection.set
   void createNewParentBarber(Map<String, dynamic> values, String userId)  {
     _collectionReference.doc(userId).set(values);

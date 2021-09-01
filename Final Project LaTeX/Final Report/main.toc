@@ -69,108 +69,116 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Implementation}{32}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Setup}{33}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.1}Setup}{32}{subsection.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.1}File Structure}{33}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}File Structure}{32}{subsubsection.5.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Sprint X - UI}{33}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Sprint 1 - UI}{32}{subsection.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1}Cupertino vs Material}{34}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1}Cupertino vs Material}{33}{subsubsection.5.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Sprint X - Sign Up and Login}{34}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Sprint 2 - Sign Up and Login}{33}{subsection.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.1}Authentication}{35}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1}Authentication}{34}{subsubsection.5.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.2}Sign Up}{35}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2}Sign Up}{34}{subsubsection.5.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.3}Login}{36}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3}Login}{35}{subsubsection.5.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.4}State Management}{37}{subsubsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.4}State Management}{36}{subsubsection.5.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Sprint X - Backend Design}{38}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4}Sprint 3 - Backend Setup and Modelling}{37}{subsection.5.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.1}Database Design}{38}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1}Setup}{38}{subsubsection.5.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Sprint X - Connecting the Frontend and Backend}{39}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.4.2}Database Design}{38}{subsubsection.5.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.5.1}Persistent Storage of the User}{39}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.4.3}Creating the Models}{39}{subsubsection.5.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.5.2}Loading the barbers}{39}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.4.4}Avoiding Nested Data}{40}{subsubsection.5.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.5.3}Loading the users orders}{40}{subsubsection.5.5.3}%
+\contentsline {subsection}{\numberline {5.5}Sprint 4 - Connecting the Frontend and Backend}{41}{subsection.5.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.5.4}Shopping Cart}{40}{subsubsection.5.5.4}%
+\contentsline {subsubsection}{\numberline {5.5.1}Loading the Parent Barbers}{41}{subsubsection.5.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.5.5}Checkout}{40}{subsubsection.5.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.2}Loading the barbers}{42}{subsubsection.5.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6}Sprint X - Location}{40}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.5.3}Loading the users orders}{43}{subsubsection.5.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.1}Autocomplete locations}{41}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.5.4}Shopping Cart}{43}{subsubsection.5.5.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.7}Sprint X - Barber Side Application}{41}{subsection.5.7}%
+\contentsline {subsubsection}{\numberline {5.5.5}Checkout}{43}{subsubsection.5.5.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.7.1}Creating a Parent Barber}{42}{subsubsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.6}Sprint 5 - Location}{43}{subsection.5.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.7.2}Loading the barbers orders}{42}{subsubsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.6.1}Autocomplete locations}{44}{subsubsection.5.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8}Widgets, Common Items and Added Features}{42}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.7}Sprint 6 - Barber Side Application}{45}{subsection.5.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.8.1}Widgets}{42}{subsubsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.7.1}Creating a Parent Barber}{45}{subsubsection.5.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.8.2}Common Items}{42}{subsubsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.7.2}Loading the barbers orders}{45}{subsubsection.5.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.8.3}Launcher Icons}{43}{subsubsection.5.8.3}%
+\contentsline {subsection}{\numberline {5.8}Widgets, Common Items and Added Features}{45}{subsection.5.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.8.4}Discount Codes}{43}{subsubsection.5.8.4}%
+\contentsline {subsubsection}{\numberline {5.8.1}Widgets}{45}{subsubsection.5.8.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.8.5}Hide and Show Password}{43}{subsubsection.5.8.5}%
+\contentsline {subsubsection}{\numberline {5.8.2}Common Items}{46}{subsubsection.5.8.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Testing}{43}{section.6}%
+\contentsline {subsubsection}{\numberline {5.8.3}Launcher Icons}{46}{subsubsection.5.8.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}User Testing}{43}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {5.8.4}Discount Codes}{46}{subsubsection.5.8.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Acceptance Testing}{43}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {5.8.5}Hide and Show Password}{46}{subsubsection.5.8.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Use Cases}{43}{subsection.6.3}%
+\contentsline {section}{\numberline {6}Testing}{46}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Conclusion and Further Work}{43}{section.7}%
+\contentsline {subsection}{\numberline {6.1}User Testing}{46}{subsection.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Conclusion}{43}{subsection.7.1}%
+\contentsline {subsection}{\numberline {6.2}Acceptance Testing}{46}{subsection.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Use Cases}{48}{appendix.A}%
+\contentsline {subsection}{\numberline {6.3}Use Cases}{46}{subsection.6.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1}Use case 1 - Sign Up}{48}{subsection.A.1}%
+\contentsline {section}{\numberline {7}Conclusion and Further Work}{47}{section.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2}Use case 2 - Login}{49}{subsection.A.2}%
+\contentsline {subsection}{\numberline {7.1}Conclusion}{47}{subsection.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3}Use case 3 - Book a Haircut}{49}{subsection.A.3}%
+\contentsline {section}{\numberline {A}Use Cases}{51}{appendix.A}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.4}Use case 4 - Search for a Barber}{50}{subsection.A.4}%
+\contentsline {subsection}{\numberline {A.1}Use case 1 - Sign Up}{51}{subsection.A.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.5}Use case 5 - Checkout}{50}{subsection.A.5}%
+\contentsline {subsection}{\numberline {A.2}Use case 2 - Login}{52}{subsection.A.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.6}Use case 6 - View Orders}{51}{subsection.A.6}%
+\contentsline {subsection}{\numberline {A.3}Use case 3 - Book a Haircut}{52}{subsection.A.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.7}Use case 7 - Sign Out}{51}{subsection.A.7}%
+\contentsline {subsection}{\numberline {A.4}Use case 4 - Search for a Barber}{53}{subsection.A.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.8}Use case 8 - Add a Barber (\emph {barbers only})}{52}{subsection.A.8}%
+\contentsline {subsection}{\numberline {A.5}Use case 5 - Checkout}{53}{subsection.A.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.9}Use case 9 - Add a Product (\emph {barbers only})}{52}{subsection.A.9}%
+\contentsline {subsection}{\numberline {A.6}Use case 6 - View Orders}{54}{subsection.A.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Figures}{53}{appendix.B}%
+\contentsline {subsection}{\numberline {A.7}Use case 7 - Sign Out}{54}{subsection.A.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Application Images}{53}{appendix.C}%
+\contentsline {subsection}{\numberline {A.8}Use case 8 - Add a Barber (\emph {barbers only})}{55}{subsection.A.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {D}Code Snippets}{53}{appendix.D}%
+\contentsline {subsection}{\numberline {A.9}Use case 9 - Add a Product (\emph {barbers only})}{55}{subsection.A.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.1}Partial Code for Authenticate.dart Showing the Email and Password Sign In}{53}{subsection.D.1}%
+\contentsline {section}{\numberline {B}Figures}{56}{appendix.B}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.2}Partial Code for forgot\_password.dart}{53}{subsection.D.2}%
+\contentsline {section}{\numberline {C}Application Images}{56}{appendix.C}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.3}Code for navigate.dart}{54}{subsection.D.3}%
+\contentsline {section}{\numberline {D}Code Snippets}{56}{appendix.D}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.4}Code for navigation\_bar.dart}{55}{subsection.D.4}%
+\contentsline {subsection}{\numberline {D.1}Partial Code for Authenticate.dart Showing the Email and Password Sign In}{56}{subsection.D.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.5}Partial Code for main.dart}{56}{subsection.D.5}%
+\contentsline {subsection}{\numberline {D.2}Partial Code for forgot\_password.dart}{56}{subsection.D.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {D.6}Partial Code for user\_model.dart}{57}{subsection.D.6}%
+\contentsline {subsection}{\numberline {D.3}Code for navigate.dart}{57}{subsection.D.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.4}Code for filter-list.dart}{58}{subsection.D.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.5}Code for navigation\_bar.dart}{58}{subsection.D.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.6}Partial Code for main.dart}{60}{subsection.D.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.7}Partial Code for user\_model.dart}{61}{subsection.D.7}%

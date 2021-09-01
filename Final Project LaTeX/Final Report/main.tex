@@ -291,7 +291,7 @@
 	When deciding on the programming software, several metrics were taken into consideration, including cross-platform functionality, speed, speed of development and performance. For this reason, Dart and the corresponding Flutter software development kit (SDK) were chosen for the primary software. Flutter is a cross-platform development kit, meaning that it will natively run on both iOS and android applications created by Google \cite{FlutterBeautifulNative}. Dart is compiled ahead-of-time into native ARM code giving better performance compared to other similar development kits, such as React Native and the user interface  is implemented within a fast, low-level C++ library giving great speed to the application. Dart has also seen a large increase in usage within recent years, jumping up 532\% from 2018 to 2019 \cite{StateOctoverse2019} meaning that there is now an extensible list of third-party plugins available and a large community.
 	
 	\subsection{Backend: SQL vs noSQL database}
-	For the database, it was decided to use Google Firestore (\cite{CloudFirestoreFirebase}), a noSQL database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform. The cloud firestore also integrates well with Firebases Authentication service, which is used throughout and discussed extensively in \autoref{chap:implementation}
+	For the database, it was decided to use Google Firestore (\cite{CloudFirestoreFirebase}), a  database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform. The cloud firestore also integrates well with Firebases Authentication service, which is used throughout and discussed extensively in \autoref{chap:implementation}
 	
 	Another important feature of noSQL databases is the ability to easily modify the internal data in response to changing business requirements, in an interactive way that allows fordo you use relationship data in firebase stackoverflow modification throughout the application lifestyle and therefore easy scaling.
 	
@@ -465,12 +465,7 @@
 	Domain driven design (DDD), which originated from a 2003 book by Eric Evans \cite{evansDomainDrivenDesignTackling2003} depicts a paradigm whereby data is visualised as a lexicon of abstractions, with the data model clearly representing key data concepts and the relationships between them. Modelling in this way bridges the gap between activities and interests of the users with the software and allows.
 	
 	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[scale=0.7]{images/model-class-diagrams.png}
-		\caption{Model Class Diagrams}
-		\label{fig:model-class-diagrams}
-	\end{figure}
+	
 	
 	\subsubsection{Entities}
 	
@@ -643,7 +638,7 @@
 	
 	
 	
-	\subsection{Sprint X - UI}
+	\subsection{Sprint 1 - UI}
 	The first sprint involved implementing the UI, which was previously wire-framed within Adove XD. Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning that would not scale. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possible, therefore the UI was implemented manually.
 	
 	Within Flutter, the UI is built through using widgets, which describe not only the look of the application, but also provide the state and can be rebuilt to reflect a change in state. As an example we can look at the forgot password screen, a segment of which is shown in \ref{code:forgot-password}. The UI here is built using a variety of widgets. For example, line 2 shows a Column widget, which allows for daughter widgets to be stacked alongside each-other vertically. The first daughter widget is a TextField that allows us to get text from the user and this is wrapped within a padding widget, which allows us to specify the required padding to aid in UI design. Finally, a button is placed within the application using the GestureDetector widget, which, by implementing the 'onTap' function looks for input from the user and then navigates to the Login screen after using the AuthenticateProvider to send a password reset link.  
@@ -656,7 +651,7 @@
 	
 	
 	
-	\subsection{Sprint X - Sign Up and Login}
+	\subsection{Sprint 2 - Sign Up and Login}
 	Once the UI was built the Login and Sign Up page logic was implemented. This involved creating an authentication page (aunthenticate.dart), which acted as a provider for the user and other authentication logic that could be injected into the UI along with using a database to store users so that user data could be persistent.
 	
 	\subsubsection{Authentication}
@@ -675,6 +670,7 @@
 		\begin{itemize}
 			\item Using OAuth allowed for sign in methods with Google, Facebook and Twitter to align with the previously drawn wireframes
 		\end{itemize}
+		\item 99.999\% SLA
 	\end{itemize}
 	
 	
@@ -706,7 +702,7 @@
 			AUTH_WITH_MAPS
 		}
 	\end{minted}
-	\caption{Enum Found in authenticate.dart}
+	\caption{AuthStatus Enum Found in authenticate.dart}
 	\end{figure}
 	
 	The user can also be authenticated and signed in using Google sign in; for which the 'google\_sign\_in' package was utilised, Twitter sign in; for which the package flutter\_twitter\_login was used and Facebook sign in; whereby the package flutter\_facebook\_auth was used. All of these work by returning a respective OAuth token and therefore is a secure way to authenticate the user.
@@ -717,7 +713,7 @@
 	
 	\subsubsection{State Management}
 	
-	TODO: move below figure in relevant place
+	As previously discussed, flutters built in Provider was used for the state management required throughout the application. As seen in figure \ref{fig:widget-tree} - which displays a widget tree diagram for the application, two providers, AuthenticateProvider and ParentBarbersFirestore are passed down the chain and are used to access relevant variables and data types globally. Within Authenticate provider the current user is stored, therefore giving access to their details, along with previous orders and current shopping cart items. Due to flutters declarative nature, this means that the state is kept above the widgets currently using it. 
 	
 		
 	\begin{figure}[H]
@@ -732,27 +728,60 @@
 
 	
 	
-	\subsection{Sprint X - Backend Design}
-	The next sprint involved modelling and creating the database to suit the needs of the project. As previously discussed, for the project it was decided that a noSQL database, instead of a relational one was to be implemented.
+	\subsection{Sprint 3 - Backend Setup and Modelling}
+	The next sprint involved modelling and creating the database to suit the needs of the project. As previously discussed, it was decided that a noSQL database, instead of a relational one was to be implemented due to the aforementioned benefits it provided.
+	
+	\subsubsection{Setup}
+	The setup for firebase was simple and involved several steps. First a project was created, initialised and registered on firebase.google.com. Next, the plugin 'cloud\_firestore' was installed with flutters built in 'pub get' function. For security, firebase has it's own language that allows us to implement rules that regulate access for both reading and writing to the database. This works by the given rules pattern matching against database paths, so for example in our database, if we only wanted to give read and write access to the /users paths to logged in users we would write 
+	\begin{minted}{javascript}
+
+	...
+		"users": {
+			"$uid": {
+				allow read, write:
+				if "auth.uid == $uid"
+			...
+	\end{minted}
+
+	As the project was only to show proof of concept it was decided that, rather than specify specific rules, only authenticated users could gain access to the entirety of the database. This is shown below, which displays code giving the user access to any documents within the database so long as they are logged in.
+	
+	\begin{minted}{javascript}
+		service cloud.firestore {
+			match /databases/{database}/documents {
+				match /{document=**} {
+					allow read, write:
+					if auth != null
+				}
+			}
+		}
+	\end{minted}
+	
 	
 	\subsubsection{Database Design}
-	Although noSQL is most frequently used for non-relational data a database schema was constructed to constitute the parent barbers, barbers and products as modelling this way added to readability with the added benefit of the features previously discussed. The schema is represented in figure \ref{fig :database-schema} below.
-	( TODO: add orders to the database schema)
-	
+	Although noSQL is most frequently used for non-relational data a database schema was constructed to constitute the parent barbers, barbers, users, orders  and products as modelling this way added to readability with the added benefit of the features previously discussed. The schema is represented in figure \ref{fig:database-schema} below and shows each class with a primary key and foreign key where necessary.
+
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.7]{images/database-schema.png}
+		\includegraphics[scale=0.6]{images/database-schema.png}
 		\caption{Database Schema}
 		\label{fig:database-schema}
 	\end{figure}
+
+	\subsubsection{Creating the Models}
+	As previously mentioned, within the project we used models to represent the data layer within our architectural structure. These were portrayed as individual classes, each of which contained minimal, only necessary logic relevant to it's inherent functions. This is shown in figure \ref{fig:model-class-diagrams} below, which shows the model class diagrams and their relationships.
 	
-	Loading all parentBarbers/ barbers and products - 
-	When entering the app it is more effecient to make one call to the server rather than multiple due to GPS restrictions. Therefore ParentBarbers, barbers and all of their products are loaded within a certain radius, rather than loading parentBarbers and barbers separately throughout the app. 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{images/model-class-diagrams.png}
+		\caption{Model Class Diagrams}
+		\label{fig:model-class-diagrams}
+	\end{figure}
+	TODO: remove bottom but of barber model class
+
+	Each model also contains a ".fromSnapshot" function. DocumentSnapshots are data containers that hold undefined documents from firebase. To access this, we make a call using a CollectionReference, which is simply a reference to the data location within firebase, before defining the incoming data and specifiying its type. Having a .fromSnapshot function within each model allows us to simply call the function on the DocumentSnapshot to explicitly define the data type and then load it into memory. 
 	
-	Don't nest as calls will fetch all of the parent and nested structured so better to have separate data.
-	
-	
-	Within the UserDatabase class, for the createNewUser function, we pass through the authentication uid, which is then used as the document id, so that future calls can refer to this and therefore fetch the document, without doing a call such as 
+	\subsubsection{Avoiding Nested Data}
+	A consideration when creating the database was to optimise queries for fast lookup time, as this was one of the main considerations in choosing a noSQL over SQL database. For this reason, when storing data, the id was stored as the document id. For example within the UserFirebase class, for the 'createNewUser()' function, we pass through the authentication uid, which is then used as the document id. This means that rather than querying with a call such as 
 	\begin{lstlisting}
 		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
 	\end{lstlisting}
@@ -764,28 +793,50 @@
 	
 	
 	
-	\subsection{Sprint X - Connecting the Frontend and Backend}
 	
-	\subsubsection{Persistent Storage of the User}
-	Although the above methods allow the user to login and sign up  along with locally store the data, there is no mentioned way to persistently store any user data.
+	\subsection{Sprint 4 - Connecting the Frontend and Backend}
+	Now that we have built a frontend UI, the database has been created, along with models to locally store data, it is time to connect the two.
 	
-	 
+	\subsubsection{Loading the Parent Barbers}
+	After the user is logged in they are presented with the main screen containing 3 seperate widgets; Featured(), which presents the user with 2 parent barbers; AvailableNow(), which shows a list of the barbers that are immediately available; and TopRated(), which displays a column of the 5 most top rated parent barbers. Each of the 3 elements is contained within it's own widget as per the previously discussed clean architecture principles. All of the logic that connects the frontend and backend are placed inside of the utilities folder, which acts as the controller within the MVC or domain layer of our architecture. 
+	
+	When loading the parent barbers, initially this was done with 3 separate calls to the server. An example of this is when getting the parent barbers for the topRated() widget, the following database query was made: 
+	\begin{lstlisting}
+		_firebaseFirestore.collection("parentBarber").orderBy("rating", Direction.DESCENDING).limit(5).get();
+	\end{lstlisting}
+	This made a call to the collection parentBarber, ordered by the top 5 rated parent barbers and fetched the resulting data. As there were 3 different widgets this resulted in 3 separate calls to the database. This was later changed in favour of fetching all of the parent barbers first before filtering within memory. This aided in not only increasing speeds due to local filtering, but also reduced the number of needed calls to the database, further reducing speeds and costs. An example of this filtering can be seen in the 'filter-list.dart' file in appendix \ref{code:filter-list}.
+	\newline
+	
+	This is done in the body of the 'parent\_barbers.dart' class and therefore is run when the class is instantiated. This is run in 'main.dart' using a 'ChangeNotifierProvider' as shown below and therefore means that the data is loaded as soon as the application is run and can also be accessed globally throughout the application along with the descendents being updated and rebuilt with any change in the widget.
+	
+	\begin{minted}{dart}
+		...
+		ChangeNotifierProvider<ParentBarbersProvider>(
+		create: (_) => ParentBarbersProvider(),
+		),
+		...
+	\end{minted}
 	
 	
-	To get the list of items within a range
-	1) Get the users current location
-	2) Query firestore with the radius
+	\noindent
+	\emph{Note: Loading the parents also involved filtering via location, which is discussed in detail in section \ref{sprint-location}}.
+	
 	
 	\subsubsection{Loading the barbers}
-	When loading the barbers either they were loading through making a database query based on the parentBarberId once the parent barbers were loaded, or every barber was loaded into memory and this was the filtered in memory.
-	\\
-	Pros of first method - Scales well as does not matter how many barbers there are
-	\\
-	Cons of first method - more costly as there are more requests to the db
-	\\
-	Pros of 2nd - cheaper
-	\\
-	cons - does not scale well
+	Once the parent barbers are loaded we must now load the individual barbers, each of which have 1 parent barber. This can be done in two ways; either through making a database query based on the parent barber ID and fetching only the relevant barbers for each parent barber loaded in memory, or through loading every available barber into memory and then filtering in situ. Each method comes with pros and cons which are discussed briefly below.
+	\newline
+	
+	\noindent
+	\underline{Database Call on Parent Barber ID}
+	\newline
+	As previously mentioned, firebase has a lookup time of $\mathcal{O}$(1), therefore making individual calls to the database will scale well as it does not matter how many barbers there are within the system. Another benefit is that only the relevant barbers will be loaded into local memory, saving on valuable space. The disadvantageous side to this method of fetching the barbers, is that it will require several database calls, depending on how many parent barbers there are and therefore add to costs.
+	\newline
+	
+	\noindent	
+	\underline{Loading all Barbers and Filtering Locally}
+	\newline
+	
+	Loading all the barbers and filtering locally is beneficial in that it is cheaper due to less database queries, however, the negative is that it does not scale well, due to having to load more and more barbers as the application grows. However, as further discussed in section \ref{sprint-location}, we filter first based on location and therefore greatly limit the amount of relevant barbers.
 	
 	\subsubsection{Loading the users orders}
 	
@@ -797,7 +848,8 @@
 	\subsubsection{Checkout}
 	Similar to section \ref{authentication} to create a search time of $\mathcal{O}$(1) a seperate 'orders' collection was created, with each document representing all of the pertinent order details. Within each barber and user, the document (order) id was then added to each respective order arrays, for quick and easy lookup.
 	
-	\subsection{Sprint X - Location}
+	\subsection{Sprint 5 - Location}
+	\label{sprint-location}
 	https://firebase.google.com/docs/firestore/solutions/geoqueries
 	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are longitude and latitiude co-ordinates that are hashed into a single Base32 string. Each character presents a greater level of precision and therefore we opted for 9, which represents an area of 5 x 5 meters.
 	
@@ -825,7 +877,7 @@
 	
 	Next, we parse the data into JSON format by passing the PlaceModel object into the function 'createLocationMap', which creates a map using the location data. Finally we pass through this map to the 'addLocationDetails', which uses the given user id to update the database with the users location.
 	
-	\subsection{Sprint X - Barber Side Application}
+	\subsection{Sprint 6 - Barber Side Application}
 	The next sprint involved..
 	In order to create a comprehensive application the final sprint involved coding a barber side app, giving the ability for the barber interact with the database and allow them to create an account, add and remove barbers and view orders.
 	
@@ -873,7 +925,7 @@
 	\newline
 	
 	\noindent
-	I begin the thesis by discussing the methodologies that will be utilised throughout the project, for example new product development - which encompassed the stages involved to bring the app from ideation to market and agile, which was used as a more general project management tool to guide the work. In section \ref{market-analysis} I then go on to discuss existing applications in the field, any market gaps and define the novelty of the proposed application. I therefore believe that this first objective was met well.
+	I begin the thesis by discussing the methodologies that will be utilised throughout the project, for example new product development - which encompassed the stages involved to bring the app from ideation to market and agile software development, which was used as a more general project management tool to guide the work. In section \ref{market-analysis} I then go on to discuss existing applications in the field, any market gaps and characterise the novelty of the proposed application. I therefore believe that this first objective was met well.
 	\newline
 	
 	\noindent
@@ -883,7 +935,7 @@
 	\newline
 	
 	\noindent
-	After discussing market gaps I then go on to decide on which platform best suits the application which can be seen in section \ref{chap:platform}, where I also discuss the most suitable software modalities, including frontend and backend platforms. I then move on to presenting the target user and the conception of user personas, an integral component of UCD. The next chapter I present as a software requirements specification document, outlining the scope, user needs and requirements of the application, along with any pertinent use cases.
+	After discussing market gaps I then go on to decide which platform best suits the application, which can be seen in section \ref{chap:platform}, where I also discuss the most suitable software modalities, including frontend and back-end platforms. I then move on to presenting the target user and the conception of user personas, an integral component of UCD. The next chapter I present as a software requirements specification document, outlining the scope, user needs and requirements of the application, along with any pertinent use cases. Although I believe I met the minimum requirements for a user centric design approach, I feel this could have been further improved through iterative development of further MVPs and regular user testing, as this was only carried out during the early and late stages of development.
 	
 	
 	\printbibliography
@@ -1189,6 +1241,28 @@
 		(context) => widget)
 		);
 	}	
+	\end{minted}
+
+	\subsection{Code for filter-list.dart}
+	\label{code:filter-list}
+	\begin{minted}[]{dart}
+		class FilterList {
+			
+			// Order by highest rated and return the top 5
+			Future<List<ParentBarberModel>> getTopRatedParents(List<Parent
+			BarberModel> parents) async {
+				parents.sort((a, b) => b.rating.compareTo(a.rating));
+				return parents.take(5).toList();
+			}
+			
+			// Find the featured parents, although this should always 
+			// only be 2, filter just in case
+			Future<List<ParentBarberModel>> getFeaturedParents(List<Parent
+			BarberModel> parents) async =>
+			parents.where((element) => element.featured == true).take(2)
+			.toList();
+			
+		}
 	\end{minted}
 
 
