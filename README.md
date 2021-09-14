@@ -1,1 +1,1 @@
-## Uber for Haircuts - Cross platform app built with Dart/ Flutter/ Firestore
+## Mobile Haircut Delivery - Cross platform app built with Flutter/ Firestore
