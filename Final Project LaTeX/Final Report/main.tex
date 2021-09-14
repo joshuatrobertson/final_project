@@ -1127,8 +1127,13 @@
 	The next section discusses the implementation of the application, for which I start by discussing the initial setup requirements of the IDE and flutter. The implementation discusses the sprints that were carried out in order to develop the application. The sprints were all completed to a satisfactory level, which is gauged by referring to both the initial feature requirements as set out in \autoref{ideation-concept} and the user stories as found in \autoref{use-cases}. Finally, any auxiliary code that was either not carried out in the sprints or found ubiquitously throughout the code is discussed, along with the testing methods.
 	
 	\subsubsection{Application Deployment}
-	\underline{Android Application}
+	Here, we discuss how both the android and iOS apps are built and deployed to their respective application stores.
 	\\
+	
+	\noindent
+	\underline{Android Application}
+	
+	\noindent
 	To deploy the android application there are several steps that must be carried out. First a launcher icon must be added, which was previously implemented and discussed in \autoref{launcher-icons}. Next, to publish the android version of the app, a digital signature must be created, first involving creating a 2048 bit RSA key through running 
 	\begin{lstlisting}
 	keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
@@ -1148,16 +1153,28 @@
 	\begin{lstlisting}
 		flutter build appbundle
 	\end{lstlisting}
-	which creates the app bundle within 
+	which creates the app bundle that can be found at 
 	\begin{lstlisting}
-	../build/app/outputs/bundle/release/app.aab.
+		../build/app/outputs/bundle/release/app.aab.
 	\end{lstlisting}
 	and this can then be uploaded to the Google Play Store.
-	
-	\underline{iOS Application}
 	\\
 	
+	\noindent
+	\underline{iOS Application}
+	\\
+	\noindent
+	To deploy the iOS application, first we must create a developer account on apple.developer.com. Next, we should register our bundle ID \cite{appleBundleIDsApple2021}, which acts as a unique identifier that every iOS application has. Next, an application record is created using App Store Connect, which registers the application. Now, an application icon is added, which was previously implemented in \autoref{launcher-icons}. Next, a build archive, which is used to release the application is created using XCode which involves editing the Runner.xcworkspace file by adding a version number, along with the previously created build identifier.
+	Finally, we create a build archive, which can be uploaded to the iOS store by running 
+	\begin{lstlisting}
+		flutter build ipa
+	\end{lstlisting}
+	which builds an ipa (iOS App Store Package), serving as an application archive file, that can be found in
+	\begin{lstlisting}
+		build/ios/archive/MyApp.xcarchive
+	\end{lstlisting}
 	
+		
 	\subsection{Future Work}
 	
 	As previously stated, the the goal of the project was to create an MVP of a mobile barber application. The project met all of the requirements and only needs for a booking and payment system to be implemented for it to be market ready as an MVP.

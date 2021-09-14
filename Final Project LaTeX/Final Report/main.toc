@@ -155,72 +155,72 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.2}Future Work}{57}{subsection.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Use Cases}{62}{appendix.A}%
+\contentsline {section}{\numberline {A}Use Cases}{63}{appendix.A}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1}Use case 1 - Sign Up}{62}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.1}Use case 1 - Sign Up}{63}{subsection.A.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2}Use case 2 - Login}{63}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.2}Use case 2 - Login}{64}{subsection.A.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3}Use case 3 - Add a Product To The Cart (\emph {customers only})}{63}{subsection.A.3}%
+\contentsline {subsection}{\numberline {A.3}Use case 3 - Add a Product To The Cart (\emph {customers only})}{64}{subsection.A.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.4}Use case 4 - Search for a Barber (\emph {customers only})}{64}{subsection.A.4}%
+\contentsline {subsection}{\numberline {A.4}Use case 4 - Search for a Barber (\emph {customers only})}{65}{subsection.A.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.5}Use case 5 - Checkout (\emph {customers only})}{64}{subsection.A.5}%
+\contentsline {subsection}{\numberline {A.5}Use case 5 - Checkout (\emph {customers only})}{65}{subsection.A.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.6}Use case 6 - View Orders}{65}{subsection.A.6}%
+\contentsline {subsection}{\numberline {A.6}Use case 6 - View Orders}{66}{subsection.A.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.7}Use case 7 - Sign Out}{65}{subsection.A.7}%
+\contentsline {subsection}{\numberline {A.7}Use case 7 - Sign Out}{66}{subsection.A.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.8}Use case 8 - Add a Barber (\emph {barbers only})}{66}{subsection.A.8}%
+\contentsline {subsection}{\numberline {A.8}Use case 8 - Add a Barber (\emph {barbers only})}{67}{subsection.A.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Application Images}{67}{appendix.B}%
+\contentsline {section}{\numberline {B}Application Images}{68}{appendix.B}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1}Customer Sign Up with Email}{67}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.1}Customer Sign Up with Email}{68}{subsection.B.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2}Customer Sign Up with Google}{68}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.2}Customer Sign Up with Google}{69}{subsection.B.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.3}Barber Sign Up}{69}{subsection.B.3}%
+\contentsline {subsection}{\numberline {B.3}Barber Sign Up}{70}{subsection.B.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.4}Sign Up Failed}{70}{subsection.B.4}%
+\contentsline {subsection}{\numberline {B.4}Sign Up Failed}{71}{subsection.B.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.5}Customer Login with Google}{70}{subsection.B.5}%
+\contentsline {subsection}{\numberline {B.5}Customer Login with Google}{71}{subsection.B.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.6}Customer Login with Email and Password}{71}{subsection.B.6}%
+\contentsline {subsection}{\numberline {B.6}Customer Login with Email and Password}{72}{subsection.B.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.7}Wrong Login Details}{71}{subsection.B.7}%
+\contentsline {subsection}{\numberline {B.7}Wrong Login Details}{72}{subsection.B.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.8}Basket Empty}{72}{subsection.B.8}%
+\contentsline {subsection}{\numberline {B.8}Basket Empty}{73}{subsection.B.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.9}Reset Password}{73}{subsection.B.9}%
+\contentsline {subsection}{\numberline {B.9}Reset Password}{74}{subsection.B.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.10}Add Product to the Cart}{73}{subsection.B.10}%
+\contentsline {subsection}{\numberline {B.10}Add Product to the Cart}{74}{subsection.B.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.11}Search for a Barber}{74}{subsection.B.11}%
+\contentsline {subsection}{\numberline {B.11}Search for a Barber}{75}{subsection.B.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.12}Checkout}{74}{subsection.B.12}%
+\contentsline {subsection}{\numberline {B.12}Checkout}{75}{subsection.B.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.13}Sign Out}{75}{subsection.B.13}%
+\contentsline {subsection}{\numberline {B.13}Sign Out}{76}{subsection.B.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.14}Add Barber}{76}{subsection.B.14}%
+\contentsline {subsection}{\numberline {B.14}Add Barber}{77}{subsection.B.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Code Snippets}{76}{appendix.C}%
+\contentsline {section}{\numberline {C}Code Snippets}{77}{appendix.C}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.1}Partial Code for Authenticate.dart Showing the Email and Password Sign In}{76}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.1}Partial Code for Authenticate.dart Showing the Email and Password Sign In}{77}{subsection.C.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.2}Partial Code for forgot\_password.dart}{77}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.2}Partial Code for forgot\_password.dart}{78}{subsection.C.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.3}Code for navigate.dart}{78}{subsection.C.3}%
+\contentsline {subsection}{\numberline {C.3}Code for navigate.dart}{79}{subsection.C.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.4}Code for filter-list.dart}{79}{subsection.C.4}%
+\contentsline {subsection}{\numberline {C.4}Code for filter-list.dart}{80}{subsection.C.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.5}updateCartFirestore() Method Found in order.dart}{79}{subsection.C.5}%
+\contentsline {subsection}{\numberline {C.5}updateCartFirestore() Method Found in order.dart}{80}{subsection.C.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.6}getLocations() Method Found in maps.dart}{80}{subsection.C.6}%
+\contentsline {subsection}{\numberline {C.6}getLocations() Method Found in maps.dart}{81}{subsection.C.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.7}Code for navigation\_bar.dart}{80}{subsection.C.7}%
+\contentsline {subsection}{\numberline {C.7}Code for navigation\_bar.dart}{81}{subsection.C.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.8}Partial Code for main.dart}{82}{subsection.C.8}%
+\contentsline {subsection}{\numberline {C.8}Partial Code for main.dart}{83}{subsection.C.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.9}Partial Code for user\_model.dart}{82}{subsection.C.9}%
+\contentsline {subsection}{\numberline {C.9}Partial Code for user\_model.dart}{83}{subsection.C.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.10}Hide/ Show Password Code Found In login.dart}{83}{subsection.C.10}%
+\contentsline {subsection}{\numberline {C.10}Hide/ Show Password Code Found In login.dart}{84}{subsection.C.10}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  14 SEP 2021 10:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.17)  14 SEP 2021 12:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1235,251 +1235,262 @@ Underfull \hbox (badness 10000) in paragraph at lines 1118--1121
 
  []
 
-[55] [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1157--1159
+[55]
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1132
 
  []
 
-[57]
-Overfull \hbox (12.09851pt too wide) in paragraph at lines 1188--1188
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 1160--1162
+
+ []
+
+[57] [58]
+Overfull \hbox (5.92351pt too wide) in paragraph at lines 1205--1205
+\OT1/cmtt/m/n/12 apple . com / account / ios / identifier / bundle$[][] \OT1/cm
+r/m/n/12 (vis-ited on 14/09/2021). 
+ []
+
+
+Overfull \hbox (12.09851pt too wide) in paragraph at lines 1205--1205
 \OT1/cmtt/m/n/12 science / article / pii / B9780120885688500163$[][] \OT1/cmr/m
 /n/12 (vis-ited on 27/05/2021). 
  []
 
 
-Overfull \hbox (14.02652pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (14.02652pt too wide) in paragraph at lines 1205--1205
 \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / develop
 er . android . com / studio$[][] \OT1/cmr/m/n/12 (vis-ited on 16/08/2021). 
  []
 
-[58]
-Overfull \hbox (7.06825pt too wide) in paragraph at lines 1188--1188
+[59]
+Overfull \hbox (7.06825pt too wide) in paragraph at lines 1205--1205
 []\OT1/cmr/m/it/12 Flutter - Beau-ti-ful Na-tive Apps in Record Time\OT1/cmr/m/
 n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / 
 flutter .
  []
 
 
-Overfull \hbox (16.70265pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (16.70265pt too wide) in paragraph at lines 1205--1205
 \OT1/cmtt/m/n/12 books . google . co . uk / books / about / Rapid _ Application
  _ Development .
  []
 
 
-Overfull \hbox (25.06186pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (25.06186pt too wide) in paragraph at lines 1205--1205
 []\OT1/cmr/m/it/12 Monday - Home\OT1/cmr/m/n/12 . 2021. \OT1/cmr/m/sc/12 url\OT
 1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / monday . com/$[][] \OT1/cmr/m/
 n/12 (vis-ited on 15/08/2021). 
  []
 
-
-Overfull \hbox (137.02771pt too wide) in paragraph at lines 1188--1188
+[60]
+Overfull \hbox (137.02771pt too wide) in paragraph at lines 1205--1205
 \OT1/cmtt/m/n/12 Design -[] and -[] Product -[] An -[] for -[] Grudin -[] Pruit
 t / 7ea9505694f1d444a330b1947109c7268a9704d2$[][]
  []
 
-[59]
-Overfull \hbox (16.48196pt too wide) in paragraph at lines 1188--1188
+
+Overfull \hbox (16.48196pt too wide) in paragraph at lines 1205--1205
 []\OT1/cmr/m/it/12 React Na-tive \TS1/cmr/m/it/12 · \OT1/cmr/m/it/12 Learn Once
 , Write Any-where\OT1/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\
 OT1/cmtt/m/n/12 https : / / reactnative .
  []
 
 
-Overfull \hbox (1.66032pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (1.66032pt too wide) in paragraph at lines 1205--1205
 []\OT1/cmr/m/it/12 Sketch vs Figma, Adobe XD, And Other UI De-sign Ap-pli-ca-ti
 ons\OT1/cmr/m/n/12 . Smash-
  []
 
 
-Overfull \hbox (36.67752pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (36.67752pt too wide) in paragraph at lines 1205--1205
 \OT1/cmr/m/n/12 ing Mag-a-zine. 11:00:16 +0200 +0200. \OT1/cmr/m/sc/12 url\OT1/
 cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / www . smashingmagazine .
  []
 
 
-Overfull \hbox (20.05307pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (20.05307pt too wide) in paragraph at lines 1205--1205
 []\OT1/cmr/m/it/12 State of Ag-ile Re-port | State of Ag-ile\OT1/cmr/m/n/12 . 2
 021. \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / st
 ateofagile .
  []
 
-[60]
-Overfull \hbox (12.29575pt too wide) in paragraph at lines 1188--1188
+[61]
+Overfull \hbox (12.29575pt too wide) in paragraph at lines 1205--1205
 []\OT1/cmr/m/it/12 TrimCheck - Home Hair-cuts on-Demand\OT1/cmr/m/n/12 . \OT1/c
 mr/m/sc/12 url\OT1/cmr/m/n/12 : [][]$\OT1/cmtt/m/n/12 https : / / get . trimche
 ck .
  []
 
 
-Overfull \hbox (41.40266pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (41.40266pt too wide) in paragraph at lines 1205--1205
 \OT1/cmtt/m/n/12 come / ?guccounter = 1 & guce _ referrer = aHR0cHM6Ly93d3cuZ29
 vZ2xlLmNvbS8 &
  []
 
 
-Overfull \hbox (42.90266pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (42.90266pt too wide) in paragraph at lines 1205--1205
 \OT1/cmtt/m/n/12 guce _ referrer _ sig = AQAAALI -[] wmBgq89Iy5 -[] xw3IGxisaXn
 b2 -[] j1jMukBMZr0fb _
  []
 
 
-Overfull \hbox (66.60268pt too wide) in paragraph at lines 1188--1188
+Overfull \hbox (66.60268pt too wide) in paragraph at lines 1205--1205
 \OT1/cmtt/m/n/12 p2OE4cobBWyJa _ VB8ySIkFyuVC5nWlLixn5 _ o8Y -[] SQmmd0NJw68rs3
 Ek9nhL9d6W4Ycu _
  []
 
-[61]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 1198--1219
-[][] 
- []
-
-
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 1224--1245
-[][] 
- []
-
 [62]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 1251--1269
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1215--1236
 [][] 
  []
 
 
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 1274--1289
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1241--1262
 [][] 
  []
 
 [63]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 1294--1311
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1268--1286
 [][] 
  []
 
 
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 1316--1331
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1291--1306
 [][] 
  []
 
 [64]
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 1336--1351
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1311--1328
 [][] 
  []
 
 
-Overfull \hbox (37.75858pt too wide) in paragraph at lines 1356--1373
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1333--1348
 [][] 
  []
 
 [65]
-<images/sign-up-email.png, id=1300, 2005.4925pt x 1598.97375pt>
-File: images/sign-up-email.png Graphic file (type png)
-<use images/sign-up-email.png>
-Package pdftex.def Info: images/sign-up-email.png  used on input line 1381.
-(pdftex.def)             Requested size: 441.20972pt x 351.77531pt.
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1353--1368
+[][] 
+ []
 
-Overfull \hbox (51.20972pt too wide) in paragraph at lines 1381--1382
- [][] 
+
+Overfull \hbox (37.75858pt too wide) in paragraph at lines 1373--1390
+[][] 
  []
 
 [66]
-<images/google-signup.png, id=1306, 1612.0225pt x 1569.865pt>
+<images/sign-up-email.png, id=1314, 2005.4925pt x 1598.97375pt>
+File: images/sign-up-email.png Graphic file (type png)
+<use images/sign-up-email.png>
+Package pdftex.def Info: images/sign-up-email.png  used on input line 1398.
+(pdftex.def)             Requested size: 441.20972pt x 351.77531pt.
+
+Overfull \hbox (51.20972pt too wide) in paragraph at lines 1398--1399
+ [][] 
+ []
+
+[67]
+<images/google-signup.png, id=1319, 1612.0225pt x 1569.865pt>
 File: images/google-signup.png Graphic file (type png)
 <use images/google-signup.png>
-Package pdftex.def Info: images/google-signup.png  used on input line 1388.
+Package pdftex.def Info: images/google-signup.png  used on input line 1405.
 (pdftex.def)             Requested size: 354.64604pt x 345.37137pt.
- [67 <./images/sign-up-email.png>]
-<images/barber-sign-up.png, id=1312, 955.57pt x 750.805pt>
+ [68 <./images/sign-up-email.png>]
+<images/barber-sign-up.png, id=1325, 955.57pt x 750.805pt>
 File: images/barber-sign-up.png Graphic file (type png)
 <use images/barber-sign-up.png>
-Package pdftex.def Info: images/barber-sign-up.png  used on input line 1395.
+Package pdftex.def Info: images/barber-sign-up.png  used on input line 1412.
 (pdftex.def)             Requested size: 382.22122pt x 300.31668pt.
- [68 <./images/google-signup.png>]
-<images/sign-up-failed.png, id=1318, 431.6125pt x 695.59875pt>
+ [69 <./images/google-signup.png>]
+<images/sign-up-failed.png, id=1331, 431.6125pt x 695.59875pt>
 File: images/sign-up-failed.png Graphic file (type png)
 <use images/sign-up-failed.png>
-Package pdftex.def Info: images/sign-up-failed.png  used on input line 1402.
+Package pdftex.def Info: images/sign-up-failed.png  used on input line 1419.
 (pdftex.def)             Requested size: 172.64194pt x 278.23457pt.
 
-[69 <./images/barber-sign-up.png>]
-<images/google-login.png, id=1324, 2005.4925pt x 803.0pt>
+[70 <./images/barber-sign-up.png>]
+<images/google-login.png, id=1337, 2005.4925pt x 803.0pt>
 File: images/google-login.png Graphic file (type png)
 <use images/google-login.png>
-Package pdftex.def Info: images/google-login.png  used on input line 1409.
+Package pdftex.def Info: images/google-login.png  used on input line 1426.
 (pdftex.def)             Requested size: 441.20972pt x 176.66054pt.
 
-Overfull \hbox (51.20972pt too wide) in paragraph at lines 1409--1410
+Overfull \hbox (51.20972pt too wide) in paragraph at lines 1426--1427
  [][] 
  []
 
-<images/email-login.png, id=1325, 1985.4175pt x 825.0825pt>
+<images/email-login.png, id=1338, 1985.4175pt x 825.0825pt>
 File: images/email-login.png Graphic file (type png)
 <use images/email-login.png>
-Package pdftex.def Info: images/email-login.png  used on input line 1416.
+Package pdftex.def Info: images/email-login.png  used on input line 1433.
 (pdftex.def)             Requested size: 436.7932pt x 181.5187pt.
 
-Overfull \hbox (46.7932pt too wide) in paragraph at lines 1416--1417
+Overfull \hbox (46.7932pt too wide) in paragraph at lines 1433--1434
  [][] 
  []
 
-[70 <./images/sign-up-failed.png> <./images/google-login.png>]
+[71 <./images/sign-up-failed.png> <./images/google-login.png>]
 File: images/sign-up-failed.png Graphic file (type png)
 <use images/sign-up-failed.png>
-Package pdftex.def Info: images/sign-up-failed.png  used on input line 1423.
+Package pdftex.def Info: images/sign-up-failed.png  used on input line 1440.
 (pdftex.def)             Requested size: 172.64194pt x 278.23457pt.
-<images/basket-empty.png, id=1332, 431.6125pt x 695.59875pt>
+<images/basket-empty.png, id=1345, 431.6125pt x 695.59875pt>
 File: images/basket-empty.png Graphic file (type png)
 <use images/basket-empty.png>
-Package pdftex.def Info: images/basket-empty.png  used on input line 1430.
+Package pdftex.def Info: images/basket-empty.png  used on input line 1447.
 (pdftex.def)             Requested size: 172.64194pt x 278.23457pt.
- [71 <./images/email-login.png>]
-<images/reset-password.png, id=1338, 431.6125pt x 695.59875pt>
+ [72 <./images/email-login.png>]
+<images/reset-password.png, id=1352, 431.6125pt x 695.59875pt>
 File: images/reset-password.png Graphic file (type png)
 <use images/reset-password.png>
-Package pdftex.def Info: images/reset-password.png  used on input line 1437.
+Package pdftex.def Info: images/reset-password.png  used on input line 1454.
 (pdftex.def)             Requested size: 172.64194pt x 278.23457pt.
- [72 <./images/basket-empty.png>]
-<images/add-to-cart.png, id=1345, 1468.48625pt x 795.97375pt>
+ [73 <./images/basket-empty.png>]
+<images/add-to-cart.png, id=1358, 1468.48625pt x 795.97375pt>
 File: images/add-to-cart.png Graphic file (type png)
 <use images/add-to-cart.png>
-Package pdftex.def Info: images/add-to-cart.png  used on input line 1444.
+Package pdftex.def Info: images/add-to-cart.png  used on input line 1461.
 (pdftex.def)             Requested size: 323.06798pt x 175.11476pt.
-<images/search.png, id=1346, 1526.70375pt x 850.17625pt>
+<images/search.png, id=1359, 1526.70375pt x 850.17625pt>
 File: images/search.png Graphic file (type png)
 <use images/search.png>
-Package pdftex.def Info: images/search.png  used on input line 1453.
+Package pdftex.def Info: images/search.png  used on input line 1470.
 (pdftex.def)             Requested size: 335.87587pt x 187.03935pt.
- [73 <./images/reset-password.png> <./images/add-to-cart.png>]
-<images/checkout.png, id=1353, 1563.8425pt x 843.15pt>
+ [74 <./images/reset-password.png> <./images/add-to-cart.png>]
+<images/checkout.png, id=1366, 1563.8425pt x 843.15pt>
 File: images/checkout.png Graphic file (type png)
 <use images/checkout.png>
-Package pdftex.def Info: images/checkout.png  used on input line 1460.
+Package pdftex.def Info: images/checkout.png  used on input line 1477.
 (pdftex.def)             Requested size: 344.04642pt x 185.49356pt.
-<images/sign-out.png, id=1354, 1086.0575pt x 838.13126pt>
+<images/sign-out.png, id=1367, 1086.0575pt x 838.13126pt>
 File: images/sign-out.png Graphic file (type png)
 <use images/sign-out.png>
-Package pdftex.def Info: images/sign-out.png  used on input line 1469.
+Package pdftex.def Info: images/sign-out.png  used on input line 1486.
 (pdftex.def)             Requested size: 238.93338pt x 184.38943pt.
- [74 <./images/search.png> <./images/checkout.png>]
-<images/add-barber.png, id=1361, 1964.33875pt x 1541.76pt>
+ [75 <./images/search.png> <./images/checkout.png>]
+<images/add-barber.png, id=1374, 1964.33875pt x 1541.76pt>
 File: images/add-barber.png Graphic file (type png)
 <use images/add-barber.png>
-Package pdftex.def Info: images/add-barber.png  used on input line 1476.
+Package pdftex.def Info: images/add-barber.png  used on input line 1493.
 (pdftex.def)             Requested size: 432.15587pt x 339.18825pt.
 
-Overfull \hbox (42.15587pt too wide) in paragraph at lines 1476--1477
+Overfull \hbox (42.15587pt too wide) in paragraph at lines 1493--1494
  [][] 
  []
 
-[75 <./images/sign-out.png>]
+[76 <./images/sign-out.png>]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/46B1946705DCF01B64F50A8821086F4F841CDBE00FC6D64409DC9CAE2DBD3FA
-0.pygtex) [76 <./images/add-barber.png>]
+0.pygtex) [77 <./images/add-barber.png>]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/73A3A2273B43BAB562C716CF7C232CDE841CDBE00FC6D64409DC9CAE2DBD3FA
-0.pygtex) [77]
+0.pygtex) [78]
 \openout3 = `main.pyg'.
 
 
@@ -1487,10 +1498,10 @@ Overfull \hbox (42.15587pt too wide) in paragraph at lines 1476--1477
 0.pygtex)
 \openout3 = `main.pyg'.
 
- [78]
+ [79]
 (./_minted-main/7D800F014BF015130B0F3249CA00777A841CDBE00FC6D64409DC9CAE2DBD3FA
 0.pygtex)
-Overfull \hbox (7.5562pt too wide) in paragraph at lines 1595--1595
+Overfull \hbox (7.5562pt too wide) in paragraph at lines 1612--1612
 []\OT1/cmr/bx/n/14.4 updateCartFirestore() Method Found in or-der.dart 
  []
 
@@ -1501,35 +1512,35 @@ Overfull \hbox (7.5562pt too wide) in paragraph at lines 1595--1595
 0.pygtex)
 \openout3 = `main.pyg'.
 
- [79]
+ [80]
 (./_minted-main/BC6CA76D01035523231656599C4A0956841CDBE00FC6D64409DC9CAE2DBD3FA
 0.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/552CE7EE426FCEC29A3E69BDD7DAF213841CDBE00FC6D64409DC9CAE2DBD3FA
-0.pygtex) [80]
+0.pygtex) [81]
 \openout3 = `main.pyg'.
 
- [81]
+ [82]
 (./_minted-main/C0C439C7D13E9C46AE83E5DE97C547B4841CDBE00FC6D64409DC9CAE2DBD3FA
 0.pygtex)
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/E0AED465B34ED61B2EB95C9F128F6020841CDBE00FC6D64409DC9CAE2DBD3FA
-0.pygtex) [82]
+0.pygtex) [83]
 \openout3 = `main.pyg'.
 
 
 (./_minted-main/6C574726ED32B0612F868F6A0B1892E6841CDBE00FC6D64409DC9CAE2DBD3FA
-0.pygtex) [83]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1804.
- [84]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1804.
+0.pygtex) [84]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1821.
+ [85]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1821.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1804.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1804.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1821.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1821.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: F8FA7227C2AF1F9D9848F5BDD9AB72C1;8489.
@@ -1544,10 +1555,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19456 strings out of 483183
- 346379 string characters out of 5966292
- 883292 words of memory out of 5000000
- 33829 multiletter control sequences out of 15000+600000
+ 19465 strings out of 483183
+ 346634 string characters out of 5966292
+ 883984 words of memory out of 5000000
+ 33832 multiletter control sequences out of 15000+600000
  540997 words of font info for 54 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  41i,11n,61p,1074b,2841s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1566,10 +1577,10 @@ ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t12.pfb>
-Output written on main.pdf (85 pages, 8101271 bytes).
+Output written on main.pdf (86 pages, 8102902 bytes).
 PDF statistics:
- 1528 PDF objects out of 1728 (max. 8388607)
- 1348 compressed objects within 14 object streams
- 277 named destinations out of 1000 (max. 500000)
+ 1542 PDF objects out of 1728 (max. 8388607)
+ 1361 compressed objects within 14 object streams
+ 283 named destinations out of 1000 (max. 500000)
  1052 words of extra memory for PDF output out of 10000 (max. 10000000)
 

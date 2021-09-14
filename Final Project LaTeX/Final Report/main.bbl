@@ -80,6 +80,30 @@
     \field{urlyear}{2021}
   \endentry
 
+  \entry{appleBundleIDsApple2021}{online}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         given={Apple},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {{Bundle IDs | Apple Developer Documentation}}%
+    }
+    \strng{namehash}{A2}
+    \strng{fullhash}{A2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Bundle {{IDs}} | {{Apple Developer Documentation}}}
+    \verb{url}
+    \verb https://developer.apple.com/account/ios/identifier/bundle
+    \endverb
+    \field{year}{2021}
+    \field{urlday}{14}
+    \field{urlmonth}{09}
+    \field{urlyear}{2021}
+  \endentry
+
   \entry{AgileWaterfall2021}{online}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{A}
