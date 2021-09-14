@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n}{Padding}\PYG{p}{(}
+		\PYG{n+nl}{padding:} \PYG{k}{const} \PYG{n}{EdgeInsets}\PYG{p}{.}\PYG{n}{fromLTRB}\PYG{p}{(}\PYG{l+m}{40}\PYG{p}{,} \PYG{l+m}{30}\PYG{p}{,} \PYG{l+m}{40}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{),}
+		\PYG{n+nl}{child:} \PYG{n}{TextField}\PYG{p}{(}
+		\PYG{n+nl}{obscureText:} \PYG{n}{\PYGZus{}obscurePasswordText}\PYG{p}{,}
+		\PYG{n+nl}{controller:} \PYG{n}{\PYGZus{}passwordController}\PYG{p}{,}
+			\PYG{n+nl}{decoration:} \PYG{n}{InputDecoration}\PYG{p}{(}
+				\PYG{n+nl}{labelText:} \PYG{l+s+s2}{\PYGZdq{}Password\PYGZdq{}}\PYG{p}{,}
+			\PYG{n+nl}{suffixIcon:} \PYG{n}{IconButton}\PYG{p}{(}
+				\PYG{c+c1}{// Change the colour of the icon and set the obscure}
+				\PYG{c+c1}{// password bool}
+				\PYG{n+nl}{onPressed:} \PYG{p}{()} \PYG{p}{\PYGZob{}}
+					\PYG{n}{setState}\PYG{p}{(()} \PYG{p}{\PYGZob{}}
+						\PYG{c+c1}{// Toggles the icon colour/ obscures text}
+						\PYG{k}{if} \PYG{p}{(}\PYG{n}{\PYGZus{}hidePasswordColour} \PYG{o}{==} \PYG{n}{Colors}\PYG{p}{.}\PYG{n}{grey}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+							\PYG{n}{\PYGZus{}hidePasswordColour} \PYG{o}{=} \PYG{n}{Colors}\PYG{p}{.}\PYG{n}{blueAccent}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+							\PYG{n}{\PYGZus{}hidePasswordColour} \PYG{o}{=} \PYG{n}{Colors}\PYG{p}{.}\PYG{n}{grey}\PYG{p}{;}
+						\PYG{p}{\PYGZcb{}}
+						\PYG{n}{\PYGZus{}obscurePasswordText} \PYG{o}{=} \PYG{o}{!}\PYG{n}{\PYGZus{}obscurePasswordText}\PYG{p}{;}
+					\PYG{p}{\PYGZcb{});}
+				\PYG{p}{\PYGZcb{},}
+				\PYG{n+nl}{icon:} \PYG{n}{Icon}\PYG{p}{(}\PYG{n}{Icons}\PYG{p}{.}\PYG{n}{remove\PYGZus{}red\PYGZus{}eye}\PYG{p}{,} \PYG{n+nl}{color:} \PYG{n}{\PYGZus{}hidePasswordColour}\PYG{p}{,}
+						\PYG{p}{),}
+					\PYG{p}{)}
+				\PYG{p}{)}
+			\PYG{p}{),}
+		\PYG{p}{),}
+\end{Verbatim}

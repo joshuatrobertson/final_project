@@ -1,38 +1,40 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {british}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces The 7 Steps of New Product Development}}{9}{figure.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces The 7 Steps of New Product Development}}{10}{figure.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces Screenshot of Monday.com Displaying the Project Stories}}{11}{figure.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Screenshot of Monday.com Displaying the Project Stories}}{13}{figure.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Desktop vs Mobile Market Share in the United Kingdom}}{13}{figure.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Desktop vs Mobile Market Share in the United Kingdom}}{15}{figure.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4}{\ignorespaces iOS vs Android Market Share Over The Last 10 Years}}{14}{figure.4}%
+\contentsline {figure}{\numberline {4}{\ignorespaces iOS vs Android Market Share Over The Last 10 Years}}{16}{figure.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5}{\ignorespaces Persona 1}}{16}{figure.5}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Persona 1}}{19}{figure.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6}{\ignorespaces Persona 2}}{17}{figure.6}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Persona 2}}{20}{figure.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7}{\ignorespaces Persona 3}}{18}{figure.7}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Persona 3}}{21}{figure.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8}{\ignorespaces Persona 4}}{19}{figure.8}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Persona 4}}{22}{figure.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9}{\ignorespaces High-level System Architecture}}{24}{figure.9}%
+\contentsline {figure}{\numberline {9}{\ignorespaces High-level System Architecture}}{26}{figure.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {10}{\ignorespaces Clean Architecture (adapted from \cite {martinRapidApplicationDevelopment1991})}}{25}{figure.10}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Clean Architecture (adapted from \cite {martinRapidApplicationDevelopment1991})}}{27}{figure.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {11}{\ignorespaces Application Minimal Activity Diagram}}{26}{figure.11}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Application Minimal Activity Diagram}}{28}{figure.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {12}{\ignorespaces Pen and Paper Sketches and Brainstorming}}{29}{figure.12}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Pen and Paper Sketches and Brainstorming}}{31}{figure.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {13}{\ignorespaces Component Interactivity within Adobe XD}}{30}{figure.13}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Component Interactivity within Adobe XD}}{32}{figure.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {14}{\ignorespaces Sign In Page Made With Adobe XD}}{31}{figure.14}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Sign In Page Made With Adobe XD}}{34}{figure.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {15}{\ignorespaces AuthStatus Enum Found in authenticate.dart}}{35}{figure.15}%
+\contentsline {figure}{\numberline {15}{\ignorespaces AuthStatus Enum Found in authenticate.dart}}{38}{figure.15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {16}{\ignorespaces Widget Tree Diagram}}{37}{figure.16}%
+\contentsline {figure}{\numberline {16}{\ignorespaces clearNavigator() function found in navigate.dart}}{39}{figure.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {17}{\ignorespaces Database Schema}}{39}{figure.17}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Widget Tree Diagram}}{40}{figure.17}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {18}{\ignorespaces Model Class Diagrams}}{40}{figure.18}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Database Schema}}{42}{figure.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {19}{\ignorespaces Model Class Diagrams}}{43}{figure.19}%

@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{p}{...}
+		\PYG{l+s+s2}{\PYGZdq{}users\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+			\PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}uid\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+				\PYG{n+nx}{allow} \PYG{n+nx}{read}\PYG{p}{,} \PYG{n+nx}{write}\PYG{o}{:}
+				\PYG{k}{if} \PYG{l+s+s2}{\PYGZdq{}auth.uid == \PYGZdl{}uid\PYGZdq{}}
+			\PYG{p}{...}
+\end{Verbatim}

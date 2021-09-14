@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{k+kd}{class} \PYG{n+nc}{FilterList} \PYG{p}{\PYGZob{}}
+			
+			\PYG{c+c1}{// Order by highest rated and return the top 5}
+			\PYG{n}{Future}\PYG{o}{\PYGZlt{}}\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{ParentBarberModel}\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{getTopRatedParents}\PYG{p}{(}\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{Parent}
+			\PYG{n}{BarberModel}\PYG{o}{\PYGZgt{}} \PYG{n}{parents}\PYG{p}{)} \PYG{k+kd}{async} \PYG{p}{\PYGZob{}}
+				\PYG{n}{parents}\PYG{p}{.}\PYG{n}{sort}\PYG{p}{((}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)} \PYG{o}{=\PYGZgt{}} \PYG{n}{b}\PYG{p}{.}\PYG{n}{rating}\PYG{p}{.}\PYG{n}{compareTo}\PYG{p}{(}\PYG{n}{a}\PYG{p}{.}\PYG{n}{rating}\PYG{p}{));}
+				\PYG{k}{return} \PYG{n}{parents}\PYG{p}{.}\PYG{n}{take}\PYG{p}{(}\PYG{l+m}{5}\PYG{p}{).}\PYG{n}{toList}\PYG{p}{();}
+			\PYG{p}{\PYGZcb{}}
+			
+			\PYG{c+c1}{// Find the featured parents, although this should always}
+			\PYG{c+c1}{// only be 2, filter just in case}
+			\PYG{n}{Future}\PYG{o}{\PYGZlt{}}\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{ParentBarberModel}\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{getFeaturedParents}\PYG{p}{(}\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{Parent}
+			\PYG{n}{BarberModel}\PYG{o}{\PYGZgt{}} \PYG{n}{parents}\PYG{p}{)} \PYG{k+kd}{async} \PYG{o}{=\PYGZgt{}}
+			\PYG{n}{parents}\PYG{p}{.}\PYG{n}{where}\PYG{p}{((}\PYG{n}{element}\PYG{p}{)} \PYG{o}{=\PYGZgt{}} \PYG{n}{element}\PYG{p}{.}\PYG{n}{featured} \PYG{o}{==} \PYG{k+kc}{true}\PYG{p}{).}\PYG{n}{take}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{)}
+			\PYG{p}{.}\PYG{n}{toList}\PYG{p}{();}
+			
+		\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

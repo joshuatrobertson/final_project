@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+			\PYG{k+kt}{void} \PYG{n}{clearNavigator}\PYG{p}{(}\PYG{n}{BuildContext} \PYG{n}{context}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+				\PYG{n}{Navigator}\PYG{p}{.}\PYG{n}{pushAndRemoveUntil}\PYG{p}{(}
+				\PYG{n}{context}\PYG{p}{,}
+				\PYG{n}{MaterialPageRoute}\PYG{p}{(}\PYG{n+nl}{builder:} \PYG{p}{(}\PYG{n}{BuildContext} \PYG{n}{context}\PYG{p}{)} \PYG{o}{=\PYGZgt{}}
+				\PYG{n}{UserType}\PYG{p}{()),}
+				\PYG{p}{(}\PYG{n}{Route}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{dynamic}\PYG{o}{\PYGZgt{}} \PYG{n}{route}\PYG{p}{)} \PYG{o}{=\PYGZgt{}} \PYG{k+kc}{false}
+				\PYG{p}{);}
+			\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

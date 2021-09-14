@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{p}{...}
+		\PYG{n}{ChangeNotifierProvider}\PYG{o}{\PYGZlt{}}\PYG{n}{ParentBarbersProvider}\PYG{o}{\PYGZgt{}}\PYG{p}{(}
+		\PYG{n+nl}{create:} \PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)} \PYG{o}{=\PYGZgt{}} \PYG{n}{ParentBarbersProvider}\PYG{p}{(),}
+		\PYG{p}{),}
+		\PYG{p}{...}
+\end{Verbatim}

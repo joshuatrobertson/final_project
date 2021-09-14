@@ -100,12 +100,31 @@
 	\end{titlepage}
 
 
-	\section*{Executive Summary}
-
+	\section*{Abstract}
+	This thesis discusses the creation of an minimum viable product (MVP) application aimed to facilitate the delivery and execution of delivered home haircuts. Whilst there exists a range of applications that serve a similar purpose, none allow for immediate booking and delivery, similar to that seen in the "Uber" model, which we therefore aim to provide in this application.
+	\\
+	In describing the process, we first begin by examining the project management and software methodologies that will be used throughout, which pertains to agile, or more specifically lean and user centric design (UCD). Next, we discuss the software and frameworks chosen for both the front end and back end, along with the ideas influencing these decisions and examine the target user.
+	\\
+	In the software requirements section, we discuss the scope, user needs, requirements and use cases, similar to what would be found within a software requirements specifications (SRS) documents. The system design section then builds upon those requirements and discusses how they were used to drive decisions around the architecture and state management within the application.
+	\\
+	Next, we discuss the execution of the application, which is split into a prototyping phase, which includes sketching and wire-framing and an implementation phase, which describes the coding of the application.
+	\\
+	Finally, we discuss testing and any further work, for which the main contributions of the project are as follows:
+	\begin{itemize}
+		\item Market research was carried out to highlight any market gaps within existing applications
+		\item User surverys and testing was used through to adhere to both UCD and lean development methodologies
+		\item A cross-platform MVP was created that exhibited the following features
+		\begin{itemize}
+			\item Allowed a user and barber to create an account and login through authentication
+			\item Allowed for the booking and checkout of a variety of barber products
+			\item Allowed a barber to manage their account within the application
+		\end{itemize}
+	\end{itemize}
 	
 	\pagebreak
 
 	\section*{Acknowledgements}
+	I would like to thank my supervisor, Dr Alex Kavvos for his continued guidance and support throughout the project.
 	\pagebreak
 	
 	\section*{Author's Declaration}
@@ -121,7 +140,10 @@
 	dissertation, other than referenced material, are those of the author. 
 	\\
 	\\
-	SIGNED: Joshua Robertson DATE: 14.09.2021 
+	This project fits within the scope of ethics application 0028, as reviewed by my supervisor Dr Alex Kavvos.
+	\\
+	\\
+	SIGNED: Joshua Robertson DATE: 19.09.2021 
 	
 	\pagebreak
 	
@@ -142,16 +164,15 @@
 	
 	
 	The COVID-19 pandemic has had a ubiquitous impact on our lives, from work, to travel, to how we socialise. Some of these changes are temporary, such as mask wearing, but others, such as the adoption of more digital services and flexible homeworking seem likely to be permanent (ADD CITE). 
-	Subsequently, the restriction of movement has caused consumers to migrate to online services at an unprecedented rate. With the global home services market expected to grow by almost 20\% per year until 2026 \cite{ray28StatisticsHome2021} there exists a wealth of opportunity for companies to capitalise through digitalising previously physical services. One of these services is hairdressing, which saw a sizeable uptake in demand throughout the pandemic. 
+	Subsequently, the restriction of movement has caused consumers to migrate to online services at an unprecedented rate. With the global home services market expected to grow by almost 20\% per year until 2026 \cite{ray28StatisticsHome2021}, there exists a wealth of opportunity for companies to capitalise through digitalising previously physical services. One of these services is hairdressing, which saw a sizeable uptake in demand throughout the pandemic. 
 	\\
 	
-	There already exists a range of applications suited towards providing home haircuts. For example, Shortcut \cite{incShortcutInHomeHaircuts}, TRIM-IT\cite{TRIMITMobileBarbershopsa} and TrimCheck\cite{TrimCheckHomeHaircuts} all provide bookable home haircuts. Despite this, none of the aforementioned applications follow the "uber" model, of allowing for immediate booking and delivery of home haircuts. 
+	There already exists a range of applications suited towards providing home haircuts. For example, Shortcut \cite{incShortcutInHomeHaircuts}, TRIM-IT\cite{TRIMITMobileBarbershopsa} and TrimCheck\cite{TrimCheckHomeHaircuts} all provide bookable home haircuts. Despite this, none of the aforementioned applications follow the "uber" model, of allowing for immediate booking and delivery of home haircuts and instead require booking for an advanced date. 
 	\\
 	
-	This application will therefore aim to facilitate this, along with exploring any other market gaps through early research and will aim to achieve this through the following objectives:
-	\\
+	The proposed application is therefore to facilitate this and to create an application allowing for immediate booking and delivery of home haircuts. We will also aim to explore the novelty of the application through market research to elucidate any further gaps that may be apparent. This will be achieved through the following broad objectives: 
 	
-	\noindent
+
 	$\bullet$ Conduct research to elucidate any market gaps
 	\\
 	$\bullet$ Through a user centric design (UCD) methodology plan and prototype the user interface of the application
@@ -173,21 +194,44 @@
 	
 	
 	\subsection{Ideation and Concept}
-	The first stage of NPD starts with conceptualisation of a product idea. For the application the initial concept came from an external partner, who proposed a mobile hairdresser application to capitalise on the increased need for home delivery services. This was further defined during several meetings carried out in the initial stages of the project.
-	\\
-	
+	\label{ideation-concept}
+	The first stage of NPD starts with conceptualisation of a product idea. For the application the initial concept came from an external partner, who proposed a mobile hairdresser application to capitalise on the increased need for home delivery services. This was further defined during several meetings carried out in the initial stages of the project. This amounted in several features required for the product to be considered a viable MVP, including:
+	\begin{itemize}
+		\item The user should be able to create an account and login using authentication
+		\item The user should be able to view a list of barbers in their area
+		\item The user should be able to view the barbers products and add them to their cart
+		\item The user should be able to checkout their cart
+		\item The user should be able to schedule in a time when they will receive their home hair cut
+		\item The parent barber should be able to create an account and login using authentication
+		\item The parent barber should be able to add a new barber and their products
+
+	\end{itemize}
+
 	\subsection{Project Management}
 
 	The project management for the application focused on two key aspects; a clear vision and scope, including a detailed project plan; and an execution phase, which utilized an agile methodology.
 	
-	\subsubsection{Vision and Scope}
-	The end goal of the project was as a springboard to create a fully functional and profitable barber delivery application.
+	\subsubsection{Choosing a Project Management Framework}
+	Historically, the waterfall framework was the most dominant software methodology \cite{AgileWaterfall2021}. The Waterfall method involves an iterative model, whereby a step-by-step approach is taken, with each stage being extensively planned out and execution being rigid. 
+	It was decided that Waterfall was not to be used due to several considerations, which included a lack of programming experience on behalf of the user and therefore it is likely that development would be hindered by a structured approach and also due to it being a time-limited project, not enough resources would be available to be assigned to the time needed to meticulously plan the project.
 	
-	The scope of the project was..
+	Alternatively, it was decided to adopt an agile methodology, arguably the industry standard in software development. Agile was introduced as a means to make the execution of projects more flexible and timely and it is estimated that around 86\% of software projects are carried out using such methods \cite{StateAgileReport2021}.
+	Within agile, there exists a variety of methodogloies, of which lean was beleived to be the most suitable \cite{poppendieckLeanSoftwareDevelopment2003}), which involves seven basic principles:
+	\begin{itemize}
+		\item eliminate waste
+		\item amplify learning and create knowledge
+		\item decide as late as possible
+		\item deliver as fast as possible
+		\item empower the team
+		\item build integrity/quality in
+		\item see the whole
+	\end{itemize}
 	
-	\subsubsection{Agile Methodology}
-	To carry out the project, an agile methodology was utilised, which allowed for short, iterative cycles of production, providing value in the form of quick creation and constant revision. Taking on an agile methodology also served the project well in the sense that there was a strong focus on prioritising value over comprehensive documentation and lengthy processes. 
 	
+	
+	Using lean development allowed for short, iterative cycles of production, providing value in the form of quick creation and constant revision. Taking on an agile methodology also served the project well in the sense that there was a strong focus on prioritising value over comprehensive documentation and lengthy processes. This methodogloy also involves constant variation and improvement of previously implemented code, allowing for learning and development as the project grows. Finally, giving a focus of the project as a whole added tremendous value due to it being solo developed and therefore allowed for 'bigger' picture thinking at every stage of production.
+	
+
 	Although this approach is more commonly relevant to a team of developers, approaching the project management in this way allowed for a stringent and well defined timeline to be used, aiding in project delivery and outcome. This involved several key stages.
 	Firstly, individual 'epics' were defined, which included:
 	\\
@@ -271,7 +315,7 @@
 	\underline{Features and Performance}
 	\\
 	\noindent
-	Another metric to take into consideration is which features are required for the application and how this is reflected in mobile vs desktop applications. One the most pertinent features required is geolocation, which is much more suited to a mobile application due to inbuilt GPS. Another important consideration for the project is speed, for which mobiles perform actions much faster than a website. Finally, as continuation of the project to market is expected, speed of creation is essential, for which an application is better suited.
+	Another measure to take into consideration is which features are required for the application and how this is reflected in mobile vs desktop applications. One the most pertinent features required is geolocation, which is much more suited to a mobile application due to inbuilt GPS. Another important consideration for the project is speed, for which mobiles perform actions much faster than a website along with ease of use, for which mobile again comes out on top. Finally, as continuation of the project to market is expected, speed of creation is essential, for which an application is better suited, thereofore for this project we have decided to create a mobile application.
 
 	
 	\subsubsection{Mobile Platform: Android vs iOS}
@@ -294,23 +338,12 @@
 	For the database, it was decided to use Google Firestore (\cite{CloudFirestoreFirebase}), a  database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform. The cloud firestore also integrates well with Firebases Authentication service, which is used throughout and discussed extensively in \autoref{chap:implementation}
 	
 	Another important feature of noSQL databases is the ability to easily modify the internal data in response to changing business requirements, in an interactive way that allows fordo you use relationship data in firebase stackoverflow modification throughout the application lifestyle and therefore easy scaling.
-	
-	
 
-	
-	
-	\subsection{The Target User}
-	\label{chap:target-user}
-	The planned application targets any user who wishes to get a haircut from their home.
-	TODO: finish target user section 
-
-	
-	
-	\subsubsection{User Personas}
+	\subsection{User Personas}
 	\label{user-personas}
-	The creation of user personas representing fictitious, archetypal users is an essential part of application development \cite{PDFPersonasParticipatory} and allows a deep understanding of the target user to be sought and implemented within the features and design of the application \cite{arnowitzChapter15Wireframe2007}. There are, however, some shortcomings to qualitative persona generation, such as validity concerns and user bias \cite{chapmanPersonasNewClothes2005} and although they are addressed by other methods, such as data-driven personas \cite{mcginnDatadrivenPersonaDevelopment2008}, these require a broad user base and therefore we have decided to stick with qualitative methods, which allow for enough brevity and depth for the scope of the project.
+	The creation of user personas representing fictitious, archetypal users is an essential part of application development and UCD \cite{PDFPersonasParticipatory}, allowing a deep understanding of the target user to be sought and implemented within the features and design of the application \cite{arnowitzChapter15Wireframe2007}. There are, however, some shortcomings to qualitative persona generation, such as validity concerns and user bias \cite{chapmanPersonasNewClothes2005} and although they are addressed by other methods, such as data-driven personas \cite{mcginnDatadrivenPersonaDevelopment2008}, these require a broad user base and therefore here we have decided to stick with qualitative methods, which allow for enough brevity and depth for the scope of the project and the desired outcome.
 	
-	Here 4 user personas were created, which are discussed in detail below.
+	Here we create 4 user personas that are used extensively in creating the software requirements set out within the next chapter and are discussed in detail below.
 	\newline
 	
 		\underline{Persona 1 - Sarah Johnson}
@@ -437,7 +470,8 @@
 
 	
 	\subsection{Use Cases}
-	Here the use cases are presented, which are described by Ivar Jacobson as “a description of a set of sequences of actions and variants that a system performs that yield an observable result of value to an actor.” (Jacobson, et. al., 1999, p.41). Use cases are useful in the sense that they provide a structure for collecting customer requirements and setting the scope \cite{larsonUseCasesWhat2004}. They also allow for validation of the project through post-production testing, which can be seen in section \autoref{use-case-implementation}.
+	\label{use-cases}
+	Here the use cases are presented, which are described by Ivar Jacobson as “a description of a set of sequences of actions and variants that a system performs that yield an observable result of value to an actor.” (Jacobson, et. al., 1999, p.41). Use cases are useful in the sense that they provide a structure for collecting customer requirements and setting the scope \cite{larsonUseCasesWhat2004}. They also allow for validation of the project through post-production testing, which can be seen in \autoref{use-case-implementation}.
 	\\
 	
 	To produce the use cases we reference both the user personas created in \autoref{user-personas} and the functional and non-functional requirements discussed in the previous section. Below lists the most pertinent use cases.
@@ -460,24 +494,12 @@
 	\section{System Design}
 	In this section, we discuss the structure of the project, the system and software architectures and data and state management given the previously specified requirements. 
 	
-	\subsection{Domain Model}
-	TODO: discuss domain model
-	Domain driven design (DDD), which originated from a 2003 book by Eric Evans \cite{evansDomainDrivenDesignTackling2003} depicts a paradigm whereby data is visualised as a lexicon of abstractions, with the data model clearly representing key data concepts and the relationships between them. Modelling in this way bridges the gap between activities and interests of the users with the software and allows.
-	
-	
-	
-	
-	\subsubsection{Entities}
-	
-	Within DDD it is recommended that a structured architecture is implemented, which is discussed in detail below.
-	
-	TODO: continue with article	and discuss how the project code was split using DDD, i.e. models, screens etc etc
 	
 	\subsection{System Architecture}
 	https://www.raywenderlich.com/6373413-state-management-with-provider
 	System Architecture can be broadly defined as a conceptual model which outlines the structure, behaviour and interactions between internal and external components of the system. Modelling and creating a structured and well-defined architecture allows for the development of a sustainable, scalable and stable software product which can easily grow relevant to the demands placed on it's features.
 	
-	The overall system architecture can be seen below in figure \ref{fig:system-architecture}.
+	The overall system architecture can be seen below in \autoref{fig:system-architecture}.
 	
 	\begin{figure}[H]
 		\centering
@@ -511,7 +533,7 @@
 		\end{itemize}
 	\end{itemize}
 
-	 This generally follows clean architecture principles (\cite{martinRapidApplicationDevelopment1991}) and each layer is represented in figure \ref{fig:clean-architecture} below.
+	 This generally follows clean architecture principles (\cite{martinRapidApplicationDevelopment1991}) and each layer is represented in \autoref{fig:clean-architecture} below.
 	 
 	 \begin{figure}[H]
 	 	\centering
@@ -520,7 +542,7 @@
 	 	\label{fig:clean-architecture}
 	 \end{figure}
  
- 	From this architecture and the previously devised specifications, an activity diagram was created, to detail the minimum required activities within the application, which can be seen in figure \ref{fig:activities} below.
+ 	From this architecture and the previously devised specifications, an activity diagram was created, to detail the minimum required activities within the application, which can be seen in \autoref{fig:activities} below.
  	
  	
  	\begin{figure}[H]
@@ -531,13 +553,7 @@
  	\end{figure}
 	 
 	
-
-	
-	\subsection{Client-side Specification}
-
-
-	
-	\subsubsection{State Management}
+	\subsection{State Management}
 	State management is an important feature within flutter. As flutter is declarative, rather than allow for changes in the widget or UI, each time a change is required the UI is rebuilt to reflect the applications current state. Within flutter there exists a variety of different methods for managing the state of the app, of which Provider, BLoC and GetX are some of the most popular and widely used. Here we will discuss the merits and pitfalls of each before settling on a framework for the application for both the local and global scope.
 	\\
 	
@@ -566,9 +582,9 @@
 	\subsubsection{Provider}
 	For locally managing state, 'setState()' can be utilised within a statefulWidget, which was used extensively throughout the project, for example in the Checkout screen when updating the total to match the given products.
 	
-	For managing the global state within the project it was decided that Provider would be used as the primary global state management framework for several reasons. Firstly, it is fairly simple to understand, and when used with ChangeNotifier allows for the required state management for the proposed application. Secondly, Provider lends itself to a clean architecture with the logic seperated from the UI, meaning that a simple widget tree can be designed and implemented, which can be seen in figure \ref{fig:widget-tree} bellow, which displays the widget tree diagram for the application. Unlike BLoC, Provider allows for good flexibility, which as there was only 1 developer on the project makes more sense, giving greater scope for changes throughout the project. Despite this, future growth could lend itself towards also implementing BLoC alongside Provider, to improve structure and increase growth potential, a good example can be seen with Ebay's Motor App \cite{techblogEBayMotorsState2021}.
+	For managing the global state within the project it was decided that Provider would be used as the primary global state management framework for several reasons. Firstly, it is fairly simple to understand, and when used with ChangeNotifier allows for the required state management for the proposed application. Secondly, Provider lends itself to a clean architecture with the logic seperated from the UI, meaning that a simple widget tree can be designed and implemented, which can be seen in \autoref{fig:widget-tree} bellow, which displays the widget tree diagram for the application. Unlike BLoC, Provider allows for good flexibility, which as there was only 1 developer on the project makes more sense, giving greater scope for changes throughout the project. Despite this, future growth could lend itself towards also implementing BLoC alongside Provider, to improve structure and increase growth potential, a good example can be seen with Ebay's Motor App \cite{techblogEBayMotorsState2021}.
 	
-	 Finally, although GetX makes an excellent framework for larger projects, due to it's "micro framework" that encompasses several features not limited to controlling state management, the fairly simplistic nature of Provider better suited the relatively small project and hence was chosen here. The overall state management can be seen in the implementation section in \ref{fig:widget-tree}.
+	 Finally, although GetX makes an excellent framework for larger projects, due to it's "micro framework" that encompasses several features not limited to controlling state management, the fairly simplistic nature of Provider better suited the relatively small project and hence was chosen here. The overall state management can be seen in \autoref{fig:widget-tree}.
 	 	
 	 	
 	
@@ -595,7 +611,7 @@
 	\subsection{Initial Sketches and Brainstorming}
 	Initial sketches involve using pen and paper to elucidate problems and brain storm ideas for the project. During this phase, several design and UI features were considered, which allowed us to generate many ideas, using a fast and simple approach.
 	
-	Some of these sketches can be seen in figure \ref{fig:sketches} below.
+	Some of these sketches can be seen in \autoref{fig:sketches} below.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.3]{images/placeholder.jpg}
@@ -605,7 +621,7 @@
 	(TODO: UPDATE PHOTO WITH INITIAL SKETCHES)
 	
 	\subsection{Wire-framing}
-	Once the sketches were completed we moved on to wire-framing the application, which involved taking the best sketch variants and creating a more detailed, lower level prototype.For the wire-framing application Adobe XD was chosen for several reasons. Firstly, it has strong prototyping functionality, allowing the user to click around the application through the use of ‘components’. This interactivity means that early testers can get a real feel for how the application works. An illustration of this can be seen below, whereby each arrow represents a state change in the form of a trigger/ action pair, whereby for example a user could click on ‘Available Right Now’ and be taken to the ‘Checkout’ as seen in figure \ref{fig:prot-comp} below.
+	Once the sketches were completed we moved on to wire-framing the application, which involved taking the best sketch variants and creating a more detailed, lower level prototype.For the wire-framing application Adobe XD was chosen for several reasons. Firstly, it has strong prototyping functionality, allowing the user to click around the application through the use of ‘components’. This interactivity means that early testers can get a real feel for how the application works. An illustration of this can be seen below, whereby each arrow represents a state change in the form of a trigger/ action pair, whereby for example a user could click on ‘Available Right Now’ and be taken to the ‘Checkout’ as seen in \autoref{fig:prot-comp} below.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.5]{images/prototyping-components.png}
@@ -641,13 +657,13 @@
 	\subsection{Sprint 1 - UI}
 	The first sprint involved implementing the UI, which was previously wire-framed within Adove XD. Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning that would not scale. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possible, therefore the UI was implemented manually.
 	
-	Within Flutter, the UI is built through using widgets, which describe not only the look of the application, but also provide the state and can be rebuilt to reflect a change in state. As an example we can look at the forgot password screen, a segment of which is shown in \ref{code:forgot-password}. The UI here is built using a variety of widgets. For example, line 2 shows a Column widget, which allows for daughter widgets to be stacked alongside each-other vertically. The first daughter widget is a TextField that allows us to get text from the user and this is wrapped within a padding widget, which allows us to specify the required padding to aid in UI design. Finally, a button is placed within the application using the GestureDetector widget, which, by implementing the 'onTap' function looks for input from the user and then navigates to the Login screen after using the AuthenticateProvider to send a password reset link.  
-	
+	Within Flutter, the UI is built through using widgets, which describe not only the look of the application, but also provide the state and can be rebuilt to reflect a change in state. As an example we can look at the forgot password screen, a segment of which is shown in \autoref{code:forgot-password}. The UI here is built using a variety of widgets. For example, line 2 shows a Column widget, which allows for daughter widgets to be stacked alongside each-other vertically. The first daughter widget is a TextField that allows us to get text from the user and this is wrapped within a padding widget, which allows us to specify the required padding to aid in UI design. Finally, a button is placed within the application using the GestureDetector widget, which, by implementing the 'onTap' function looks for input from the user and then navigates to the Login screen after using the AuthenticateProvider to send a password reset link.  
+		
 	
 	\subsubsection{Cupertino vs Material}
 	A consideration when building the UI was on whether to model the application using Cupertino, which gives the app an iOS type look and feel or material, which is more generalised across android and iOS. As the project was designed to be multi-platform, it was decided that material would be used throughout. 
 	
-	Using material also lends itself well to the project for other reasons, For example, it gives us access to a number of useful widgets at the root of the application. For example, the Navigator allows us to keep a track of the users chosen screens as a stack and by using Navigator.pop() and Navigator.push() we can navigate between screens. This is implemented in the Navigate widget, which can be seen in appendix \ref{code:navigate} and allows us to easily navigate the user around the application. Using material also gives us access to both a bottom navigation bar, which can be seen in appendix \ref{code:nav-bar} and a side bar. Finally using material allows for easy styling of the app by using the built in class 'ThemeData'. The implementation of material can be seen in the main.dart file in appendix \ref{code:MyApp} which serves as the root and entry point to the application.
+	Using material also lends itself well to the project for other reasons, For example, it gives us access to a number of useful widgets at the root of the application. For example, the Navigator allows us to keep a track of the users chosen screens as a stack and by using Navigator.pop() and Navigator.push() we can navigate between screens. This is implemented in the Navigate widget, which can be seen in \autoref{code:navigate} and allows us to easily navigate the user around the application. Using material also gives us access to both a bottom navigation bar, which can be seen in \autoref{code:nav-bar} and a side bar. Finally using material allows for easy styling of the app by using the built in class 'ThemeData'. The implementation of material can be seen in the main.dart file in \autoref{code:MyApp} which serves as the root and entry point to the application.
 	
 	
 	
@@ -678,14 +694,14 @@
 	The user is first presented with the sign up screen whereby they can enter their name, email and password and click through to make an account. Once the user clicks the Sign Up button, a token is created within Firebase Authentication and the credentials are stored. Inside of authenticate.dart there is a signUp method which carries out the logic behind user sign up, which works in several steps.
 	\begin{itemize}
 		\item First, a UserCredential (which holds the return value of firebases sign up method) is returned from an attempt to create a new user with the email and password
-		\item Next, a created model (UserModel, which can be seen in appendix \ref{code:user-model}) is assigned to the user which holds all pertinent information, such as name, email, shopping cart items etc
+		\item Next, a created model (UserModel, which can be seen in \autoref{code:user-model}) is assigned to the user which holds all pertinent information, such as name, email, shopping cart items etc
 		\item The Authenticate enum status is set to AUTHENTICATED as discussed below
 	\end{itemize}
 	
 
 	
 	\subsubsection{Login}
-	Once the user has been created and the credentials are stored, the user can login using the given name and password. This is then authenticated with Firebase and a response is returned to the client, before the user is then logged in for the session. To follow the authentication status of the application we created an enum seen in figure \ref{fig:authenticate-enum} below. This can then be tracked by using 'Provider.of<AuthenticateProvider>(context)', allowing us to manage and alter the state of the application based on the status of the user.
+	Once the user has been created and the credentials are stored, the user can login using the given name and password. This is then authenticated with Firebase and a response is returned to the client, before the user is then logged in for the session. To follow the authentication status of the application we created an enum seen in \autoref{fig:authenticate-enum} below. This can then be tracked by using 'Provider.of<AuthenticateProvider>(context)', allowing us to manage and alter the state of the application based on the status of the user.
 	
 	\begin{figure}[H]
 	\centering
@@ -705,15 +721,39 @@
 	\caption{AuthStatus Enum Found in authenticate.dart}
 	\end{figure}
 	
-	The user can also be authenticated and signed in using Google sign in; for which the 'google\_sign\_in' package was utilised, Twitter sign in; for which the package flutter\_twitter\_login was used and Facebook sign in; whereby the package flutter\_facebook\_auth was used. All of these work by returning a respective OAuth token and therefore is a secure way to authenticate the user.
+	The user can also be authenticated and signed in using Google sign in; for which the 'google\_sign\_in' package was utilised, Twitter sign in; for which the package flutter\_twitter\_login was used and Facebook sign in; whereby the package flutter\_facebook\_auth was used. All of these work by returning a respective OAuth token and therefore is a secure way to authenticate the user. Although all follow similar methodologies, each was implemented separately, an example of which (Google) is discussed below.
+	
+	TODO: discuss google login
 	
 	
-	Similar to when signing up, on login, a User Model is created, which locally stores the details needed for the user, i.e. id, name, email, address and any other relevant data such as their cart items within the Authenticate class. In this way, the data contained within can be accessed using Provider and data such as cart items accessed globally. Part of the user model can be seen in appendix \ref{code:user-model}.
+	Similar to when signing up, on login, a User Model is created, which locally stores the details needed for the user, i.e. id, name, email, address and any other relevant data such as their cart items within the Authenticate class. In this way, the data contained within can be accessed using Provider and data such as cart items accessed globally. Part of the user model can be seen in \autoref{code:user-model}.
+	
+	\subsubsection{Sign Out}
+	TODO: talk about sign out more
+	
+	Within navigate.dart, after signing out we clear the Navigator stack through using the following code, which uses a RoutePredicate ('route => false') that always returns false, hence will remove all of the routes on the stack, before pushing the UserType() screen.
+	\begin{figure}[H]
+		\centering
+		\label{fig:clear-nav}
+		\begin{minted}{dart}
+			void clearNavigator(BuildContext context) {
+				Navigator.pushAndRemoveUntil(
+				context,
+				MaterialPageRoute(builder: (BuildContext context) => 
+				UserType()),
+				(Route<dynamic> route) => false
+				);
+			}
+		\end{minted}
+		\caption{clearNavigator() function found in navigate.dart}
+	\end{figure}
+	
+	
 	
 	
 	\subsubsection{State Management}
 	
-	As previously discussed, flutters built in Provider was used for the state management required throughout the application. As seen in figure \ref{fig:widget-tree} - which displays a widget tree diagram for the application, two providers, AuthenticateProvider and ParentBarbersFirestore are passed down the chain and are used to access relevant variables and data types globally. Within Authenticate provider the current user is stored, therefore giving access to their details, along with previous orders and current shopping cart items. Due to flutters declarative nature, this means that the state is kept above the widgets currently using it. 
+	As previously discussed, flutters built in Provider was used for the state management required throughout the application. As seen in \autoref{fig:widget-tree} - which displays a widget tree diagram for the application, two providers, AuthenticateProvider and ParentBarbersFirestore are passed down the chain and are used to access relevant variables and data types globally. Within Authenticate provider the current user is stored, therefore giving access to their details, along with previous orders and current shopping cart items. Due to flutters declarative nature, this means that the state is kept above the widgets currently using it. The widget tree begins with MyApp, which is the entry point to the application and found in 'main.dart'. We then initialise a MultiProvider, which allows us to instantiate several Providers to pass down the chain throughout the application.
 	
 		
 	\begin{figure}[H]
@@ -758,7 +798,7 @@
 	
 	
 	\subsubsection{Database Design}
-	Although noSQL is most frequently used for non-relational data a database schema was constructed to constitute the parent barbers, barbers, users, orders  and products as modelling this way added to readability with the added benefit of the features previously discussed. The schema is represented in figure \ref{fig:database-schema} below and shows each class with a primary key and foreign key where necessary.
+	Although noSQL is most frequently used for non-relational data a database schema was constructed to constitute the parent barbers, barbers, users, orders  and products as modelling this way added to readability with the added benefit of the features previously discussed. The schema is represented in \autoref{fig:database-schema} below and shows each class with a primary key and foreign key where necessary.
 
 	\begin{figure}[H]
 		\centering
@@ -768,7 +808,7 @@
 	\end{figure}
 
 	\subsubsection{Creating the Models}
-	As previously mentioned, within the project we used models to represent the data layer within our architectural structure. These were portrayed as individual classes, each of which contained minimal, only necessary logic relevant to it's inherent functions. This is shown in figure \ref{fig:model-class-diagrams} below, which shows the model class diagrams and their relationships.
+	As previously mentioned, within the project we used models to represent the data layer within our architectural structure. These were portrayed as individual classes, each of which contained minimal, only necessary logic relevant to it's inherent functions. This is shown in \autoref{fig:model-class-diagrams} below, which shows the model class diagrams and their relationships.
 	
 	\begin{figure}[H]
 		\centering
@@ -804,7 +844,7 @@
 	\begin{lstlisting}
 		_firebaseFirestore.collection("parentBarber").orderBy("rating", Direction.DESCENDING).limit(5).get();
 	\end{lstlisting}
-	This made a call to the collection parentBarber, ordered by the top 5 rated parent barbers and fetched the resulting data. As there were 3 different widgets this resulted in 3 separate calls to the database. This was later changed in favour of fetching all of the parent barbers first before filtering within memory. This aided in not only increasing speeds due to local filtering, but also reduced the number of needed calls to the database, further reducing speeds and costs. An example of this filtering can be seen in the 'filter-list.dart' file in appendix \ref{code:filter-list}.
+	This made a call to the collection parentBarber, ordered by the top 5 rated parent barbers and fetched the resulting data. As there were 3 different widgets this resulted in 3 separate calls to the database. This was later changed in favour of fetching all of the parent barbers first before filtering within memory. This aided in not only increasing speeds due to local filtering, but also reduced the number of needed calls to the database, further reducing speeds and costs. An example of this filtering can be seen in the 'filter-list.dart' file in \autoref{code:filter-list}.
 	\newline
 	
 	This is done in the body of the 'parent\_barbers.dart' class and therefore is run when the class is instantiated. This is run in 'main.dart' using a 'ChangeNotifierProvider' as shown below and therefore means that the data is loaded as soon as the application is run and can also be accessed globally throughout the application along with the descendents being updated and rebuilt with any change in the widget.
@@ -819,7 +859,7 @@
 	
 	
 	\noindent
-	\emph{Note: Loading the parents also involved filtering via location, which is discussed in detail in section \ref{sprint-location}}.
+	\emph{Note: Loading the parents also involved filtering via location, which is discussed in detail in \autoref{sprint-location}}.
 	
 	
 	\subsubsection{Loading the barbers}
@@ -829,6 +869,8 @@
 	\noindent
 	\underline{Database Call on Parent Barber ID}
 	\newline
+	
+	\noindent
 	As previously mentioned, firebase has a lookup time of $\mathcal{O}$(1), therefore making individual calls to the database will scale well as it does not matter how many barbers there are within the system. Another benefit is that only the relevant barbers will be loaded into local memory, saving on valuable space. The disadvantageous side to this method of fetching the barbers, is that it will require several database calls, depending on how many parent barbers there are and therefore add to costs.
 	\newline
 	
@@ -836,27 +878,34 @@
 	\underline{Loading all Barbers and Filtering Locally}
 	\newline
 	
-	Loading all the barbers and filtering locally is beneficial in that it is cheaper due to less database queries, however, the negative is that it does not scale well, due to having to load more and more barbers as the application grows. However, as further discussed in section \ref{sprint-location}, we filter first based on location and therefore greatly limit the amount of relevant barbers.
+	\noindent
+	Loading all the barbers and filtering locally is beneficial in that it is cheaper due to less database queries, however, the negative is that it does not scale well, due to having to load more and more barbers as the application grows. However, as further discussed in \autoref{sprint-location}, we filter first based on location and therefore greatly limit the amount of relevant barbers.
 	
-	\subsubsection{Loading the users orders}
+	As the second method works out cheaper and due to the location restrictions scales well, we use this method to fetch the barbers.
 	
+	\subsection{Sprint 5 - Shopping Cart and Checkout}
+	Sprint 5 involved creating and implementing the logic for the shopping cart along with allowing the user to checkout.
 	
+	\subsubsection{Adding an Item To the Shopping Cart}
+	As previously stated, within our UserModel class we store an array of type OrderModel, which represents the users cart. The OrderModel is simply a class with a price (so that each barber can set the price for the product individually), an int representing quantity, a product ID and a class of type Product Model to represent the product. The 'product\_details.dart' holds the UI for the selected item to be added. To add a product to the cart, the user first selects the desired quantity, which is implemented through a simple local setState() method, they then click the button 'Add [quantity] To Basket]. Within the 'product\_details.dart' file, we use a Provider.of call to fetch the user and call the method 'addItemToCart', which first checks the current cart to see if the item already exists, before creating a new OrderModel from the item requested, and adding the order model to the array within the UserModel. All of this logic can be found within the order utility (order.dart).
 	
-	\subsubsection{Shopping Cart}
-	Chose to store the cart items in a nested array as this adds to readbility and structure and although this restricts look up time, this is not relevant due to the limited number of items a user will order.
+	\subsubsection{Storing the Shopping Cart Items}
+	When the user logs out the cart is automatically stored within memory, however, here we also give the application the ability to persistently store the cart, so that each user will be returned to the previously left cart state. An example of how we do this is found in \autoref{code:update-cart-item}, a method found within order.dart. To do this, we fetch all of the items within the cart, which are currently represented as an array of OrderModels. Next, we traverse the array and use a created method to turn the class items into a map, before uploading to firebase using the .update method, so as to only overwrite the 'cart' document. Consequently, within 'getDatabaseCartItems()' in 'orders.dart' the cart items are then fetched when the user logs in doing the inverse and taking a map of items from firebase and assigning them to an OrderModel, before adding them to the users cart array.
 	
-	\subsubsection{Checkout}
-	Similar to section \ref{authentication} to create a search time of $\mathcal{O}$(1) a seperate 'orders' collection was created, with each document representing all of the pertinent order details. Within each barber and user, the document (order) id was then added to each respective order arrays, for quick and easy lookup.
+	\subsubsection{Displaying The Shopping Cart Items}
+	Throughout the application you can see a small icon in the top right corner representing a shopping cart, which when clicked will take you to the checkout screen (checkout.dart). Here, we implement a ListView builder, which, using a Provider call to AuthenticateProvider allows us to traverse the shopping cart and display certain elements of our cart item class at position position [index], for example the image and price etc. As we are using Provider, in this screen we are also able to change the quantity of the required product and delete items, which is reflected across the application.
 	
-	\subsection{Sprint 5 - Location}
-	\label{sprint-location}
-	https://firebase.google.com/docs/firestore/solutions/geoqueries
-	Once the user logs in they give their location in the form of their address. This is stored in 'geohashes', which are longitude and latitiude co-ordinates that are hashed into a single Base32 string. Each character presents a greater level of precision and therefore we opted for 9, which represents an area of 5 x 5 meters.
+
 	
-	User location access is granted through the following line in the ./android/app/src/main/AndroidManifest.xml file
-	\begin{lstlisting}
-		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-	\end{lstlisting}
+	\subsubsection{Checking Out an Order}
+	Similar to storing the cart items, each user had an array of items representing the orders. The type was of class MadeOrdersModel, which each contained a list of OrderModels, along with a timestamp and the user and barber IDs. When a new order was made in 'cart.dart', a call was made to the function createNewOrder(), within order.dart. Here, an ID was created using UUID v4 (as recommended by Google), the order was then added to firebase within the 'orders' collection. Similar to \autoref{authentication} to create a search time of $\mathcal{O}$(1) a separate 'orders' collection was created, with each document representing all of the pertinent order details. Within each barber and user, the document (order) id was then added to each respective order arrays, for quick and easy lookup.
+	
+		\subsubsection{Storing a Users Order}
+		(user.dart - discuss \_convertOrdersFromMap) as ProductModel is put inside an array along with the MadeOrdersModel
+	
+	\subsection{Sprint 6 - Location}
+	\label{sprint-location}	
+	\subsubsection{Fetching the Geohash from the User}
 	For the search results we use a drop down menu in the form of flutters built in 'showSearch' function loosely following a guide on medium \cite{sheanLocationSearchAutocomplete2020} to display a search page and 'SearchDelegate' to define the content of said search page.
 	
 	A textEditingController is used to collect the inputted data from the user and pass through to the showSearch function.
@@ -871,18 +920,33 @@
 	\begin{lstlisting}
 		'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=address&components=country:uk&lang=en&key=$apiKey&sessiontoken=$sessionToken'
 	\end{lstlisting}
-	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each query (Google recommends to use version 4 UUID and so this is used here). Without our 'user\_gps.dart' file
+	The returned results are in json format and after some minor error checking we parse using json.decode into a list with our LocationModel class, whilst assigning a new UUID for each query (Google recommends to use version 4 UUID and so this is used here).The full code that is used to make the API call can be seen in \autoref{code:get-locations}.
 	
 	For the content of the search page we use pass in newly created session token into the ShowSearchPage class, which in turn sends an API request and parses the json data to return a list of locations in the form of 'place id's' and 'description' using a FutureBuilder. From here, we pass through the location id to the getLocationDetails function to fetch the address details of each location and put into a PlaceModel object.
 	
 	Next, we parse the data into JSON format by passing the PlaceModel object into the function 'createLocationMap', which creates a map using the location data. Finally we pass through this map to the 'addLocationDetails', which uses the given user id to update the database with the users location.
 	
-	\subsection{Sprint 6 - Barber Side Application}
-	The next sprint involved..
+	\subsubsection{Filtering the Parent Barbers}
+	As is discussed below in \autoref{barber-application}, once the barber creates an account they give their location in the form of their address. This is stored in 'geohashes', which are longitude and latitiude co-ordinates that are hashed into a single Base32 string. Each character presents a greater level of precision and therefore we opted for 9, which represents an area of 5 x 5 meters. With this, we can use the data to 'filter' out parent barbers when a user first logs in after grabbing their location. User location access is granted through the following line in the ./android/app/src/main/AndroidManifest.xml file
+	\begin{lstlisting}
+		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	\end{lstlisting}
+
+	Therefore, when the user first logs in, all of the parent barbers are fetched based on their geolocation relative to the user. For this, we use the plugin GeoFlutterFire \cite{GeoflutterfireFlutterPackage2021}, which was chosen due to it being open source, light-weight, but also having the ability to allow for queries instead of CollectionReferences, which means that it will allow for growth with the application. Within getLocalParents() in 'location\_firestore.dart', we make the following query:
+	\begin{lstlisting}
+		Stream<List<DocumentSnapshot>> stream = geoflutterfire.collection(collectionRef: _collectionReferenceParents).within(center: center, radius: radius, field: 'location');
+	\end{lstlisting}
+	This call returns a stream of DocumentSnapshots, which, as previously mentioned are references to unspecified data within firebase, which we then create a list of ParentBarberModels. This list will contain only the search results within '\emph{radius}' and we then filter based on other relevant metrics i.e. rating, featured etc.
+	
+	\subsection{Sprint 7 - Barber Side Application}
+	\label{barber-application}
 	In order to create a comprehensive application the final sprint involved coding a barber side app, giving the ability for the barber interact with the database and allow them to create an account, add and remove barbers and view orders.
 	
 	\subsubsection{Creating a Parent Barber}
-	As the location functionality of the application requires both longitude and latitude co-ordinates, along with a geohash (EXPLAIN HOW PLUGIN USED TO GET THIS).
+	As the location functionality of the application requires both longitude and latitude co-ordinates, along with a geohash we needed to fetch this information from the barber. To do this, we first get the location of the user through the previously implemented Google places API call. With this data, we then 
+	
+	\subsubsection{Adding a Barber and Their Products}
+	We create a uuid v4 id that is assigned to the barber and then used to link them to each product. Each product is added to an array, then once the barber is made the barber is added to firebase using the given id, along with each product. 
 	
 	\subsubsection{Loading the barbers orders}
 	Each barber has a list of order ID's from previously made orders. To display the list of parent barbers orders first we fetch each barber ID from the array of barber ID's within the parent barber. Next we fetch the order ID's for each barber.
@@ -896,27 +960,144 @@
 	\subsubsection{Common Items}
 	The common items contains global variables that were accessible throughout the project. Initially this included structures and arrays that served as objects to test the functionality of the frontend, for example a barber shop class with a nested list of barbers classes, each with a name, age, description etc. As backend functionality was added these items were removed. A theme class was then added which contains dart files that can be implemented. Doing it in this way meant that the application could be easily styled, without any unnecessary refactoring of code.
 	
+	\subsubsection{Notifying the User}
+	Throughout the application, the user is notified of any pertinent error or status message, for example when their login fails, or adding an item already existing within the basket. To do this we use a ScaffoldMessenger widget, which can be applied on a scaffold widget. This briefly pops up a window that we can specify specific text to the user as shown below.
+	\begin{minted}{dart}
+		ScaffoldMessenger.of(context).showSnackBar(
+		SnackBar(
+			content: ReturnText(text: "Login failed!", color: white,
+				)
+			)
+		);
+	\end{minted} 
+	
+	
 	\subsubsection{Launcher Icons}
+	\label{launcher-icons}
 	Created using GIMP. Plugin flutter\_launcher\_icons used to install icons across android and iOS
 	
 	\subsubsection{Discount Codes}
+	Within the checkout screen 'cart.dart' we gave the user the ability to add discount codes to their order. This simply involved creating a new document within firebase 'discountCodes' and then adding the code name as the document ID, a bool on whether it was active and the discount percentage. This was then called on an
 	
 	\subsubsection{Hide and Show Password}
-	
+	To add a layer of security the text form that represented the box to enter a users password obscured and the user is given the ability to toggle this through pressing an icon. This was implemented by using a local state management setState() function, which allows the 'obscureText' function within the TextField widget to be updated, along with the icon colour when the user presses the icon. This code can be seen in \autoref{code:obscure-text}.
 	
 	
 	\section{Testing}
-	\label{use-case-implementation}
-	\subsection{User Testing}
-	\subsection{Acceptance Testing}
-	\cite{humbleContinuousDeliveryReliable2010}
-	It is recommended that acceptance testing is used throughout development as a metric to ensure a continious link between the customer and development and is an important tool within UCD. To implement this, here we analyse against the previously defined use cases as set out below.
 	
-	\subsection{Use Cases}
-	TODO: refer to screenshots of app in use cases
+	
+	\label{use-case-implementation}
+	\subsection{User (Beta) Testing}
+	Beta testing was carried out through providing end users with a copy of the application and asking them to fill out a feedback form, which can be found at: (TODO: ADD FORM)
+	The form allowed for validation of the application, but also heavily influenced the ‘future work’ section of the application, for example, one user wrote:
+	"It would be useful to add a side bar where I could access other details, such as my account and orders etc". This comment influenced the development in that previously there was no intention to implement a side bar, which was then later added.
+	The survey also exposed some flaws and bugs related to the current version of the application, for example, one user wrote:
+	"After creating an account I am unable to logout and I need to exit the application". This, along with many other comments throughout development exposed bugs within the application which allowed for fixes to be made.
+	
+	\subsection{Acceptance Testing}
+	
+	It is recommended that acceptance testing is used throughout development as a metric to ensure a continuous link between the customer and development and is an important tool within UCD \cite{humbleContinuousDeliveryReliable2010}. To implement this, here we analyse against the previously defined use cases as a success metric as set out below.
+	
+	\subsubsection{Use Case Implementation}
+	Throughout development, the previously thought out use cases were used as a measure of performance and to keep development directed. When production was completed, they were again consulted to make sure that each required use case could be implemented fully. Here we display this analysis, along with providing relevant screen shots of the application.
+	\newline
+	
+	\noindent
+	(\emph{Here 'user' refers to both a regular customer and barber as each application presents similar use cases. If instead we wish to refer to a specific case, 'customer' or 'barber' will be used explicitly.})
+	\newline
+	
+	\noindent
+	\underline{Use Case 1 - Sign Up}
+	
+	\begin{itemize}
+		\item The customer can sign up through Google (\autoref{app-image: sign-up-google}), Facebook and twitter
+		\item The user can sign up through email and password (\autoref{app-image: sign-up-email})
+		\item The barber can sign up through email and password (\autoref{app-image: barber-sign-up})
+		\item The user is notified when they enter an incorrect username or password (\autoref{app-image: sign-up-failed})
+	\end{itemize}
+	
+	\noindent
+	\\	
+	\underline{Use Case 2 - Login}
+	
+	\begin{itemize}
+		\item The customer can login through Google (\autoref{app-image: login-google}), Facebook and twitter
+		\item The customer can login through email and password (\autoref{app-image: login-email})
+		\item The barber can login through email and password (\autoref{app-image: barber-login})
+		\item The user is able to reset their password (\autoref{app-image: reset-password})
+	\end{itemize}
+	
+	\noindent	
+	\\
+	\underline{Use Case 3 - Add a Product To The Cart}
+	
+	\begin{itemize}
+		\item The customer is able to navigate to the required product
+		\item The customer is able to chose the desired quantity and add it to the cart (ADD CITE)
+		\item The customer is not able to add an item already in the basket
+	\end{itemize}
+	
+	\noindent
+	\\
+	\underline{Use Case 4 - Search for a Barber}
+	
+	\begin{itemize}
+		\item The customer is able to search for a barber using the search bar
+		\item The system presents the user with a list of relevant barbers (\autoref{app-image: search})
+	\end{itemize}
+	
+	\noindent
+	\\
+	\underline{Use Case 5 - Checkout}
+	
+	\begin{itemize}
+		\item The customer is able to navigate to the shopping cart by pressing the cart icon
+		\item The customer is able to checkout the order by pressing the checkout button (\autoref{app-image: checkout})
+		\item The customer is notified if their basket is empty (\autoref{app-image: basket-empty})
+	\end{itemize}
+	
+	\noindent
+	\\	
+	\underline{Use Case 6 - View Orders}
+	
+	\begin{itemize}
+		\item The user is able to view their previously made orders TODO
+	\end{itemize}
+	
+	\noindent
+	\\
+	\underline{Use Case 7 - Sign Out}
+	
+	\begin{itemize}
+		\item The user is able to sign out (\autoref{app-image: sign-out})
+	\end{itemize}
+	
+	\noindent
+	\\
+	\underline{Use Case 8 - Add a Barber}
+	
+	\begin{itemize}
+		\item The parent barber is able to add a barber (\autoref{app-image: add-barber})
+	\end{itemize}
+	
 	
 	\section{Conclusion and Further Work}
 	\subsection{Conclusion}
+	
+	\subsubsection{Achieving the Required Objectives}
+	
+	TODO:
+	discuss 
+	- have I achieved narrow goals, why, what can I learn
+	
+	- How I would deploy the app
+	
+	- At large how does it relate to the world
+	
+	- What would you do differently
+	
+	
+	
 	The motivation for this project was to create a cross-platform working MVP of a delivery barber app that attained the required objectives as stated in the introductory chapter, which are addressed here.
 	\newline
 	
@@ -925,7 +1106,7 @@
 	\newline
 	
 	\noindent
-	I begin the thesis by discussing the methodologies that will be utilised throughout the project, for example new product development - which encompassed the stages involved to bring the app from ideation to market and agile software development, which was used as a more general project management tool to guide the work. In section \ref{market-analysis} I then go on to discuss existing applications in the field, any market gaps and characterise the novelty of the proposed application. I therefore believe that this first objective was met well.
+	I begin the thesis by discussing the methodologies that will be utilised throughout the project, for example new product development - which encompassed the stages involved to bring the app from ideation to market and agile software development, which was used as a more general project management tool to guide the work. In \autoref{market-analysis} I then go on to discuss existing applications in the field, any market gaps and characterise the novelty of the proposed application. I therefore believe that this first objective was met well.
 	\newline
 	
 	\noindent
@@ -935,9 +1116,74 @@
 	\newline
 	
 	\noindent
-	After discussing market gaps I then go on to decide which platform best suits the application, which can be seen in section \ref{chap:platform}, where I also discuss the most suitable software modalities, including frontend and back-end platforms. I then move on to presenting the target user and the conception of user personas, an integral component of UCD. The next chapter I present as a software requirements specification document, outlining the scope, user needs and requirements of the application, along with any pertinent use cases. Although I believe I met the minimum requirements for a user centric design approach, I feel this could have been further improved through iterative development of further MVPs and regular user testing, as this was only carried out during the early and late stages of development.
+	After discussing market gaps I then go on to decide which platform best suits the application, which can be seen in \autoref{chap:platform}, where I also discuss the most suitable software modalities, including frontend and back-end platforms. I then move on to presenting the target user and the conception of user personas, an integral component of UCD. The next chapter I present as a software requirements specification document, outlining the scope, user needs and requirements of the application, along with any pertinent use cases. Although I believe I met the minimum requirements for a user centric design approach, I feel this could have been improved through iterative development of further MVPs and regular user testing, as this was only carried out during the early and late stages of development.
+	\newline
+	
+	\noindent
+	\underline{Create a minimum viable product (MVP) using new product development}
+	\\
+	\underline{(NPD) methodologies} 
+	\newline
+	The next section discusses the implementation of the application, for which I start by discussing the initial setup requirements of the IDE and flutter. The implementation discusses the sprints that were carried out in order to develop the application. The sprints were all completed to a satisfactory level, which is gauged by referring to both the initial feature requirements as set out in \autoref{ideation-concept} and the user stories as found in \autoref{use-cases}. Finally, any auxiliary code that was either not carried out in the sprints or found ubiquitously throughout the code is discussed, along with the testing methods.
+	
+	\subsubsection{Application Deployment}
+	\underline{Android Application}
+	\\
+	To deploy the android application there are several steps that must be carried out. First a launcher icon must be added, which was previously implemented and discussed in \autoref{launcher-icons}. Next, to publish the android version of the app, a digital signature must be created, first involving creating a 2048 bit RSA key through running 
+	\begin{lstlisting}
+	keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+	\end{lstlisting}
+	before the key is referenced from the app by creating a file and storing in 
+	\begin{lstlisting}
+		mobile-barber-app/android/key.properties
+	\end{lstlisting}.
+	This creates a private key that allows the developer to upload to the Google Play Store.
+	Next, gradle \cite{androidAndroidGradlePlugin2021}, which is used as a build tool within android studio must be configured to use the key in the following steps which involve the build.gradle file found in ../android/app/build.gradle: 
+	\begin{itemize}
+		\item The keystore information is added
+		\item Within the buildTypes block setup information is added so that the app will be signed automatically
+	\end{itemize}
+
+	Finally, an android app bundle \cite{androidAndroidAppBundle2021}, which is the preferred format for the Play Store is created using 
+	\begin{lstlisting}
+		flutter build appbundle
+	\end{lstlisting}
+	which creates the app bundle within 
+	\begin{lstlisting}
+	../build/app/outputs/bundle/release/app.aab.
+	\end{lstlisting}
+	and this can then be uploaded to the Google Play Store.
+	
+	\underline{iOS Application}
+	\\
 	
 	
+	\subsection{Future Work}
+	
+	As previously stated, the the goal of the project was to create an MVP of a mobile barber application. The project met all of the requirements and only needs for a booking and payment system to be implemented for it to be market ready as an MVP.
+	
+	Once this is completed the app will be initially released, although a greater feature set as discussed below will be implemented, including:
+	
+	\begin{itemize}
+		\item Booking system which allows the user to select from a list of dates the relevant barber is available from
+		\item Payment system
+		\item Greater customisation for the users including:
+		\begin{itemize}
+			\item Allowing for specific discount codes
+			\item Setting up a membership scheme
+		\end{itemize}
+		\item Admin application which allows for:
+		\begin{itemize}
+			\item Manage complaints
+			\item Manage admin profile
+			\item Manage users
+			\item Manage informational pages
+		\end{itemize}
+		\item Complaints system which implements a ticket system that links with the admin application
+	\end{itemize}
+	
+	
+	\pagebreak
 	\printbibliography
 	\pagebreak
 	
@@ -992,12 +1238,14 @@
 			\rowcolor[HTML]{F5FBFF} 
 			& 3) The user is signed-in                                           \\ \hline
 			\rowcolor[HTML]{EFEFEF} 
-			Alternative Paths    & 1) The user enters the wrong login details and is notified of this
+			Alternative Paths    & 1) The user enters the wrong login details and is notified of this \\
+			\rowcolor[HTML]{EFEFEF} 
+			& 2) The user has forgotten their password and is able to reset it \\ \hline
 		\end{tabular}
 	\end{table}
 	
 
-	\subsection{Use case 3 - Book a Haircut}
+	\subsection{Use case 3 - Add a Product To The Cart (\emph{customers only})}
 	\label{chap:use-cases-3}
 	\begin{table}[H]
 		\begin{tabular}{|l|p{0.8\linewidth}}
@@ -1005,7 +1253,7 @@
 			\rowcolor[HTML]{EFEFEF} 
 			\textbf{Use Case 3}  & \textbf{Book a Haircut}                                                   \\ \hline
 			\rowcolor[HTML]{F5FBFF} 
-			\textit{Description} & \textit{Allow the user to book a remote haircut}                                 \\ \hline
+			\textit{Description} & \textit{Allow the user to add a required product to their shopping cart}                                 \\ \hline
 			\rowcolor[HTML]{EFEFEF} 
 			Pre-conditions       & The user must be signed in                                                \\ \hline
 			\rowcolor[HTML]{F5FBFF} 
@@ -1014,14 +1262,13 @@
 			& 2) The customer chooses the required quantity and clicks 'Add To Cart'    \\
 			\rowcolor[HTML]{F5FBFF} 
 			& 3) The system adds the item to the users cart                             \\
-			\rowcolor[HTML]{F5FBFF} 
-			& 4) The user is taken to the Home Screen                                   \\ \hline
+			\rowcolor[HTML]{F5FBFF}                                   \hline
 			\rowcolor[HTML]{EFEFEF} 
 			Alternative Paths    & 1) The user tries to add a product already in the basket and is unable to
 		\end{tabular}
 	\end{table}
 
-	\subsection{Use case 4 - Search for a Barber}
+	\subsection{Use case 4 - Search for a Barber (\emph{customers only})}
 	\label{chap:use-cases-4}
 	\begin{table}[H]
 		\begin{tabular}{|l|p{0.8\linewidth}}
@@ -1041,7 +1288,7 @@
 		\end{tabular}
 	\end{table}
 
-	\subsection{Use case 5 - Checkout}
+	\subsection{Use case 5 - Checkout (\emph{customers only})}
 	\label{chap:use-cases-5}
 	\begin{table}[H]
 		\begin{tabular}{|l|p{0.8\linewidth}}
@@ -1053,9 +1300,11 @@
 			\rowcolor[HTML]{EFEFEF} 
 			Pre-conditions       & The user must have items in their basket                                    \\ \hline
 			\rowcolor[HTML]{F5FBFF} 
-			Basic Flow           & 1) The user requests to checkout their basket                               \\
+			Basic Flow           & 1) The user navigates to the basket                 \\
 			\rowcolor[HTML]{F5FBFF} 
-			& 2) The system creates and authenticates the new user and signs them in      \\ \hline
+			& 2) The user clicks checkout     \\
+			\rowcolor[HTML]{F5FBFF} 
+			& 3) The system creates an order within the database                                                 \\ \hline
 			\rowcolor[HTML]{EFEFEF} 
 			Alternative Paths    & 1) The user does not have any items in their basket and is notified of this
 		\end{tabular}
@@ -1123,34 +1372,112 @@
 		\end{tabular}
 	\end{table}
 	
-	\subsection{Use case 9 - Add a Product (\emph{barbers only})}
-	\label{chap:use-cases-9}
-	\begin{table}[H]
-		\begin{tabular}{|l|p{0.8\linewidth}}
-			\hline
-			\rowcolor[HTML]{EFEFEF} 
-			\textbf{Use Case 9}  & \textbf{Add a product}                                           \\ \hline
-			\rowcolor[HTML]{F5FBFF} 
-			\textit{Description} & \textit{Allow the parent barber to add a new product}            \\ \hline
-			\rowcolor[HTML]{EFEFEF} 
-			Pre-conditions       & There must be a barber to add the product to                     \\ \hline
-			\rowcolor[HTML]{F5FBFF} 
-			Basic Flow           & 1) The parent barber enters the details of the product           \\
-			\rowcolor[HTML]{F5FBFF} 
-			& 2) The parent barber assigns the product to a barber             \\
-			\rowcolor[HTML]{F5FBFF} 
-			& 3) The parent barber requests for the product to be created      \\
-			\rowcolor[HTML]{F5FBFF} 
-			& 4) The system creates a new product and assigns it to the barber \\ \hline
-			\rowcolor[HTML]{EFEFEF} 
-			Alternative Paths    & none                                                            
-		\end{tabular}
-	\end{table}
-	
-
-	\section{Figures}
-	
 	\section{Application Images}
+	
+	\subsection{Customer Sign Up with Email}
+	\label{app-image: sign-up-email}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/sign-up-email.png}
+	\end{figure}
+
+	\subsection{Customer Sign Up with Google}
+	\label{app-image: sign-up-google}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/google-signup.png}
+	\end{figure}
+
+	\subsection{Barber Sign Up}
+	\label{app-image: barber-sign-up}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.4]{images/barber-sign-up.png}
+	\end{figure}
+
+	\subsection{Sign Up Failed}
+	\label{app-image: sign-up-failed}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.4]{images/sign-up-failed.png}
+	\end{figure}
+
+	\subsection{Customer Login with Google}
+	\label{app-image: login-google}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/google-login.png}
+	\end{figure}
+
+	\subsection{Customer Login with Email and Password}
+	\label{app-image: login-email}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/email-login.png}
+	\end{figure}
+
+	\subsection{Wrong Login Details}
+	\label{app-image: wrong-login}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.4]{images/sign-up-failed.png}
+	\end{figure}
+
+	\subsection{Basket Empty}
+	\label{app-image: basket-empty}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.4]{images/basket-empty.png}
+	\end{figure}
+
+	\subsection{Reset Password}
+	\label{app-image: reset-password}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.4]{images/reset-password.png}
+	\end{figure}
+
+	\subsection{Add Product to the Cart}
+	\label{app-image: cart}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/add-to-cart.png}
+	\end{figure}
+
+
+
+	\subsection{Search for a Barber}
+	\label{app-image: search}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/search.png}
+	\end{figure}
+
+	\subsection{Checkout}
+	\label{app-image: checkout}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/checkout.png}
+	\end{figure}
+
+
+
+	\subsection{Sign Out}
+	\label{app-image: sign-out}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/sign-out.png}
+	\end{figure}
+
+	\subsection{Add Barber}
+	\label{app-image: add-barber}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.22]{images/add-barber.png}
+	\end{figure}
+
+
+	
 	\section{Code Snippets}
 	\subsection{Partial Code for Authenticate.dart Showing the Email and Password Sign In}
 	\label{code:authenticate}
@@ -1265,7 +1592,56 @@
 		}
 	\end{minted}
 
-
+	\subsection{updateCartFirestore() Method Found in order.dart}
+	\label{code:update-cart-item}
+	\begin{minted}[]{dart}
+		   Future<void> updateCartFirestore({String userId, UserModel user}) async {
+		 	List<OrderModel> orderItems = user.cart;
+		 	
+		 	try {
+		 		List<dynamic> newOrders = [];
+		 		for (OrderModel cartItem in orderItems) {
+		 			newOrders.add(cartItem.toMap());
+		 		}
+		 		await _firestore.collection(USERS).doc(userId).update({
+		 			"cart": newOrders
+		 		});
+		 	} catch(e) {
+		 		print("Error deleting item from firestore cart: " + e.toString());
+		 	}
+		 }
+	\end{minted}
+	
+	\subsection{getLocations() Method Found in maps.dart}
+	\label{code:get-locations}
+	\begin{minted}[]{dart}
+	Future<List<LocationModel>> getLocations(String input) async {
+		// Create an api request using the session token/ api key
+		final apiRequest =
+		'https://maps.googleapis.com/maps/api/place/
+		autocomplete/json?input=$input&types=address
+		&components=country:uk&lang=en&key=$apiKey
+		&sessiontoken=$sessionToken';
+		// Send a get request to the server and return a response
+		final response = await client.get(Uri.parse(apiRequest));
+		final result = json.decode(response.body);
+		if (result['status'] == 'OK') {
+			// If we are returned results, put them into a list
+			return result['predictions']
+			.map<LocationModel>((p) => LocationModel(p['place_id'],
+			 p['description']))
+			.toList();
+		}
+		// Successful call but no results
+		if (result['status'] == 'ZERO_RESULTS') {
+			return [];
+		}
+		else {
+			throw Exception(result['error_message']);
+		}
+	}
+	\end{minted}
+	
 	\subsection{Code for navigation\_bar.dart}
 	\label{code:nav-bar}
 	\begin{minted}[]{dart}
@@ -1390,7 +1766,39 @@
 			UserModel();
 	\end{minted}
 
+	\subsection{Hide/ Show Password Code Found In login.dart}
+	\label{code:obscure-text}
+	\begin{minted}[]{dart}
+		Padding(
+		padding: const EdgeInsets.fromLTRB(40, 30, 40, 0),
+		child: TextField(
+		obscureText: _obscurePasswordText,
+		controller: _passwordController,
+			decoration: InputDecoration(
+				labelText: "Password",
+			suffixIcon: IconButton(
+				// Change the colour of the icon and set the obscure 
+				// password bool
+				onPressed: () {
+					setState(() {
+						// Toggles the icon colour/ obscures text
+						if (_hidePasswordColour == Colors.grey) {
+							_hidePasswordColour = Colors.blueAccent;
+						} else {
+							_hidePasswordColour = Colors.grey;
+						}
+						_obscurePasswordText = !_obscurePasswordText;
+					});
+				},
+				icon: Icon(Icons.remove_red_eye, color: _hidePasswordColour,
+						),
+					)
+				)
+			),
+		),
+		\end{minted}
+	
 
-
+		TODO: ADD COMMENTS THAT INFLUENCED DEVELOPMENT
 	
 \end{document}

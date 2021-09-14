@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n}{ScaffoldMessenger}\PYG{p}{.}\PYG{n}{of}\PYG{p}{(}\PYG{n}{context}\PYG{p}{).}\PYG{n}{showSnackBar}\PYG{p}{(}
+		\PYG{n}{SnackBar}\PYG{p}{(}
+			\PYG{n+nl}{content:} \PYG{n}{ReturnText}\PYG{p}{(}\PYG{n+nl}{text:} \PYG{l+s+s2}{\PYGZdq{}Login failed!\PYGZdq{}}\PYG{p}{,} \PYG{n+nl}{color:} \PYG{n}{white}\PYG{p}{,}
+				\PYG{p}{)}
+			\PYG{p}{)}
+		\PYG{p}{);}
+\end{Verbatim}

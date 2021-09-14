@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		\PYG{n+nx}{service} \PYG{n+nx}{cloud}\PYG{p}{.}\PYG{n+nx}{firestore} \PYG{p}{\PYGZob{}}
+			\PYG{n+nx}{match} \PYG{o}{/}\PYG{n+nx}{databases}\PYG{o}{/}\PYG{p}{\PYGZob{}}\PYG{n+nx}{database}\PYG{p}{\PYGZcb{}}\PYG{o}{/}\PYG{n+nx}{documents} \PYG{p}{\PYGZob{}}
+				\PYG{n+nx}{match} \PYG{o}{/}\PYG{p}{\PYGZob{}}\PYG{n+nb}{document}\PYG{o}{=**}\PYG{p}{\PYGZcb{}} \PYG{p}{\PYGZob{}}
+					\PYG{n+nx}{allow} \PYG{n+nx}{read}\PYG{p}{,} \PYG{n+nx}{write}\PYG{o}{:}
+					\PYG{k}{if} \PYG{n+nx}{auth} \PYG{o}{!=} \PYG{k+kc}{null}
+				\PYG{p}{\PYGZcb{}}
+			\PYG{p}{\PYGZcb{}}
+		\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

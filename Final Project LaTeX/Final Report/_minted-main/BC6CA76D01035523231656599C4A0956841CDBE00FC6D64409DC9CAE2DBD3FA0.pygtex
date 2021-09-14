@@ -1,0 +1,27 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+	\PYG{n}{Future}\PYG{o}{\PYGZlt{}}\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{LocationModel}\PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{n}{getLocations}\PYG{p}{(}\PYG{k+kt}{String} \PYG{n}{input}\PYG{p}{)} \PYG{k+kd}{async} \PYG{p}{\PYGZob{}}
+		\PYG{c+c1}{// Create an api request using the session token/ api key}
+		\PYG{k+kd}{final} \PYG{n}{apiRequest} \PYG{o}{=}
+		\PYG{l+s+s1}{\PYGZsq{}https://maps.googleapis.com/maps/api/place/}
+		\PYG{n}{autocomplete}\PYG{o}{/}\PYG{n}{json}\PYG{o}{?}\PYG{n}{input}\PYG{o}{=}\PYG{n}{\PYGZdl{}input}\PYG{o}{\PYGZam{}}\PYG{n}{types}\PYG{o}{=}\PYG{n}{address}
+		\PYG{o}{\PYGZam{}}\PYG{n}{components}\PYG{o}{=}\PYG{n+nl}{country:}\PYG{n}{uk}\PYG{o}{\PYGZam{}}\PYG{n}{lang}\PYG{o}{=}\PYG{n}{en}\PYG{o}{\PYGZam{}}\PYG{n}{key}\PYG{o}{=}\PYG{n}{\PYGZdl{}apiKey}
+		\PYG{o}{\PYGZam{}}\PYG{n}{sessiontoken}\PYG{o}{=}\PYG{n}{\PYGZdl{}sessionToken}\PYG{l+s+s1}{\PYGZsq{};}
+		\PYG{c+c1}{// Send a get request to the server and return a response}
+		\PYG{k+kd}{final} \PYG{n}{response} \PYG{o}{=} \PYG{k+kd}{await} \PYG{n}{client}\PYG{p}{.}\PYG{k+kd}{get}\PYG{p}{(}\PYG{n}{Uri}\PYG{p}{.}\PYG{n}{parse}\PYG{p}{(}\PYG{n}{apiRequest}\PYG{p}{));}
+		\PYG{k+kd}{final} \PYG{n}{result} \PYG{o}{=} \PYG{n}{json}\PYG{p}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{n}{response}\PYG{p}{.}\PYG{n}{body}\PYG{p}{);}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}status\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}OK\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{c+c1}{// If we are returned results, put them into a list}
+			\PYG{k}{return} \PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}predictions\PYGZsq{}}\PYG{p}{]}
+			\PYG{p}{.}\PYG{n}{map}\PYG{o}{\PYGZlt{}}\PYG{n}{LocationModel}\PYG{o}{\PYGZgt{}}\PYG{p}{((}\PYG{n}{p}\PYG{p}{)} \PYG{o}{=\PYGZgt{}} \PYG{n}{LocationModel}\PYG{p}{(}\PYG{n}{p}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}place\PYGZus{}id\PYGZsq{}}\PYG{p}{],}
+			 \PYG{n}{p}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}description\PYGZsq{}}\PYG{p}{]))}
+			\PYG{p}{.}\PYG{n}{toList}\PYG{p}{();}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{c+c1}{// Successful call but no results}
+		\PYG{k}{if} \PYG{p}{(}\PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}status\PYGZsq{}}\PYG{p}{]} \PYG{o}{==} \PYG{l+s+s1}{\PYGZsq{}ZERO\PYGZus{}RESULTS\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{return} \PYG{p}{[];}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{k}{else} \PYG{p}{\PYGZob{}}
+			\PYG{k}{throw} \PYG{n}{Exception}\PYG{p}{(}\PYG{n}{result}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}error\PYGZus{}message\PYGZsq{}}\PYG{p}{]);}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

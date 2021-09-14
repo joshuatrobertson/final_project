@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+		   \PYG{n}{Future}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{void}\PYG{o}{\PYGZgt{}} \PYG{n}{updateCartFirestore}\PYG{p}{(\PYGZob{}}\PYG{k+kt}{String} \PYG{n}{userId}\PYG{p}{,} \PYG{n}{UserModel} \PYG{n}{user}\PYG{p}{\PYGZcb{})} \PYG{k+kd}{async} \PYG{p}{\PYGZob{}}
+		 	\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{OrderModel}\PYG{o}{\PYGZgt{}} \PYG{n}{orderItems} \PYG{o}{=} \PYG{n}{user}\PYG{p}{.}\PYG{n}{cart}\PYG{p}{;}
+		 	
+		 	\PYG{k}{try} \PYG{p}{\PYGZob{}}
+		 		\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{dynamic}\PYG{o}{\PYGZgt{}} \PYG{n}{newOrders} \PYG{o}{=} \PYG{p}{[];}
+		 		\PYG{k}{for} \PYG{p}{(}\PYG{n}{OrderModel} \PYG{n}{cartItem} \PYG{k}{in} \PYG{n}{orderItems}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		 			\PYG{n}{newOrders}\PYG{p}{.}\PYG{n}{add}\PYG{p}{(}\PYG{n}{cartItem}\PYG{p}{.}\PYG{n}{toMap}\PYG{p}{());}
+		 		\PYG{p}{\PYGZcb{}}
+		 		\PYG{k+kd}{await} \PYG{n}{\PYGZus{}firestore}\PYG{p}{.}\PYG{n}{collection}\PYG{p}{(}\PYG{n}{USERS}\PYG{p}{).}\PYG{n}{doc}\PYG{p}{(}\PYG{n}{userId}\PYG{p}{).}\PYG{n}{update}\PYG{p}{(\PYGZob{}}
+		 			\PYG{l+s+s2}{\PYGZdq{}cart\PYGZdq{}}\PYG{o}{:} \PYG{n}{newOrders}
+		 		\PYG{p}{\PYGZcb{});}
+		 	\PYG{p}{\PYGZcb{}} \PYG{k}{catch}\PYG{p}{(}\PYG{n}{e}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		 		\PYG{n}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Error deleting item from firestore cart: \PYGZdq{}} \PYG{o}{+} \PYG{n}{e}\PYG{p}{.}\PYG{n}{toString}\PYG{p}{());}
+		 	\PYG{p}{\PYGZcb{}}
+		 \PYG{p}{\PYGZcb{}}
+\end{Verbatim}
