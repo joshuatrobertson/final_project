@@ -7,6 +7,7 @@ import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/barber_registration.dart';
 import 'package:uber_haircuts/screens/change_address.dart';
 import 'package:uber_haircuts/screens/contact_us.dart';
+import 'package:uber_haircuts/screens/user_type.dart';
 import 'package:uber_haircuts/theme/main_theme.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
@@ -71,6 +72,7 @@ class _SideBarState extends State<SideBar> {
           padding: const EdgeInsets.fromLTRB(75, 10, 0, 0),
           child: GestureDetector(
             onTap: () async {
+              clearNavigator(context);
               authProvider.signOut('customer');
             },
             child: Container(
@@ -115,7 +117,7 @@ class _SideBarState extends State<SideBar> {
           child: GestureDetector(
             onTap: () async {
               authProvider.signOut('customer');
-              navigateToScreen(context, BarberRegistration());
+              clearNavigator(context);
             },
             child: Container(
                 alignment: Alignment.bottomLeft,

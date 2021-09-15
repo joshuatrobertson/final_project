@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:flutter_twitter_login/flutter_twitter_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:uber_haircuts/models/made_orders.dart';
 import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
@@ -12,6 +11,7 @@ import 'package:uber_haircuts/models/user.dart';
 import 'package:uber_haircuts/utilities/parent_barber_firestore.dart';
 import 'package:uber_haircuts/utilities/order.dart';
 import 'package:uber_haircuts/utilities/user_firestore.dart';
+import 'package:uber_haircuts/widgets/navigate.dart';
 
 enum AuthStatus {
   UNINITIALISED,
@@ -72,18 +72,18 @@ class AuthenticateProvider extends ChangeNotifier {
       return true;
     } on FirebaseAuthException catch (e) {
       print(e);
-      _authStatus = AuthStatus.NOT_AUTHENTICATED;
+      _authStatus = AuthStatus.UNINITIALISED;
       notifyListeners();
       return false;
     }
   }
 
   Future<bool> barberSignIn({String email, String password}) async {
+    _authStatus = AuthStatus.AUTHENTICATING;
+    notifyListeners();
     try {
-      _authStatus = AuthStatus.AUTHENTICATING;
-      notifyListeners();
       await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
-      barberModel = await _orderUtility.getBarberById(_firebaseAuth.currentUser.uid);
+      barberModel = await _orderUtility.getParentBarberById(_firebaseAuth.currentUser.uid);
       _authStatus = AuthStatus.BARBER_AUTHENTICATED;
       print("signed in barber " + email);
       notifyListeners();
@@ -161,7 +161,7 @@ class AuthenticateProvider extends ChangeNotifier {
       // Create a new user and add to the database
       // Here we use the auth result user id as the document id so that it can be referred to later
       _userDatabase.createNewUser(newUser, user.uid);
-      UserModel newModel;
+      UserModel newModel = new UserModel();
       this.userModel = newModel;
       _authStatus = AuthStatus.AUTHENTICATED;
       notifyListeners();
@@ -318,23 +318,31 @@ class AuthenticateProvider extends ChangeNotifier {
   // Sign out of all providers and then from firebase
   // TODO: sign out not working when log in from fresh install
   Future signOut(String userType) async {
-    try {
-      final User user = FirebaseAuth.instance.currentUser;
-      // Persistently store the users cart when the user signs out
-      if (userModel.cart.isNotEmpty) {
-        _orderUtility.updateCartFirestore(userId: user.uid, user: userModel);
+    if (userType == 'customer') {
+      try {
+        // Persistently store the users cart when the user signs out
+        if (userModel.cart.isNotEmpty) {
+          _orderUtility.updateCartFirestore(userId: user.uid, user: userModel);
+        }
+        await _googleSignIn.signOut();
+        await FacebookAuth.instance.logOut();
+        await _twitterSignIn.logOut();
+        await _firebaseAuth.signOut();
+        print("User signed out");
+        _authStatus = AuthStatus.UNINITIALISED;
+        notifyListeners();
+      } catch (exception) {
+        print(exception.toString());
+        return null;
       }
-      await _googleSignIn.signOut();
-      await FacebookAuth.instance.logOut();
-      await _twitterSignIn.logOut();
-      await _firebaseAuth.signOut();
-      print("User signed out");
+    }
+    else {
+      _firebaseAuth.signOut();
       _authStatus = AuthStatus.UNINITIALISED;
       notifyListeners();
-    } catch (exception) {
-      print(exception.toString());
-      return null;
     }
+
+
   }
 
   // Used to add an item to each user, which has their own 'Authenticate' instance

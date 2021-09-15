@@ -5,7 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
-import 'package:uber_haircuts/providers/google_maps.dart';
+import 'package:uber_haircuts/providers/maps.dart';
 import 'package:uber_haircuts/models/location.dart';
 import 'package:uber_haircuts/screens/barber_home.dart';
 import 'package:uber_haircuts/utilities/parent_barber_firestore.dart';
@@ -82,7 +82,7 @@ class _FireMapState extends State<FireMap> {
                   final FirebaseAuth _auth = FirebaseAuth.instance;
                   final User _user = _auth.currentUser;
                   if (searchResult != null) {
-                    final placeDetails = await GoogleMapsAPI(sessionToken)
+                    final placeDetails = await Maps(sessionToken)
                         .getLocationDetails(searchResult.placeId);
                     Map<String, dynamic> values = authProvider.createLocationMap(placeDetails);
                     // Add to the barber or user document within the database and navigate to the respective home pages

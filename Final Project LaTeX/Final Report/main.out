@@ -9,7 +9,7 @@
 \BOOKMARK [3][-]{subsubsection.1.4.1}{Mobile vs Desktop}{subsection.1.4}% 9
 \BOOKMARK [3][-]{subsubsection.1.4.2}{Mobile Platform: Android vs iOS}{subsection.1.4}% 10
 \BOOKMARK [2][-]{subsection.1.5}{Frontend: Programming Language}{section.1}% 11
-\BOOKMARK [2][-]{subsection.1.6}{Backend: SQL vs noSQL database}{section.1}% 12
+\BOOKMARK [2][-]{subsection.1.6}{Back-end: SQL vs NoSQL database}{section.1}% 12
 \BOOKMARK [2][-]{subsection.1.7}{User Personas}{section.1}% 13
 \BOOKMARK [1][-]{section.2}{Software Requirements}{}% 14
 \BOOKMARK [2][-]{subsection.2.1}{Application Scope}{section.2}% 15
@@ -75,38 +75,41 @@
 \BOOKMARK [3][-]{subsubsection.7.1.1}{Achieving the Required Objectives}{subsection.7.1}% 75
 \BOOKMARK [3][-]{subsubsection.7.1.2}{Application Deployment}{subsection.7.1}% 76
 \BOOKMARK [2][-]{subsection.7.2}{Future Work}{section.7}% 77
-\BOOKMARK [1][-]{appendix.A}{Use Cases}{}% 78
-\BOOKMARK [2][-]{subsection.A.1}{Use case 1 - Sign Up}{appendix.A}% 79
-\BOOKMARK [2][-]{subsection.A.2}{Use case 2 - Login}{appendix.A}% 80
-\BOOKMARK [2][-]{subsection.A.3}{Use case 3 - Add a Product To The Cart \(customers only\)}{appendix.A}% 81
-\BOOKMARK [2][-]{subsection.A.4}{Use case 4 - Search for a Barber \(customers only\)}{appendix.A}% 82
-\BOOKMARK [2][-]{subsection.A.5}{Use case 5 - Checkout \(customers only\)}{appendix.A}% 83
-\BOOKMARK [2][-]{subsection.A.6}{Use case 6 - View Orders}{appendix.A}% 84
-\BOOKMARK [2][-]{subsection.A.7}{Use case 7 - Sign Out}{appendix.A}% 85
-\BOOKMARK [2][-]{subsection.A.8}{Use case 8 - Add a Barber \(barbers only\)}{appendix.A}% 86
-\BOOKMARK [1][-]{appendix.B}{Application Images}{}% 87
-\BOOKMARK [2][-]{subsection.B.1}{Customer Sign Up with Email}{appendix.B}% 88
-\BOOKMARK [2][-]{subsection.B.2}{Customer Sign Up with Google}{appendix.B}% 89
-\BOOKMARK [2][-]{subsection.B.3}{Barber Sign Up}{appendix.B}% 90
-\BOOKMARK [2][-]{subsection.B.4}{Sign Up Failed}{appendix.B}% 91
-\BOOKMARK [2][-]{subsection.B.5}{Customer Login with Google}{appendix.B}% 92
-\BOOKMARK [2][-]{subsection.B.6}{Customer Login with Email and Password}{appendix.B}% 93
-\BOOKMARK [2][-]{subsection.B.7}{Wrong Login Details}{appendix.B}% 94
-\BOOKMARK [2][-]{subsection.B.8}{Basket Empty}{appendix.B}% 95
-\BOOKMARK [2][-]{subsection.B.9}{Reset Password}{appendix.B}% 96
-\BOOKMARK [2][-]{subsection.B.10}{Add Product to the Cart}{appendix.B}% 97
-\BOOKMARK [2][-]{subsection.B.11}{Search for a Barber}{appendix.B}% 98
-\BOOKMARK [2][-]{subsection.B.12}{Checkout}{appendix.B}% 99
-\BOOKMARK [2][-]{subsection.B.13}{Sign Out}{appendix.B}% 100
-\BOOKMARK [2][-]{subsection.B.14}{Add Barber}{appendix.B}% 101
-\BOOKMARK [1][-]{appendix.C}{Code Snippets}{}% 102
-\BOOKMARK [2][-]{subsection.C.1}{Partial Code for Authenticate.dart Showing the Email and Password Sign In}{appendix.C}% 103
-\BOOKMARK [2][-]{subsection.C.2}{Partial Code for forgot\137password.dart}{appendix.C}% 104
-\BOOKMARK [2][-]{subsection.C.3}{Code for navigate.dart}{appendix.C}% 105
-\BOOKMARK [2][-]{subsection.C.4}{Code for filter-list.dart}{appendix.C}% 106
-\BOOKMARK [2][-]{subsection.C.5}{updateCartFirestore\(\) Method Found in order.dart}{appendix.C}% 107
-\BOOKMARK [2][-]{subsection.C.6}{getLocations\(\) Method Found in maps.dart}{appendix.C}% 108
-\BOOKMARK [2][-]{subsection.C.7}{Code for navigation\137bar.dart}{appendix.C}% 109
-\BOOKMARK [2][-]{subsection.C.8}{Partial Code for main.dart}{appendix.C}% 110
-\BOOKMARK [2][-]{subsection.C.9}{Partial Code for user\137model.dart}{appendix.C}% 111
-\BOOKMARK [2][-]{subsection.C.10}{Hide/ Show Password Code Found In login.dart}{appendix.C}% 112
+\BOOKMARK [1][-]{appendix.A}{Surveys}{}% 78
+\BOOKMARK [2][-]{subsection.A.1}{Market Analysis Survey}{appendix.A}% 79
+\BOOKMARK [2][-]{subsection.A.2}{User Testing Survey}{appendix.A}% 80
+\BOOKMARK [1][-]{appendix.B}{Use Cases}{}% 81
+\BOOKMARK [2][-]{subsection.B.1}{Use case 1 - Sign Up}{appendix.B}% 82
+\BOOKMARK [2][-]{subsection.B.2}{Use case 2 - Login}{appendix.B}% 83
+\BOOKMARK [2][-]{subsection.B.3}{Use case 3 - Add a Product To The Cart \(customers only\)}{appendix.B}% 84
+\BOOKMARK [2][-]{subsection.B.4}{Use case 4 - Search for a Barber \(customers only\)}{appendix.B}% 85
+\BOOKMARK [2][-]{subsection.B.5}{Use case 5 - Checkout \(customers only\)}{appendix.B}% 86
+\BOOKMARK [2][-]{subsection.B.6}{Use case 6 - View Orders}{appendix.B}% 87
+\BOOKMARK [2][-]{subsection.B.7}{Use case 7 - Sign Out}{appendix.B}% 88
+\BOOKMARK [2][-]{subsection.B.8}{Use case 8 - Add a Barber \(barbers only\)}{appendix.B}% 89
+\BOOKMARK [1][-]{appendix.C}{Application Images}{}% 90
+\BOOKMARK [2][-]{subsection.C.1}{Customer Sign Up with Email}{appendix.C}% 91
+\BOOKMARK [2][-]{subsection.C.2}{Customer Sign Up with Google}{appendix.C}% 92
+\BOOKMARK [2][-]{subsection.C.3}{Barber Sign Up}{appendix.C}% 93
+\BOOKMARK [2][-]{subsection.C.4}{Sign Up Failed}{appendix.C}% 94
+\BOOKMARK [2][-]{subsection.C.5}{Customer Login with Google}{appendix.C}% 95
+\BOOKMARK [2][-]{subsection.C.6}{Customer Login with Email and Password}{appendix.C}% 96
+\BOOKMARK [2][-]{subsection.C.7}{Wrong Login Details}{appendix.C}% 97
+\BOOKMARK [2][-]{subsection.C.8}{Basket Empty}{appendix.C}% 98
+\BOOKMARK [2][-]{subsection.C.9}{Reset Password}{appendix.C}% 99
+\BOOKMARK [2][-]{subsection.C.10}{Add Product to the Cart}{appendix.C}% 100
+\BOOKMARK [2][-]{subsection.C.11}{Search for a Barber}{appendix.C}% 101
+\BOOKMARK [2][-]{subsection.C.12}{Checkout}{appendix.C}% 102
+\BOOKMARK [2][-]{subsection.C.13}{Sign Out}{appendix.C}% 103
+\BOOKMARK [2][-]{subsection.C.14}{Add Barber}{appendix.C}% 104
+\BOOKMARK [1][-]{appendix.D}{Code Snippets}{}% 105
+\BOOKMARK [2][-]{subsection.D.1}{Partial Code for Authenticate.dart Showing the Email and Password Sign In}{appendix.D}% 106
+\BOOKMARK [2][-]{subsection.D.2}{Partial Code for forgot\137password.dart}{appendix.D}% 107
+\BOOKMARK [2][-]{subsection.D.3}{Code for navigate.dart}{appendix.D}% 108
+\BOOKMARK [2][-]{subsection.D.4}{Code for filter-list.dart}{appendix.D}% 109
+\BOOKMARK [2][-]{subsection.D.5}{updateCartFirestore\(\) Method Found in order.dart}{appendix.D}% 110
+\BOOKMARK [2][-]{subsection.D.6}{getLocations\(\) Method Found in maps.dart}{appendix.D}% 111
+\BOOKMARK [2][-]{subsection.D.7}{Code for navigation\137bar.dart}{appendix.D}% 112
+\BOOKMARK [2][-]{subsection.D.8}{Partial Code for main.dart}{appendix.D}% 113
+\BOOKMARK [2][-]{subsection.D.9}{Partial Code for user\137model.dart}{appendix.D}% 114
+\BOOKMARK [2][-]{subsection.D.10}{Hide/ Show Password Code Found In login.dart}{appendix.D}% 115

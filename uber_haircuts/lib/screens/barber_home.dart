@@ -6,12 +6,14 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/screens/barber_login.dart';
 import 'package:uber_haircuts/screens/registration.dart';
+import 'package:uber_haircuts/screens/user_type.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
 import 'add_barber.dart';
 import 'change_address.dart';
 import 'barber_registration.dart';
+import 'delete_barber.dart';
 import 'forgot_password.dart';
 
 class BarberHome extends StatefulWidget {
@@ -65,6 +67,10 @@ class _BarberHomeState extends State<BarberHome> {
                             color: theme,
                             child: GestureDetector(
                               onTap: () async {
+                                /*
+                                navigateToScreen(context, DeleteBarber());
+
+                                 */
                               },
                               child: Center(
                                 child: ReturnText(text: 'Delete Barber', fontWeight: FontWeight.w400, size: 30, color: white,),
@@ -100,7 +106,7 @@ class _BarberHomeState extends State<BarberHome> {
                             child: GestureDetector(
                               onTap: () async {
                                 authProvider.signOut('barber');
-                                navigateToScreen(context, BarberLogin());
+                                clearNavigator(context);
                               },
                               child: Center(
                                 child: ReturnText(text: 'Sign Out', fontWeight: FontWeight.w400, size: 30, color: white,),

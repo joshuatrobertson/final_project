@@ -3,10 +3,10 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 
-class GoogleMapsAPI {
+class Maps {
   var client = http.Client();
 
-  GoogleMapsAPI(this.sessionToken);
+  Maps(this.sessionToken);
 
   final sessionToken;
 

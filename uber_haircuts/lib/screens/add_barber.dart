@@ -6,13 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:uber_haircuts/models/product.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
+import 'package:uber_haircuts/screens/barber_home.dart';
 import 'package:uber_haircuts/screens/user_gps.dart';
 import 'package:uber_haircuts/theme/common_items.dart';
 import 'package:uber_haircuts/utilities/barber_firestore.dart';
 import 'package:uber_haircuts/utilities/files.dart';
+import 'package:uber_haircuts/utilities/products_firestore.dart';
+import 'package:uber_haircuts/widgets/barber_widget.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
+import 'package:uuid/uuid.dart';
 import '../theme/main_theme.dart';
 import 'login.dart';
 import 'package:provider/provider.dart';
@@ -36,6 +41,14 @@ class _AddBarberState extends State<AddBarber> {
   final _imagePicker = ImagePicker();
   File _imageFile;
   final BarberFirestore _barberFirestore = new BarberFirestore();
+  var uuid = Uuid();
+  var barberID;
+  String _selectedText = availableProducts.first;
+  num currentIndex = 0;
+  List<ProductModel> _products = [];
+  ProductsFirestore _productsFirestore = new ProductsFirestore();
+  ProductModel _product = new ProductModel();
+
 
   @override
   Widget build(BuildContext context) {
@@ -133,14 +146,39 @@ class _AddBarberState extends State<AddBarber> {
                             ),
                             ReturnText(text: "Add Products", size: 22,),
                             // Drop down menu with only the 'allowed' products
-                            DropdownButton<String>(
-                              items: availableProducts.map((String value) {
-                                return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: new Text(value),
-                                );
-                              }).toList(),
-                              onChanged: (_) {},
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(25, 5, 25, 0),
+                              child: FormField<String>(
+                                builder: (FormFieldState<String> state) {
+                                  return InputDecorator(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(4.0)
+                                        )
+                                    ),
+                                    child: DropdownButtonHideUnderline(
+                                      child: DropdownButton<String>(
+                                        hint: Text("Select a Product"),
+                                        value: _selectedText,
+                                        isDense: true,
+                                        onChanged: (newValue) {
+                                          setState(() {
+                                            _selectedText = newValue;
+                                            currentIndex = availableProducts.indexOf(newValue);
+                                          });
+                                          print(_selectedText);
+                                        },
+                                        items: availableProducts.map((String value) {
+                                          return DropdownMenuItem<String>(
+                                            value: value,
+                                            child: Text(value),
+                                          );
+                                        }).toList(),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
                             ),
                             Padding(
                               padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
@@ -159,11 +197,7 @@ class _AddBarberState extends State<AddBarber> {
                               child: TextField(
                                   // The keyboard will only show numbers
                                   keyboardType: TextInputType.number,
-                                  inputFormatters: [
-                                    // Only allow numbers
-                                    FilteringTextInputFormatter.allow(RegExp(r'[0-9].')),
-                                  ],
-                                  controller: _productDescriptionController,
+                                  controller: _productPriceController,
                                   decoration: InputDecoration(
                                     labelText: "Price",
                                   )
@@ -172,7 +206,23 @@ class _AddBarberState extends State<AddBarber> {
                             Padding(
                               padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
                               child: GestureDetector(
-                                onTap: () async {},
+                                onTap: () async {
+                                  var id = uuid.v4();
+                                    var items = {
+                                      "id": id,
+                                      "name": _selectedText,
+                                      "description": _productDescriptionController.text,
+                                      "price": int.parse(_productPriceController.text),
+                                      "image": productImages.elementAt(currentIndex),
+                                      "featured": false,
+                                      "barberID": barberID,
+                                    };
+                                  _product = createNewProduct(items);
+                                  _products.add(_product);
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                          content: ReturnText(text: "Product Added", color: white,)));
+                                },
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: Colors.grey,
@@ -195,18 +245,25 @@ class _AddBarberState extends State<AddBarber> {
                                   color: theme,
                                   child: GestureDetector(
                                     onTap: () async {
+                                      barberID = uuid.v4();
                                       if (!await _barberFirestore.createAddBarber(
+                                        id: barberID,
                                         firstName: _firstNameController.text.trim(),
                                         lastName: _lastNameController.text.trim(),
                                         description: _descriptionController.text.trim(),
                                         image: _uploadedImageRef.trim(),
+                                        parentBarberID: authProvider.barberModel.id
                                       )) {
                                         ScaffoldMessenger.of(context).showSnackBar(
                                             SnackBar(
                                                 content: ReturnText(text: "Adding new barber failed!", color: white,)));
                                       }
                                       else {
-                                        navigateToScreen(context, UserGPS());
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                            SnackBar(
+                                                content: ReturnText(text: "Barber Added", color: white,)));
+                                        _productsFirestore.addProducts(_products);
+                                        replaceScreen(context, BarberHome());
                                       }
                                     },
                                     child: Center(

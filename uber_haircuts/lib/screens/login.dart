@@ -69,7 +69,6 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(
                           labelText: "Password",
                         suffixIcon: IconButton(
-                          // TODO : discuss toggles text/ colour
                           onPressed: () {
                             setState(() {
                               // Toggles the icon colour/ obscures text

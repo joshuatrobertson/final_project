@@ -39,8 +39,7 @@
 
 \usepackage{hyperref}
 \hypersetup{linktoc = all}
-\renewcommand{\arraystretch}{1.5}	% Increase row space between tables
-
+\renewcommand{\arraystretch}{1.5} % Increase row space between tables
 
 
 \begin{document}
@@ -84,7 +83,8 @@
 		
 		\begin{center}
 			
-			\textsc\emph{{“A dissertation submitted to the University of Bristol in accordance with the requirements of the degree of Master of Science by advanced study in Computer Science in the Faculty of Engineering."}} \\[1.2 cm]
+			\emph{“A dissertation submitted to the University of Bristol in accordance with the requirements of the degree of Master of Science by advanced study in Computer Science in the Faculty of Engineering."} \\[1.2 cm]
+			
 			
 			School of Computer Science, Electrical and Electronic Engineering, and Engineering Maths (SCEEM) \\[1 cm]
 			
@@ -101,15 +101,18 @@
 
 
 	\section*{Abstract}
-	This thesis discusses the creation of an minimum viable product (MVP) application aimed to facilitate the delivery and execution of delivered home haircuts. Whilst there exists a range of applications that serve a similar purpose, none allow for immediate booking and delivery, similar to that seen in the "Uber" model, which we therefore aim to provide in this application.
+	This thesis discusses the creation of a minimum viable product (MVP) of an application aimed to facilitate the delivery and execution of home haircuts and other beauty treatments. Whilst there exists a range of applications that serve a similar purpose, none allow for immediate booking and delivery, similar to that seen in the "Uber" model, which we therefore aim to provide in this application.
 	\\
-	In describing the process, we first begin by examining the project management and software methodologies that will be used throughout, which pertains to agile, or more specifically lean and user centric design (UCD). Next, we discuss the software and frameworks chosen for both the front end and back end, along with the ideas influencing these decisions and examine the target user.
+	In describing the process, we first begin by examining the project management and software methodologies that will be used for the project, which pertains to agile, or more specifically lean and user centric design (UCD). Next, we discuss the software and framework chosen for both the front and back-end, along with the ideas influencing these decisions before examining the target user.
 	\\
-	In the software requirements section, we discuss the scope, user needs, requirements and use cases, similar to what would be found within a software requirements specifications (SRS) documents. The system design section then builds upon those requirements and discusses how they were used to drive decisions around the architecture and state management within the application.
+	In the software requirements section, we discuss the scope, user needs, requirements and use cases, similar to what would be found within a software requirements specifications (SRS) document. The system design section then builds upon those requirements and discusses how they were used to drive decisions around the architecture and state management used for the application.
 	\\
-	Next, we discuss the execution of the application, which is split into a prototyping phase, which includes sketching and wire-framing and an implementation phase, which describes the coding of the application.
+	Within the prototyping section, we discuss the sketching and wire-framing that was carried out to represent the user interface of the app, along with some basic functionality, before this is implemented in the implementation section.
 	\\
-	Finally, we discuss testing and any further work, for which the main contributions of the project are as follows:
+	Finally, we discuss testing and any future work.
+	\\
+	
+	The main contributions of the project are as follows:
 	\begin{itemize}
 		\item Market research was carried out to highlight any market gaps within existing applications
 		\item User surverys and testing was used through to adhere to both UCD and lean development methodologies
@@ -124,19 +127,22 @@
 	\pagebreak
 
 	\section*{Acknowledgements}
-	I would like to thank my supervisor, Dr Alex Kavvos for his continued guidance and support throughout the project.
+	
+	
+	I would like to thank my supervisor, Dr Alex Kavvos. I am extremely grateful for our weekly meetings, the guidance and support of which were highly influential in the outcome of the project. I would like to thank any participants who have given their time to the project in any capacity. Finally, thank you to friends and family for their unconditioned support throughout a challenging year.
+	
 	\pagebreak
 	
 	\section*{Author's Declaration}
 
 	I declare that the work in this dissertation was carried out in accordance with the 
 	requirements of the University’s Regulations and Code of Practice for Taught Programmes 
-	and that it has not been submitted for any other academic award.  Except where indicated 
+	and that it has not been submitted for any other academic award. Except where indicated 
 	by specific reference in the text, this work is my own work. Work done in collaboration with, 
 	or with the assistance of others, is indicated as such. I have identified all material in this 
 	dissertation which is not my own work through appropriate referencing and 
 	acknowledgement. Where I have quoted or otherwise incorporated material which is the 
-	work of others, I have included the source in the references.  Any views expressed in the 
+	work of others, I have included the source in the references. Any views expressed in the 
 	dissertation, other than referenced material, are those of the author. 
 	\\
 	\\
@@ -158,29 +164,30 @@
 	
 	\hypersetup{linkcolor={blue!80!black}}
 	
+	
+	
 	\section{Introduction}
 
 
 	
 	
-	The COVID-19 pandemic has had a ubiquitous impact on our lives, from work, to travel, to how we socialise. Some of these changes are temporary, such as mask wearing, but others, such as the adoption of more digital services and flexible homeworking seem likely to be permanent (ADD CITE). 
-	Subsequently, the restriction of movement has caused consumers to migrate to online services at an unprecedented rate. With the global home services market expected to grow by almost 20\% per year until 2026 \cite{ray28StatisticsHome2021}, there exists a wealth of opportunity for companies to capitalise through digitalising previously physical services. One of these services is hairdressing, which saw a sizeable uptake in demand throughout the pandemic. 
+	The COVID-19 pandemic has had a ubiquitous impact on our lives, from influencing how we work and travel, to disrupting how we socialise and interact with one another. This has caused a shift in consumer and business behaviours, some of which, such as mask wearing are temporary but others, such as the adoption of more digital services and flexible home-working seem likely to be permanent \cite{mckinseyCOVID19DigitalTransformation2020}. 
+	Furthermore, the restriction of movement has caused consumers to migrate to online services at an unprecedented rate. With the global home services market expected to grow by almost 20\% per year until 2026 \cite{ray28StatisticsHome2021}, there exists a wealth of opportunity for companies to capitalise through digitalising previously physical services. Here, we propose an application geared towards targetting the self-care market, which, unsurprisingly saw a sizeable uptake in demand during the pandemic \cite{cosmeticsdesign-europe.comTrendReflectionsWays}. Despite many retailers re-opening their stores, consumers are still spending less money in physical stores \cite{mckinseyEvolvingConsumerHow2020} and we therefore posit a market for application, even in a post-COVID world.
 	\\
 	
-	There already exists a range of applications suited towards providing home haircuts. For example, Shortcut \cite{incShortcutInHomeHaircuts}, TRIM-IT\cite{TRIMITMobileBarbershopsa} and TrimCheck\cite{TrimCheckHomeHaircuts} all provide bookable home haircuts. Despite this, none of the aforementioned applications follow the "uber" model, of allowing for immediate booking and delivery of home haircuts and instead require booking for an advanced date. 
+	There already exists a range of applications suited towards providing home haircuts. For example, Shortcut \cite{incShortcutInHomeHaircuts}, TRIM-IT \cite{TRIMITMobileBarbershopsa} and TrimCheck \cite{TrimCheckHomeHaircuts} all provide bookable home haircuts. Despite this, no application offers a comprehensive set of features, such as allowing for immediate home haircuts, rather than requiring an advanced booking and allowing for booking of multiple beauty products.
 	\\
 	
-	The proposed application is therefore to facilitate this and to create an application allowing for immediate booking and delivery of home haircuts. We will also aim to explore the novelty of the application through market research to elucidate any further gaps that may be apparent. This will be achieved through the following broad objectives: 
+	The proposed application therefore aims to facilitate this and create an application allowing for immediate booking and delivery of home haircuts, along with the abilty to choose from a range of treatments. We will aim to explore the novelty of the application through market research to elucidate any further gaps that may be apparent. This will be achieved through the following broad objectives: 
+	\\
 	
-
+	\noindent
 	$\bullet$ Conduct research to elucidate any market gaps
 	\\
 	$\bullet$ Through a user centric design (UCD) methodology plan and prototype the user interface of the application
 	\\
 	$\bullet$ Create a minimum viable product (MVP) using new product development (NPD) methodologies
 	\\
-	
-	The research aspect of the project will aim to analyse the strength and weaknesses of existing applications within the field, therefore exposing any market gaps that may be present. 
 	
 	For the implementation of the application, a heavy focus on the end user was taken through using a UCD methodology, along with NPD, which refers to the  entirety of processes leading to bringing a product to market and encompasses several steps as seen in figure \ref{fig:npd} below and discussed throughout the proceeding sections.
 	\newline
@@ -216,7 +223,7 @@
 	It was decided that Waterfall was not to be used due to several considerations, which included a lack of programming experience on behalf of the user and therefore it is likely that development would be hindered by a structured approach and also due to it being a time-limited project, not enough resources would be available to be assigned to the time needed to meticulously plan the project.
 	
 	Alternatively, it was decided to adopt an agile methodology, arguably the industry standard in software development. Agile was introduced as a means to make the execution of projects more flexible and timely and it is estimated that around 86\% of software projects are carried out using such methods \cite{StateAgileReport2021}.
-	Within agile, there exists a variety of methodogloies, of which lean was beleived to be the most suitable \cite{poppendieckLeanSoftwareDevelopment2003}), which involves seven basic principles:
+	Within agile, there exists a variety of methodogloies, of which lean was beleived to be the most suitable \cite{poppendieckLeanSoftwareDevelopment2003}, which involves seven basic principles:
 	\begin{itemize}
 		\item eliminate waste
 		\item amplify learning and create knowledge
@@ -244,7 +251,7 @@
 	$\bullet$ Write the Dissertation
 	\\
 	
-	These were then used to create 'stories' which were further split into individual tasks placed into a timeline and carried out in . For this, the project management tool monday.com \cite{MondayHome2021} was used, which can be seen in figure \ref{fig:monday.com}. Using Monday.com allowed for a timeline to be easily created, along with updating the status of each story when relevant to follow the completion of the project. In this way, a change management approach (ADD CITE) could be carried out, in which the project could easily be updated and reflected in the tasks. This was especially important as both agile methodology and the UCD rely on constant feedback from the end user which informs the project.
+	These were then used to create 'stories' which were further split into individual tasks placed into a timeline and carried out in . For this, the project management tool monday.com \cite{MondayHome2021} was used, which can be seen in figure \ref{fig:monday.com}. Using Monday.com allowed for a timeline to be easily created, along with updating the status of each story when relevant to follow the completion of the project. In this way, a change management approach \cite{kierominIntroductionChangeManagement2020} could be carried out, in which the project could easily be updated and reflected in the tasks. This was especially important as both agile methodology and the UCD rely on constant feedback from the end user which informs the project.
 	
 	\begin{figure}[H]
 		\centering
@@ -254,7 +261,7 @@
 		\cite{MondayHome2021}
 	\end{figure}
 
-	Finally, using the created timeline, a gantt chart was implemented, which gave an overarching view of the project, with tasks performed represented along the vertical axis and the timeline represented along the horizontal axis. This can be found in the appendix (ADD CITE).
+	Finally, using the created timeline, a gantt chart was implemented, which gave an overarching view of the project, with tasks performed represented along the vertical axis and the timeline represented along the horizontal axis.
 	
 	\subsection{Research and Market Analysis}
 	\label{market-analysis}
@@ -265,34 +272,41 @@
 	\\
 	TODO: finish this section
 	
-	\noindent
-	\underline{Shortcut}
-	\\
-	Shortcut is a US based application..
-	One of the defining features of the shortcut app is the availability, with the app providing the ability to request a haircut from 8am to as late as midnight capatilising on a previously unventured late night hair cut market.
-	
-	The application is limited on it's features, with it only having the option to request a Hair Cut only or a Hair Cut and Beard Trim. 
-	Another limiting feature of the application is the price. For a single haircut the cost starts at 75\$ (around £54), which is most likely a reflection of high start up costs and is a problem seen in other similar applications, such as uber and lyft that can only be mitigated through losses (\cite{WillRidehailingProfits}).
-	\\
+
 	
 	\noindent
 	\underline{TRIM-IT}
 	https://www.bbc.co.uk/news/stories-47711610
 	TODO: discuss more here
 	\\
-	TRIM-IT is a UK based mobile hairdressor application. Their business model is franchise based similar to that seen by Mcdonald's, whereby barbers would invest through a monthly fee and be provided with the tools necessary, such as a mobile barber unit. 
+	TRIM-IT is a UK based mobile hairdresser application that currently operates in London, UK. Their business model is franchise based model, whereby barbers would invest through a monthly fee and be provided with the tools necessary to provide a haircut, such as a mobile barber unit and salon items. The positives of the service are that barbers are able to provide immediate haircuts and are not limited in having to book for a future date. The current negative features are that potential barbers must 'buy in' to the service and there are therefore some initial start up costs which may dissuade barbers from using the service.
 	
 	\noindent
 	\underline{TrimCheck}
+	TrimCheck is another UK based application operating in London. They work by allowing users to book a home hair cut through the application to be delivered at a future date and time. The positives of the application are that barbers must be registered at a barber shop, therefore there is some level of vetting that occurs and they also are widely known and used. The negatives of the application is that they only allow for booking of home haircuts and also do not provide a way to book a haircut immediately and only for a future date and time.
+	
+	\noindent
+	\underline{Shortcut}
+	\\
+	Shortcut is a US based application that was founded in 2014 and allows the user to book either a haircut or a hair cut and beard trim. One of the defining features of the shortcut app is the availability functionality, with the app providing the ability to request a haircut from 8am to as late as midnight.
+	
+	The application is limited on it's features that it provides, with it only having the option to request a Hair Cut only or a Hair Cut and Beard Trim. 
+	Another limiting feature of the application is the price. For a single haircut the cost starts at 75\$ (around £54), which is most likely a reflection of high start up costs and is a problem seen in other similar applications, such as uber and lyft that can only be mitigated through losses \cite{WillRidehailingProfits}. As the application is currently only operating in the US, it does not prevent any current competition.
+	\\
 	
 	
 	\subsubsection{Novelty of the Proposed Application}
-	As discussed in the previous sections, there exists a range of applications that are suited towards providing a mobile barber service.
-	
-	(shortcut)The ability to offer a variety of services not limited to just a haircut or beardtrim.
+	As discussed in the previous sections, there exists a range of applications that are suited towards providing a mobile barber service, however, they are each limited by several factors. The novelty of the proposed application therefore aims to build upon these applications and act to unify the features found previously, such as:
+	\begin{itemize}
+		\item Allowing the user to book a home hair cut for immediate delivery
+		\item Allowing for the barber to enter a range of services, rather than just a hair cut
+		\item Keeping costs low by reducing initial start up costs to the barber (i.e. allowing them to use their own salon equipment and providing the products at the users address rather than a mobile unit)
+		\item Providing the application throughout the U.K. by standardising the sign up process and focusing on ease of use
+	\end{itemize}
 	
 	\subsection{Deciding on a Platform}
 	\label{chap:platform}
+	
 	\subsubsection{Mobile vs Desktop}
 	An important consideration in NPD is determining which platform best suits the project, mobile or desktop. Here, we will discuss the merits and pitfalls of each, before concluding which is most relevant for the project. 
 	\\
@@ -329,15 +343,15 @@
 		\cite{AndroidVsIOS2021}
 	\end{figure}
 	
-	With this change has brought with it a push towards frameworks that allow for development across multiple platforms, such as React Native (\cite{ReactNativeLearn}) and Flutter (\cite{FlutterBeautifulNative}). For this reason, it was decided that a cross platform framework would be used, which is further discussed below.
+	With this change has brought with it a push towards frameworks that allow for development across multiple platforms, such as React Native \cite{ReactNativeLearn} and Flutter \cite{FlutterBeautifulNative}. For this reason, it was decided that a cross platform framework would be used, which is further discussed below.
 	
 	\subsection{Frontend: Programming Language}
-	When deciding on the programming software, several metrics were taken into consideration, including cross-platform functionality, speed, speed of development and performance. For this reason, Dart and the corresponding Flutter software development kit (SDK) were chosen for the primary software. Flutter is a cross-platform development kit, meaning that it will natively run on both iOS and android applications created by Google \cite{FlutterBeautifulNative}. Dart is compiled ahead-of-time into native ARM code giving better performance compared to other similar development kits, such as React Native and the user interface  is implemented within a fast, low-level C++ library giving great speed to the application. Dart has also seen a large increase in usage within recent years, jumping up 532\% from 2018 to 2019 \cite{StateOctoverse2019} meaning that there is now an extensible list of third-party plugins available and a large community.
+	When deciding on the programming software, several metrics were taken into consideration, including cross-platform functionality, speed, speed of development and performance. For this reason, Dart and the corresponding Flutter software development kit (SDK) were chosen for the primary software. Flutter is a cross-platform development kit, meaning that it will natively run on both iOS and android applications created by Google \cite{FlutterBeautifulNative}. Dart is compiled ahead-of-time into native ARM code giving better performance compared to other similar development kits, such as React Native and the user interface  is implemented within a fast, low-level C++ library giving great speed to the application. Dart has also seen a large increase in usage within recent years, jumping up 532\% from 2018 to 2019 \cite{StateOctoverse2019} meaning that there is now an extensible list of third-party plug-ins available and a large community.
 	
-	\subsection{Backend: SQL vs noSQL database}
-	For the database, it was decided to use Google Firestore (\cite{CloudFirestoreFirebase}), a  database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform. The cloud firestore also integrates well with Firebases Authentication service, which is used throughout and discussed extensively in \autoref{chap:implementation}
+	\subsection{Back-end: SQL vs NoSQL database}
+	For the database, it was decided to use Google Firestore \cite{CloudFirestoreFirebase}, a  database that relies on  nested 'documents' within 'collections'. This was chosen for several reasons. Firstly, as the chosen language 'Dart' is run by Google, using firestore allows for greater integration and congruence with the platform and APIs. Firestore also allows for rapid scalability, along with using Googles excellent cloud platform. The cloud firestore also integrates well with Firebases Authentication service, which is used throughout and discussed extensively in \autoref{chap:implementation}
 	
-	Another important feature of noSQL databases is the ability to easily modify the internal data in response to changing business requirements, in an interactive way that allows fordo you use relationship data in firebase stackoverflow modification throughout the application lifestyle and therefore easy scaling.
+	Another important feature of noSQL databases is the ability to easily modify the internal data in response to changing business requirements, in an interactive way that allows forgo you use relationship data in firebase modification throughout the application lifestyle and therefore easy scaling. TODO: change this sentence
 
 	\subsection{User Personas}
 	\label{user-personas}
@@ -447,7 +461,7 @@
 	\begin{itemize}
 		\item Use-ability
 		\begin{itemize}
-			\item The application shall follow nielsen's usability heuristics and be easily usable for the user without any guidance or help
+			\item The application shall follow Nielsen's usability heuristics and be easily usable for the user without any guidance or help
 		\end{itemize}
 	\end{itemize}
 
@@ -508,7 +522,7 @@
 		\label{fig:system-architecture}
 	\end{figure}
 	
-	When designing the architecture, core business logic was kept separate from the UI, database and network. For example, when interacting with the database the UI called upon the utilities package and any API calls where contained within the providers package. The project was also split into 3 layers, according to clean architecture principles (\cite{martinRapidApplicationDevelopment1991})
+	When designing the architecture, core business logic was kept separate from the UI, database and network. For example, when interacting with the database the UI called upon the utilities package and any API calls where contained within the providers package. The project was also split into 3 layers, according to clean architecture principles \cite{martinRapidApplicationDevelopment1991}
 	
 	\begin{itemize}
 		\item Presentation layer
@@ -533,7 +547,7 @@
 		\end{itemize}
 	\end{itemize}
 
-	 This generally follows clean architecture principles (\cite{martinRapidApplicationDevelopment1991}) and each layer is represented in \autoref{fig:clean-architecture} below.
+	 This generally follows clean architecture principles \cite{martinRapidApplicationDevelopment1991} and each layer is represented in \autoref{fig:clean-architecture} below.
 	 
 	 \begin{figure}[H]
 	 	\centering
@@ -582,7 +596,7 @@
 	\subsubsection{Provider}
 	For locally managing state, 'setState()' can be utilised within a statefulWidget, which was used extensively throughout the project, for example in the Checkout screen when updating the total to match the given products.
 	
-	For managing the global state within the project it was decided that Provider would be used as the primary global state management framework for several reasons. Firstly, it is fairly simple to understand, and when used with ChangeNotifier allows for the required state management for the proposed application. Secondly, Provider lends itself to a clean architecture with the logic seperated from the UI, meaning that a simple widget tree can be designed and implemented, which can be seen in \autoref{fig:widget-tree} bellow, which displays the widget tree diagram for the application. Unlike BLoC, Provider allows for good flexibility, which as there was only 1 developer on the project makes more sense, giving greater scope for changes throughout the project. Despite this, future growth could lend itself towards also implementing BLoC alongside Provider, to improve structure and increase growth potential, a good example can be seen with Ebay's Motor App \cite{techblogEBayMotorsState2021}.
+	For managing the global state within the project it was decided that Provider would be used as the primary global state management framework for several reasons. Firstly, it is fairly simple to understand, and when used with ChangeNotifier allows for the required state management for the proposed application. Secondly, Provider lends itself to a clean architecture with the logic separated from the UI, meaning that a simple widget tree can be designed and implemented, which can be seen in \autoref{fig:widget-tree} bellow, which displays the widget tree diagram for the application. Unlike BLoC, Provider allows for good flexibility, which as there was only 1 developer on the project makes more sense, giving greater scope for changes throughout the project. Despite this, future growth could lend itself towards also implementing BLoC alongside Provider, to improve structure and increase growth potential, a good example can be seen with Ebay's Motor App \cite{techblogEBayMotorsState2021}.
 	
 	 Finally, although GetX makes an excellent framework for larger projects, due to it's "micro framework" that encompasses several features not limited to controlling state management, the fairly simplistic nature of Provider better suited the relatively small project and hence was chosen here. The overall state management can be seen in \autoref{fig:widget-tree}.
 	 	
@@ -611,14 +625,14 @@
 	\subsection{Initial Sketches and Brainstorming}
 	Initial sketches involve using pen and paper to elucidate problems and brain storm ideas for the project. During this phase, several design and UI features were considered, which allowed us to generate many ideas, using a fast and simple approach.
 	
-	Some of these sketches can be seen in \autoref{fig:sketches} below.
+	The sketches representing the Login and Sign Up screens can be seen in \autoref{fig:sketch-1} below.
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.3]{images/placeholder.jpg}
+		\includegraphics[scale=0.2]{images/sketch-1.png}
 		\caption{Pen and Paper Sketches and Brainstorming}
-		\label{fig:sketches}
+		\label{fig:sketch-1}
 	\end{figure}
-	(TODO: UPDATE PHOTO WITH INITIAL SKETCHES)
+	
 	
 	\subsection{Wire-framing}
 	Once the sketches were completed we moved on to wire-framing the application, which involved taking the best sketch variants and creating a more detailed, lower level prototype.For the wire-framing application Adobe XD was chosen for several reasons. Firstly, it has strong prototyping functionality, allowing the user to click around the application through the use of ‘components’. This interactivity means that early testers can get a real feel for how the application works. An illustration of this can be seen below, whereby each arrow represents a state change in the form of a trigger/ action pair, whereby for example a user could click on ‘Available Right Now’ and be taken to the ‘Checkout’ as seen in \autoref{fig:prot-comp} below.
@@ -632,7 +646,7 @@
 	
 	Adobe XD also allows for easy distribution of the prototype in the form of a shareable link that opens in the browser and encompasses the same functionality and components that can be found within the application itself, meaning that anyone with access to a browser can test the prototype. Along with this, the prototype also allows for comments to be made, which are fed back to the owner. This comment capability was used early on during beta testing when it was sent out with the early questionnaire and influenced initial design decisions \cite{SketchVsFigma0200}.
 	
-	When designing the screens there was a strong focus on user experience following Nielsons 10 Heuristics for User Interface Design \cite{experience10UsabilityHeuristics} . For example, the functionality was kept as minimal as possible to avoid clittering and avoid cognitive load on the user, the user was given control to go back and forward between previous screens to allow for user control and freedom and simple and self-explanatory language was used to apply recognition over recall. For example, the Sign In screen below extraneous text was kept to a minimum by using images for the login items, such as Google, Facebook and Twitter, a sign up button was included to allow the user to access the application through creating a new account and large, clear sign in forms and buttons were used. The full interactive Adobe XD wireframe can be found \href{https://xd.adobe.com/view/c6aeda9c-9b9a-456a-b699-cc4cd8b4cefa-93fd/}{here}. 
+	When designing the screens there was a strong focus on user experience following Nielson's 10 Heuristics for User Interface Design \cite{experience10UsabilityHeuristics} . For example, the functionality was kept as minimal as possible to avoid clittering and avoid cognitive load on the user, the user was given control to go back and forward between previous screens to allow for user control and freedom and simple and self-explanatory language was used to apply recognition over recall. For example, the Sign In screen below extraneous text was kept to a minimum by using images for the login items, such as Google, Facebook and Twitter, a sign up button was included to allow the user to access the application through creating a new account and large, clear sign in forms and buttons were used. The full interactive Adobe XD wireframe can be found \href{https://xd.adobe.com/view/c6aeda9c-9b9a-456a-b699-cc4cd8b4cefa-93fd/}{here}. 
 	
 	\begin{figure}[H]
 		\centering
@@ -655,7 +669,7 @@
 	
 	
 	\subsection{Sprint 1 - UI}
-	The first sprint involved implementing the UI, which was previously wire-framed within Adove XD. Flutter offer an Adobe XD plugin to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning that would not scale. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possible, therefore the UI was implemented manually.
+	The first sprint involved implementing the UI, which was previously wire-framed within Adobe XD. Flutter offer an Adobe XD plug-in to turn wireframes directly into code, however, this was not used for several reasons. In Adobe XD components are positioned absolutely, whereas in Flutter it is done relatively, leading to several issues with positioning that would not scale. Adobe XD also does not contain customer properties and therefore mapping these to components, such as title is not possible, therefore the UI was implemented manually.
 	
 	Within Flutter, the UI is built through using widgets, which describe not only the look of the application, but also provide the state and can be rebuilt to reflect a change in state. As an example we can look at the forgot password screen, a segment of which is shown in \autoref{code:forgot-password}. The UI here is built using a variety of widgets. For example, line 2 shows a Column widget, which allows for daughter widgets to be stacked alongside each-other vertically. The first daughter widget is a TextField that allows us to get text from the user and this is wrapped within a padding widget, which allows us to specify the required padding to aid in UI design. Finally, a button is placed within the application using the GestureDetector widget, which, by implementing the 'onTap' function looks for input from the user and then navigates to the Login screen after using the AuthenticateProvider to send a password reset link.  
 		
@@ -823,11 +837,11 @@
 	\subsubsection{Avoiding Nested Data}
 	A consideration when creating the database was to optimise queries for fast lookup time, as this was one of the main considerations in choosing a noSQL over SQL database. For this reason, when storing data, the id was stored as the document id. For example within the UserFirebase class, for the 'createNewUser()' function, we pass through the authentication uid, which is then used as the document id. This means that rather than querying with a call such as 
 	\begin{lstlisting}
-		_firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
+		firebaseFirestore.collection(collection).where('uid', .isEqualTo('givenID')).get()
 	\end{lstlisting}
 	which does not scale well due to a search time of $\mathcal{O}$(n). Instead, we store the uid as the document id, allowing us to do a similar, although quicker call such as
 	\begin{lstlisting}
-		_firebaseFirestore.collection(collection).doc(userId).get()
+		firebaseFirestore.collection(collection).doc(userId).get()
 	\end{lstlisting}
 	which gives a search time of $\mathcal{O}$(1).
 	
@@ -842,7 +856,7 @@
 	
 	When loading the parent barbers, initially this was done with 3 separate calls to the server. An example of this is when getting the parent barbers for the topRated() widget, the following database query was made: 
 	\begin{lstlisting}
-		_firebaseFirestore.collection("parentBarber").orderBy("rating", Direction.DESCENDING).limit(5).get();
+		firebaseFirestore.collection("parentBarber").orderBy("rating", Direction.DESCENDING).limit(5).get();
 	\end{lstlisting}
 	This made a call to the collection parentBarber, ordered by the top 5 rated parent barbers and fetched the resulting data. As there were 3 different widgets this resulted in 3 separate calls to the database. This was later changed in favour of fetching all of the parent barbers first before filtering within memory. This aided in not only increasing speeds due to local filtering, but also reduced the number of needed calls to the database, further reducing speeds and costs. An example of this filtering can be seen in the 'filter-list.dart' file in \autoref{code:filter-list}.
 	\newline
@@ -988,7 +1002,7 @@
 	
 	\label{use-case-implementation}
 	\subsection{User (Beta) Testing}
-	Beta testing was carried out through providing end users with a copy of the application and asking them to fill out a feedback form, which can be found at: (TODO: ADD FORM)
+	Beta testing was carried out through providing end users with a copy of the application and asking them to fill out a feedback form, which continually changed throughout development. The final form, which contains questions relevant to the entirety of features can be found in \autoref{user-testing-survey}.
 	The form allowed for validation of the application, but also heavily influenced the ‘future work’ section of the application, for example, one user wrote:
 	"It would be useful to add a side bar where I could access other details, such as my account and orders etc". This comment influenced the development in that previously there was no intention to implement a side bar, which was then later added.
 	The survey also exposed some flaws and bugs related to the current version of the application, for example, one user wrote:
@@ -1082,6 +1096,7 @@
 	
 	
 	\section{Conclusion and Further Work}
+	
 	\subsection{Conclusion}
 	
 	\subsubsection{Achieving the Required Objectives}
@@ -1136,7 +1151,7 @@
 	\noindent
 	To deploy the android application there are several steps that must be carried out. First a launcher icon must be added, which was previously implemented and discussed in \autoref{launcher-icons}. Next, to publish the android version of the app, a digital signature must be created, first involving creating a 2048 bit RSA key through running 
 	\begin{lstlisting}
-	keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
+		keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias upload
 	\end{lstlisting}
 	before the key is referenced from the app by creating a file and storing in 
 	\begin{lstlisting}
@@ -1148,14 +1163,14 @@
 		\item The keystore information is added
 		\item Within the buildTypes block setup information is added so that the app will be signed automatically
 	\end{itemize}
-
+	
 	Finally, an android app bundle \cite{androidAndroidAppBundle2021}, which is the preferred format for the Play Store is created using 
 	\begin{lstlisting}
 		flutter build appbundle
 	\end{lstlisting}
 	which creates the app bundle that can be found at 
 	\begin{lstlisting}
-		../build/app/outputs/bundle/release/app.aab.
+		../build/app/outputs/bundle/release/app.aab
 	\end{lstlisting}
 	and this can then be uploaded to the Google Play Store.
 	\\
@@ -1174,7 +1189,7 @@
 		build/ios/archive/MyApp.xcarchive
 	\end{lstlisting}
 	
-		
+	
 	\subsection{Future Work}
 	
 	As previously stated, the the goal of the project was to create an MVP of a mobile barber application. The project met all of the requirements and only needs for a booking and payment system to be implemented for it to be market ready as an MVP.
@@ -1198,6 +1213,7 @@
 		\end{itemize}
 		\item Complaints system which implements a ticket system that links with the admin application
 	\end{itemize}
+
 	
 	
 	\pagebreak
@@ -1206,6 +1222,26 @@
 	
 	\appendix
 	\appendixpage
+	
+	\section{Surveys}
+	\label{appendix-surveys}
+	
+	\subsection{Market Analysis Survey}
+	\label{market-analysis-survey}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{images/market-analysis-survey.png}
+	\end{figure}
+
+	\subsection{User Testing Survey}
+	\label{user-testing-survey}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{images/user-testing-survey.png}
+	\end{figure}
+	
+	\pagebreak
+	
 	\section{Use Cases}
 	\label{chap:use-cases}
 		
@@ -1388,6 +1424,8 @@
 			Alternative Paths    & none                                                                       
 		\end{tabular}
 	\end{table}
+
+	\pagebreak
 	
 	\section{Application Images}
 	
@@ -1461,8 +1499,6 @@
 		\includegraphics[scale=0.22]{images/add-to-cart.png}
 	\end{figure}
 
-
-
 	\subsection{Search for a Barber}
 	\label{app-image: search}
 	\begin{figure}[H]
@@ -1476,8 +1512,6 @@
 		\centering
 		\includegraphics[scale=0.22]{images/checkout.png}
 	\end{figure}
-
-
 
 	\subsection{Sign Out}
 	\label{app-image: sign-out}
@@ -1493,7 +1527,7 @@
 		\includegraphics[scale=0.22]{images/add-barber.png}
 	\end{figure}
 
-
+	\pagebreak
 	
 	\section{Code Snippets}
 	\subsection{Partial Code for Authenticate.dart Showing the Email and Password Sign In}
@@ -1814,8 +1848,6 @@
 			),
 		),
 		\end{minted}
-	
 
-		TODO: ADD COMMENTS THAT INFLUENCED DEVELOPMENT
 	
 \end{document}

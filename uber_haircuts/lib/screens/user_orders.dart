@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:uber_haircuts/models/made_orders.dart';
 import 'package:uber_haircuts/providers/authenticate.dart';
 import 'package:uber_haircuts/theme/main_theme.dart';
+import 'package:uber_haircuts/utilities/products_firestore.dart';
 import 'package:uber_haircuts/widgets/navigate.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class _UserOrdersState extends State<UserOrders> {
     Widget build(BuildContext context) {
       final _user = Provider.of<AuthenticateProvider>(context);
       List<MadeOrdersModel> _orders = _user.userModel.orders;
+      final ProductsFirestore _productsFirestore = new ProductsFirestore();
 
       return MaterialApp(
           home: Scaffold(
@@ -85,15 +87,12 @@ class _UserOrdersState extends State<UserOrders> {
                                                     .start,
                                                 children: [
                                                   ListView.builder(
-                                                      scrollDirection: Axis
-                                                          .vertical,
-                                                      itemCount: _orders.length,
+                                                      scrollDirection: Axis.vertical,
+                                                      shrinkWrap: true,
+                                                      itemCount: _orders[index].products.length,
                                                       itemBuilder: (_, index2) {
                                                         return ReturnText(
-                                                            text: "PRODUCT ID: " +
-                                                                _orders[index]
-                                                                    .products[index2]
-                                                                    .id);
+                                                            text: _orders[index].products[index2].product.toString());
                                                       }),
                                                   Row(
                                                       mainAxisAlignment: MainAxisAlignment

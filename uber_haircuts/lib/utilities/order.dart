@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/made_orders.dart';
 import 'package:uber_haircuts/models/order.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
@@ -11,6 +12,7 @@ class OrderUtility {
   FirebaseFirestore _firestore = FirebaseFirestore.instance;
   static const USERS = "users";
   static const BARBERS = "barbers";
+  static const PARENT_BARBER = "parentBarber";
   final OrdersFirestore ordersFirestore = new OrdersFirestore();
 
 
@@ -117,7 +119,11 @@ class OrderUtility {
     return UserModel.fromSnapshot(value);
   });
 
-  Future<ParentBarberModel> getBarberById(String userId) => _firestore.collection(BARBERS).doc(userId).get().then((value){
+  Future<BarberModel> getBarberById(String barberID) => _firestore.collection(BARBERS).doc(barberID).get().then((value){
+    return BarberModel.fromSnapshot(value);
+  });
+
+  Future<ParentBarberModel> getParentBarberById(String barberID) => _firestore.collection(PARENT_BARBER).doc(barberID).get().then((value){
     return ParentBarberModel.fromSnapshot(value);
   });
 

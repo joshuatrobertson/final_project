@@ -11,28 +11,22 @@ import 'package:uber_haircuts/widgets/return_image.dart';
 import 'package:uber_haircuts/widgets/return_text.dart';
 import '../theme/main_theme.dart';
 import 'cart.dart';
+/*
+class DeleteBarber extends StatefulWidget {
 
-class BarberDetails extends StatefulWidget {
-  final ParentBarbersProvider parentBarbersProvider;
-  final ParentBarberModel parentBarberModel;
+  createState() => _DeleteBarberState();
 
-  createState() => _BarberDetailsState();
-
-  BarberDetails({@required this.parentBarbersProvider, @required this.parentBarberModel});
-
-
+  DeleteBarber();
 
 }
 
-class _BarberDetailsState extends State<BarberDetails> {
+class _DeleteBarberState extends State<DeleteBarber> {
   int _currentNav = 0;
   @override
     Widget build(BuildContext context) {
     AuthenticateProvider _user = Provider.of<AuthenticateProvider>(context);
 
     // Fetch only the barbers which have the parent barber ID
-    List<BarberModel> _barbers = widget.parentBarbersProvider.barbers.where((barber) =>
-    barber.parentBarberID == widget.parentBarberModel.id).toList();
 
     return MaterialApp(
       home: Scaffold(
@@ -165,6 +159,6 @@ class _BarberDetailsState extends State<BarberDetails> {
     );
   }
 }
-
+*/
 
 

@@ -8,6 +8,19 @@ enum allowedProducts {
   STUDENT_CUT,
 }
 
+var allowedProductsString = {
+  "Haircut",
+  "Shave",
+  "Student Cut",
+};
+
+var productImages = {
+  "https://firebasestorage.googleapis.com/v0/b/uber-haircuts.appspot.com/o/products%2Fhair_cut.jpg?alt=media&token=f24e8e0b-64fb-49e2-b73d-c7e2e8d0ec0b",
+  "https://firebasestorage.googleapis.com/v0/b/uber-haircuts.appspot.com/o/products%2Fbeard_trim.jpg?alt=media&token=e26f73d4-8c73-4366-aa0c-971dcf32f376",
+  "https://firebasestorage.googleapis.com/v0/b/uber-haircuts.appspot.com/o/products%2Fstudent_cut.jpg?alt=media&token=197b7101-672d-4bfe-9131-90924a257cb2",
+};
+
+
 class ProductModel {
 
   static const ID = "id";
@@ -51,4 +64,27 @@ class ProductModel {
     _featured = documentSnapshot.data()[FEATURED];
     _barberID = documentSnapshot.data()[BARBER_ID];
   }
+
+  ProductModel.fromMap(Map product) {
+    _id = product[ID];
+    _name = product[NAME];
+    _description = product[DESCRIPTION];
+    _price = product[PRICE];
+    _image = product[IMAGE];
+    _featured = product[FEATURED];
+    _barberID = product[BARBER_ID];
+  }
+
+  Map toMap() => {
+    ID: _id,
+    NAME: _name,
+    DESCRIPTION: _description,
+    PRICE: _price,
+    IMAGE: _image,
+    FEATURED:_featured,
+    BARBER_ID: _barberID,
+  };
+
+  ProductModel();
+
 }

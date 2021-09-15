@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:uber_haircuts/providers/google_maps.dart';
+import 'package:uber_haircuts/providers/maps.dart';
 import 'package:uber_haircuts/models/location.dart';
 
 class ShowSearchPage extends SearchDelegate<LocationModel> {
 
   final sessionToken;
-  GoogleMapsAPI googleMapsAPI;
+  Maps googleMapsAPI;
 
   ShowSearchPage(this.sessionToken) {
-    googleMapsAPI = GoogleMapsAPI(sessionToken);
+    googleMapsAPI = Maps(sessionToken);
   }
 
 

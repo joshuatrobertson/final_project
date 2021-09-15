@@ -17,6 +17,10 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+\preamble{%
+\ifdefined\DeclarePrefChars\DeclarePrefChars{'’-}\else\fi
+}
+
   \entry{androidAndroidAppBundle2021}{online}{}
     \name{author}{1}{}{%
       {{hash=A}{%
@@ -100,6 +104,69 @@
     \endverb
     \field{year}{2021}
     \field{urlday}{14}
+    \field{urlmonth}{09}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{mckinseyCOVID19DigitalTransformation2020}{online}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         given={Mckinsey},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{{COVID}}-19 Digital Transformation \& Technology |
+  {{McKinsey}}}
+    \verb{url}
+    \verb https://www.mckinsey.com/business-functions/strategy-and-corporate-fi
+    \verb nance/our-insights/how-covid-19-has-pushed-companies-over-the-technol
+    \verb ogy-tipping-point-and-transformed-business-forever
+    \endverb
+    \verb{file}
+    \verb /home/josh/Zotero/storage/C8JH9CXM/how-covid-19-has-pushed-companies-
+    \verb over-the-technology-tipping-point-and-transformed-business-fo.html
+    \endverb
+    \field{year}{2020}
+    \field{urlday}{15}
+    \field{urlmonth}{09}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{mckinseyEvolvingConsumerHow2020}{online}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         given={Mckinsey},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Consumer shopping and spending habits look different today. Which changes
+  will persist? What trends should retailers bear in mind heading into the
+  holidays?%
+    }
+    \field{shorttitle}{The Evolving Consumer}
+    \field{title}{The Evolving Consumer: {{How COVID}}-19 Is Changing the Way
+  We Shop | {{McKinsey}} \& {{Company}}}
+    \verb{url}
+    \verb https://www.mckinsey.com/about-us/covid-response-center/mckinsey-live
+    \verb /webinars/evolving-consumer-how-covid-19-has-changed-us-shopping-habi
+    \verb ts
+    \endverb
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/4IXSDGKS/evolving-consumer-how-covid-19-has
+    \verb -changed-us-shopping-habits.html
+    \endverb
+    \field{year}{2020}
+    \field{urlday}{15}
     \field{urlmonth}{09}
     \field{urlyear}{2021}
   \endentry
@@ -321,6 +388,48 @@
     \endverb
     \field{urlday}{16}
     \field{urlmonth}{08}
+    \field{urlyear}{2021}
+  \endentry
+
+  \entry{cosmeticsdesign-europe.comTrendReflectionsWays}{online}{useprefix}
+    \name{author}{1}{}{%
+      {{hash=ce}{%
+         prefix={cosmeticsdesign},
+         prefixi={c\bibinitperiod},
+         family={{europe.com}},
+         familyi={e\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {{cosmeticsdesign-europe.com}}%
+    }
+    \strng{namehash}{ce1}
+    \strng{fullhash}{ce1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    The ongoing coronavirus (COVID-19) pandemic has mightily impacted consumer
+  behaviour, with many upcoming beauty trends fast-forwarded and new purchase
+  and usage patterns appearing. Here, CosmeticsDesign-Europe brings you the
+  nine ways beauty consumption changed this year.%
+    }
+    \field{shorttitle}{Trend Reflections}
+    \field{title}{Trend Reflections: 9 Ways {{COVID}}-19 Changed Beauty
+  Consumption in 2020}
+    \verb{url}
+    \verb https://www.cosmeticsdesign-europe.com/Article/2020/12/22/Beauty-tren
+    \verb ds-during-COVID-19-changed-including-hygiene-safety-and-digital-focus
+    \verb -says-CosmeticsDesign-Europe
+    \endverb
+    \field{langid}{british}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/DMQC66BQ/Beauty-trends-during-COVID-19-chan
+    \verb ged-including-hygiene-safety-and-digital-focus-says-Cosmetics.html
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{09}
     \field{urlyear}{2021}
   \endentry
 
@@ -596,6 +705,46 @@
     \field{urlday}{15}
     \field{urlmonth}{08}
     \field{urlyear}{2021}
+  \endentry
+
+  \entry{kierominIntroductionChangeManagement2020}{online}{}
+    \name{author}{1}{}{%
+      {{hash=KB}{%
+         family={Kieromin},
+         familyi={K\bibinitperiod},
+         given={Berry},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {{Work Smarter Together}}%
+    }
+    \strng{namehash}{KB1}
+    \strng{fullhash}{KB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{abstract}{%
+    By Michael Sinnott, UCD Agile At a higher education conference last summer
+  I came across a change management framework developed by a group called
+  Prosci (https://www.prosci.com/).~ Prosci stood out because so many of
+  the...%
+    }
+    \field{title}{Introduction to {{Change Management}}}
+    \verb{url}
+    \verb http://worksmartertogether.ucd.ie/introduction-to-change-management/
+    \endverb
+    \field{langid}{british}
+    \verb{file}
+    \verb /home/josh/Zotero/storage/52LIB33Q/introduction-to-change-management.
+    \verb html
+    \endverb
+    \field{urlday}{15}
+    \field{urlmonth}{09}
+    \field{urlyear}{2021}
+    \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
   \endentry
 
   \entry{larsonUseCasesWhat2004}{online}{}

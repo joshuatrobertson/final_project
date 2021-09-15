@@ -20,5 +20,15 @@ class ProductsFirestore {
 
   ProductsFirestore();
 
+  // Add each product after converting to a map for firebase
+  Future<void> addProducts(List<ProductModel> products) async {
+    for (ProductModel product in products) {
+      await _collectionReference.doc(product.id).set(Map<String, dynamic>.from(product.toMap()));
+    }
+  }
+
+  Future<ProductModel> getProductWithID(String productID) async =>
+    await _collectionReference.doc(productID).get().then((product) =>
+    ProductModel.fromSnapshot(product));
 
 }

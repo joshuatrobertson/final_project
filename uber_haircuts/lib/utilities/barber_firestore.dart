@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:uber_haircuts/models/barber.dart';
 import 'package:uber_haircuts/models/parent_barber.dart';
 
 
 class BarberFirestore {
   static const BARBERS = "barbers";
   static const PRODUCTS = "products";
+  static const PARENT_BARBERS = "parentBarber";
   FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
   // Method to update an existing user
@@ -27,8 +29,12 @@ class BarberFirestore {
     });
   }
 
-  Future<bool> createAddBarber({String firstName, String lastName, String description, String image}) async {
+  List<BarberModel> getBarbersWithParentID(String parentID) {
 
+  }
+
+  Future<bool> createAddBarber({String id, String firstName, String lastName, String description, String image, String parentBarberID}) async {
+    List<String> barbers = [];
     Map<String, dynamic> newBarber = {
       "firstName": firstName,
       "lastName": lastName,
@@ -38,7 +44,11 @@ class BarberFirestore {
       "featured": false,
     };
     try {
-      await  _firebaseFirestore.collection(BARBERS).doc().set(newBarber);
+      barbers.add(id);
+      await  _firebaseFirestore.collection(BARBERS).doc(id).set(newBarber);
+      await _firebaseFirestore.collection(PARENT_BARBERS).doc(parentBarberID).update({
+          "barbers": FieldValue.arrayUnion(barbers)
+      });
       return true;
     } catch(e) {
       print("Error with adding barber: " + e.toString());

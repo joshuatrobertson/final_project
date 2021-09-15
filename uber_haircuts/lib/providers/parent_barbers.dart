@@ -10,7 +10,7 @@ class ParentBarbersProvider extends ChangeNotifier {
   // Create an instance of firestore
   LocationFirestore _parentFirestore = LocationFirestore();
   Position _position;
-  static const RADIUS = 100.0;
+  static const RADIUS = 1000.0;
 
 
   List<ParentBarberModel> _allParents = [];

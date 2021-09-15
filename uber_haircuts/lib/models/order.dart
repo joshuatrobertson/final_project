@@ -6,15 +6,18 @@ import 'package:uber_haircuts/models/product.dart';
 class OrderModel {
   static const ID = "id";
   static const PRODUCT_ID = "productID";
+  static const PRODUCT_NAME = "productName";
   static const QUANTITY = "quantity";
 
   String _id;
   String _productID;
+  String _productName;
   ProductModel _product;
   int _quantity;
 
   String get id => _id;
   String get productID => _productID;
+  String get productName => _productName;
   int get quantity => _quantity;
   ProductModel get product => _product;
 
@@ -26,6 +29,7 @@ class OrderModel {
     _id = item[ID];
     _productID =  item[PRODUCT_ID];
     _quantity =  item[QUANTITY];
+    _productName = item[PRODUCT_NAME];
   }
 
   // Create a map with json objects
@@ -38,6 +42,7 @@ class OrderModel {
   OrderModel.fromSnapshot(DocumentSnapshot documentSnapshot) {
     _id = documentSnapshot.data()[ID];
     _productID = documentSnapshot.data()[PRODUCT_ID];
+    _productName = documentSnapshot.data()[PRODUCT_NAME];
     _quantity = documentSnapshot.data()[QUANTITY];
   }
 

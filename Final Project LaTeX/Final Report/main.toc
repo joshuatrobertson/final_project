@@ -1,226 +1,232 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {british}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1}Introduction}{9}{section.1}%
+\contentsline {section}{\numberline {1}Introduction}{10}{section.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1}Ideation and Concept}{10}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.1}Ideation and Concept}{11}{subsection.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2}Project Management}{11}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.2}Project Management}{12}{subsection.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.2.1}Choosing a Project Management Framework}{11}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.1}Choosing a Project Management Framework}{12}{subsubsection.1.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3}Research and Market Analysis}{13}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.3}Research and Market Analysis}{14}{subsection.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.1}Existing Applications}{13}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.1}Existing Applications}{15}{subsubsection.1.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.3.2}Novelty of the Proposed Application}{14}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.2}Novelty of the Proposed Application}{16}{subsubsection.1.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4}Deciding on a Platform}{14}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.4}Deciding on a Platform}{16}{subsection.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.1}Mobile vs Desktop}{14}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.1}Mobile vs Desktop}{16}{subsubsection.1.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.2}Mobile Platform: Android vs iOS}{16}{subsubsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.2}Mobile Platform: Android vs iOS}{18}{subsubsection.1.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5}Frontend: Programming Language}{17}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.5}Frontend: Programming Language}{18}{subsection.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.6}Backend: SQL vs noSQL database}{17}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.6}Back-end: SQL vs NoSQL database}{19}{subsection.1.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.7}User Personas}{18}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.7}User Personas}{19}{subsection.1.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2}Software Requirements}{22}{section.2}%
+\contentsline {section}{\numberline {2}Software Requirements}{23}{section.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1}Application Scope}{22}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.1}Application Scope}{23}{subsection.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}User Needs}{23}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}User Needs}{24}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3}Requirements}{23}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Requirements}{24}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.1}Functional Requirements}{23}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.1}Functional Requirements}{24}{subsubsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.3.2}Non-Functional Requirements}{24}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.2}Non-Functional Requirements}{25}{subsubsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4}Use Cases}{24}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.4}Use Cases}{25}{subsection.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3}System Design}{25}{section.3}%
+\contentsline {section}{\numberline {3}System Design}{26}{section.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1}System Architecture}{25}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.1}System Architecture}{26}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2}State Management}{28}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}State Management}{29}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1}Provider}{29}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.1}Provider}{30}{subsubsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.2}Deciding on a Framework}{30}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2}Deciding on a Framework}{31}{subsubsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4}Prototyping}{30}{section.4}%
+\contentsline {section}{\numberline {4}Prototyping}{31}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1}Initial Sketches and Brainstorming}{31}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}Initial Sketches and Brainstorming}{32}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Wire-framing}{31}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}Wire-framing}{33}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Implementation}{34}{section.5}%
+\contentsline {section}{\numberline {5}Implementation}{35}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Setup}{35}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.1}Setup}{36}{subsection.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.1.1}File Structure}{35}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}File Structure}{36}{subsubsection.5.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Sprint 1 - UI}{35}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2}Sprint 1 - UI}{36}{subsection.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1}Cupertino vs Material}{36}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1}Cupertino vs Material}{37}{subsubsection.5.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Sprint 2 - Sign Up and Login}{36}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Sprint 2 - Sign Up and Login}{37}{subsection.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.1}Authentication}{37}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.1}Authentication}{38}{subsubsection.5.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.2}Sign Up}{37}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2}Sign Up}{38}{subsubsection.5.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.3}Login}{38}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3}Login}{39}{subsubsection.5.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.4}Sign Out}{39}{subsubsection.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.4}Sign Out}{40}{subsubsection.5.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.5}State Management}{39}{subsubsection.5.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.5}State Management}{40}{subsubsection.5.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4}Sprint 3 - Backend Setup and Modelling}{40}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4}Sprint 3 - Backend Setup and Modelling}{41}{subsection.5.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.1}Setup}{41}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1}Setup}{42}{subsubsection.5.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.2}Database Design}{41}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2}Database Design}{42}{subsubsection.5.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.3}Creating the Models}{42}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3}Creating the Models}{43}{subsubsection.5.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.4}Avoiding Nested Data}{43}{subsubsection.5.4.4}%
+\contentsline {subsubsection}{\numberline {5.4.4}Avoiding Nested Data}{44}{subsubsection.5.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5}Sprint 4 - Connecting the Frontend and Backend}{44}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.5}Sprint 4 - Connecting the Frontend and Backend}{45}{subsection.5.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.5.1}Loading the Parent Barbers}{44}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.1}Loading the Parent Barbers}{45}{subsubsection.5.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.5.2}Loading the barbers}{45}{subsubsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2}Loading the barbers}{46}{subsubsection.5.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6}Sprint 5 - Shopping Cart and Checkout}{46}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.6}Sprint 5 - Shopping Cart and Checkout}{47}{subsection.5.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.1}Adding an Item To the Shopping Cart}{46}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.1}Adding an Item To the Shopping Cart}{47}{subsubsection.5.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.2}Storing the Shopping Cart Items}{47}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2}Storing the Shopping Cart Items}{48}{subsubsection.5.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.3}Displaying The Shopping Cart Items}{47}{subsubsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.3}Displaying The Shopping Cart Items}{48}{subsubsection.5.6.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.4}Checking Out an Order}{47}{subsubsection.5.6.4}%
+\contentsline {subsubsection}{\numberline {5.6.4}Checking Out an Order}{48}{subsubsection.5.6.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.5}Storing a Users Order}{48}{subsubsection.5.6.5}%
+\contentsline {subsubsection}{\numberline {5.6.5}Storing a Users Order}{49}{subsubsection.5.6.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.7}Sprint 6 - Location}{48}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.7}Sprint 6 - Location}{49}{subsection.5.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.7.1}Fetching the Geohash from the User}{48}{subsubsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.1}Fetching the Geohash from the User}{49}{subsubsection.5.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.7.2}Autocomplete locations}{48}{subsubsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2}Autocomplete locations}{49}{subsubsection.5.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.7.3}Filtering the Parent Barbers}{49}{subsubsection.5.7.3}%
+\contentsline {subsubsection}{\numberline {5.7.3}Filtering the Parent Barbers}{50}{subsubsection.5.7.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.8}Sprint 7 - Barber Side Application}{50}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.8}Sprint 7 - Barber Side Application}{51}{subsection.5.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.8.1}Creating a Parent Barber}{50}{subsubsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.1}Creating a Parent Barber}{51}{subsubsection.5.8.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.8.2}Adding a Barber and Their Products}{50}{subsubsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2}Adding a Barber and Their Products}{51}{subsubsection.5.8.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.8.3}Loading the barbers orders}{50}{subsubsection.5.8.3}%
+\contentsline {subsubsection}{\numberline {5.8.3}Loading the barbers orders}{51}{subsubsection.5.8.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.9}Widgets, Common Items and Added Features}{50}{subsection.5.9}%
+\contentsline {subsection}{\numberline {5.9}Widgets, Common Items and Added Features}{51}{subsection.5.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.9.1}Widgets}{51}{subsubsection.5.9.1}%
+\contentsline {subsubsection}{\numberline {5.9.1}Widgets}{52}{subsubsection.5.9.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.9.2}Common Items}{51}{subsubsection.5.9.2}%
+\contentsline {subsubsection}{\numberline {5.9.2}Common Items}{52}{subsubsection.5.9.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.9.3}Notifying the User}{51}{subsubsection.5.9.3}%
+\contentsline {subsubsection}{\numberline {5.9.3}Notifying the User}{52}{subsubsection.5.9.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.9.4}Launcher Icons}{51}{subsubsection.5.9.4}%
+\contentsline {subsubsection}{\numberline {5.9.4}Launcher Icons}{52}{subsubsection.5.9.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.9.5}Discount Codes}{52}{subsubsection.5.9.5}%
+\contentsline {subsubsection}{\numberline {5.9.5}Discount Codes}{53}{subsubsection.5.9.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.9.6}Hide and Show Password}{52}{subsubsection.5.9.6}%
+\contentsline {subsubsection}{\numberline {5.9.6}Hide and Show Password}{53}{subsubsection.5.9.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Testing}{52}{section.6}%
+\contentsline {section}{\numberline {6}Testing}{53}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}User (Beta) Testing}{52}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.1}User (Beta) Testing}{53}{subsection.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Acceptance Testing}{53}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Acceptance Testing}{54}{subsection.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.2.1}Use Case Implementation}{53}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.1}Use Case Implementation}{54}{subsubsection.6.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Conclusion and Further Work}{55}{section.7}%
+\contentsline {section}{\numberline {7}Conclusion and Further Work}{56}{section.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1}Conclusion}{55}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.1}Conclusion}{56}{subsection.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.1.1}Achieving the Required Objectives}{55}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Achieving the Required Objectives}{56}{subsubsection.7.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {7.1.2}Application Deployment}{56}{subsubsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2}Application Deployment}{57}{subsubsection.7.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2}Future Work}{57}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}Future Work}{58}{subsection.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A}Use Cases}{63}{appendix.A}%
+\contentsline {section}{\numberline {A}Surveys}{64}{appendix.A}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.1}Use case 1 - Sign Up}{63}{subsection.A.1}%
+\contentsline {subsection}{\numberline {A.1}Market Analysis Survey}{64}{subsection.A.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2}Use case 2 - Login}{64}{subsection.A.2}%
+\contentsline {subsection}{\numberline {A.2}User Testing Survey}{65}{subsection.A.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3}Use case 3 - Add a Product To The Cart (\emph {customers only})}{64}{subsection.A.3}%
+\contentsline {section}{\numberline {B}Use Cases}{66}{appendix.B}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.4}Use case 4 - Search for a Barber (\emph {customers only})}{65}{subsection.A.4}%
+\contentsline {subsection}{\numberline {B.1}Use case 1 - Sign Up}{66}{subsection.B.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.5}Use case 5 - Checkout (\emph {customers only})}{65}{subsection.A.5}%
+\contentsline {subsection}{\numberline {B.2}Use case 2 - Login}{67}{subsection.B.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.6}Use case 6 - View Orders}{66}{subsection.A.6}%
+\contentsline {subsection}{\numberline {B.3}Use case 3 - Add a Product To The Cart (\emph {customers only})}{67}{subsection.B.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.7}Use case 7 - Sign Out}{66}{subsection.A.7}%
+\contentsline {subsection}{\numberline {B.4}Use case 4 - Search for a Barber (\emph {customers only})}{68}{subsection.B.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.8}Use case 8 - Add a Barber (\emph {barbers only})}{67}{subsection.A.8}%
+\contentsline {subsection}{\numberline {B.5}Use case 5 - Checkout (\emph {customers only})}{68}{subsection.B.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B}Application Images}{68}{appendix.B}%
+\contentsline {subsection}{\numberline {B.6}Use case 6 - View Orders}{69}{subsection.B.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1}Customer Sign Up with Email}{68}{subsection.B.1}%
+\contentsline {subsection}{\numberline {B.7}Use case 7 - Sign Out}{69}{subsection.B.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2}Customer Sign Up with Google}{69}{subsection.B.2}%
+\contentsline {subsection}{\numberline {B.8}Use case 8 - Add a Barber (\emph {barbers only})}{70}{subsection.B.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.3}Barber Sign Up}{70}{subsection.B.3}%
+\contentsline {section}{\numberline {C}Application Images}{71}{appendix.C}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.4}Sign Up Failed}{71}{subsection.B.4}%
+\contentsline {subsection}{\numberline {C.1}Customer Sign Up with Email}{71}{subsection.C.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.5}Customer Login with Google}{71}{subsection.B.5}%
+\contentsline {subsection}{\numberline {C.2}Customer Sign Up with Google}{72}{subsection.C.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.6}Customer Login with Email and Password}{72}{subsection.B.6}%
+\contentsline {subsection}{\numberline {C.3}Barber Sign Up}{73}{subsection.C.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.7}Wrong Login Details}{72}{subsection.B.7}%
+\contentsline {subsection}{\numberline {C.4}Sign Up Failed}{74}{subsection.C.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.8}Basket Empty}{73}{subsection.B.8}%
+\contentsline {subsection}{\numberline {C.5}Customer Login with Google}{74}{subsection.C.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.9}Reset Password}{74}{subsection.B.9}%
+\contentsline {subsection}{\numberline {C.6}Customer Login with Email and Password}{75}{subsection.C.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.10}Add Product to the Cart}{74}{subsection.B.10}%
+\contentsline {subsection}{\numberline {C.7}Wrong Login Details}{75}{subsection.C.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.11}Search for a Barber}{75}{subsection.B.11}%
+\contentsline {subsection}{\numberline {C.8}Basket Empty}{76}{subsection.C.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.12}Checkout}{75}{subsection.B.12}%
+\contentsline {subsection}{\numberline {C.9}Reset Password}{77}{subsection.C.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.13}Sign Out}{76}{subsection.B.13}%
+\contentsline {subsection}{\numberline {C.10}Add Product to the Cart}{77}{subsection.C.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.14}Add Barber}{77}{subsection.B.14}%
+\contentsline {subsection}{\numberline {C.11}Search for a Barber}{78}{subsection.C.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C}Code Snippets}{77}{appendix.C}%
+\contentsline {subsection}{\numberline {C.12}Checkout}{78}{subsection.C.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.1}Partial Code for Authenticate.dart Showing the Email and Password Sign In}{77}{subsection.C.1}%
+\contentsline {subsection}{\numberline {C.13}Sign Out}{79}{subsection.C.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.2}Partial Code for forgot\_password.dart}{78}{subsection.C.2}%
+\contentsline {subsection}{\numberline {C.14}Add Barber}{80}{subsection.C.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.3}Code for navigate.dart}{79}{subsection.C.3}%
+\contentsline {section}{\numberline {D}Code Snippets}{81}{appendix.D}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.4}Code for filter-list.dart}{80}{subsection.C.4}%
+\contentsline {subsection}{\numberline {D.1}Partial Code for Authenticate.dart Showing the Email and Password Sign In}{81}{subsection.D.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.5}updateCartFirestore() Method Found in order.dart}{80}{subsection.C.5}%
+\contentsline {subsection}{\numberline {D.2}Partial Code for forgot\_password.dart}{81}{subsection.D.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.6}getLocations() Method Found in maps.dart}{81}{subsection.C.6}%
+\contentsline {subsection}{\numberline {D.3}Code for navigate.dart}{82}{subsection.D.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.7}Code for navigation\_bar.dart}{81}{subsection.C.7}%
+\contentsline {subsection}{\numberline {D.4}Code for filter-list.dart}{83}{subsection.D.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.8}Partial Code for main.dart}{83}{subsection.C.8}%
+\contentsline {subsection}{\numberline {D.5}updateCartFirestore() Method Found in order.dart}{83}{subsection.D.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.9}Partial Code for user\_model.dart}{83}{subsection.C.9}%
+\contentsline {subsection}{\numberline {D.6}getLocations() Method Found in maps.dart}{84}{subsection.D.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.10}Hide/ Show Password Code Found In login.dart}{84}{subsection.C.10}%
+\contentsline {subsection}{\numberline {D.7}Code for navigation\_bar.dart}{85}{subsection.D.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.8}Partial Code for main.dart}{86}{subsection.D.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.9}Partial Code for user\_model.dart}{87}{subsection.D.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {D.10}Hide/ Show Password Code Found In login.dart}{87}{subsection.D.10}%
